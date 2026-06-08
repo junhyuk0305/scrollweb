@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/대표 약력·등록번호/요금/카카오·전화/주소 -->
+<!-- 규제: 세무/노무 기준. '1위/최고' 등 과장 금지(표시광고법). 결과보증 표현 금지 -->
+<!-- tier: BASIC(30만원) · 원페이지 · 5섹션 · 진입 fade-up만(시그니처/로더/마스크/폼/지도 없음) -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>정도(正道) 세무회계 · 노무 | 사장님 곁의 세무·노무 파트너</title>
+<meta name="description" content="정도 세무회계·노무 — 바른 길로 모십니다. 세무조정·기장대행·양도/상속세·노무관리·4대보험·급여 아웃소싱. 소상공인·중소기업을 위한 무료 상담은 전화·카카오톡으로.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="정도(正道) 세무회계 · 노무 | 사장님 곁의 세무·노무 파트너">
+<meta property="og:description" content="세금과 노무, 혼자 고민하지 마세요. 세무사·노무사가 사업의 시작부터 곁에서 함께합니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js" defer></script>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER (앵커 메뉴 없음 — 로고 + 전화 CTA만, BASIC 절제) ===== -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">
+      <span class="logo-mark">正</span>
+      <span>정도 세무회계·노무<small>JEONGDO TAX &amp; LABOR</small></span>
+    </a>
+    <a href="tel:0212345678" class="nav-tel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2H7a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg>
+      <span>02-1234-5678</span>
+    </a>
+  </div>
+</header>
+
+<!-- ===== 1. HERO (슬로건 + 무료상담 CTA) ===== -->
+<section class="hero" id="top">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-photo"><span class="hero-photo-mask" aria-hidden="true"></span></div>
+  <div class="wrap hero-inner">
+    <span class="hero-badge"><span class="dot"></span>소상공인·중소기업 전담 · 세무사 + 노무사 협업</span>
+    <h1>바른 길로 모십니다.<br>사장님 곁의 <span class="hl">세무·노무</span> 파트너.</h1>
+    <p class="hero-sub">세금과 노무, 혼자 고민하지 마세요. 현장 경험 많은 세무사·노무사가 사업의 시작부터 성장까지 곁에서 함께합니다. 복잡한 신고는 저희가, 사장님은 사업에만 집중하세요.</p>
+    <div class="hero-cta">
+      <a href="tel:0212345678" class="btn btn-primary">전화로 무료 상담
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">상담 안내 보기</a>
+    </div>
+    <p class="hero-note">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+      첫 상담은 비용 없이 — 현재 상황 진단부터 도와드립니다.
+    </p>
+
+    <!-- 신뢰 지표 (진입 시 1회 카운트업 → 최종값 고정. data-count=목표값) -->
+    <div class="stats">
+      <div class="stat">
+        <div class="num"><span class="count" data-count="850">850</span><span class="suffix">+</span></div>
+        <div class="label">함께한 고객 사업장</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="count" data-count="12000">12,000</span><span class="suffix">건</span></div>
+        <div class="label">누적 상담 건수</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="count" data-count="18">18</span><span class="suffix">년</span></div>
+        <div class="label">세무·노무 현장 경력</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR (작은 신뢰 띠 — 섹션 카운트 제외) ===== -->
+<div class="trustbar">
+  <div class="wrap trustbar-inner">
+    <div class="trustbar-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>한국세무사회 정회원</div>
+    <div class="trustbar-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>공인노무사 협업 운영</div>
+    <div class="trustbar-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>국세청 홈택스 전자신고 등록</div>
+    <div class="trustbar-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>1:1 전담 담당제</div>
+  </div>
+</div>
+
+<!-- ===== 2. SERVICES (업무 분야) ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head reveal">
+      <div>
+        <span class="eyebrow">Practice Areas</span>
+        <h2 class="sec-title">사업의 모든 숫자,<br>정도가 함께 정리합니다.</h2>
+      </div>
+      <p class="sec-lead">창업 신고부터 기장, 세무조정, 직원 노무관리까지. 세무와 노무를 한 사무소에서 동시에 챙겨 드립니다.</p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 2h6l4 4v14a1 1 0 01-1 1H6a1 1 0 01-1-1V3a1 1 0 011-1z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+        <h3>세무조정 · 결산</h3>
+        <p>법인·개인사업자 결산과 세무조정. 절세 가능 항목을 빠짐없이 검토해 정확한 신고로 가산세 리스크를 줄입니다.</p>
+        <div class="svc-tags"><span>법인세</span><span>종합소득세</span><span>결산</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg></div>
+        <h3>기장대행</h3>
+        <p>매월 장부 작성·증빙 관리·부가세 신고를 대행합니다. 사장님은 매출 영수증만, 나머지 회계는 저희가 챙깁니다.</p>
+        <div class="svc-tags"><span>월 기장</span><span>부가가치세</span><span>증빙관리</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3>양도 · 상속 · 증여세</h3>
+        <p>부동산 양도, 가업 승계, 증여 설계. 미리 시뮬레이션해 합법적인 절세 플랜과 신고까지 한 번에 진행합니다.</p>
+        <div class="svc-tags"><span>양도세</span><span>상속세</span><span>증여 설계</span></div>
+      </article>
+
+      <article class="svc-card reveal">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M3 21v-1a6 6 0 016-6 6 6 0 016 6v1M16 11l2 2 4-4"/></svg></div>
+        <h3>노무관리 · 4대보험</h3>
+        <p>근로계약서·취업규칙·인사 자문부터 4대보험 취득상실 신고와 두루누리 지원 검토까지. 노동법 리스크를 사전에 점검합니다.</p>
+        <div class="svc-tags"><span>근로계약</span><span>취업규칙</span><span>4대보험</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. TEAM (대표 소개 — 자격·경력) ===== -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto" class="reveal">
+      <span class="eyebrow" style="justify-content:center">Our Professionals</span>
+      <h2 class="sec-title">자격과 경력으로<br>증명하는 구성원</h2>
+      <p class="sec-lead" style="margin:16px auto 0">세무사와 공인노무사가 한 팀으로. 사장님의 세금과 사람 문제를 양쪽에서 든든하게 받칩니다.</p>
+    </div>
+
+    <div class="team-grid">
+      <article class="member reveal">
+        <div class="member-photo">
+          <span class="role-tag">대표 세무사</span>
+          <img src="https://picsum.photos/id/1005/600/750" alt="대표 세무사 김정도" loading="lazy">
+        </div>
+        <div class="member-info">
+          <h3>김정도</h3>
+          <div class="cred">세무사 · 경영학 석사</div>
+          <ul>
+            <li>한국세무사회 정회원 (등록 제00000호)</li>
+            <li>전 회계법인 세무본부 18년</li>
+            <li>소상공인·스타트업 기장 전문</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="member reveal">
+        <div class="member-photo">
+          <span class="role-tag">공인노무사</span>
+          <img src="https://picsum.photos/id/1027/600/750" alt="공인노무사 이바른" loading="lazy">
+        </div>
+        <div class="member-info">
+          <h3>이바른</h3>
+          <div class="cred">공인노무사 · 노동법 전공</div>
+          <ul>
+            <li>고용노동부 노동위원회 자문 경력</li>
+            <li>인사노무 · 노동분쟁 예방 자문</li>
+            <li>중소기업 취업규칙 컨설팅 다수</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. PRICING (비용 · 요금 안내) ===== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div style="text-align:center;max-width:620px;margin:0 auto" class="reveal">
+      <span class="eyebrow" style="justify-content:center">Transparent Pricing</span>
+      <h2 class="sec-title">숨김없이, 미리 알려드리는<br>합리적인 기장료</h2>
+      <p class="sec-lead" style="margin:16px auto 0">매출 규모에 맞춘 투명한 월 기장료. 아래는 대략적인 기준이며, 업종·거래 건수에 따라 상담 시 정확히 안내해 드립니다.</p>
+    </div>
+
+    <div class="price-grid">
+      <article class="price-card reveal">
+        <h3>스타터</h3>
+        <p class="plan-for">간이과세 · 1인 창업 사업장</p>
+        <div class="price-amt"><span class="from">월</span><span class="val">8</span><span class="unit">만원~</span></div>
+        <p class="vat">VAT 별도 · 연 1회 정리 포함</p>
+        <ul class="price-feat">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>월 기장 · 부가세 신고 대행</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>종합소득세 신고</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>카카오 상시 문의</li>
+        </ul>
+        <a href="tel:0212345678" class="btn btn-kakao">상담으로 정확히 보기</a>
+      </article>
+
+      <article class="price-card featured reveal">
+        <h3>스탠다드</h3>
+        <p class="plan-for">일반과세 · 직원 있는 사업장</p>
+        <div class="price-amt"><span class="from">월</span><span class="val">15</span><span class="unit">만원~</span></div>
+        <p class="vat">VAT 별도 · 4대보험 관리 포함</p>
+        <ul class="price-feat">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>스타터 전체 항목 포함</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>4대보험 취득·상실 신고</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>원천세 · 급여 신고</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>전담 담당자 1:1 배정</li>
+        </ul>
+        <a href="tel:0212345678" class="btn btn-primary">상담으로 정확히 보기</a>
+      </article>
+
+      <article class="price-card reveal">
+        <h3>비즈니스</h3>
+        <p class="plan-for">법인 · 노무 자문이 필요한 사업장</p>
+        <div class="price-amt"><span class="from">월</span><span class="val">25</span><span class="unit">만원~</span></div>
+        <p class="vat">VAT 별도 · 노무 자문 결합</p>
+        <ul class="price-feat">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>스탠다드 전체 항목 포함</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>법인 결산 · 세무조정</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>근로계약 · 취업규칙 노무 자문</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4 4L19 7"/></svg>급여 아웃소싱 옵션</li>
+        </ul>
+        <a href="tel:0212345678" class="btn btn-kakao">상담으로 정확히 보기</a>
+      </article>
+    </div>
+
+    <p class="price-note reveal">양도·상속·증여세 등 <strong>단발성 신고 업무</strong>는 사안별 별도 견적으로 진행합니다. 정확한 비용은 부담 없는 상담에서 — 계약 전 예상 비용을 미리 알려드립니다.</p>
+  </div>
+</section>
+
+<!-- ===== 5. CONTACT (상담 문의 — 폼/지도 없이 전화·카톡 버튼 + 주소 텍스트) ===== -->
+<section class="contact" id="contact">
+  <div class="contact-grid-bg"></div>
+  <div class="wrap contact-inner reveal">
+    <span class="eyebrow on-dark">Free Consultation</span>
+    <h2 class="sec-title">먼저 듣겠습니다.<br>부담 없이 상담하세요.</h2>
+    <p class="sec-lead">어떤 업종이든, 어떤 고민이든 괜찮습니다. 전화 또는 카카오톡으로 편하게 연락 주세요. 담당 세무사·노무사가 직접 응대해 드립니다.</p>
+
+    <div class="contact-cta">
+      <a href="tel:0212345678" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2H7a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg>
+        전화 상담 02-1234-5678
+      </a>
+      <a href="#" class="btn btn-kakao">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.7-1.8 3.8-2.6.6.1 1.3.1 1.9.1 5.5 0 10-3.5 10-7.5S17.5 3 12 3z"/></svg>
+        카카오톡 상담
+      </a>
+    </div>
+
+    <div class="contact-channels">
+      <div class="ch-item tel">
+        <div class="ch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2H7a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></div>
+        <div><div class="ch-label">전화 상담</div><div class="ch-val">02-1234-5678</div></div>
+      </div>
+      <div class="ch-item kakao">
+        <div class="ch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.7-1.8 3.8-2.6.6.1 1.3.1 1.9.1 5.5 0 10-3.5 10-7.5S17.5 3 12 3z"/></svg></div>
+        <div><div class="ch-label">카카오톡 채널</div><div class="ch-val">@정도세무노무</div></div>
+      </div>
+      <div class="ch-item map">
+        <div class="ch-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="ch-label">오시는 길</div><div class="ch-val">서울 강남구 테헤란로 123, 8층</div></div>
+      </div>
+    </div>
+    <p class="contact-hours">상담 시간: 평일 09:00 – 18:00 (점심 12:00 – 13:00) · 토·일·공휴일 휴무</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-logo"><span class="logo-mark">正</span>정도 세무회계·노무</div>
+        <p>바른 길로 모시는 사장님의 세무·노무 파트너. 소상공인과 중소기업의 곁에서 세금과 사람 문제를 함께 풀어갑니다.</p>
+      </div>
+      <div class="foot-col">
+        <h4>바로가기</h4>
+        <ul>
+          <li><a href="#services">업무 분야</a></li>
+          <li><a href="#team">구성원 소개</a></li>
+          <li><a href="#pricing">요금 안내</a></li>
+          <li><a href="#contact">상담 문의</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-legal">
+      <span><strong>정도 세무회계·노무</strong> &nbsp;|&nbsp; 대표 세무사 김정도 &nbsp;|&nbsp; 공인노무사 이바른</span>
+      <span>세무사 등록번호 제2008-00000호 &nbsp;|&nbsp; 공인노무사 등록번호 제0000호 &nbsp;|&nbsp; 사업자등록번호 123-45-67890</span>
+      <span>서울특별시 강남구 테헤란로 123, 8층 (역삼동) &nbsp;|&nbsp; TEL 02-1234-5678 &nbsp;|&nbsp; FAX 02-1234-5679</span>
+    </div>
+
+    <p class="foot-disclaimer">※ 본 사이트의 실적 수치는 예시이며, 개별 사안의 사실관계에 따라 결과가 달라질 수 있습니다. 특정 결과를 보장하지 않습니다. 표시·광고의 공정화에 관한 법률을 준수하며, 객관적 근거 없는 '1위·최고' 등의 표현을 사용하지 않습니다.</p>
+
+    <div class="foot-bottom">
+      <span>© 2026 정도 세무회계·노무. All rights reserved.</span>
+      <span>본 페이지는 포트폴리오용 데모이며, 모든 정보는 예시입니다.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING (고정 CTA — 전화·카톡) ===== -->
+<div class="floating">
+  <a href="#" class="float-btn kakao" aria-label="카카오톡 상담"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.7-1.8 3.8-2.6.6.1 1.3.1 1.9.1 5.5 0 10-3.5 10-7.5S17.5 3 12 3z"/></svg><span class="ftip">카카오톡 상담</span></a>
+  <a href="tel:0212345678" class="float-btn tel" aria-label="전화 상담"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2H7a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.1a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg><span class="ftip">전화 상담 02-1234-5678</span></a>
+</div>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>

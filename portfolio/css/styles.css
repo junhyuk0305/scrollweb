@@ -13,11 +13,11 @@
   --amber-deep:#c8973a;
   --accent:#5b8cff;
   --radius:16px;
-  --serif:"Noto Serif KR",serif;
+  --serif:"Pretendard",sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
 body{
   font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;
   background:var(--bg);color:var(--ink);

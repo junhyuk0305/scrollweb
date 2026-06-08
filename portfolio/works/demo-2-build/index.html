@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/시공사진/면허번호/견적폼 수신/카카오 링크/지도/연락처 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>여백건축 YEOBAEK — 공간에 여백을 더하다 | 상업·주거 인테리어/리모델링</title>
+<meta name="description" content="여백건축 YEOBAEK. 누적 시공 1,200건, 14년 실적의 상업·주거 인테리어/리모델링 전문. 비포/애프터로 확인하는 시공 품질, 투명한 5단계 공정, 무료 견적 문의." />
+<meta property="og:title" content="여백건축 YEOBAEK — 공간에 여백을 더하다" />
+<meta property="og:description" content="누적 시공 1,200건 · 14년 · 재발주율 68%. 신뢰와 실적 중심의 인테리어/리모델링." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ============ 헤더 (홈: 히어로 위 투명 시작) ============ -->
+<header class="nav over-hero" id="nav">
+  <a class="brand" href="index.html">
+    <span class="mark">餘</span>
+    <span>여백건축<small>YEOBAEK</small></span>
+  </a>
+  <nav class="nav-links" aria-label="주요 메뉴">
+    <a href="index.html" data-nav="index.html">홈</a>
+    <a href="portfolio.html" data-nav="portfolio.html">시공 포트폴리오</a>
+    <a href="quote.html" data-nav="quote.html">견적·문의</a>
+    <a href="quote.html" class="nav-cta" data-nav="quote.html">무료 견적</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<!-- 모바일 드로어 -->
+<div class="m-drawer" id="mDrawer" aria-label="모바일 메뉴">
+  <button class="md-close" aria-label="메뉴 닫기">&times;</button>
+  <a href="index.html" data-nav="index.html">홈</a>
+  <a href="portfolio.html" data-nav="portfolio.html">시공 포트폴리오</a>
+  <a href="quote.html" data-nav="quote.html">견적·문의</a>
+</div>
+
+<!-- ============ 고정 CTA ============ -->
+<div class="float-cta">
+  <!-- 판매 시 교체: 카카오 채널 링크 -->
+  <a href="#" class="fbtn kakao" aria-label="카카오 채널 상담">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.5 10-7.6C22 6.5 17.5 3 12 3z"/></svg>
+    <span>카카오 상담</span>
+  </a>
+  <a href="quote.html" class="fbtn estimate">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span>무료 견적 받기</span>
+  </a>
+</div>
+
+<main id="main">
+
+<!-- ============ [섹션1] 히어로 ============ -->
+<section class="hero">
+  <div class="hero-bg">
+    <!-- 판매 시 교체: 대표 시공 사진 -->
+    <img src="https://picsum.photos/id/1048/1920/1280" alt="여백건축 대표 시공 — 모던 미니멀 거실 리모델링" />
+  </div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--wood-soft)">상업 · 주거 인테리어 / 리모델링</span>
+      <h1 class="display">
+        <span class="ko">공간에</span> <span class="accent">여백</span><span class="ko">을<br>더하다</span>
+      </h1>
+      <p class="hero-sub">덜어내야 보이는 본질. 14년간 1,200건의 공간을, 과하지 않게 그러나 완성도 높게 다시 지었습니다.</p>
+      <div class="hero-actions">
+        <a href="quote.html" class="btn-primary">
+          무료 견적 받기
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#ba" class="btn-ghost">비포/애프터 보기</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>종합건설업</b> 등록</span>
+        <span><b>실내건축공사업</b> 면허</span>
+        <span><b>하자보증 2년</b> A/S</span>
+        <span><b>재발주율 68%</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- ============ [섹션2] 브랜드 + 카운트업(시그니처) ============ -->
+<section class="brandline">
+  <div class="wrap">
+    <span class="eyebrow reveal">여백의 철학</span>
+    <p class="lead reveal" style="margin-top:22px">
+      <b>채우는 인테리어</b>는 흔합니다. 여백건축은 <span class="hl">덜어내는 설계</span>로, 사는 사람과 쓰는 사람이 오래 머무는 공간을 만듭니다.
+    </p>
+    <p class="desc reveal">
+      아파트 전체 리모델링부터 상가·카페·사무실 인테리어까지. 실측 기반 설계, 직영 시공, 투명한 공정 관리로
+      "예산은 지키고 품질은 타협하지 않는" 작업을 14년째 이어오고 있습니다.
+    </p>
+
+    <!-- ★ 시그니처: 스크롤에 매여 숫자가 올라가는 카운트업 스크럽 -->
+    <div class="stats" id="stats">
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="1200">0</span><span class="suf">건</span></div>
+        <div class="lab">누적 시공 실적</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="14">0</span><span class="suf">년</span></div>
+        <div class="lab">업력 (2011년 설립)</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="68">0</span><span class="suf">%</span></div>
+        <div class="lab">재발주 · 소개 비율</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="2">0</span><span class="suf">년</span></div>
+        <div class="lab">하자보증 A/S 기간</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ [섹션3] 비포/애프터 (킬러 인터랙션) ============ -->
+<section class="ba" id="ba">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">BEFORE / AFTER</span>
+        <h2 class="reveal">사진이 아니라<br>'변화'를 보여드립니다</h2>
+      </div>
+      <p class="sh-side reveal">핸들을 좌우로 드래그하면 시공 전과 후가 한 화면에서 비교됩니다. 노후 공간이 어떻게 달라지는지 직접 확인해 보세요.</p>
+    </div>
+
+    <div class="ba-stage reveal">
+      <div class="ba-tabs" id="baTabs">
+        <button class="ba-tab active" data-i="0">아파트 거실 · 32평</button>
+        <button class="ba-tab" data-i="1">카페 인테리어 · 18평</button>
+        <button class="ba-tab" data-i="2">사무실 리모델링 · 45평</button>
+      </div>
+
+      <div class="ba-compare" id="baCompare" style="--pos:50%">
+        <div class="ba-layer ba-after">
+          <img id="baAfter" src="https://picsum.photos/id/1080/1600/900" alt="시공 후 — 밝고 정돈된 공간" />
+        </div>
+        <div class="ba-layer ba-before">
+          <img id="baBefore" src="https://picsum.photos/id/1078/1600/900" alt="시공 전 — 노후한 기존 공간" />
+        </div>
+        <span class="ba-cap b">BEFORE</span>
+        <span class="ba-cap a">AFTER</span>
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-knob">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-meta">
+        <div>
+          <div class="t" id="baTitle">서초 아파트 32평 — 거실·주방 통합 리모델링</div>
+          <div class="d" id="baDesc">벽을 헐어 거실과 주방을 하나로. 우드톤 마루와 간접조명으로 군더더기를 덜어냈습니다.</div>
+        </div>
+        <div class="ba-spec" id="baSpec">
+          <div><b>4주</b>공사 기간</div>
+          <div><b>전체 리모델링</b>공사 범위</div>
+          <div><b>4,800만원대</b>시공 예산</div>
+        </div>
+      </div>
+      <span class="ba-hint">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+        핸들을 드래그하거나 이미지를 클릭/터치해 비교하세요
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ [섹션4] 프로세스 ============ -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">HOW WE WORK</span>
+        <h2 class="reveal">상담부터 하자보수까지,<br>5단계 투명 공정</h2>
+      </div>
+      <p class="sh-side reveal">"맡겨놓으면 알아서"가 아니라, 매 단계 진행 상황을 공유합니다. 스크롤을 내리면 현재 단계가 강조됩니다.</p>
+    </div>
+
+    <div class="proc-grid" id="procGrid">
+      <div class="proc-line"><span class="fill" id="procFill"></span></div>
+
+      <div class="step is-active">
+        <div class="dot">01</div>
+        <div class="scontent">
+          <span class="stag">STEP 01 — Consulting</span>
+          <h3>상담</h3>
+          <p>공간 용도·예산·일정을 듣고 방향을 잡습니다. 무리한 권유 없이, 가능한 것과 어려운 것을 솔직하게 말씀드립니다.</p>
+          <ul><li>현장 방문 상담</li><li>예산대 협의</li><li>레퍼런스 확인</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">02</div>
+        <div class="scontent">
+          <span class="stag">STEP 02 — Measuring</span>
+          <h3>실측</h3>
+          <p>전문 인력이 직접 방문해 치수·배관·전기·구조를 정밀 측정합니다. 추가 비용의 80%는 부실 실측에서 나옵니다.</p>
+          <ul><li>정밀 실측</li><li>설비 상태 점검</li><li>철거 범위 확정</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">03</div>
+        <div class="scontent">
+          <span class="stag">STEP 03 — Design</span>
+          <h3>설계</h3>
+          <p>3D 도면과 자재 샘플로 완성된 모습을 미리 확인합니다. 견적서에는 자재·수량·단가를 모두 명시합니다.</p>
+          <ul><li>3D 설계 도면</li><li>자재 마감재 선정</li><li>항목별 상세 견적</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">04</div>
+        <div class="scontent">
+          <span class="stag">STEP 04 — Construction</span>
+          <h3>시공</h3>
+          <p>직영 시공팀이 공정표대로 진행하고, 매일 작업 사진을 공유합니다. 현장 소장이 끝까지 한 명으로 책임집니다.</p>
+          <ul><li>직영 시공</li><li>일일 진행 공유</li><li>공정별 검수</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">05</div>
+        <div class="scontent">
+          <span class="stag">STEP 05 — Warranty</span>
+          <h3>하자보수</h3>
+          <p>준공 후 2년간 하자보증. 사용 중 발생한 문제는 빠르게 방문 조치합니다. 끝이 아니라 관계의 시작입니다.</p>
+          <ul><li>2년 하자보증</li><li>신속 A/S 방문</li><li>정기 점검</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ [섹션5] 후기 슬라이드 ============ -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">CLIENT REVIEWS</span>
+        <h2 class="reveal">맡겨보신 분들의<br>실제 후기</h2>
+      </div>
+      <p class="sh-side reveal">10건 중 7건이 재발주·소개로 이어집니다. 시공이 끝난 뒤에도 관계가 이어지는 이유입니다. <a href="quote.html" style="color:var(--wood);font-weight:700">→ 견적 문의</a></p>
+    </div>
+
+    <!-- 판매 시 교체: 실제 고객 후기 -->
+    <div class="rev-stage reveal" id="revStage">
+      <div class="rev-track">
+        <article class="rev-slide">
+          <div class="rev-stars" aria-label="별점 5점">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg>
+          </div>
+          <p class="rev-quote">견적서에 <b>자재와 단가가 다 적혀 있어</b> 추가비 걱정이 없었습니다. 매일 작업 사진을 보내주셔서 출근하면서도 안심했어요. 거실이 두 배는 넓어 보입니다.</p>
+          <div class="rev-by"><span class="ava">김</span><span class="who"><b>김○○ 고객님</b><span>서초 아파트 32평 · 전체 리모델링</span></span></div>
+        </article>
+        <article class="rev-slide">
+          <div class="rev-stars" aria-label="별점 5점">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg>
+          </div>
+          <p class="rev-quote">카페 오픈 일정이 빠듯했는데 <b>약속한 3주 안에 마감</b>해 주셨습니다. 손님들이 인테리어 사진을 먼저 찍어요. 매출에 진짜 도움이 됐습니다.</p>
+          <div class="rev-by"><span class="ava">이</span><span class="who"><b>이○○ 사장님</b><span>연남동 로스터리 카페 · 상업 인테리어</span></span></div>
+        </article>
+        <article class="rev-slide">
+          <div class="rev-stars" aria-label="별점 5점">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.9 1.2 7L12 18l-6.4 3.3L7 14.3l-5-4.9 7-.9z"/></svg>
+          </div>
+          <p class="rev-quote">준공 1년 뒤 누수가 생겼는데 <b>전화 한 통에 바로 방문</b>해 해결해 주셨습니다. 하자보증이 말로만 있는 게 아니더군요. 다음 사옥도 맡길 생각입니다.</p>
+          <div class="rev-by"><span class="ava">박</span><span class="who"><b>박○○ 대표님</b><span>강남 스타트업 오피스 · 부분 리모델링</span></span></div>
+        </article>
+      </div>
+      <div class="rev-ctrl" style="padding:0 clamp(20px,4vw,40px) clamp(24px,4vw,40px)">
+        <div class="rev-dots" id="revDots"></div>
+        <div class="rev-arrows">
+          <button class="rev-arrow" id="revPrev" aria-label="이전 후기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="rev-arrow" id="revNext" aria-label="다음 후기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 푸터 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><span class="mark">餘</span><span>여백건축<small>YEOBAEK</small></span></a>
+        <p>공간에 여백을 더하다. 상업·주거 인테리어와 리모델링을 직영 시공으로 책임지는 종합건설 브랜드입니다.</p>
+        <div class="foot-badges">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>하자보증 2년</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>직영 시공</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round"/></svg>4대보험 가입</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>바로가기</h5>
+        <a href="index.html">홈</a>
+        <a href="index.html#ba">시공 비교 (B/A)</a>
+        <a href="portfolio.html">시공 포트폴리오</a>
+        <a href="portfolio.html#budget">예산 가이드</a>
+        <a href="quote.html">무료 견적 문의</a>
+      </div>
+      <div class="foot-col">
+        <h5>문의 · 연락</h5>
+        <!-- 판매 시 교체: 연락처/주소/카카오 -->
+        <a href="tel:0212345678">대표전화 02-1234-5678</a>
+        <a href="#">카카오 채널 @여백건축</a>
+        <a href="#">평일 09:00 – 18:00</a>
+        <a href="#">서울특별시 강남구 논현로 000, 3층</a>
+      </div>
+    </div>
+
+    <!-- 판매 시 교체: 면허번호/사업자번호/평가액 -->
+    <div class="foot-licenses">
+      <div class="lic"><span>종합건설업 등록</span><b>서울-제 2018-000-0000 호</b></div>
+      <div class="lic"><span>실내건축공사업 면허</span><b>제 2016-실내-0000 호</b></div>
+      <div class="lic"><span>시공능력평가액</span><b>토목건축 / 실내건축 등재</b></div>
+      <div class="lic"><span>사업자등록번호</span><b>123-45-67890</b></div>
+      <div class="lic"><span>통신판매업 신고</span><b>제 2019-서울강남-0000 호</b></div>
+      <div class="lic"><span>하자이행 · 영업보증</span><b>건설공제조합 가입</b></div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 여백건축 YEOBAEK Co., Ltd. All rights reserved.</span>
+      <span>본 페이지는 판매용 데모이며, 표기된 면허·실적·연락처는 예시입니다.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

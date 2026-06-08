@@ -26,11 +26,11 @@
   --shadow:0 8px 30px rgba(20,27,24,.10);
   --shadow-lg:0 22px 60px rgba(20,27,24,.22);
   --maxw:1180px;
-  --serif:'Noto Serif KR','Pretendard',serif;
+  --serif:'Pretendard',sans-serif;
   --cta-bar-h:60px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scrollbar-gutter:stable}
 body{
   font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
   color:var(--ink);
@@ -86,7 +86,7 @@ h2.title{font-family:var(--serif);font-weight:600;font-size:clamp(27px,4vw,42px)
 /* ===== 헤더 ===== */
 header{
   position:sticky;top:0;z-index:60;
-  background:rgba(29,42,34,.86);backdrop-filter:blur(12px);
+  background:rgba(29,42,34,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line-dark);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
@@ -128,7 +128,7 @@ header{
 .page-head p{font-size:18px;color:var(--sage);max-width:700px}
 
 /* ===== 히어로 (홈) ===== */
-.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;color:#fff}
+.hero{position:relative;height:100vh;height:100dvh;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;color:#fff}
 .hero-media{position:absolute;inset:0;z-index:0;will-change:transform}
 .hero-media img{width:100%;height:100%;object-fit:cover}
 .hero-media::after{content:"";position:absolute;inset:0;
@@ -213,7 +213,7 @@ header{
 .site-block.flip .site-media{order:2}
 .site-media{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:var(--moss)}
 .site-media .pimg{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover;will-change:transform}
-.site-media .price-tag{position:absolute;left:18px;bottom:18px;z-index:2;background:rgba(20,27,24,.78);backdrop-filter:blur(6px);color:#fff;padding:10px 16px;border-radius:14px}
+.site-media .price-tag{position:absolute;left:18px;bottom:18px;z-index:2;background:rgba(20,27,24,.78);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:#fff;padding:10px 16px;border-radius:14px}
 .site-media .price-tag b{font-family:var(--serif);font-size:19px;color:var(--amber)}
 .site-media .price-tag span{display:block;font-size:12px;color:var(--cream-2)}
 .site-body .s-tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--amber-deep);background:#f1e6d2;padding:5px 13px;border-radius:999px;margin-bottom:14px}
@@ -376,8 +376,64 @@ footer a:hover{color:var(--amber)}
 .float-cta .pulse{width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.6);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%{box-shadow:0 0 0 10px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
 
+/* ===== 브랜드 인트로 로더 (PRO 시그니처) ===== */
+/* 모든 페이지 공통. JS가 window.load 후 페이드/와이프 아웃.
+   reduced-motion·gsap 미로드 시 app.js가 즉시 제거(깜빡임 없음). */
+#loader{
+  position:fixed;inset:0;z-index:300;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 36%,#23332a 0%,var(--forest) 38%,var(--night) 100%);
+  color:var(--cream);
+}
+#loader[hidden]{display:none}
+body.is-loading{overflow:hidden}
+.ld-inner{text-align:center;will-change:transform,opacity}
+.ld-logo{
+  width:76px;height:76px;border-radius:50%;display:grid;place-items:center;margin:0 auto 20px;
+  background:radial-gradient(circle at 50% 38%,#2b3a30,#141b18);
+  border:1px solid rgba(224,164,88,.5);color:var(--amber);font-size:34px;
+}
+.ld-name{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--cream);letter-spacing:.02em}
+.ld-name small{display:block;font-size:11px;font-weight:600;color:var(--sage);letter-spacing:.32em;margin-top:6px}
+.ld-bar{width:148px;height:3px;border-radius:3px;background:rgba(244,239,228,.16);margin:24px auto 0;overflow:hidden}
+.ld-bar i{display:block;height:100%;width:40%;border-radius:3px;background:linear-gradient(90deg,var(--amber),var(--ember));
+  transform:translateX(-120%);animation:ldscan 1.1s ease-in-out infinite}
+@keyframes ldscan{0%{transform:translateX(-120%)}100%{transform:translateX(360%)}}
+/* 로더 별빛 점멸(은은하게) */
+.ld-logo span{animation:ldtwinkle 1.6s ease-in-out infinite}
+@keyframes ldtwinkle{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* ===== 시그니처1: 가로 스크롤 핀 구간 (홈 사이트 타입) ===== */
+/* 데스크톱: ScrollTrigger pin + x translate. 모바일/reduced-motion은 폴백(세로 그리드). */
+.htrack-wrap{position:relative;overflow:hidden}
+html.js .htrack{display:flex;flex-wrap:nowrap;gap:24px;will-change:transform;align-items:stretch}
+html.js .htrack .type-card{flex:0 0 clamp(280px,32vw,400px);margin:0}
+.htrack-cap{display:none;align-items:center;gap:8px;justify-content:center;margin-top:26px;font-size:13px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase}
+html.js .htrack-cap.on{display:flex}
+.htrack-cap .arrow{color:var(--amber);font-size:16px}
+/* 폴백(no-js / 모바일 / reduced-motion): html.js 미적용 → .type-cards 4열 그리드 그대로 */
+
+/* ===== 시그니처2 + 고급전환: 핀 + 마스크 와이프 (sites/홈) ===== */
+.mask-stage{position:relative;height:100vh;height:100dvh;min-height:560px;overflow:hidden;background:var(--night);padding:0}
+.mask-stage .ms-bg{position:absolute;inset:0;z-index:0}
+.mask-stage .ms-bg img{width:100%;height:100%;object-fit:cover}
+.mask-stage .ms-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,22,18,.5),rgba(15,22,18,.78))}
+/* 마스크로 드러나는 전경 이미지 (clip-path 원형 와이프) */
+.mask-stage .ms-reveal{position:absolute;inset:0;z-index:1;will-change:clip-path;
+  clip-path:circle(14% at 50% 50%)}
+.mask-stage .ms-reveal img{width:100%;height:100%;object-fit:cover}
+.mask-stage .ms-reveal::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,22,18,.15),rgba(15,22,18,.62))}
+.mask-stage .ms-copy{position:absolute;z-index:2;left:0;right:0;bottom:clamp(48px,9vh,96px);text-align:center;color:#fff;padding:0 24px;pointer-events:none}
+.mask-stage .ms-copy .eyebrow{color:var(--amber)}
+.mask-stage .ms-copy h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,52px);color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.45);margin-bottom:12px}
+.mask-stage .ms-copy p{color:#ece4d4;max-width:560px;margin:0 auto;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+/* JS 미사용/no-js: 마스크 완전 개방 상태로 정적 노출 */
+html.no-js .mask-stage .ms-reveal{clip-path:none}
+
 /* ===== fade-up / reveal ===== */
-.fade-up{opacity:0;transform:translateY(30px)}
+/* pre-hide: JS 사용 가능 시에만(첫 페인트부터 숨김 → 깜빡임 방지) */
+html.js .fade-up{opacity:0;transform:translateY(30px)}
+/* no-js / JS 미실행 / GSAP 실패: 항상 노출 */
+html.no-js .fade-up{opacity:1!important;transform:none!important}
 .is-in{opacity:1;transform:none}
 
 /* ===== 반응형 ===== */
@@ -415,9 +471,29 @@ footer a:hover{color:var(--amber)}
   .float-cta{display:none!important}
   .philo-band{padding:80px 0}
 }
+/* 모바일: 가로 트랙을 세로 그리드로 폴백 */
+@media (max-width:880px){
+  html.js .htrack{display:grid;grid-template-columns:repeat(2,1fr);flex-wrap:wrap}
+  html.js .htrack .type-card{flex:none}
+  html.js .htrack-cap.on{display:none}
+}
+@media (max-width:680px){
+  html.js .htrack{grid-template-columns:1fr}
+  .mask-stage{height:auto;min-height:0;padding:0}
+  .mask-stage .ms-reveal{position:relative;clip-path:none;height:64vw;min-height:300px}
+  .mask-stage .ms-bg{display:none}
+  .mask-stage .ms-copy{position:static;padding:28px 24px 36px;background:var(--night);text-align:left}
+}
+
 @media (prefers-reduced-motion:reduce){
-  .fade-up{opacity:1;transform:none}
+  .fade-up,html.js .fade-up{opacity:1!important;transform:none!important}
   .gitem:hover img,.type-card:hover .tc-media img,.feat:hover,.amen-card:hover{transform:none}
   .scroll-hint,.float-cta .pulse{animation:none}
   .hero-media{transform:none!important}
+  /* 가로 트랙 → 세로 그리드, 마스크 완전 개방 */
+  html.js .htrack{display:grid;grid-template-columns:repeat(2,1fr);transform:none!important}
+  html.js .htrack .type-card{flex:none}
+  html.js .htrack-cap{display:none!important}
+  .mask-stage .ms-reveal{clip-path:none!important}
+  .ld-bar i,.ld-logo span{animation:none}
 }

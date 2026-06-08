@@ -180,6 +180,9 @@
     }
 
     if (reduce || typeof gsap === 'undefined' || typeof Lenis === 'undefined') {
+      // CSS pre-hide(.js 스코프) 해제 → 콘텐츠 100% 노출 보장
+      document.documentElement.classList.remove('js');
+      document.documentElement.classList.add('no-js');
       showFallback();
       return;
     }

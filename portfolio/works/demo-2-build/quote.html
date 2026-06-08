@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/견적폼 수신(action/이메일/API)/지도 임베드/연락처/면허번호/카카오 링크 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>무료 견적 · 문의 · 오시는 길 | 여백건축 YEOBAEK</title>
+<meta name="description" content="여백건축 무료 견적 문의. 평형·예산·공사범위·연락처만 남기면 담당 소장이 24시간 내 맞춤 견적을 안내합니다. 현장 실측·방문 상담 무료, 오시는 길 안내." />
+<meta property="og:title" content="무료 견적 · 문의 · 오시는 길 | 여백건축 YEOBAEK" />
+<meta property="og:description" content="평형과 공사 범위만 알려주시면 24시간 내 맞춤 견적. 실측·방문 상담 무료." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ============ 헤더 ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="index.html">
+    <span class="mark">餘</span>
+    <span>여백건축<small>YEOBAEK</small></span>
+  </a>
+  <nav class="nav-links" aria-label="주요 메뉴">
+    <a href="index.html" data-nav="index.html">홈</a>
+    <a href="portfolio.html" data-nav="portfolio.html">시공 포트폴리오</a>
+    <a href="quote.html" data-nav="quote.html">견적·문의</a>
+    <a href="quote.html" class="nav-cta" data-nav="quote.html">무료 견적</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<div class="m-drawer" id="mDrawer" aria-label="모바일 메뉴">
+  <button class="md-close" aria-label="메뉴 닫기">&times;</button>
+  <a href="index.html" data-nav="index.html">홈</a>
+  <a href="portfolio.html" data-nav="portfolio.html">시공 포트폴리오</a>
+  <a href="quote.html" data-nav="quote.html">견적·문의</a>
+</div>
+
+<div class="float-cta">
+  <!-- 판매 시 교체: 카카오 채널 링크 -->
+  <a href="#" class="fbtn kakao" aria-label="카카오 채널 상담">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.5 10-7.6C22 6.5 17.5 3 12 3z"/></svg>
+    <span>카카오 상담</span>
+  </a>
+  <a href="#quote" class="fbtn estimate">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span>견적 폼으로</span>
+  </a>
+</div>
+
+<!-- ============ 페이지 헤더 ============ -->
+<header class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">홈</a> &nbsp;/&nbsp; 견적·문의</p>
+    <span class="eyebrow">GET A QUOTE</span>
+    <h1>무료 견적, 3분이면 충분합니다</h1>
+    <p>평형과 원하는 공사 범위만 알려주세요. 담당 소장이 24시간 내 연락드려 맞춤 견적을 안내합니다. 방문 상담·실측도 무료입니다.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ [섹션1] 견적 문의 폼 ============ -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="quote-grid">
+      <div class="quote-left">
+        <span class="eyebrow reveal">WHY YEOBAEK</span>
+        <h2 class="reveal">예산은 지키고,<br>품질은 타협하지 않습니다</h2>
+        <p class="reveal">14년, 1,200건의 시공. 견적서에 자재·수량·단가를 모두 명시하고, 시공 중에는 매일 작업 사진을 공유합니다.</p>
+
+        <div class="quote-trust">
+          <div class="qt reveal"><span class="qic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>현장 실측 · 방문 상담 무료</div>
+          <div class="qt reveal"><span class="qic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>항목별 상세 견적서 · 추가비 없는 투명 계약</div>
+          <div class="qt reveal"><span class="qic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>준공 후 2년 하자보증 · A/S</div>
+        </div>
+
+        <!-- 판매 시 교체: 카카오 채널 링크 -->
+        <a href="#" class="kakao-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.5 10-7.6C22 6.5 17.5 3 12 3z"/></svg>
+          카카오 채널로 바로 상담
+        </a>
+      </div>
+
+      <!-- 판매 시 교체: 견적폼 수신(action / 이메일 / API). 데모는 화면 전환만 -->
+      <form class="qform" id="quoteForm" novalidate>
+        <div id="qformBody">
+          <h3>맞춤 견적 신청</h3>
+          <p class="qf-sub">입력해 주신 정보는 견적 안내 용도로만 사용됩니다.</p>
+
+          <div class="field">
+            <label>공사 범위<span class="req">*</span></label>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="scope" value="부분 시공" checked><span>부분 시공</span></label>
+              <label class="chip"><input type="radio" name="scope" value="전체 리모델링"><span>전체 리모델링</span></label>
+              <label class="chip"><input type="radio" name="scope" value="상업 공간"><span>상업 공간</span></label>
+              <label class="chip"><input type="radio" name="scope" value="미정·상담"><span>미정 · 상담</span></label>
+            </div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="area">평형 / 면적<span class="req">*</span></label>
+              <input type="text" id="area" name="area" placeholder="예) 32평 아파트" required>
+              <span class="err">평형/면적을 입력해 주세요.</span>
+            </div>
+            <div class="field">
+              <label for="budget">예산대</label>
+              <select id="budget" name="budget">
+                <option value="">선택해 주세요</option>
+                <option>2,000만원 이하</option>
+                <option>2,000 ~ 4,000만원</option>
+                <option>4,000 ~ 6,000만원</option>
+                <option>6,000 ~ 8,000만원</option>
+                <option>8,000만원 이상</option>
+                <option>상담 후 결정</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="name">성함<span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="홍길동" required>
+              <span class="err">성함을 입력해 주세요.</span>
+            </div>
+            <div class="field">
+              <label for="phone">연락처<span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+              <span class="err">연락처를 정확히 입력해 주세요.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="msg">상세 요청 (선택)</label>
+            <textarea id="msg" name="msg" placeholder="공사 희망 시기, 특별히 원하시는 부분 등을 적어주세요."></textarea>
+          </div>
+
+          <button type="submit" class="submit">
+            무료 견적 신청하기
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <label class="agree">
+            <input type="checkbox" id="agree" required>
+            <span>견적 상담을 위한 <a href="#">개인정보 수집·이용</a>에 동의합니다. (필수)
+              <span class="err">개인정보 수집·이용에 동의해 주세요.</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="form-ok" id="formOk" tabindex="-1">
+          <div class="okic"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3>견적 신청이 접수되었습니다</h3>
+          <p>담당 소장이 24시간 이내 입력하신 연락처로 연락드리겠습니다. 감사합니다.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ [섹션2] 지도 · 오시는 길 ============ -->
+<section class="locate" id="locate">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">LOCATION</span>
+        <h2 class="reveal">사무실 · 오시는 길</h2>
+      </div>
+      <p class="sh-side reveal">상담 예약 후 방문해 주시면 시공 사례 샘플과 자재 마감재를 직접 보실 수 있습니다.</p>
+    </div>
+
+    <div class="locate-grid">
+      <!-- 판매 시 교체: 카카오/네이버/구글 지도 iframe 임베드로 교체 -->
+      <div class="map-box reveal" role="img" aria-label="여백건축 사무실 위치 지도 (판매 시 실제 지도로 교체)">
+        <div class="map-pin">
+          <span class="pin-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <b>여백건축 본사</b>
+          <span>서울특별시 강남구 논현로 000, 3층</span>
+          <span style="font-size:.78rem;color:var(--muted-d)">※ 판매 시 카카오/네이버 지도로 교체</span>
+        </div>
+      </div>
+
+      <div class="locate-info">
+        <div class="loc-card reveal">
+          <h4>주소</h4>
+          <p>서울특별시 강남구 논현로 000, 3층<span>지하철 7호선 학동역 3번 출구 도보 5분</span></p>
+        </div>
+        <div class="loc-card reveal">
+          <h4>연락처</h4>
+          <p><a href="tel:0212345678" style="color:var(--wood)">대표전화 02-1234-5678</a><span>평일 09:00 – 18:00 (주말·공휴일 상담 예약 가능)</span></p>
+        </div>
+        <div class="loc-card reveal">
+          <h4>상담 안내</h4>
+          <p>방문 상담은 예약제로 운영합니다<span>현장 실측은 서울·경기 전 지역 무료 방문해 드립니다.</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 푸터 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><span class="mark">餘</span><span>여백건축<small>YEOBAEK</small></span></a>
+        <p>공간에 여백을 더하다. 상업·주거 인테리어와 리모델링을 직영 시공으로 책임지는 종합건설 브랜드입니다.</p>
+        <div class="foot-badges">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>하자보증 2년</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>직영 시공</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round"/></svg>4대보험 가입</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>바로가기</h5>
+        <a href="index.html">홈</a>
+        <a href="index.html#ba">시공 비교 (B/A)</a>
+        <a href="portfolio.html">시공 포트폴리오</a>
+        <a href="portfolio.html#budget">예산 가이드</a>
+        <a href="quote.html">무료 견적 문의</a>
+      </div>
+      <div class="foot-col">
+        <h5>문의 · 연락</h5>
+        <!-- 판매 시 교체: 연락처/주소/카카오 -->
+        <a href="tel:0212345678">대표전화 02-1234-5678</a>
+        <a href="#">카카오 채널 @여백건축</a>
+        <a href="#">평일 09:00 – 18:00</a>
+        <a href="#">서울특별시 강남구 논현로 000, 3층</a>
+      </div>
+    </div>
+
+    <!-- 판매 시 교체: 면허번호/사업자번호/평가액 -->
+    <div class="foot-licenses">
+      <div class="lic"><span>종합건설업 등록</span><b>서울-제 2018-000-0000 호</b></div>
+      <div class="lic"><span>실내건축공사업 면허</span><b>제 2016-실내-0000 호</b></div>
+      <div class="lic"><span>시공능력평가액</span><b>토목건축 / 실내건축 등재</b></div>
+      <div class="lic"><span>사업자등록번호</span><b>123-45-67890</b></div>
+      <div class="lic"><span>통신판매업 신고</span><b>제 2019-서울강남-0000 호</b></div>
+      <div class="lic"><span>하자이행 · 영업보증</span><b>건설공제조합 가입</b></div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 여백건축 YEOBAEK Co., Ltd. All rights reserved.</span>
+      <span>본 페이지는 판매용 데모이며, 표기된 면허·실적·연락처는 예시입니다.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

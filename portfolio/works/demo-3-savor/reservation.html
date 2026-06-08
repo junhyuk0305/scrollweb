@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 캐치테이블/네이버 예약 링크/전화번호/영업시간·휴무/예약금 정책 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>예약·문의 | NOTTE 노트 — 한남 시즈널 다이닝</title>
+<meta name="description" content="캐치테이블·네이버 또는 전화로 예약하세요. 영업시간·휴무·라스트오더 안내와 간편 예약·문의 폼. 4인 이상 예약금 안내. 한남동 시즈널 다이닝 NOTTE.">
+<meta property="og:title" content="예약·문의 | NOTTE 노트">
+<meta property="og:description" content="캐치테이블·네이버·전화 예약 안내와 간편 문의 폼. 영업시간·휴무·라스트오더 확인.">
+<meta property="og:type" content="restaurant">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-name">NOTTE<small>seasonal dining &amp; wine</small></div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="NOTTE 노트 홈">
+      <span class="b-name">NOTTE<small>한남 시즌 다이닝</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="menu.html" data-nav="menu.html">메뉴</a>
+      <a href="space.html" data-nav="space.html">공간·대관</a>
+      <a href="reservation.html" data-nav="reservation.html" aria-current="page">예약</a>
+      <a href="location.html" data-nav="location.html">오시는 길</a>
+      <a href="reservation.html" class="nav-cta">예약 Reserve</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-head" aria-label="예약">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep">›</span><b>예약·문의</b>
+    </nav>
+    <h1>오늘 저녁, 한 자리를 비워두었습니다</h1>
+    <p>실시간 좌석은 캐치테이블·네이버에서, 단체·프라이빗 문의는 아래 폼으로 남겨 주세요. 4인 이상은 노쇼 방지를 위해 예약금이 있습니다.</p>
+  </div>
+</section>
+
+<!-- ===== 1. 예약 채널 + 영업 안내 ===== -->
+<section aria-label="예약 채널과 영업 안내">
+  <div class="wrap">
+    <span class="eyebrow">Reservation</span>
+    <h2 class="title">예약하기</h2>
+    <p class="lead">원하시는 채널로 예약하세요. 전화 예약은 16:00부터 통화 가능합니다.</p>
+
+    <div class="reserve-grid">
+      <div class="reserve-cta">
+        <!-- 교체: 캐치테이블 / 네이버 예약 실제 링크 -->
+        <a href="#" class="book-btn catch" aria-label="캐치테이블 예약">
+          <span>캐치테이블로 예약<span class="bb-sub">실시간 좌석 확인 · CATCH TABLE</span></span><span class="arr" aria-hidden="true">→</span>
+        </a>
+        <a href="#" class="book-btn naver" aria-label="네이버 예약">
+          <span>네이버 예약<span class="bb-sub">네이버로 간편 예약 · NAVER</span></span><span class="arr" aria-hidden="true">→</span>
+        </a>
+        <a href="tel:0277900000" class="book-btn call" aria-label="전화 예약 02-790-0000">
+          <span>전화로 예약<span class="bb-sub">02-790-0000 · 16:00부터 통화 가능</span></span><span class="arr" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="hours-card">
+        <h3>영업 안내</h3>
+        <div class="hours-row"><span>화 – 금</span><b>18:00 – 23:00</b></div>
+        <div class="hours-row"><span>토 · 일 · 공휴일</span><b>17:30 – 23:00</b></div>
+        <div class="hours-row closed"><span>매주 월요일</span><b>휴무 CLOSED</b></div>
+        <div class="hours-foot">
+          <b>라스트오더</b> 코스 21:00 · 단품/와인 21:30<br>
+          예약은 방문 2시간 전까지 권장드리며, 노쇼 방지를 위해 <b>4인 이상은 예약금</b>이 있습니다.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. 간편 예약·문의 폼 (메일 알림 안내) ===== -->
+<section class="on-deep" aria-label="간편 예약·문의 폼">
+  <div class="wrap">
+    <div class="story-grid" style="align-items:start">
+      <div class="story-copy">
+        <span class="eyebrow">Inquiry</span>
+        <h2 class="title" style="margin-bottom:22px">단체·기념일·대관은<br>문의로 남겨 주세요</h2>
+        <p>원하는 날짜·인원·코스를 남겨 주시면 잔여 좌석을 확인해 연락드립니다. 기념일 세팅, 알러지·비건 조정, 프라이빗 룸 등 무엇이든 편하게 적어 주세요.</p>
+        <p style="font-size:.92rem;color:var(--cream-dim)">실시간 좌석 예약은 위의 캐치테이블·네이버가 가장 빠릅니다. 이 폼은 상담이 필요한 문의에 적합합니다.</p>
+      </div>
+
+      <!-- 간편 예약·문의 폼 -->
+      <div class="form-card fade-up" id="formFields">
+        <h3><span aria-hidden="true">✉️</span> 예약·문의 남기기</h3>
+        <p class="form-note">접수 즉시 담당자에게 <b>메일로 자동 전달</b>됩니다. (데모 폼 — 실제 전송되지 않습니다.)</p>
+        <!-- 판매 시 교체: 폼 action을 메일/알림톡 연동(예: Formspree action="https://formspree.io/f/XXXX" method="post", 또는 자체 API/구글폼). 연동 시 app.js 목업 제출을 실제 fetch/submit으로 교체. -->
+        <form id="bookForm" novalidate>
+          <div class="field">
+            <label for="bf-name">성함 <span style="color:var(--terra)">*</span></label>
+            <input type="text" id="bf-name" name="name" autocomplete="name" placeholder="예) 홍길동">
+            <div class="err">성함을 입력해 주세요.</div>
+          </div>
+          <div class="field">
+            <label for="bf-tel">연락처 <span style="color:var(--terra)">*</span></label>
+            <input type="tel" id="bf-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="예) 010-1234-5678">
+            <div class="err">연락처를 정확히 입력해 주세요.</div>
+          </div>
+          <div class="field">
+            <label for="bf-type">문의 유형</label>
+            <select id="bf-type" name="type">
+              <option>디너 코스 예약</option>
+              <option>프라이빗 룸 (기념일·비즈니스)</option>
+              <option>단체 · 단독 대관</option>
+              <option>셰프 출장 케이터링</option>
+              <option>알러지·비건 조정 문의</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bf-memo">희망 날짜·인원·요청사항</label>
+            <textarea id="bf-memo" name="memo" rows="3" placeholder="예) 6/20(토) 19:00, 성인 4명, 기념일 케이크 세팅 희망, 견과류 알러지 1명"></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="bf-agree">
+            <span>개인정보 수집·이용(예약 상담 목적)에 동의합니다. <span style="color:var(--terra)">*</span>
+              <span class="err">동의가 필요합니다.</span>
+            </span>
+          </label>
+          <button type="submit" class="btn btn-gold" style="width:100%">문의 보내기</button>
+        </form>
+      </div>
+
+      <!-- 폼 완료 메시지 -->
+      <div class="form-ok" id="formOk" tabindex="-1">
+        <div class="ic" aria-hidden="true">🍷</div>
+        <h3>문의가 접수되었습니다</h3>
+        <p>접수 내용은 <b>담당자에게 메일로 즉시 전달</b>되었습니다. 빠른 시일 내 남겨주신 연락처로 잔여 좌석을 확인해 연락드리겠습니다. 감사합니다. (데모 화면 — 실제 발송되지 않습니다.)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>가장 빠른 길은 전화 한 통입니다</h2>
+    <p>당일·소수 인원은 전화가 가장 빠릅니다. 16:00부터 통화 가능합니다.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="tel:0277900000" class="btn btn-gold">📞 02-790-0000 전화 예약</a>
+      <a href="location.html#map" class="btn btn-ghost">오시는 길 보기</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">NOTTE</div>
+        <div class="foot-tag">seasonal dining &amp; wine bar</div>
+        <p style="max-width:34ch">제철·로컬 식재로 짓는 한 접시의 무드. 해가 진 뒤 시작되는 저녁을 위해, 서울 한남동에서.</p>
+        <div class="foot-sns">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="네이버 예약">NV</a>
+          <a href="#" aria-label="캐치테이블">CT</a>
+          <a href="#" aria-label="카카오 채널">KK</a>
+        </div>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>서울 용산구 한남대로27길 00, 2층</li>
+          <li>화–금 18:00 – 23:00</li>
+          <li>토·일·공휴일 17:30 – 23:00</li>
+          <li>매주 월요일 휴무</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu &amp; Reserve</h5>
+        <ul>
+          <li><a href="menu.html">디너 코스·단품·와인</a></li>
+          <li><a href="space.html">공간·프라이빗 룸·대관</a></li>
+          <li><a href="reservation.html">예약·문의</a></li>
+          <li><a href="location.html">오시는 길·인스타</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>상호 NOTTE 노트 · 대표 정○○ · 사업자등록번호 000-00-00000 · 서울 용산구 한남대로27길 00</span>
+      <span>© 2026 NOTTE 노트. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="#main" class="book"><span class="ic" aria-hidden="true">🍷</span>예약</a>
+    <a href="tel:0277900000" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="location.html#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+<a href="#main" class="float-cta" id="floatCta" aria-label="예약 위로"><span class="pulse" aria-hidden="true"></span> 예약 옵션 보기</a>
+
+</body>
+</html>

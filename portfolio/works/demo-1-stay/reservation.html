@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<!-- 판매 시 교체: 로고/연락처/네이버예약 링크/카카오 채널/지도 임베드/사업자·민박업 신고번호/폼 전송 action -->
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>예약 · 오시는 길 — 고요재 古耀齋 | 강원 양양 독채 풀빌라</title>
+<meta name="description" content="고요재 예약 문의와 오시는 길. 직접 예약 문의폼, 네이버·전화 예약 채널, 환불 규정, 지도와 교통 안내. 강원 양양 독채 프리미엄 풀빌라.">
+<meta property="og:title" content="예약 · 오시는 길 — 고요재 古耀齋">
+<meta property="og:description" content="직접 예약 문의폼·네이버·전화 예약, 환불 규정, 지도·오시는 길 안내.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body class="body-pad">
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ===== 공유 헤더 (서브: solid) ===== -->
+<header class="site-header solid" id="header">
+  <a href="index.html" class="logo">고요재<span class="han">古耀齋</span></a>
+  <nav class="nav" id="nav" aria-label="주요 메뉴">
+    <a href="index.html" data-nav="index.html">홈</a>
+    <a href="rooms.html" data-nav="rooms.html">객실·공간</a>
+    <a href="reservation.html" data-nav="reservation.html">예약·오시는 길</a>
+    <a href="reservation.html" class="header-cta">예약하기</a>
+  </nav>
+  <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+</header>
+
+<main id="main">
+
+<!-- ===== 페이지 헤드 ===== -->
+<section class="page-head" aria-label="예약 · 오시는 길">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">홈</a> &nbsp;›&nbsp; 예약 · 오시는 길</div>
+    <h1 class="serif">예약 · 오시는 길</h1>
+    <p>단 세 채뿐인 하루, 주말·성수기는 빠르게 마감됩니다. 아래 문의를 남기시면 빠르게 회신드립니다. 네이버·전화 예약도 가능합니다.</p>
+  </div>
+</section>
+
+<!-- ===== [섹션1] 예약·문의 폼 + 빠른 예약 채널 ===== -->
+<section class="section" id="booking" aria-label="예약 문의">
+  <div class="wrap">
+    <div class="section-head center fade-up" style="margin-bottom:48px">
+      <span class="eyebrow">RESERVATION INQUIRY</span>
+      <h2 class="serif">예약 문의</h2>
+      <p style="margin-left:auto;margin-right:auto">원하시는 날짜와 객실을 남겨 주시면, 잔여 여부와 함께 빠르게 안내드립니다.</p>
+    </div>
+    <div class="resv-grid">
+      <!-- 문의 폼 -->
+      <div class="form-card fade-up">
+        <div id="formFields">
+          <h3 class="serif">문의 남기기</h3>
+          <p class="form-sub">표시(<span style="color:#b04a3e">*</span>)는 필수 항목입니다.</p>
+          <!-- 판매 시: form action/method를 메일 전송 또는 예약 시스템에 연결 -->
+          <form id="bookForm" novalidate>
+            <div class="field">
+              <label for="bf-name">성함 <span class="req">*</span></label>
+              <input type="text" id="bf-name" name="name" autocomplete="name" placeholder="홍길동">
+              <p class="err">성함을 입력해 주세요.</p>
+            </div>
+            <div class="field">
+              <label for="bf-tel">연락처 <span class="req">*</span></label>
+              <input type="tel" id="bf-tel" name="tel" autocomplete="tel" placeholder="010-0000-0000">
+              <p class="err">연락처를 정확히 입력해 주세요.</p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="bf-room">희망 객실</label>
+                <select id="bf-room" name="room">
+                  <option value="">선택 안 함</option>
+                  <option>솔담채 (₩460,000~)</option>
+                  <option>물안채 (₩390,000~)</option>
+                  <option>달채 (₩320,000~)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="bf-date">희망 날짜</label>
+                <input type="date" id="bf-date" name="date">
+              </div>
+            </div>
+            <div class="field">
+              <label for="bf-msg">문의 내용</label>
+              <textarea id="bf-msg" name="message" placeholder="인원, 박수, 기념일·단체 여부 등을 남겨 주세요."></textarea>
+            </div>
+            <div class="consent">
+              <input type="checkbox" id="bf-agree">
+              <label for="bf-agree" style="font-weight:400;color:var(--muted);margin:0">개인정보 수집·이용에 동의합니다. (예약 상담 목적, <a href="#">자세히</a>)
+                <span class="err" style="margin-top:4px">동의가 필요합니다.</span>
+              </label>
+            </div>
+            <button type="submit" class="submit">문의 보내기</button>
+            <p class="form-note">* 본 폼은 데모입니다. 판매 시 입력 내용을 운영자 메일/예약 시스템으로 전송하도록 연결합니다.</p>
+          </form>
+        </div>
+        <!-- 제출 완료 -->
+        <div class="form-ok" id="formOk" tabindex="-1" role="status">
+          <div class="ico" aria-hidden="true">✓</div>
+          <h3 class="serif">문의가 접수되었습니다</h3>
+          <p>남겨주신 연락처로 빠르게 회신드리겠습니다.<br>급하신 경우 033-000-0000으로 전화 주세요.</p>
+        </div>
+      </div>
+
+      <!-- 빠른 예약 채널 + 환불 규정 -->
+      <div class="book-side fade-up">
+        <h3 class="serif">바로 예약하시겠어요?</h3>
+        <p class="lead">네이버 예약은 실시간 잔여 객실이 확인됩니다. 단체·대관·기념일 패키지는 전화로 문의해 주세요.</p>
+        <div class="book-btns">
+          <a class="btn btn-naver" href="#" onclick="return false;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M16.3 12.8 7.7 0H0v24h7.7V11.2L16.3 24H24V0h-7.7v12.8Z"/></svg>
+            네이버 예약 바로가기
+          </a>
+          <a class="btn btn-tel" href="tel:033-000-0000">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+            전화 예약 033-000-0000
+          </a>
+        </div>
+        <div class="refund">
+          <h5>◆ 환불 규정 요약</h5>
+          <ul>
+            <li><span>이용 7일 전까지 취소</span><b>100% 환불</b></li>
+            <li><span>이용 5일 전까지</span><b>70% 환불</b></li>
+            <li><span>이용 3일 전까지</span><b>50% 환불</b></li>
+            <li><span>이용 1일 전 · 당일 · No-show</span><b>환불 불가</b></li>
+          </ul>
+          <p class="note">* 성수기(7~8월, 연말연시) 및 특가 상품은 별도 규정이 적용될 수 있습니다. 천재지변 등 불가항력 사유는 별도 협의합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== [섹션2] 오시는 길 (지도 자리 포함) ===== -->
+<section class="section" style="background:var(--off-2)" id="directions" aria-label="오시는 길">
+  <div class="wrap">
+    <div class="dir-inner">
+      <div class="map-ph fade-up" role="img" aria-label="고요재 위치 지도(데모)">
+        <div class="road r1"></div><div class="road r2"></div><div class="water"></div>
+        <div class="map-pin"><div class="dot"></div><div class="lbl">고요재 古耀齋</div></div>
+        <div class="map-note">지도 영역 — 판매 시 네이버/카카오 지도 임베드로 교체</div>
+      </div>
+      <div class="dir-info fade-up">
+        <span class="eyebrow">DIRECTIONS</span>
+        <h2 class="serif" style="font-size:clamp(28px,4vw,46px);color:var(--green);margin:14px 0 24px">오시는 길</h2>
+        <div class="dir-row">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="t"><div class="k">주소</div><div class="v">강원특별자치도 양양군 현북면 솔숲길 24-7<br><small>고요재 古耀齋 · 우편번호 25023</small></div></div>
+        </div>
+        <div class="dir-row">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/><path d="M3 11h18"/></svg></div>
+          <div class="t"><div class="k">자가용</div><div class="v">서울양양고속도로 양양IC에서 약 15분<br><small>내비게이션 "고요재" 또는 위 주소 검색</small></div></div>
+        </div>
+        <div class="dir-row">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 13h14M8 21l2-4m6 4-2-4"/><circle cx="8.5" cy="9" r="1"/><circle cx="15.5" cy="9" r="1"/></svg></div>
+          <div class="t"><div class="k">대중교통</div><div class="v">양양시외버스터미널에서 차량 12분<br><small>사전 요청 시 픽업 서비스 협의 가능</small></div></div>
+        </div>
+        <div class="dir-row">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12"/><path d="M4 20h16M9 14h6"/></svg></div>
+          <div class="t"><div class="k">주차 안내</div><div class="v">객실당 전용 주차 2대 무료<br><small>전기차 충전 콘센트(완속) 1면 구비</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 공유 푸터 ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="trust">
+      <div class="stat fade-up"><div class="num"><span class="count" data-to="9800">0</span><span class="suf">+</span></div><div class="lbl">누적 투숙 객실 (2021–2026)</div></div>
+      <div class="stat fade-up"><div class="num"><span class="count" data-to="4.9" data-dec="1">0</span><span class="suf">/5.0</span></div><div class="lbl">네이버 예약 평균 평점</div></div>
+      <div class="stat fade-up"><div class="num"><span class="count" data-to="96">0</span><span class="suf">%</span></div><div class="lbl">재방문 의향 응답률</div></div>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo serif">고요재 <span style="font-size:.6em;opacity:.6">古耀齋</span></div>
+        <p>강원도 양양, 비움의 하룻밤을 위한 단 세 채의 독채 프리미엄 풀빌라. 자연과 여백, 그리고 온전한 프라이버시를 드립니다.</p>
+      </div>
+      <div class="foot-col">
+        <h6>둘러보기</h6>
+        <a href="index.html">홈</a>
+        <a href="rooms.html">객실·공간</a>
+        <a href="reservation.html">예약·오시는 길</a>
+      </div>
+      <div class="foot-col">
+        <h6>예약 &amp; 문의</h6>
+        <a href="tel:033-000-0000">예약 문의 033-000-0000</a>
+        <p>운영시간 09:00 – 21:00</p>
+        <p>체크인 15:00 / 체크아웃 11:00</p>
+        <a href="#">네이버 예약 바로가기</a>
+        <a href="#">카카오톡 채널 문의</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <div class="biz">
+        <span>상호: 고요재(古耀齋)</span>
+        <span>대표: 홍길동</span>
+        <span>사업자등록번호: 000-00-00000</span>
+        <span>농어촌민박업 신고번호: 제2021-양양현북-00호</span>
+      </div>
+      <div>주소: 강원특별자치도 양양군 현북면 솔숲길 24-7 &nbsp;|&nbsp; 통신판매업신고: 제2021-양양-0000호 &nbsp;|&nbsp; 개인정보관리책임자: 홍길동</div>
+      <div style="margin-top:10px;opacity:.7">© 2026 GOYOJAE. All rights reserved. &nbsp;·&nbsp; 본 페이지는 판매용 데모이며 사업자 정보·이미지·연락처는 예시입니다.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 스티키 모바일 CTA ===== -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="tel" href="tel:033-000-0000" aria-label="전화">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="margin:0 auto"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+  </a>
+  <a class="resv" href="#booking">예약 문의</a>
+</div>
+
+</body>
+</html>

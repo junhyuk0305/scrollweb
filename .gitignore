@@ -21,3 +21,11 @@ desktop.ini
 docs/
 # Claude Code 설정·에이전트
 .claude/
+
+# ===== 비공개 자산(GitHub 업로드 제외) =====
+# 효과/스타일 카탈로그 (내부 레퍼런스)
+_catalog/
+# 재사용 문의폼 모듈 (핵심 IP)
+_engine/form/
+# 보류·폐기 변형 보관함
+파킹랏/

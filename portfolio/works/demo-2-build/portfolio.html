@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/시공사진/사례 정보/예산표/면허번호/카카오 링크 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>시공 포트폴리오 · 예산 가이드 | 여백건축 YEOBAEK</title>
+<meta name="description" content="여백건축 시공 사례 — 아파트·상가·카페·사무실. 공간유형별 포트폴리오와 평형·공사범위별 예산 가이드. 비포/애프터로 검증된 시공 품질." />
+<meta property="og:title" content="시공 포트폴리오 · 예산 가이드 | 여백건축 YEOBAEK" />
+<meta property="og:description" content="아파트·상가·카페·사무실 공간유형별 시공 사례와 평형별 참고 예산." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ============ 헤더 ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="index.html">
+    <span class="mark">餘</span>
+    <span>여백건축<small>YEOBAEK</small></span>
+  </a>
+  <nav class="nav-links" aria-label="주요 메뉴">
+    <a href="index.html" data-nav="index.html">홈</a>
+    <a href="portfolio.html" data-nav="portfolio.html">시공 포트폴리오</a>
+    <a href="quote.html" data-nav="quote.html">견적·문의</a>
+    <a href="quote.html" class="nav-cta" data-nav="quote.html">무료 견적</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+</header>
+
+<div class="m-drawer" id="mDrawer" aria-label="모바일 메뉴">
+  <button class="md-close" aria-label="메뉴 닫기">&times;</button>
+  <a href="index.html" data-nav="index.html">홈</a>
+  <a href="portfolio.html" data-nav="portfolio.html">시공 포트폴리오</a>
+  <a href="quote.html" data-nav="quote.html">견적·문의</a>
+</div>
+
+<div class="float-cta">
+  <!-- 판매 시 교체: 카카오 채널 링크 -->
+  <a href="#" class="fbtn kakao" aria-label="카카오 채널 상담">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.5 10-7.6C22 6.5 17.5 3 12 3z"/></svg>
+    <span>카카오 상담</span>
+  </a>
+  <a href="quote.html" class="fbtn estimate">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span>무료 견적 받기</span>
+  </a>
+</div>
+
+<!-- ============ 페이지 헤더 ============ -->
+<header class="page-head">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">홈</a> &nbsp;/&nbsp; 시공 포트폴리오</p>
+    <span class="eyebrow">PORTFOLIO &amp; BUDGET</span>
+    <h1>공간유형별 시공 사례</h1>
+    <p>아파트·상가·카페·사무실. 14년간 쌓인 1,200건의 작업 중 대표 사례를 모았습니다. 사진을 클릭하면 면적·예산·공기까지 상세가 열립니다.</p>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ [섹션1] 포트폴리오 갤러리 (필터 + 라이트박스) ============ -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="filters" id="filters">
+      <button class="filter active" data-f="all">전체</button>
+      <button class="filter" data-f="apt">아파트</button>
+      <button class="filter" data-f="shop">상가</button>
+      <button class="filter" data-f="cafe">카페</button>
+      <button class="filter" data-f="office">사무실</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <!-- 판매 시 교체: 시공 사진 / 사례 정보 -->
+      <button type="button" class="gitem wide" data-cat="apt" data-img="1084" data-type="아파트" data-name="반포 래미안 38평" data-sub="전체 리모델링 · 5주" data-area="38평" data-budget="5,600만원대" data-period="5주" data-scope="전체 리모델링" data-desc="확장형 거실에 헤링본 마루와 무몰딩 마감. 수납을 벽 안으로 숨겨 시야를 비웠습니다.">
+        <img src="https://picsum.photos/id/1084/900/560" alt="반포 래미안 38평 리모델링" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">아파트</span><span class="gname">반포 래미안 38평</span><span class="gsub">전체 리모델링 · 5주</span></span>
+      </button>
+      <button type="button" class="gitem" data-cat="cafe" data-img="431" data-type="카페" data-name="연남동 로스터리 카페" data-sub="상업 인테리어 · 3주" data-area="22평" data-budget="3,200만원대" data-period="3주" data-scope="상업 인테리어" data-desc="노출 천장과 빈티지 우드 바. 원두 향이 머무는 동선으로 좌석을 재배치했습니다.">
+        <img src="https://picsum.photos/id/431/600/750" alt="연남동 로스터리 카페" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">카페</span><span class="gname">연남동 로스터리</span><span class="gsub">상업 인테리어 · 3주</span></span>
+      </button>
+      <button type="button" class="gitem" data-cat="office" data-img="180" data-type="사무실" data-name="강남 스타트업 오피스" data-sub="사무실 리모델링 · 4주" data-area="45평" data-budget="6,100만원대" data-period="4주" data-scope="부분 리모델링" data-desc="유리 파티션으로 집중과 협업 공간을 분리. 흡음 패널로 소음을 잡았습니다.">
+        <img src="https://picsum.photos/id/180/600/750" alt="강남 스타트업 오피스" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">사무실</span><span class="gname">강남 스타트업 오피스</span><span class="gsub">사무실 리모델링 · 4주</span></span>
+      </button>
+      <button type="button" class="gitem" data-cat="apt" data-img="1062" data-type="아파트" data-name="목동 신시가지 29평" data-sub="주방·욕실 부분 시공 · 2주" data-area="29평" data-budget="2,400만원대" data-period="2주" data-scope="부분 시공" data-desc="주방 상부장을 걷어내 개방감을 확보. 욕실은 대형 타일로 청소가 쉬운 마감.">
+        <img src="https://picsum.photos/id/1062/600/750" alt="목동 신시가지 29평" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">아파트</span><span class="gname">목동 신시가지 29평</span><span class="gsub">주방·욕실 부분 · 2주</span></span>
+      </button>
+      <button type="button" class="gitem wide" data-cat="shop" data-img="1077" data-type="상가" data-name="성수 편집숍 매장" data-sub="상업 인테리어 · 4주" data-area="30평" data-budget="4,400만원대" data-period="4주" data-scope="상업 인테리어" data-desc="브론즈 집기와 마이크로시멘트 바닥. 제품이 주인공이 되도록 배경을 비웠습니다.">
+        <img src="https://picsum.photos/id/1077/900/560" alt="성수 편집숍 매장" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">상가</span><span class="gname">성수 편집숍 매장</span><span class="gsub">상업 인테리어 · 4주</span></span>
+      </button>
+      <button type="button" class="gitem" data-cat="cafe" data-img="225" data-type="카페" data-name="망원 브런치 카페" data-sub="상업 인테리어 · 3주" data-area="26평" data-budget="3,700만원대" data-period="3주" data-scope="상업 인테리어" data-desc="아치 개구부와 따뜻한 베이지 톤. 큰 창으로 자연광을 끌어들였습니다.">
+        <img src="https://picsum.photos/id/225/600/750" alt="망원 브런치 카페" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">카페</span><span class="gname">망원 브런치 카페</span><span class="gsub">상업 인테리어 · 3주</span></span>
+      </button>
+      <button type="button" class="gitem" data-cat="office" data-img="3" data-type="사무실" data-name="여의도 금융사 라운지" data-sub="부분 리모델링 · 3주" data-area="40평" data-budget="5,200만원대" data-period="3주" data-scope="부분 리모델링" data-desc="차콜과 브론즈로 묵직한 신뢰감. 응접 라운지와 회의실을 동선으로 분리.">
+        <img src="https://picsum.photos/id/3/600/750" alt="여의도 금융사 라운지" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">사무실</span><span class="gname">여의도 금융사 라운지</span><span class="gsub">부분 리모델링 · 3주</span></span>
+      </button>
+      <button type="button" class="gitem" data-cat="apt" data-img="1068" data-type="아파트" data-name="판교 타운하우스 52평" data-sub="전체 리모델링 · 6주" data-area="52평" data-budget="8,300만원대" data-period="6주" data-scope="전체 리모델링" data-desc="복층 구조에 우드 계단과 라이브러리 월. 가족의 동선을 중심에 놓은 설계.">
+        <img src="https://picsum.photos/id/1068/600/750" alt="판교 타운하우스 52평" loading="lazy" />
+        <span class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        <span class="gov"><span class="gtype">아파트</span><span class="gname">판교 타운하우스 52평</span><span class="gsub">전체 리모델링 · 6주</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ [섹션2] 예산/공정 가이드 ============ -->
+<section class="budget" id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">BUDGET GUIDE</span>
+        <h2 class="reveal">평형 · 공사범위별<br>예산 가이드</h2>
+      </div>
+      <p class="sh-side reveal">아래는 표준 자재 기준의 참고 예산입니다. 실제 견적은 현장 실측 후 자재·구조에 따라 조정됩니다.</p>
+    </div>
+
+    <div class="guide-wrap reveal">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>평형</th>
+            <th>부분 시공<span style="display:block;font-weight:400;font-size:.78rem;opacity:.7;margin-top:2px">주방·욕실·도배</span></th>
+            <th>전체 리모델링<span style="display:block;font-weight:400;font-size:.78rem;opacity:.7;margin-top:2px">올수리 기준</span></th>
+            <th>예상 공기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="range">20평대<span class="scope">소형 아파트 / 빌라</span></td>
+            <td>1,500 ~ 2,500만원</td>
+            <td class="price">2,800 ~ 4,200만원</td>
+            <td>2 ~ 4주</td>
+          </tr>
+          <tr>
+            <td class="range">30평대<span class="scope">표준 아파트</span></td>
+            <td>2,200 ~ 3,400만원</td>
+            <td class="price">4,000 ~ 5,800만원</td>
+            <td>3 ~ 5주</td>
+          </tr>
+          <tr>
+            <td class="range">40평대<span class="scope">대형 아파트 / 주택</span></td>
+            <td>3,000 ~ 4,600만원</td>
+            <td class="price">5,500 ~ 8,000만원</td>
+            <td>4 ~ 6주</td>
+          </tr>
+          <tr>
+            <td class="range">상가 · 카페<span class="scope">상업 공간 (평당)</span></td>
+            <td>평당 90 ~ 150만원</td>
+            <td class="price">평당 150 ~ 260만원</td>
+            <td>3 ~ 5주</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="guide-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+      샤시(창호) 교체, 확장, 구조 변경, 시스템 에어컨 등은 별도 견적입니다. 자재 등급(타일·마루·주방)에 따라 금액이 달라지며, 정확한 비용은 무료 현장 실측 후 항목별로 안내해 드립니다.
+    </p>
+
+    <div class="scope-cards">
+      <div class="scope-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h4>부분 시공</h4>
+        <p>주방·욕실·도배·바닥 등 필요한 부분만. 거주하면서도 진행 가능한 합리적 선택입니다.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></svg></div>
+        <h4>전체 리모델링</h4>
+        <p>철거부터 마감까지 올수리. 구조·동선·수납을 처음부터 다시 설계하는 작업입니다.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+        <h4>상업 공간</h4>
+        <p>카페·상가·사무실. 매출과 브랜드로 이어지는 공간을 콘셉트부터 함께 만듭니다.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(40px,6vh,64px);text-align:center">
+      <a href="quote.html" class="btn-primary" style="background:var(--wood)">우리 공간 예산 받아보기
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 라이트박스 ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="닫기">&times;</button>
+    <div class="lb-img"><img id="lbImg" src="" alt="" /></div>
+    <div class="lb-info">
+      <span class="lbtype" id="lbType"></span>
+      <h3 id="lbName"></h3>
+      <p id="lbDesc"></p>
+      <div class="lbgrid">
+        <div><span>면적</span><b id="lbArea"></b></div>
+        <div><span>공사 범위</span><b id="lbScope"></b></div>
+        <div><span>공사 기간</span><b id="lbPeriod"></b></div>
+        <div><span>시공 예산</span><b id="lbBudget"></b></div>
+      </div>
+      <a href="quote.html" class="btn-primary" id="lbCta" style="margin-top:8px;align-self:flex-start">이런 공간 견적 받기</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 푸터 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><span class="mark">餘</span><span>여백건축<small>YEOBAEK</small></span></a>
+        <p>공간에 여백을 더하다. 상업·주거 인테리어와 리모델링을 직영 시공으로 책임지는 종합건설 브랜드입니다.</p>
+        <div class="foot-badges">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>하자보증 2년</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>직영 시공</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round"/></svg>4대보험 가입</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>바로가기</h5>
+        <a href="index.html">홈</a>
+        <a href="index.html#ba">시공 비교 (B/A)</a>
+        <a href="portfolio.html">시공 포트폴리오</a>
+        <a href="portfolio.html#budget">예산 가이드</a>
+        <a href="quote.html">무료 견적 문의</a>
+      </div>
+      <div class="foot-col">
+        <h5>문의 · 연락</h5>
+        <!-- 판매 시 교체: 연락처/주소/카카오 -->
+        <a href="tel:0212345678">대표전화 02-1234-5678</a>
+        <a href="#">카카오 채널 @여백건축</a>
+        <a href="#">평일 09:00 – 18:00</a>
+        <a href="#">서울특별시 강남구 논현로 000, 3층</a>
+      </div>
+    </div>
+
+    <!-- 판매 시 교체: 면허번호/사업자번호/평가액 -->
+    <div class="foot-licenses">
+      <div class="lic"><span>종합건설업 등록</span><b>서울-제 2018-000-0000 호</b></div>
+      <div class="lic"><span>실내건축공사업 면허</span><b>제 2016-실내-0000 호</b></div>
+      <div class="lic"><span>시공능력평가액</span><b>토목건축 / 실내건축 등재</b></div>
+      <div class="lic"><span>사업자등록번호</span><b>123-45-67890</b></div>
+      <div class="lic"><span>통신판매업 신고</span><b>제 2019-서울강남-0000 호</b></div>
+      <div class="lic"><span>하자이행 · 영업보증</span><b>건설공제조합 가입</b></div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 여백건축 YEOBAEK Co., Ltd. All rights reserved.</span>
+      <span>본 페이지는 판매용 데모이며, 표기된 면허·실적·연락처는 예시입니다.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HERO LAB | 메인 히어로 애니메이션 12종 전시 — SCROLLWORKS</title>
+<meta name="description" content="스크롤트리거 메인 히어로(첫 화면) 애니메이션 12종을 한자리에서. 풀스크린 축소·텍스트 줌인·커튼·창 열림·켄번스·단어 교체·패럴랙스 등 GSAP 라이브 데모.">
+<meta name="theme-color" content="#0a0b0e">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body data-page="gallery">
+<main class="wrap">
+  <header class="gal-head">
+    <span class="eyebrow">SCROLLWORKS · HERO LAB</span>
+    <h1>메인 화면을 여는 <em>움직임 라이브러리</em></h1>
+    <p>웹사이트의 첫인상은 히어로(메인 애니메이션 섹션)에서 결정됩니다. 히어로 12종에 더해, 막이 걷히는 리빌 15종 · 페이지 로딩/전환 10종 · 마우스 인터랙션까지 한자리에 모았습니다.</p>
+  </header>
+
+  <nav class="hl-cats" aria-label="컬렉션">
+    <a class="hl-cat" href="reveals.html"><b>리빌 / 막 걷힘</b><span>15종</span><i>막 올리기·블라인드·원형·SVG 드로잉</i></a>
+    <a class="hl-cat" href="loaders.html"><b>페이지 로딩·전환</b><span>10종</span><i>커튼·카운터·컬럼 스윕·로고 드로잉</i></a>
+    <a class="hl-cat" href="cursor.html"><b>마우스 인터랙션</b><span>7종</span><i>커스텀 커서·마그네틱·틸트·트레일</i></a>
+  </nav>
+
+  <h2 class="hl-sub">히어로(첫 화면) 11종</h2>
+  <section class="gal-grid" id="galGrid" aria-label="히어로 애니메이션 목록"><!-- app.js 렌더 --></section>
+  <p class="gal-foot">모든 효과는 GSAP + ScrollTrigger + Lenis로 구현 · 모바일/모션최소화 폴백 포함 · 사진은 데모 플레이스홀더</p>
+</main>
+</body>
+</html>

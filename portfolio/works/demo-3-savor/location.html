@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 인스타그램 임베드/지도(네이버·카카오·구글) iframe/주소·교통·주차 정보 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>오시는 길·인스타 | NOTTE 노트 — 한남 시즈널 다이닝</title>
+<meta name="description" content="6호선 한강진역 2번 출구 도보 7분. 한남동 붉은 벽돌 건물 2층. 발레파킹·대중교통 안내와 인스타그램 @notte.hannam 피드. 시즈널 다이닝 NOTTE 오시는 길.">
+<meta property="og:title" content="오시는 길·인스타 | NOTTE 노트">
+<meta property="og:description" content="한강진역 도보 7분. 한남동 붉은 벽돌 건물 2층. 발레파킹 운영. 인스타 @notte.hannam.">
+<meta property="og:type" content="restaurant">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-name">NOTTE<small>seasonal dining &amp; wine</small></div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="NOTTE 노트 홈">
+      <span class="b-name">NOTTE<small>한남 시즌 다이닝</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="menu.html" data-nav="menu.html">메뉴</a>
+      <a href="space.html" data-nav="space.html">공간·대관</a>
+      <a href="reservation.html" data-nav="reservation.html">예약</a>
+      <a href="location.html" data-nav="location.html" aria-current="page">오시는 길</a>
+      <a href="reservation.html" class="nav-cta">예약 Reserve</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-head" aria-label="오시는 길">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep">›</span><b>오시는 길·인스타</b>
+    </nav>
+    <h1>한강진역에서 7분, 골목 안의 밤</h1>
+    <p>6호선 한강진역 2번 출구에서 도보 7분. 한남동 붉은 벽돌 건물 2층, 1층 꽃집 옆 계단으로 올라오세요.</p>
+  </div>
+</section>
+
+<!-- ===== 1. 인스타그램 피드 ===== -->
+<section aria-label="인스타그램">
+  <div class="wrap">
+    <div class="insta-head">
+      <div>
+        <span class="eyebrow">Instagram</span>
+        <h2 class="title" style="font-size:clamp(1.9rem,4.5vw,3rem)">@notte.hannam</h2>
+      </div>
+      <a class="ih-handle" href="#">인스타그램에서 더 보기 →</a>
+    </div>
+    <!-- 판매 시 교체: 아래 그리드를 실제 인스타그램 임베드(Embed/위젯)로 교체 -->
+    <div class="insta-grid">
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/1080/420/420" alt="NOTTE 인스타그램 게시물 — 제철 요리"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/312/420/420" alt="NOTTE 인스타그램 게시물 — 파스타"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/431/420/420" alt="NOTTE 인스타그램 게시물 — 저녁 무드"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/1060/420/420" alt="NOTTE 인스타그램 게시물 — 메인 요리"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/225/420/420" alt="NOTTE 인스타그램 게시물 — 화덕 요리"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/766/420/420" alt="NOTTE 인스타그램 게시물 — 와인 셀러"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/1025/420/420" alt="NOTTE 인스타그램 게시물 — 디저트"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/1059/420/420" alt="NOTTE 인스타그램 게시물 — 다이닝 홀"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/292/420/420" alt="NOTTE 인스타그램 게시물 — 주방"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/326/420/420" alt="NOTTE 인스타그램 게시물 — 프라이빗 룸"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/24/420/420" alt="NOTTE 인스타그램 게시물 — 촛불 무드"></a>
+      <a class="iitem" href="#"><img src="https://picsum.photos/id/493/420/420" alt="NOTTE 인스타그램 게시물 — 테이블 세팅"></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. 오시는 길 ===== -->
+<section id="map" class="on-deep" aria-label="오시는 길">
+  <div class="wrap">
+    <span class="eyebrow">Location</span>
+    <h2 class="title">오시는 길</h2>
+    <p class="lead">내비게이션에 <b style="color:var(--gold)">“NOTTE 한남”</b> 또는 아래 주소를 입력하세요.</p>
+    <div class="map-grid">
+      <div class="map-info">
+        <h3>주소·연락</h3>
+        <div class="mi-row"><div class="k">Address</div><div class="v">서울 용산구 한남대로27길 00, 2층<br><small>한남동 붉은 벽돌 건물 · 1층 꽃집 옆 계단</small></div></div>
+        <div class="mi-row"><div class="k">Subway</div><div class="v">6호선 한강진역 2번 출구 도보 7분</div></div>
+        <div class="mi-row"><div class="k">Parking</div><div class="v">발레파킹 운영 (2시간) <small>· 인근 공영주차장 제휴</small></div></div>
+        <div class="mi-row"><div class="k">Reserve</div><div class="v">02-790-0000 · reserve@notte.kr</div></div>
+      </div>
+      <!-- 판매 시 교체: 아래 지도 플레이스홀더를 네이버/카카오/구글 지도 iframe으로 교체 -->
+      <div class="map-box" role="img" aria-label="NOTTE 위치 지도 자리표시">
+        <span class="maptag">지도 영역 (판매 시 실제 지도 삽입) · 한강진역 7min</span>
+        <div class="road r1"></div>
+        <div class="road r2"></div>
+        <div class="pin"><div class="dot"></div><div class="lbl">NOTTE</div></div>
+      </div>
+    </div>
+
+    <div class="access">
+      <div class="acc-item fade-up"><h4><span aria-hidden="true">🚇</span> 지하철</h4><p>6호선 한강진역 2번 출구에서 도보 7분. 골목 안쪽 붉은 벽돌 건물 2층입니다.</p></div>
+      <div class="acc-item fade-up"><h4><span aria-hidden="true">🚗</span> 자가용·발레</h4><p>건물 앞 발레파킹 2시간 운영(저녁 한정). 인근 공영주차장과도 제휴되어 있습니다.</p></div>
+      <div class="acc-item fade-up"><h4><span aria-hidden="true">🚕</span> 택시</h4><p>“한남동 꽃집 건물” 또는 주소로 안내하시면 빠릅니다. 골목이 좁으니 입구에서 내려 주세요.</p></div>
+      <div class="acc-item fade-up"><h4><span aria-hidden="true">🕯️</span> 방문 팁</h4><p>저녁 예약제로 운영합니다. 도착 후 1층 꽃집 옆 계단으로 2층까지 올라오시면 됩니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>골목 끝에서, 한 저녁을 기다립니다</h2>
+    <p>좌석은 캐치테이블·네이버 또는 전화로 미리 예약해 주세요. 직접 안내해 드리겠습니다.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="reservation.html" class="btn btn-gold">예약하기</a>
+      <a href="tel:0277900000" class="btn btn-ghost">📞 02-790-0000</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">NOTTE</div>
+        <div class="foot-tag">seasonal dining &amp; wine bar</div>
+        <p style="max-width:34ch">제철·로컬 식재로 짓는 한 접시의 무드. 해가 진 뒤 시작되는 저녁을 위해, 서울 한남동에서.</p>
+        <div class="foot-sns">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="네이버 예약">NV</a>
+          <a href="#" aria-label="캐치테이블">CT</a>
+          <a href="#" aria-label="카카오 채널">KK</a>
+        </div>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>서울 용산구 한남대로27길 00, 2층</li>
+          <li>화–금 18:00 – 23:00</li>
+          <li>토·일·공휴일 17:30 – 23:00</li>
+          <li>매주 월요일 휴무</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu &amp; Reserve</h5>
+        <ul>
+          <li><a href="menu.html">디너 코스·단품·와인</a></li>
+          <li><a href="space.html">공간·프라이빗 룸·대관</a></li>
+          <li><a href="reservation.html">예약·문의</a></li>
+          <li><a href="location.html">오시는 길·인스타</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>상호 NOTTE 노트 · 대표 정○○ · 사업자등록번호 000-00-00000 · 서울 용산구 한남대로27길 00</span>
+      <span>© 2026 NOTTE 노트. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="reservation.html" class="book"><span class="ic" aria-hidden="true">🍷</span>예약</a>
+    <a href="tel:0277900000" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+<a href="reservation.html" class="float-cta" id="floatCta" aria-label="예약하기"><span class="pulse" aria-hidden="true"></span> 오늘 저녁 예약</a>
+
+</body>
+</html>

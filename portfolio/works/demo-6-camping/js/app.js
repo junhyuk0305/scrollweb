@@ -16,6 +16,7 @@
   document.addEventListener('DOMContentLoaded', init);
 
   function init() {
+    setupLoader();
     setupMobileMenu();
     setActiveNav();
     setupForm();
@@ -23,6 +24,47 @@
     setupGalleryFilter();
     buildCalendar();
     setupMotion();
+  }
+
+  /* ----- 브랜드 인트로 로더 (PRO) -----
+     - window.load 후 GSAP로 페이드/와이프 아웃 → display:none + 스크롤 해제
+     - reduced-motion 또는 gsap 미로드 시 즉시 제거(깜빡임 없음)
+     - 안전장치: 최대 3.5s 후 강제 제거(무한로딩 방지) */
+  function setupLoader() {
+    var loader = document.getElementById('loader');
+    if (!loader) return;
+    document.body.classList.add('is-loading'); // 로딩 중 스크롤 잠금
+
+    function remove(animate) {
+      if (!loader || loader.hasAttribute('hidden')) return;
+      function done() {
+        loader.setAttribute('hidden', '');
+        document.body.classList.remove('is-loading');
+        if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+      }
+      if (animate && typeof gsap !== 'undefined') {
+        gsap.to(loader.querySelector('.ld-inner'), { opacity: 0, y: -18, duration: 0.4, ease: 'power2.in' });
+        gsap.to(loader, { opacity: 0, duration: 0.6, delay: 0.18, ease: 'power2.inOut', onComplete: done });
+      } else {
+        done();
+      }
+    }
+
+    // 즉시 제거 케이스: 모션 차단 / 라이브러리 미로드
+    if (reduce || typeof gsap === 'undefined') {
+      // 다음 프레임에 제거(레이아웃 안정)
+      requestAnimationFrame(function () { remove(false); });
+      return;
+    }
+
+    var removed = false;
+    window.addEventListener('load', function () {
+      if (removed) return; removed = true;
+      // 최소 노출시간 살짝 확보 후 와이프 아웃
+      setTimeout(function () { remove(true); }, 350);
+    });
+    // 안전장치(이미지 로드 지연 대비)
+    setTimeout(function () { if (!removed) { removed = true; remove(true); } }, 3500);
   }
 
   /* ----- 모바일 햄버거 메뉴 ----- */
@@ -257,6 +299,9 @@
     }
 
     if (reduce || typeof gsap === 'undefined' || typeof Lenis === 'undefined') {
+      // CSS pre-hide(html.js)를 확실히 끄고 폴백 노출
+      document.documentElement.classList.remove('js');
+      document.documentElement.classList.add('no-js');
       showAllStatic();
       setupFloatCta(window.scrollY);
       window.addEventListener('scroll', function () { setupFloatCta(window.scrollY); }, { passive: true });
@@ -333,8 +378,83 @@
         onUpdate: function () { el.textContent = obj.v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g, ','); } });
     });
 
+    // 시그니처1: 가로 스크롤 핀 구간
+    setupHorizontalScroll();
+    // 시그니처2 + 고급전환: 핀 + 마스크 와이프
+    setupMaskReveal();
+
     window.addEventListener('load', function () { ScrollTrigger.refresh(); });
     setTimeout(function () { ScrollTrigger.refresh(); }, 600);
+  }
+
+  /* ----- 시그니처1: 가로 스크롤 핀 구간 (홈 사이트 타입) -----
+     데스크톱 한정: 섹션을 핀 고정하고 세로 스크롤을 가로 이동으로 변환.
+     모바일/reduced-motion은 CSS가 세로 그리드로 폴백 → 핀 미생성. */
+  function setupHorizontalScroll() {
+    if (isMobile) return; // 모바일은 폴백(세로 그리드)
+    var track = document.querySelector('.htrack');
+    var wrap = track && track.closest('.htrack-wrap');
+    if (!track || !wrap) return;
+
+    // 트랙 내부 콘텐츠 폭 - 트랙 가시 폭(.wrap 기준). 0 이하면 핀 불필요.
+    var inner = track.parentElement; // .wrap
+    var getScroll = function () {
+      var pad = 48; // .wrap 좌우 패딩 보정
+      return Math.max(0, track.scrollWidth - (inner.clientWidth - pad));
+    };
+    if (getScroll() <= 0) return; // 화면이 충분히 넓으면 폴백(가로 이동 불필요)
+
+    var cap = wrap.querySelector('.htrack-cap');
+    if (cap) cap.classList.add('on');
+
+    var tween = gsap.to(track, {
+      x: function () { return -getScroll(); },
+      ease: 'none',
+      scrollTrigger: {
+        trigger: wrap,
+        start: 'top top',
+        end: function () { return '+=' + getScroll(); },
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1
+      }
+    });
+
+    // 카드 진입 시 살짝 떠오르는 보조 모션(가로 트랙 기준)
+    gsap.utils.toArray(track.querySelectorAll('.type-card')).forEach(function (card) {
+      gsap.from(card, {
+        opacity: 0, y: 26, duration: 0.5, ease: 'power2.out',
+        scrollTrigger: { trigger: card, containerAnimation: tween, start: 'left 88%', toggleActions: 'play none none none', once: true }
+      });
+    });
+  }
+
+  /* ----- 시그니처2 + 고급전환: 핀 + 마스크(clip-path) 와이프 -----
+     핀 고정 상태에서 원형 마스크가 열리며 이미지가 드러난다.
+     reduced-motion은 CSS로 완전 개방, 모바일은 정적 노출(핀 미생성). */
+  function setupMaskReveal() {
+    var stage = document.querySelector('.mask-stage');
+    if (!stage) return;
+    var reveal = stage.querySelector('.ms-reveal');
+    var copy = stage.querySelector('.ms-copy');
+    if (!reveal) return;
+
+    if (isMobile) { reveal.style.clipPath = 'none'; return; } // 모바일 정적 노출
+
+    gsap.fromTo(reveal,
+      { clipPath: 'circle(14% at 50% 50%)' },
+      {
+        clipPath: 'circle(75% at 50% 50%)', ease: 'none',
+        scrollTrigger: { trigger: stage, start: 'top top', end: '+=90%', pin: true, scrub: 1, anticipatePin: 1 }
+      });
+
+    if (copy) {
+      gsap.from(copy, {
+        opacity: 0, y: 30, ease: 'none',
+        scrollTrigger: { trigger: stage, start: 'top top', end: '+=45%', scrub: 1 }
+      });
+    }
   }
 
   /* 데스크톱 플로팅 CTA 노출 토글 */

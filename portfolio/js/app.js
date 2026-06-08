@@ -11,39 +11,39 @@ const WORKS = [
     num: "01", short: "펜션", cat: "펜션 · 풀빌라",
     title: "고요재",
     industry: "독채 프리미엄 풀빌라 (강원 양양)",
-    price: "30만원", priceTier: "기본 BASIC", tier: "basic",
-    period: "5~7일", sections: 8, pages: 1,
-    features: ["예약폼", "객실 갤러리", "지도", "환불규정"],
+    price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
+    period: "5일", sections: 10, pages: 3,
+    features: ["문의폼", "후기 슬라이드", "객실 갤러리 라이트박스", "지도", "환불규정"],
     img: "https://picsum.photos/id/1018/900/1200",
-    href: "works/demo-1-stay.html"
+    href: "works/demo-1-stay/index.html"
   },
   {
     num: "02", short: "시공", cat: "인테리어 · 시공",
     title: "여백건축",
     industry: "상업·주거 인테리어 / 리모델링",
     price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
-    period: "5~7일", sections: 8, pages: 1,
-    features: ["견적 문의폼", "비포애프터", "포트폴리오", "카카오 채널"],
+    period: "5일", sections: 9, pages: 3,
+    features: ["시그니처 카운트업 스크럽", "비포/애프터 드래그", "포트폴리오 필터+라이트박스", "견적 문의폼", "후기 슬라이드", "지도"],
     img: "https://picsum.photos/id/1076/900/1200",
-    href: "works/demo-2-build.html"
+    href: "works/demo-2-build/index.html"
   },
   {
     num: "03", short: "다이닝", cat: "다이닝 · 와인바",
     title: "NOTTE",
     industry: "시즈널 다이닝 & 와인바 (서울 한남)",
     price: "80만원", priceTier: "프리미엄 PRO", tier: "pro",
-    period: "5일", sections: 7, pages: 1,
-    features: ["예약 연결", "메뉴판", "공간 갤러리", "인스타 피드"],
+    period: "7일", sections: 15, pages: 5,
+    features: ["브랜드 로더", "시그니처 가로스크롤", "핀+마스크 전환", "예약·문의폼(메일)", "메뉴 탭", "갤러리 라이트박스", "지도"],
     img: "https://picsum.photos/id/431/900/1200",
-    href: "works/demo-3-savor.html"
+    href: "works/demo-3-savor/index.html"
   },
   {
     num: "04", short: "한의원", cat: "의원 · 한의원",
     title: "맑은숲한의원",
     industry: "척추·통증·체질 클리닉",
     price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
-    period: "5~7일", sections: 7, pages: 6,
-    features: ["예약폼", "진료시간표", "비급여 고지", "지도"],
+    period: "5일", sections: 10, pages: 3,
+    features: ["예약·상담폼", "진료시간표", "비급여 고지", "지도", "시설 갤러리"],
     img: "https://picsum.photos/id/1024/900/1200",
     href: "works/demo-4-care/index.html"
   },
@@ -51,19 +51,19 @@ const WORKS = [
     num: "05", short: "세무", cat: "세무 · 노무",
     title: "정도 세무회계",
     industry: "소규모 전문직 사무소",
-    price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
-    period: "5일", sections: 8, pages: 1,
-    features: ["1:1 상담폼", "해결 사례", "요금 안내", "지도"],
+    price: "30만원", priceTier: "기본 BASIC", tier: "basic",
+    period: "3일", sections: 5, pages: 1,
+    features: ["업무 분야 안내", "대표·구성원 소개", "요금 안내", "전화·카톡 상담"],
     img: "https://picsum.photos/id/1067/900/1200",
-    href: "works/demo-5-trust.html"
+    href: "works/demo-5-trust/index.html"
   },
   {
     num: "06", short: "캠핑", cat: "캠핑 · 글램핑",
     title: "별헤는밤",
     industry: "글램핑 & 오토캠핑 파크 (강원 홍천)",
-    price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
-    period: "7일", sections: 9, pages: 6,
-    features: ["자체 예약", "갤러리", "요금표", "지도"],
+    price: "80만원", priceTier: "프리미엄 PRO", tier: "pro",
+    period: "7일", sections: 15, pages: 5,
+    features: ["인트로 로더", "가로 스크롤", "마스크 전환", "자체 예약·메일알림"],
     img: "https://picsum.photos/id/1019/900/1200",
     href: "works/demo-6-camping/index.html"
   },
@@ -72,38 +72,38 @@ const WORKS = [
     title: "NOON 누운",
     industry: "컨템포러리 미니멀 우먼즈웨어",
     price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
-    period: "5~7일", sections: 9, pages: 1,
-    features: ["룩북 갤러리", "가로 스크롤", "키네틱 타이포", "컬렉션"],
+    period: "5일", sections: 9, pages: 3,
+    features: ["룩북 가로 스크롤", "후기 슬라이드", "문의폼·지도", "키네틱 타이포"],
     img: "https://picsum.photos/id/1027/900/1200",
-    href: "works/demo-7-mode.html"
+    href: "works/demo-7-mode/index.html"
   },
   {
     num: "08", short: "호텔", cat: "부티크 호텔",
     title: "HÔTEL NUVÉ",
     industry: "도심 부티크 호텔 (서울 한남)",
-    price: "30만원", priceTier: "기본 BASIC", tier: "basic",
-    period: "7일", sections: 10, pages: 1,
-    features: ["객실 타입", "예약 연결", "다이닝", "갤러리"],
+    price: "80만원", priceTier: "프리미엄 PRO", tier: "pro",
+    period: "7일", sections: 15, pages: 5,
+    features: ["브랜드 로더", "객실 가로스크롤", "핀+마스크 전환", "예약 달력·문의폼(메일)", "갤러리 라이트박스", "지도"],
     img: "https://picsum.photos/id/1029/900/1200",
-    href: "works/demo-8-hotel.html"
+    href: "works/demo-8-hotel/index.html"
   },
   {
     num: "09", short: "피부과", cat: "피부과 · 의료",
     title: "라엘 피부과의원",
-    industry: "피부과의원 · 디자인 5변형 제공",
+    industry: "피부과의원 · 의료 절제 톤",
     price: "30만원", priceTier: "기본 BASIC", tier: "basic",
-    period: "5일", sections: 8, pages: 1,
-    features: ["진료 안내", "비급여 고지", "상담 예약", "시술 카탈로그"],
+    period: "3일", sections: 5, pages: 1,
+    features: ["진료 안내", "의료진 소개", "진료시간·오시는 길", "전화·카톡 예약"],
     img: "https://picsum.photos/id/1062/900/1200",
-    href: "works/clinic-v2-luxury.html"
+    href: "works/clinic-v2-luxury/index.html"
   },
   {
     num: "10", short: "풀빌라", cat: "펜션 · 풀빌라",
     title: "윤슬 풀빌라",
     industry: "가평 독채 프라이빗 풀빌라",
-    price: "50만원", priceTier: "표준 STANDARD", tier: "standard",
-    period: "5일", sections: 8, pages: 1,
-    features: ["예약 안내", "공간 갤러리", "가격 안내", "지도"],
+    price: "30만원", priceTier: "기본 BASIC", tier: "basic",
+    period: "3일", sections: 5, pages: 1,
+    features: ["공간 소개", "어메니티·이용안내", "위치 요약", "전화·카톡 문의"],
     img: "https://picsum.photos/id/1043/900/1200",
     href: "works/yunseul-stay/index.html"
   },
@@ -112,8 +112,8 @@ const WORKS = [
     title: "믿음 청소이사",
     industry: "입주청소 · 이사 · 사무실 이전",
     price: "30만원", priceTier: "기본 BASIC", tier: "basic",
-    period: "3~5일", sections: 7, pages: 1,
-    features: ["단가표", "무료 견적폼", "서비스 지역", "신뢰 배지"],
+    period: "3일", sections: 5, pages: 1,
+    features: ["단가표", "전화·카톡 견적", "서비스 지역", "신뢰 배지"],
     img: "https://picsum.photos/id/1060/900/1200",
     href: "works/labor-service/index.html"
   }

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!-- 판매 시 교체: 로고/사진/연락처/네이버예약 링크/사업자·야영장업 등록번호/지도 -->
 <!-- 규제: 관광진흥법상 야영장업 등록 표기. 화기·안전 이용수칙 안내 포함 -->
-<html lang="ko">
+<html lang="ko" class="no-js">
 <head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>별헤는밤 STARGAZE | 강원 홍천 글램핑 &amp; 오토캠핑 파크</title>
 <meta name="description" content="강원 홍천 숲속 글램핑·카라반·오토캠핑·독채. 플랫폼엔 없는 우리만의 브랜드 공간과 수수료 없는 직접 예약 혜택. 별이 쏟아지는 밤, 별헤는밤에서.">
 <meta property="og:title" content="별헤는밤 STARGAZE | 강원 홍천 글램핑 & 오토캠핑 파크">
@@ -13,7 +14,6 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="css/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -23,6 +23,15 @@
 </head>
 <body>
 <a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ===== 브랜드 인트로 로더 (PRO 시그니처) — window.load 후 자동 제거 ===== -->
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-logo"><span aria-hidden="true">✦</span></div>
+    <div class="ld-name">별헤는밤<small>STARGAZE CAMP</small></div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
 
 <!-- ===== 공유 헤더 ===== -->
 <header>
@@ -34,9 +43,8 @@
     <nav class="menu" id="menu" aria-label="주요 메뉴">
       <a href="index.html" data-nav="index.html" aria-current="page">홈</a>
       <a href="sites.html" data-nav="sites.html">캠핑 사이트</a>
-      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="facility.html" data-nav="facility.html">시설·갤러리</a>
       <a href="guide.html" data-nav="guide.html">이용안내</a>
-      <a href="gallery.html" data-nav="gallery.html">갤러리</a>
       <a href="reservation.html" data-nav="reservation.html">예약</a>
       <a href="reservation.html" class="nav-cta">예약하기</a>
     </nav>
@@ -91,16 +99,18 @@
   </div>
 </section>
 
-<!-- ===== 캠핑 사이트 타입 미리보기 ===== -->
-<section aria-label="캠핑 사이트 타입">
+<!-- ===== 캠핑 사이트 타입 — 가로 스크롤 핀 (시그니처1) =====
+     데스크톱: 세로 스크롤이 카드 가로 이동으로 전환(app.js setupHorizontalScroll).
+     모바일/reduced-motion: CSS가 세로 그리드로 폴백. -->
+<section class="htrack-wrap" aria-label="캠핑 사이트 타입">
   <div class="wrap">
     <div class="center">
       <span class="eyebrow">STAY TYPES</span>
       <h2 class="title">당신의 밤을 고르세요</h2>
       <p class="lead">취향과 일행에 맞춰 네 가지 머무름을 준비했습니다. 모든 사이트는 숲 간격을 넉넉히 두어 옆자리 소음 걱정을 덜었습니다.</p>
     </div>
-    <div class="type-cards">
-      <a class="type-card fade-up" href="sites.html#glamping">
+    <div class="type-cards htrack">
+      <a class="type-card" href="sites.html#glamping">
         <div class="tc-media"><img src="https://picsum.photos/id/1043/600/760" alt="조명이 켜진 글램핑 텐트"></div>
         <div class="tc-body">
           <span class="tc-tag">GLAMPING</span>
@@ -109,7 +119,7 @@
           <span class="tc-more">자세히 보기 →</span>
         </div>
       </a>
-      <a class="type-card fade-up" href="sites.html#caravan">
+      <a class="type-card" href="sites.html#caravan">
         <div class="tc-media"><img src="https://picsum.photos/id/1067/600/760" alt="숲에 자리한 카라반"></div>
         <div class="tc-body">
           <span class="tc-tag">CARAVAN</span>
@@ -118,7 +128,7 @@
           <span class="tc-more">자세히 보기 →</span>
         </div>
       </a>
-      <a class="type-card fade-up" href="sites.html#auto">
+      <a class="type-card" href="sites.html#auto">
         <div class="tc-media"><img src="https://picsum.photos/id/1015/600/760" alt="계곡 옆 오토캠핑 데크 사이트"></div>
         <div class="tc-body">
           <span class="tc-tag">AUTO SITE</span>
@@ -127,7 +137,7 @@
           <span class="tc-more">자세히 보기 →</span>
         </div>
       </a>
-      <a class="type-card fade-up" href="sites.html#private">
+      <a class="type-card" href="sites.html#private">
         <div class="tc-media"><img src="https://picsum.photos/id/1039/600/760" alt="숲에 둘러싸인 프라이빗 독채"></div>
         <div class="tc-body">
           <span class="tc-tag">PRIVATE</span>
@@ -137,6 +147,7 @@
         </div>
       </a>
     </div>
+    <p class="htrack-cap" aria-hidden="true"><span class="arrow">→</span> 스크롤하면 옆으로 이동합니다</p>
   </div>
 </section>
 
@@ -216,9 +227,8 @@
         <h5>바로가기</h5>
         <ul>
           <li><a href="sites.html">캠핑 사이트 소개</a></li>
-          <li><a href="facility.html">시설·어메니티</a></li>
+          <li><a href="facility.html">시설·갤러리</a></li>
           <li><a href="guide.html">이용안내·환불규정</a></li>
-          <li><a href="gallery.html">갤러리</a></li>
           <li><a href="reservation.html">예약·오시는 길</a></li>
         </ul>
       </div>

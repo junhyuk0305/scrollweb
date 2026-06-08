@@ -2,91 +2,83 @@
 <html lang="ko" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>윤슬 풀빌라 — 가평 독채 프라이빗 풀빌라 (STANDARD 50만 데모)</title>
-<meta name="description" content="하루 한 팀만 머무는 가평 독채 풀빌라 윤슬. 사계절 온수풀과 통창 너머 산경, 방해받지 않는 하루. 실시간 예약 문의.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>윤슬 풀빌라 — 가평 독채 프라이빗 풀빌라 (BASIC 30만 데모)</title>
+<meta name="description" content="하루 한 팀만 머무는 가평 독채 풀빌라 윤슬. 사계절 온수풀과 통창 너머 산경, 방해받지 않는 하루. 전화·카카오 예약 문의.">
 <meta property="og:title" content="윤슬 풀빌라 · 가평 독채 프라이빗 풀빌라">
+<meta property="og:description" content="하루 한 팀만 머무는 가평 독채 프라이빗 풀빌라. 사계절 온수풀·통창 산경.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🌊</text></svg>">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 </head>
-<body data-tier="standard">
+<!-- 판매 시 교체: 상호·신고번호·전화/카톡/네이버예약 링크·이미지·요금/이용안내 [대괄호] 값 -->
+<body data-tier="basic">
 
-<!-- 포트폴리오 복귀 -->
-<header class="switcher">
-  <a class="switcher__brand" href="../../index.html">← 포트폴리오 <small>윤슬 풀빌라</small></a>
-  <nav class="switcher__tabs">
-    <span class="switcher__tab is-active"><b>50만</b><small>STANDARD</small></span>
+<!-- 헤더 네비게이션 (앵커 메뉴 + 모바일 햄버거) -->
+<header class="sitenav sitenav--basic" id="top">
+  <a class="sitenav__logo" href="#top">윤슬 <span class="sitenav__logo-mark">풀빌라</span></a>
+  <nav class="sitenav__menu" aria-label="주요 메뉴">
+    <a href="#space">공간소개</a>
+    <a href="#info">어메니티</a>
+    <a href="#location">위치</a>
+    <a href="#inquiry">예약문의</a>
+    <a class="sitenav__cta" href="tel:01000000000">예약 전화</a>
   </nav>
+  <button class="sitenav__toggle" aria-label="메뉴 열기" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
 <main class="page">
 
-  <!-- 메뉴 nav -->
-  <nav class="sitenav" aria-label="주요 메뉴">
-    <a class="sitenav__logo" href="#top">윤슬</a>
-    <button class="sitenav__toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
-    <div class="sitenav__menu" id="navmenu">
-      <a href="#space">공간</a><a href="#facility">시설</a><a href="#review">후기</a>
-      <a href="#info">이용안내</a><a href="#location">오시는 길</a>
-      <a class="sitenav__cta" href="#inquiry">예약 문의</a>
-    </div>
-  </nav>
-
-  <!-- 1. 히어로 (단어 리빌 + 배경 줌 + 스크롤힌트) -->
-  <section class="hero hero--navtop" id="top">
-    <div class="hero__bg"><img src="https://picsum.photos/seed/yunseul-pool/1600/1100" alt="윤슬 풀빌라 야외 온수 수영장과 통창"></div>
+  <!-- 1. 히어로 (시그니처 모먼트: clip-path 리빌 + ken-burns + 단어 리빌) -->
+  <section class="hero hero--navtop" id="hero">
+    <div class="hero__bg hero__reveal"><img src="https://picsum.photos/seed/yunseul-pool/1600/1100" alt="윤슬 풀빌라 야외 온수 수영장과 통창" fetchpriority="high"></div>
     <div class="wrap hero__inner stack">
       <p class="eyebrow reveal">가평 · 독채 프라이빗 풀빌라</p>
       <h1 class="display" data-split>오늘은,<br>우리 둘만의 하루</h1>
-      <p class="lead reveal" data-delay=".1">하루 한 팀만 머뭅니다. 사계절 온수풀과 통창 너머 산경 — 도착부터 떠날 때까지 온전히 당신의 시간.</p>
-      <div class="reveal" data-delay=".2" style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn--water" href="#inquiry">예약 문의하기 →</a><a class="btn btn--ghost" style="border-color:#fff;color:#fff" href="#space">공간 둘러보기</a></div>
+      <p class="lead reveal" data-delay=".12">하루 한 팀만 머뭅니다. 사계절 온수풀과 통창 너머 산경 — 도착부터 떠날 때까지 온전히 당신의 시간.</p>
+      <div class="reveal" data-delay=".18" style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn--water" href="tel:01000000000">전화로 예약 문의 →</a>
+        <a class="btn btn--ghost" style="border-color:#fff;color:#fff" href="#space">공간 둘러보기</a>
+      </div>
     </div>
     <div class="scroll-hint">SCROLL<div class="ln"></div></div>
   </section>
 
-  <!-- 키네틱 마퀴 -->
-  <section class="marquee" aria-hidden="true">
-    <div class="marquee__track">
-      <span>PRIVATE POOLVILLA<span class="dot">·</span>하루 한 팀<span class="dot">·</span>사계절 온수풀<span class="dot">·</span>GAPYEONG<span class="dot">·</span>윤슬<span class="dot">·</span></span>
-      <span>PRIVATE POOLVILLA<span class="dot">·</span>하루 한 팀<span class="dot">·</span>사계절 온수풀<span class="dot">·</span>GAPYEONG<span class="dot">·</span>윤슬<span class="dot">·</span></span>
+  <!-- 2. 공간 소개 (객실·풀) -->
+  <section class="section" id="space">
+    <div class="wrap">
+      <div class="center stack" style="max-width:760px;margin-inline:auto">
+        <p class="eyebrow reveal">SPACE</p>
+        <h2 class="h-sec reveal" data-delay=".06">‘펜션’이 아니라,<br>통째로 빌리는 독채입니다</h2>
+        <p class="lead reveal" data-delay=".12" style="margin-inline:auto">옆방 소음도, 모르는 사람과 마주칠 일도 없습니다. 마당과 수영장, 거실과 주방까지 — 한 팀이 집 한 채를 통째로 씁니다. 짐만 들고 오세요.</p>
+      </div>
+      <div class="grid cols-3" data-stagger style="margin-top:clamp(32px,5vw,56px)">
+        <figure class="card">
+          <div class="pimg-wrap" style="aspect-ratio:4/3"><img class="pimg" src="https://picsum.photos/seed/yunseul-poolside/800/600" alt="사계절 온수 프라이빗 풀과 선베드"></div>
+          <figcaption class="card__body"><h3>프라이빗 온수풀</h3><p class="muted">사계절 [수온 ○○℃] 운영. 선베드와 함께 우리 팀만의 야외 수영.</p></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="pimg-wrap" style="aspect-ratio:4/3"><img class="pimg" src="https://picsum.photos/seed/yunseul-living/800/600" alt="노을 드는 통창 리빙룸과 빔프로젝터"></div>
+          <figcaption class="card__body"><h3>리빙룸 & 베드룸</h3><p class="muted">노을이 드는 10m 통창, 빔프로젝터, 킹베드와 산경 뷰 암막 침실.</p></figcaption>
+        </figure>
+        <figure class="card">
+          <div class="pimg-wrap" style="aspect-ratio:4/3"><img class="pimg" src="https://picsum.photos/seed/yunseul-kitchen/800/600" alt="취사 가능 주방과 6인 다이닝"></div>
+          <figcaption class="card__body"><h3>주방 & 다이닝</h3><p class="muted">취사 가능 주방, 6인 식탁, 야외 바비큐 그릴까지 식기 일체 구비.</p></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
-  <!-- 2. 가치 (단어 리빌 매니페스토) -->
-  <section class="section" style="padding-block:clamp(64px,12vh,140px)">
-    <div class="wrap center" style="max-width:880px;margin-inline:auto">
-      <p class="eyebrow reveal">PHILOSOPHY</p>
-      <h2 class="h-sec" data-split style="margin-top:14px">‘펜션’이 아니라,<br>통째로 빌리는 독채입니다</h2>
-      <p class="lead reveal" data-delay=".1" style="margin-inline:auto;margin-top:24px">옆방 소음도, 모르는 사람과 마주칠 일도 없습니다. 마당과 수영장, 거실과 주방까지 — 한 팀이 집 한 채를 통째로 씁니다. 짐만 들고 오세요.</p>
-    </div>
-  </section>
-
-  <!-- 3. 공간 (가로 스크롤) -->
-  <section class="hscroll" id="space">
-    <div class="wrap" style="padding-top:48px">
-      <p class="eyebrow reveal">SPACE</p>
-      <h2 class="h-sec" data-split style="margin-top:12px">집 한 채를 따라 걷다</h2>
-      <p class="muted reveal" data-delay=".1">옆으로 스크롤하며 공간을 둘러보세요.</p>
-    </div>
-    <div class="hscroll__track" style="margin-top:28px;padding-bottom:56px">
-      <figure class="hscroll__item"><div class="pimg-wrap" style="aspect-ratio:3/4;border-radius:16px"><img class="pimg" src="https://picsum.photos/seed/yunseul-living/700/900" alt="거실"></div><h3>리빙룸</h3><p class="muted">노을이 드는 10m 통창과 빔프로젝터.</p></figure>
-      <figure class="hscroll__item"><div class="pimg-wrap" style="aspect-ratio:3/4;border-radius:16px"><img class="pimg" src="https://picsum.photos/seed/yunseul-poolside/700/900" alt="프라이빗 풀"></div><h3>프라이빗 온수풀</h3><p class="muted">사계절 [수온 ○○℃] 운영 · 선베드.</p></figure>
-      <figure class="hscroll__item"><div class="pimg-wrap" style="aspect-ratio:3/4;border-radius:16px"><img class="pimg" src="https://picsum.photos/seed/yunseul-spa/700/900" alt="스파"></div><h3>스파 & 바</h3><p class="muted">반신욕 스파와 미니 와인바.</p></figure>
-      <figure class="hscroll__item"><div class="pimg-wrap" style="aspect-ratio:3/4;border-radius:16px"><img class="pimg" src="https://picsum.photos/seed/yunseul-bed/700/900" alt="베드룸"></div><h3>베드룸</h3><p class="muted">킹베드 · 산경 뷰 · 암막.</p></figure>
-      <figure class="hscroll__item"><div class="pimg-wrap" style="aspect-ratio:3/4;border-radius:16px"><img class="pimg" src="https://picsum.photos/seed/yunseul-kitchen/700/900" alt="주방"></div><h3>주방 & 다이닝</h3><p class="muted">취사 가능 · 6인 식탁 · 바비큐.</p></figure>
-    </div>
-  </section>
-
-  <!-- 4. 시설 (좌 텍스트 + 우 패럴랙스 이미지) -->
-  <section class="section" id="facility" style="background:var(--cream-2)">
+  <!-- 3. 어메니티 · 이용안내 -->
+  <section class="section" id="info" style="background:var(--cream-2)">
     <div class="wrap grid cols-2" style="align-items:center">
-      <div class="stack" data-stagger>
-        <p class="eyebrow">WHY 윤슬</p>
+      <div class="stack reveal">
+        <p class="eyebrow">AMENITY & INFO</p>
         <h2 class="h-sec">사계절,<br>물에서 보내는 하루</h2>
         <p class="lead">겨울에도 따뜻한 [○○℃] 온수풀. 수영 후엔 스파와 바비큐, 밤엔 빔프로젝터로 영화 한 편.</p>
         <ul class="stack" style="gap:.5rem">
@@ -94,87 +86,51 @@
           <li>· 바비큐 그릴 · 취사 가능 주방 · 식기 일체</li>
           <li>· 넷플릭스 · 사운드바 · 빔프로젝터</li>
           <li>· 기준 [2인] / 최대 [6인] · 무료 주차</li>
+          <li>· 체크인 [15:00] / 체크아웃 [11:00]</li>
+          <li>· 반려동물 동반 [협의 가능] · 전체 청소·침구 교체</li>
         </ul>
       </div>
-      <div class="pimg-wrap reveal" data-reveal="scale" style="aspect-ratio:4/5;border-radius:18px"><img class="pimg" src="https://picsum.photos/seed/yunseul-poolside/900/1100" alt="온수풀과 선베드"></div>
-    </div>
-  </section>
-
-  <!-- 5. 실적/후기 (카운트업 + 후기) -->
-  <section class="section" id="review">
-    <div class="wrap stats" style="justify-content:center" data-stagger>
-      <div class="stat center"><div class="num"><span data-count="1">0</span></div><div class="label">하루 단 한 팀</div></div>
-      <div class="stat center"><div class="num"><span data-count="2800">0</span>+</div><div class="label">누적 투숙 팀 [예시]</div></div>
-      <div class="stat center"><div class="num"><span data-count="4.9" data-dec="1">0</span></div><div class="label">평균 별점 [예시]</div></div>
-      <div class="stat center"><div class="num"><span data-count="34">0</span>%</div><div class="label">재방문율 [예시]</div></div>
-    </div>
-    <div class="wrap stack" style="margin-top:48px">
-      <h2 class="h-sec center" data-split>다녀가신 분들의 이야기</h2>
-      <div class="hscroll__track" style="overflow-x:auto;scroll-snap-type:x mandatory;padding-block:12px;margin-top:8px">
-        <blockquote class="quote hscroll__item reveal" style="scroll-snap-align:start">“사진이랑 똑같아요. 물에 노을 비치는 순간을 잊을 수 없어요.”<cite>— 김○○ 님 · 커플</cite></blockquote>
-        <blockquote class="quote hscroll__item reveal" data-delay=".08" style="scroll-snap-align:start">“아이가 온수풀에서 안 나오려 했어요. 우리 가족만 있어 편했어요.”<cite>— 이○○ 님 · 가족</cite></blockquote>
-        <blockquote class="quote hscroll__item reveal" data-delay=".16" style="scroll-snap-align:start">“조용하고 깨끗하고. 청소 상태가 특히 좋았습니다.”<cite>— 박○○ 님 · 재방문</cite></blockquote>
+      <div class="reveal" data-reveal="scale" data-delay=".08">
+        <div class="pimg-wrap" style="aspect-ratio:4/5;border-radius:18px"><img class="pimg" src="https://picsum.photos/seed/yunseul-spa/900/1100" alt="반신욕 스파와 미니 와인바"></div>
       </div>
     </div>
   </section>
 
-  <!-- 6. 안심 정보 (이의 해소) -->
-  <section class="section" id="info" style="background:var(--cream-2)">
-    <div class="wrap stack">
-      <p class="eyebrow center reveal">BEFORE YOU BOOK</p>
-      <h2 class="h-sec center" data-split>예약 전에 안심하세요</h2>
-      <div class="grid cols-3" data-stagger style="margin-top:24px">
-        <div class="card"><div class="card__body"><h3>🧼 청결 기준</h3><p class="muted">한 팀이 떠날 때마다 전체 청소·침구 교체·[소독]. 입실 전 점검 후 입장합니다.</p></div></div>
-        <div class="card"><div class="card__body"><h3>👨‍👩‍👧 인원 · 반려동물</h3><p class="muted">기준 [2인] / 최대 [6인], 추가 인원 [○○]. 반려동물 동반 [협의 가능].</p></div></div>
-        <div class="card"><div class="card__body"><h3>📅 예약 · 환불</h3><p class="muted">체크인 [15:00] / 체크아웃 [11:00]. 환불 규정은 [○일 전 100%] 등 투명 안내.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. 오시는 길 -->
+  <!-- 4. 위치 요약 (주소 + 안내 텍스트, 임베드 지도 없음 — BASIC) -->
   <section class="section" id="location">
-    <div class="wrap stack">
+    <div class="wrap center stack" style="max-width:760px;margin-inline:auto">
       <p class="eyebrow reveal">LOCATION</p>
-      <h2 class="h-sec" data-split>오시는 길</h2>
-      <p class="lead reveal" data-delay=".1">[경기도 가평군 청평면 ○○로 00] · 서울에서 차로 약 [1시간 10분] · 무료 주차.</p>
-      <div class="reveal" data-reveal="scale">
-        <iframe class="map" title="윤슬 풀빌라 위치 지도" loading="lazy" style="border:0"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=127.40%2C37.72%2C127.46%2C37.76&layer=mapnik&marker=37.74,127.43"></iframe>
-      </div>
+      <h2 class="h-sec reveal" data-delay=".06">오시는 길</h2>
+      <p class="lead reveal" data-delay=".12" style="margin-inline:auto">[경기도 가평군 청평면 ○○로 00]</p>
+      <p class="muted reveal" data-delay=".16">서울에서 차로 약 [1시간 10분] · 무료 주차 · 가까운 마트/계곡 도보 [○분]<br>자세한 길 안내는 예약 확정 후 문자로 보내드립니다.</p>
     </div>
   </section>
 
-  <!-- 8. 예약 전환 -->
-  <section class="section" id="inquiry" style="background:var(--water);color:#fff">
-    <div class="wrap grid cols-2" style="align-items:center">
-      <div class="stack" data-stagger>
-        <p class="eyebrow" style="color:var(--sand)">RESERVATION</p>
-        <h2 class="h-sec" style="color:#fff">날짜만 알려주세요</h2>
-        <p class="lead" style="color:rgba(255,255,255,.85)">원하시는 날짜와 인원을 남겨주시면 가능 여부를 빠르게 회신드립니다. 접수 내용은 <b>구글시트(엑셀)에 자동 저장</b>되거나 <b>이메일로 도착</b>합니다.</p>
-        <p class="muted" style="color:rgba(255,255,255,.7)">전화 [000-0000-0000] · 카카오 [채널] · [네이버 예약]</p>
+  <!-- 5. 문의 (폼 없이 전화·카카오·네이버예약 — BASIC) -->
+  <section class="section center" id="inquiry" style="background:var(--water);color:#fff">
+    <div class="wrap stack" style="max-width:680px;margin-inline:auto">
+      <p class="eyebrow reveal" style="color:var(--sand)">RESERVATION</p>
+      <h2 class="h-sec reveal" data-delay=".06" style="color:#fff">날짜만 알려주세요</h2>
+      <p class="lead reveal" data-delay=".12" style="margin-inline:auto;color:rgba(255,255,255,.88)">원하시는 날짜와 인원을 전화 또는 카카오로 남겨주시면 가능 여부를 빠르게 회신드립니다.</p>
+      <div class="reveal" data-delay=".18" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+        <a class="btn btn--water" style="background:#fff;color:var(--water)" href="tel:01000000000">전화 [000-0000-0000]</a>
+        <a class="btn btn--ghost" style="border-color:#fff;color:#fff" href="#" rel="nofollow">카카오톡 문의</a>
+        <a class="btn btn--ghost" style="border-color:#fff;color:#fff" href="#" rel="nofollow">네이버 예약</a>
       </div>
-      <form class="form reveal" data-reveal="right" data-demo style="background:#fff;color:var(--ink);padding:24px;border-radius:18px">
-        <input type="text" style="position:absolute;left:-9999px" tabindex="-1" aria-hidden="true" autocomplete="off" name="company">
-        <div class="row"><input type="text" placeholder="성함" required><input type="tel" placeholder="연락처" required></div>
-        <div class="row"><input type="date" aria-label="체크인 날짜"><select aria-label="인원"><option>2인</option><option>3인</option><option>4인</option><option>5인 이상</option></select></div>
-        <textarea placeholder="문의 내용 (선택)"></textarea>
-        <button class="btn btn--water" type="submit">예약 문의 보내기</button>
-        <p class="form-result note-form" hidden style="color:var(--water)">✓ (데모) 접수되었습니다 — 실제 상품에서는 구글시트·이메일로 전송됩니다.</p>
-      </form>
     </div>
   </section>
 
   <footer class="footer">
     <div class="wrap center stack">
       <div class="switcher__brand" style="color:#fff">윤슬 풀빌라</div>
-      <p style="font-size:.85rem">STANDARD(50만) 데모 · <a href="../../index.html">← 포트폴리오</a> · [숙박업 신고번호] · 가상 브랜드</p>
+      <p style="font-size:.85rem"><a href="../../index.html">← 포트폴리오로 돌아가기</a> · [숙박업 신고번호 0000-000000-00-0-00000] · 가상 브랜드 데모</p>
     </div>
   </footer>
 
 </main>
 
-<a class="float-cta" href="#inquiry"><span class="pulse"></span>예약 문의</a>
-<div class="fab"><a class="call" href="tel:01000000000">전화</a><a class="kakao" href="#">카톡</a></div>
+<!-- 고정 CTA (전화·카톡) — BASIC 허용 -->
+<div class="fab"><a class="call" href="tel:01000000000">전화</a><a class="kakao" href="#" rel="nofollow">카톡</a></div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

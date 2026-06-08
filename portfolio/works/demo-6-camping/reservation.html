@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!-- 판매 시 교체: 로고/사진/연락처/네이버예약 링크/사업자·야영장업 등록번호/지도 -->
 <!-- 규제: 관광진흥법상 야영장업 등록 표기. 화기·안전 이용수칙 안내 포함 -->
-<html lang="ko">
+<html lang="ko" class="no-js">
 <head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>예약·오시는 길 | 별헤는밤 STARGAZE</title>
 <meta name="description" content="체크인/아웃 날짜를 달력에서 선택하고 공식 홈페이지에서 직접 예약하세요. 수수료 없는 직접 예약 혜택, 환불규정 요약, 오시는 길·주차·내비 안내. 별헤는밤 강원 홍천.">
 <meta property="og:title" content="예약·오시는 길 | 별헤는밤 STARGAZE">
@@ -13,7 +14,6 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 <link rel="stylesheet" href="css/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -24,6 +24,15 @@
 <body>
 <a href="#main" class="skip-link">본문 바로가기</a>
 
+<!-- ===== 브랜드 인트로 로더 (PRO 시그니처) — window.load 후 자동 제거 ===== -->
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-logo"><span aria-hidden="true">✦</span></div>
+    <div class="ld-name">별헤는밤<small>STARGAZE CAMP</small></div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
 <header>
   <div class="wrap nav">
     <a href="index.html" class="brand" aria-label="별헤는밤 STARGAZE 홈">
@@ -33,9 +42,8 @@
     <nav class="menu" id="menu" aria-label="주요 메뉴">
       <a href="index.html" data-nav="index.html">홈</a>
       <a href="sites.html" data-nav="sites.html">캠핑 사이트</a>
-      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="facility.html" data-nav="facility.html">시설·갤러리</a>
       <a href="guide.html" data-nav="guide.html">이용안내</a>
-      <a href="gallery.html" data-nav="gallery.html">갤러리</a>
       <a href="reservation.html" data-nav="reservation.html" aria-current="page">예약</a>
       <a href="reservation.html" class="nav-cta">예약하기</a>
     </nav>
@@ -130,7 +138,8 @@
       <!-- 간편 예약 문의 폼 -->
       <div class="info-card fade-up" id="formFields">
         <h3><span class="ic" aria-hidden="true">✉️</span> 간편 예약·문의 남기기</h3>
-        <p style="font-size:14.5px;color:var(--ink-soft);margin-bottom:18px">원하는 날짜·타입을 남겨 주시면 잔여 사이트를 확인해 연락드립니다. (데모 폼 — 실제 전송되지 않습니다.)</p>
+        <p style="font-size:14.5px;color:var(--ink-soft);margin-bottom:18px">원하는 날짜·타입을 남겨 주시면 잔여 사이트를 확인해 연락드립니다. 접수 즉시 담당자에게 <b style="color:var(--forest)">메일로 자동 전달</b>됩니다. (데모 폼 — 실제 전송되지 않습니다.)</p>
+        <!-- 판매 시 교체: 폼 action을 메일/알림톡 연동(예: Formspree action="https://formspree.io/f/XXXX" method="post", 또는 자체 API). 연동 시 아래 JS 목업 제출을 실제 fetch/submit으로 교체. -->
         <form id="bookForm" novalidate>
           <div class="field" style="margin-bottom:16px">
             <label for="bf-name">성함 <span style="color:var(--ember)">*</span></label>
@@ -169,7 +178,7 @@
       <div class="info-card" id="formOk" tabindex="-1" style="display:none;text-align:center">
         <div style="font-size:46px;margin-bottom:10px" aria-hidden="true">🎉</div>
         <h3 style="justify-content:center">문의가 접수되었습니다</h3>
-        <p style="color:var(--ink-soft)">빠른 시일 내 남겨주신 연락처로 잔여 사이트를 확인해 연락드리겠습니다. 감사합니다. (데모 화면)</p>
+        <p style="color:var(--ink-soft)">접수 내용은 <b style="color:var(--forest)">담당자에게 메일로 즉시 전달</b>되었습니다. 빠른 시일 내 남겨주신 연락처로 잔여 사이트를 확인해 연락드리겠습니다. 감사합니다. (데모 화면 — 실제 발송되지 않습니다.)</p>
       </div>
     </div>
   </div>
@@ -234,9 +243,8 @@
         <h5>바로가기</h5>
         <ul>
           <li><a href="sites.html">캠핑 사이트 소개</a></li>
-          <li><a href="facility.html">시설·어메니티</a></li>
+          <li><a href="facility.html">시설·갤러리</a></li>
           <li><a href="guide.html">이용안내·환불규정</a></li>
-          <li><a href="gallery.html">갤러리</a></li>
           <li><a href="reservation.html">예약·오시는 길</a></li>
         </ul>
       </div>

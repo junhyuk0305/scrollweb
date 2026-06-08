@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 공간 사진/프라이빗 룸 정보/대관 인원·요금/케이터링 문의처 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>공간·대관 — 프라이빗 룸·단체·케이터링 | NOTTE 노트</title>
+<meta name="description" content="오픈 키친 카운터 12석, 창가 다이닝 홀, 프라이빗 룸 ‘노테’, 와인 셀러. 생일·기념일·비즈니스 디너를 위한 프라이빗 룸과 단독 대관·셰프 출장 케이터링 안내.">
+<meta property="og:title" content="공간·대관 — 프라이빗 룸·단체·케이터링 | NOTTE 노트">
+<meta property="og:description" content="한남동 붉은 벽돌 건물 2층. 카운터·다이닝 홀·프라이빗 룸·와인 셀러. 대관·케이터링 가능.">
+<meta property="og:type" content="restaurant">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-name">NOTTE<small>seasonal dining &amp; wine</small></div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="NOTTE 노트 홈">
+      <span class="b-name">NOTTE<small>한남 시즌 다이닝</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="menu.html" data-nav="menu.html">메뉴</a>
+      <a href="space.html" data-nav="space.html" aria-current="page">공간·대관</a>
+      <a href="reservation.html" data-nav="reservation.html">예약</a>
+      <a href="location.html" data-nav="location.html">오시는 길</a>
+      <a href="reservation.html" class="nav-cta">예약 Reserve</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-head" aria-label="공간·대관">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep">›</span><b>공간·대관</b>
+    </nav>
+    <h1>한남동, 골목 끝의 밤</h1>
+    <p>붉은 벽돌 건물 2층. 오픈 키친을 마주한 12석의 카운터, 창가의 테이블, 그리고 단 하나의 프라이빗 룸. 저녁의 조도에 맞춰 음악과 잔의 온도까지 매만진 공간입니다.</p>
+  </div>
+</section>
+
+<!-- ===== 1. 공간 갤러리 (필터 + 라이트박스) ===== -->
+<section aria-label="공간 갤러리">
+  <div class="wrap">
+    <span class="eyebrow">The Space</span>
+    <h2 class="title">조도가 만드는 무드</h2>
+    <p class="lead">사진을 누르면 크게 볼 수 있습니다. 카테고리로 원하는 공간만 골라 보세요.</p>
+
+    <div class="gal-filter" id="galFilter" role="group" aria-label="공간 카테고리 필터">
+      <button class="active" data-filter="all">전체</button>
+      <button data-filter="counter">카운터</button>
+      <button data-filter="hall">다이닝 홀</button>
+      <button data-filter="private">프라이빗 룸</button>
+      <button data-filter="cellar">와인 셀러</button>
+    </div>
+
+    <div class="gallery">
+      <button class="gitem tall" data-cat="counter" data-lightbox data-cap="오픈 키친 카운터 — 셰프의 손끝을 마주하는 12석"><img src="https://picsum.photos/id/431/800/1100" data-full="https://picsum.photos/id/431/1400/1800" alt="오픈 키친을 마주한 12석 카운터"><span class="cap"><b>오픈 키친 카운터</b><span>12석 · 셰프의 손끝을 마주하는 자리</span></span></button>
+      <button class="gitem wide" data-cat="hall" data-lightbox data-cap="다이닝 홀 — 창가 테이블 6테이블 20석"><img src="https://picsum.photos/id/1059/1100/620" data-full="https://picsum.photos/id/1059/1600/900" alt="창가 테이블이 있는 다이닝 홀"><span class="cap"><b>다이닝 홀</b><span>창가 테이블 · 6테이블 20석</span></span></button>
+      <button class="gitem" data-cat="cellar" data-lightbox data-cap="와인 셀러 — 120여 종 상시 보유"><img src="https://picsum.photos/id/766/700/700" data-full="https://picsum.photos/id/766/1200/1200" alt="120여 종을 보유한 와인 셀러"><span class="cap"><b>와인 셀러</b><span>120여 종 상시 보유</span></span></button>
+      <button class="gitem wide" data-cat="private" data-lightbox data-cap="프라이빗 룸 ‘노테’ — 최대 8인 · 별도 입구"><img src="https://picsum.photos/id/326/1100/560" data-full="https://picsum.photos/id/326/1600/800" alt="프라이빗 룸 노테"><span class="cap"><b>프라이빗 룸 ‘노테’</b><span>최대 8인 · 별도 입구</span></span></button>
+      <button class="gitem" data-cat="hall" data-lightbox data-cap="저녁의 조도 — 촛불과 음악이 만드는 무드"><img src="https://picsum.photos/id/24/700/700" data-full="https://picsum.photos/id/24/1200/1200" alt="촛불이 켜진 저녁의 다이닝 무드"><span class="cap"><b>저녁의 조도</b><span>촛불과 음악이 만드는 무드</span></span></button>
+      <button class="gitem" data-cat="counter" data-lightbox data-cap="카운터 디테일 — 잔과 커트러리"><img src="https://picsum.photos/id/493/700/700" data-full="https://picsum.photos/id/493/1200/1200" alt="잔과 커트러리가 놓인 카운터 디테일"><span class="cap"><b>테이블 세팅</b><span>잔의 온도까지 매만진 디테일</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. 프라이빗 룸 상세 ===== -->
+<section class="on-deep" aria-label="프라이빗 룸">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-figure fade-up">
+        <div class="pimg-wrap"><img class="pimg" src="https://picsum.photos/id/326/900/1150" alt="별도 입구를 둔 프라이빗 룸 노테"></div>
+        <div class="cap">프라이빗 룸 ‘노테’ · 최대 8인</div>
+      </div>
+      <div class="story-copy">
+        <span class="eyebrow">Private Room ‘NOTTE’</span>
+        <h2 class="title" style="margin-bottom:22px">오롯이<br>우리 일행만의 저녁</h2>
+        <p>생일·기념일·비즈니스 디너를 위한 독립된 프라이빗 룸을 운영합니다. 최대 8인까지, 별도 입구로 들고 나며, 전용 페어링과 케이크·꽃 세팅을 미리 준비해 드립니다.</p>
+        <ul class="rule-list" style="list-style:none;display:grid;gap:11px;margin:18px 0">
+          <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-dim)"><span style="color:var(--gold)">●</span> 최대 <b style="color:var(--cream)">8인</b> · 4인 이상 예약 시 운영</li>
+          <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-dim)"><span style="color:var(--gold)">●</span> 코스 <b style="color:var(--cream)">사전 선택</b> 및 알러지 조정</li>
+          <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-dim)"><span style="color:var(--gold)">●</span> 케이크·꽃·플레이트 <b style="color:var(--cream)">세팅 대행</b>(사전 요청)</li>
+          <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-dim)"><span style="color:var(--gold)">●</span> 예약금 안내 후 일정 확정</li>
+        </ul>
+        <div class="btn-row" style="margin-top:18px">
+          <a href="reservation.html" class="btn btn-gold">프라이빗 룸 문의</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. 대관·케이터링 ===== -->
+<section aria-label="대관과 케이터링">
+  <div class="wrap">
+    <div class="center" style="max-width:680px;margin:0 auto 8px">
+      <span class="eyebrow">Buyout &amp; Catering</span>
+      <h2 class="title">행사를, 한 저녁의 무드로</h2>
+      <p class="lead">단독 대관부터 셰프 출장 케이터링까지. 브랜드 행사·프라이빗 파티에 맞춘 메뉴를 함께 설계해 드립니다.</p>
+    </div>
+    <div class="rental">
+      <div class="rcard fade-up">
+        <h4>단독 대관</h4>
+        <p>20인 이상 공간 단독 대관이 가능합니다. 와인 클래스·소믈리에 세션 등 프로그램을 결합한 프라이빗 이벤트를 설계합니다. 음향·조도·플레이트까지 무드에 맞춰 준비합니다.</p>
+        <div class="rmeta">대관 문의 · 20인 이상 / 사전 메뉴 협의</div>
+      </div>
+      <div class="rcard fade-up">
+        <h4>셰프 출장 케이터링</h4>
+        <p>브랜드 행사·홈파티·기업 디너에 셰프가 직접 찾아갑니다. 제철 식재 기반의 코스를 현장 조리로 제공하며, 인원과 콘셉트에 맞춘 맞춤 메뉴를 함께 구성합니다.</p>
+        <div class="rmeta">케이터링 문의 · events@notte.kr / 02-790-0000</div>
+      </div>
+    </div>
+    <div class="btn-row" style="justify-content:center">
+      <a href="mailto:events@notte.kr" class="btn btn-ghost">events@notte.kr 로 문의</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>특별한 저녁을 계획 중이신가요</h2>
+    <p>프라이빗 룸·대관·케이터링 모두 사전 협의로 진행됩니다. 원하시는 날짜와 인원을 남겨 주세요.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="reservation.html" class="btn btn-gold">예약·문의 남기기</a>
+      <a href="tel:0277900000" class="btn btn-ghost">📞 02-790-0000</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 라이트박스 -->
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="확대 이미지">
+  <button class="lb-close" aria-label="닫기">✕</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">NOTTE</div>
+        <div class="foot-tag">seasonal dining &amp; wine bar</div>
+        <p style="max-width:34ch">제철·로컬 식재로 짓는 한 접시의 무드. 해가 진 뒤 시작되는 저녁을 위해, 서울 한남동에서.</p>
+        <div class="foot-sns">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="네이버 예약">NV</a>
+          <a href="#" aria-label="캐치테이블">CT</a>
+          <a href="#" aria-label="카카오 채널">KK</a>
+        </div>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>서울 용산구 한남대로27길 00, 2층</li>
+          <li>화–금 18:00 – 23:00</li>
+          <li>토·일·공휴일 17:30 – 23:00</li>
+          <li>매주 월요일 휴무</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu &amp; Reserve</h5>
+        <ul>
+          <li><a href="menu.html">디너 코스·단품·와인</a></li>
+          <li><a href="space.html">공간·프라이빗 룸·대관</a></li>
+          <li><a href="reservation.html">예약·문의</a></li>
+          <li><a href="location.html">오시는 길·인스타</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>상호 NOTTE 노트 · 대표 정○○ · 사업자등록번호 000-00-00000 · 서울 용산구 한남대로27길 00</span>
+      <span>© 2026 NOTTE 노트. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="reservation.html" class="book"><span class="ic" aria-hidden="true">🍷</span>예약</a>
+    <a href="tel:0277900000" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="location.html#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+<a href="reservation.html" class="float-cta" id="floatCta" aria-label="예약하기"><span class="pulse" aria-hidden="true"></span> 오늘 저녁 예약</a>
+
+</body>
+</html>

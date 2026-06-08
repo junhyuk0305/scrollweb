@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/객실사진/연락처/네이버예약 링크/사업자번호·관광사업등록번호/지도 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HÔTEL NUVÉ 누베 | 서울 한남 부티크 호텔 · 도심 속 가장 조용한 하룻밤</title>
+<meta name="description" content="서울 한남, 단 28실의 도심 부티크 호텔. 브라스와 차콜의 절제된 공간, 시그니처 다이닝과 루프톱 바. HÔTEL NUVÉ에서의 하룻밤을 예약하세요.">
+<meta property="og:title" content="HÔTEL NUVÉ 누베 | 서울 한남 부티크 호텔">
+<meta property="og:description" content="도심 속 가장 조용한 하룻밤. 단 스물여덟 개의 방, 브라스와 차콜의 우아한 공간.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ===== 브랜드 인트로 로더 (PRO 시그니처) — window.load 후 자동 제거 ===== -->
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-logo">NUVÉ</div>
+    <div class="ld-name">Hôtel Nuvé · Seoul Hannam</div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
+<!-- ===== 공유 헤더 ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="HÔTEL NUVÉ 누베 홈">
+      <span class="b-name">NUVÉ<small>누베</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="rooms.html" data-nav="rooms.html">객실</a>
+      <a href="dining.html" data-nav="dining.html">다이닝·시설</a>
+      <a href="reservation.html" data-nav="reservation.html">예약·요금</a>
+      <a href="location.html" data-nav="location.html">오시는 길</a>
+      <a href="reservation.html" class="nav-cta">예약하기</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== [섹션1] 풀스크린 히어로 (패럴랙스 + 축소, 로더 동반) ===== -->
+<section class="hero" aria-label="HÔTEL NUVÉ 소개">
+  <div class="hero-media" id="heroMedia">
+    <!-- 교체: 호텔 메인 비주얼(로비/외관/객실) -->
+    <img src="https://picsum.photos/id/1067/1920/1280" alt="저녁 불빛이 깔린 HÔTEL NUVÉ의 차분한 공간" loading="eager">
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow">Seoul · Hannam Boutique Hotel</span>
+    <h1>HÔTEL NUVÉ<span class="ko">누베</span></h1>
+    <p class="sub">도심 속, 가장 조용한 하룻밤</p>
+    <div class="btn-row">
+      <a href="reservation.html" class="btn btn-brass">예약 가능일 보기</a>
+      <a href="rooms.html" class="btn btn-ghost-light">객실 둘러보기</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<!-- ===== [섹션2] 브랜드 철학 (단어 리빌 + 에디토리얼 이미지) ===== -->
+<section class="philo-band" aria-label="브랜드 철학">
+  <div class="wrap">
+    <span class="eyebrow" style="justify-content:center">Our Philosophy</span>
+    <p class="phil" id="phil">소란한 도시의 한가운데, 문 하나를 사이에 두고 <em>온전히 멈출 수 있는 시간</em>을 위해 누베는 단 스물여덟 개의 방을 빚었습니다.</p>
+
+    <div class="philo-grid">
+      <figure class="philo-media philo-media--tall fade-up">
+        <!-- 교체: 호텔 로비/복도 세로 컷 -->
+        <img src="https://picsum.photos/id/1078/760/980" alt="브라스 조명이 낮게 깔린 누베의 로비" loading="lazy">
+        <figcaption>The Lobby · 한남</figcaption>
+      </figure>
+
+      <div class="philo-text fade-up">
+        <p class="sub">한남동 언덕길 끝, 브라스와 차콜의 절제된 공간. 분주한 일상에서 한 걸음 물러나 깊은 밤과 느린 아침을 오롯이 누리시도록 설계했습니다.</p>
+        <p class="sub">크게 짓지 않았습니다. 단 스물여덟 개의 방만을 두어, 머무는 한 분 한 분께 더 가까이 다가가는 환대를 택했습니다. 누베의 하룻밤은 화려함이 아니라 고요함으로 기억되길 바랍니다.</p>
+        <div class="philo-stats">
+          <div class="ps"><div class="ps-num"><span class="count" data-to="28" data-dec="0">28</span></div><div class="ps-lbl">단 스물여덟 개의 방</div></div>
+          <div class="ps"><div class="ps-num"><span class="count" data-to="2022" data-dec="0">2022</span></div><div class="ps-lbl">한남 오픈</div></div>
+          <div class="ps"><div class="ps-num">24<span class="ps-suf">h</span></div><div class="ps-lbl">컨시어지·발렛</div></div>
+        </div>
+        <a href="rooms.html" class="philo-link">누베의 공간 둘러보기 <span aria-hidden="true">→</span></a>
+      </div>
+
+      <figure class="philo-media philo-media--wide fade-up">
+        <!-- 교체: 객실 디테일/침구 가로 컷 -->
+        <img src="https://picsum.photos/id/1062/980/620" alt="창으로 도시의 불빛이 스미는 누베 객실의 밤" loading="lazy">
+        <figcaption>The Night · 객실</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== [섹션3] 호텔 소개 + 신뢰 신호 (다크 배너) ===== -->
+<section class="benefit-band" aria-label="누베를 선택하는 이유">
+  <div class="wrap">
+    <div class="benefit-inner">
+      <div class="bcol">
+        <span class="eyebrow">Why NUVÉ</span>
+        <h2 class="title">스물여덟 개의 방, 호텔이 아니라 하나의 머무름.</h2>
+        <p class="lead">대형 호텔의 번잡함 대신, 작은 호텔만이 줄 수 있는 밀도 높은 환대를 택했습니다. 객실 수가 적기에 한 분 한 분의 밤을 더 깊게 살필 수 있습니다.</p>
+      </div>
+      <ul class="benefit-list">
+        <li><span class="dot">●</span> <span>전 객실 <b>도심 뷰 통창</b>과 프리미엄 침구</span></li>
+        <li><span class="dot">●</span> <span>셰프의 <b>7코스 시그니처 디너</b>와 루프톱 바</span></li>
+        <li><span class="dot">●</span> <span>24시간 <b>컨시어지·발렛</b> 파킹 서비스</span></li>
+        <li><span class="dot">●</span> <span>공식 예약 시 <b>레이트 체크아웃</b> 우선 신청</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== [섹션4] 객실 타입 미리보기 — 가로 스크롤 핀 (시그니처1) =====
+     데스크톱: 세로 스크롤이 카드 가로 이동으로 전환(app.js setupHorizontalScroll).
+     모바일/reduced-motion: CSS가 세로 그리드로 폴백. -->
+<section class="htrack-wrap" aria-label="객실 타입 미리보기">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow" style="justify-content:center">The Rooms</span>
+      <h2 class="title">결이 다른 세 가지 룸 타입<span class="en">Choose your night</span></h2>
+      <p class="lead">도심 뷰 디럭스부터 최상층 단 한 실의 펜트하우스까지. 당신의 밤에 맞춰 고르세요.</p>
+    </div>
+    <div class="type-cards htrack">
+      <a class="type-card" href="rooms.html#deluxe">
+        <div class="tc-media"><img src="https://picsum.photos/id/1048/720/900" alt="도심 야경이 보이는 디럭스 킹 객실"></div>
+        <div class="tc-body">
+          <span class="tc-tag">Deluxe · 32㎡</span>
+          <h3>디럭스 킹<span class="en">Deluxe King</span></h3>
+          <div class="tc-price">₩280,000~</div>
+          <p>한남의 야경을 담은 통창과 킹사이즈 베드. 가장 누베다운 방.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+      <a class="type-card" href="rooms.html#suite">
+        <div class="tc-media"><img src="https://picsum.photos/id/1080/720/900" alt="거실과 침실이 분리된 코너 스위트"></div>
+        <div class="tc-body">
+          <span class="tc-tag">Suite · 54㎡</span>
+          <h3>코너 스위트<span class="en">Corner Suite</span></h3>
+          <div class="tc-price">₩440,000~</div>
+          <p>양면 통창과 독립 욕조, 작은 라이브러리 코너가 있는 스위트.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+      <a class="type-card" href="rooms.html#penthouse">
+        <div class="tc-media"><img src="https://picsum.photos/id/164/720/900" alt="프라이빗 테라스를 갖춘 루프 펜트하우스"></div>
+        <div class="tc-body">
+          <span class="tc-tag">Penthouse · 96㎡</span>
+          <h3>루프 펜트하우스<span class="en">Roof Penthouse</span></h3>
+          <div class="tc-price">₩920,000~</div>
+          <p>최상층 단 한 실. 남산 파노라마와 노천 자쿠지, 다이닝 키친.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+      <a class="type-card" href="dining.html">
+        <div class="tc-media"><img src="https://picsum.photos/id/292/720/900" alt="불빛이 낮게 깔린 시그니처 다이닝"></div>
+        <div class="tc-body">
+          <span class="tc-tag">Dining</span>
+          <h3>메종 누베<span class="en">Maison Nuvé</span></h3>
+          <div class="tc-price">₩150,000~ / 1인</div>
+          <p>셰프의 7코스 디너와 내추럴 와인 페어링, 루프톱 바.</p>
+          <span class="tc-more">다이닝 보기 →</span>
+        </div>
+      </a>
+    </div>
+    <p class="htrack-cap" aria-hidden="true"><span class="arrow">→</span> 스크롤하면 옆으로 이동합니다</p>
+  </div>
+</section>
+
+<!-- ===== [섹션5] 시설 요약 ===== -->
+<section aria-label="시설 요약" style="background:var(--paper)">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow" style="justify-content:center">Facilities</span>
+      <h2 class="title">호텔에 머무는 동안, 그 자체로 여정</h2>
+      <p class="lead">다이닝부터 스파, 피트니스, 라운지까지. 굳이 밖으로 나서지 않아도 충분한 하루를 준비했습니다.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat fade-up">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 3v7a3 3 0 0 0 3 3v8M8 3v6M5 9h3"/><path d="M17 3c-1.5 1.5-2 4-2 6s.5 4 2 4v8"/></svg></div>
+        <h3>시그니처 레스토랑</h3><p>제철 식재료로 완성하는 모던 다이닝. 디너 코스와 위크엔드 브런치.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 11h14v8a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-8Z"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+        <h3>루프톱 바</h3><p>한남의 밤을 내려다보는 8층 칵테일 바. 시그니처 칵테일과 내추럴 와인.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12c2-2 4-2 6 0M3 16c2-2 4-2 6 0"/><path d="M14 3c0 5 6 4 6 9a3 3 0 0 1-6 0c0-3 0-6 0-9Z"/></svg></div>
+        <h3>누베 스파</h3><p>아로마 트리트먼트와 핀란드식 사우나. 도심의 긴장을 풀어내는 케어룸.</p>
+      </div>
+      <div class="feat fade-up">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M7 9v5c0 1.5 2.2 3 5 3s5-1.5 5-3V9M21 7v6"/></svg></div>
+        <h3>컨시어지 &amp; 발렛</h3><p>레스토랑 예약부터 전시·공연 안내까지. 발렛 파킹과 24시간 컨시어지.</p>
+      </div>
+    </div>
+    <div class="btn-row" style="justify-content:center">
+      <a href="dining.html" class="btn btn-dark">다이닝·시설 전체 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== [섹션6] 후기/카운트업 (다크) ===== -->
+<section class="stats-band" aria-label="이용 통계와 후기">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow" style="justify-content:center">Guest Review</span>
+      <h2 class="title" style="color:#fff">머무신 분들이 남긴 밤</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="num"><span class="count" data-to="4.8" data-dec="1">4.8</span><span class="suf">/5.0</span></div><div class="lbl">네이버 예약 평균 평점</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="42000" data-dec="0">42,000</span><span class="suf">명+</span></div><div class="lbl">누적 투숙객 (2022–2026)</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="71" data-dec="0">71</span><span class="suf">%</span></div><div class="lbl">재방문 고객 비율</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="28" data-dec="0">28</span><span class="suf">실</span></div><div class="lbl">단 스물여덟 개의 방</div></div>
+    </div>
+    <div class="review-grid">
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“방이 적어서인지 직원분들이 이름을 기억해 주셨어요. 통창으로 보이는 야경과 조용한 분위기 덕에 정말 푹 쉬었습니다.”</p><div class="who">디럭스 킹 · 정○○ 님</div></div>
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“기념일에 코너 스위트를 예약했는데 웰컴 와인과 작은 메시지를 준비해 주셨어요. 7코스 디너도 인상 깊었습니다.”</p><div class="who">코너 스위트 · 김○○ 님</div></div>
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“펜트하우스 테라스에서 본 남산 야경을 잊을 수가 없네요. 노천 자쿠지와 버틀러 서비스까지, 특별한 하룻밤이었습니다.”</p><div class="who">루프 펜트하우스 · 박○○ 님</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 예약 CTA 띠 ===== -->
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>오늘 밤, 한남의 가장 조용한 한 자리</h2>
+    <p>주말·성수기는 빠르게 마감됩니다. 날짜를 확인하고 직접 예약하세요.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="reservation.html" class="btn btn-brass">예약 가능 날짜 보기</a>
+      <a href="tel:02-000-0000" class="btn btn-ghost-light">전화 예약 02-000-0000</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 공유 푸터 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">HÔTEL NUVÉ <small>누베</small></div>
+        <p class="foot-legal">서울 한남, 도심 속 가장 조용한 하룻밤을 위한 단 스물여덟 개의 방. 브라스와 차콜의 절제된 공간에서 온전한 멈춤을 드립니다.</p>
+      </div>
+      <div>
+        <h5>둘러보기</h5>
+        <ul>
+          <li><a href="rooms.html">객실 소개</a></li>
+          <li><a href="dining.html">다이닝·시설</a></li>
+          <li><a href="reservation.html">예약·요금</a></li>
+          <li><a href="location.html">오시는 길</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>예약 &amp; 문의</h5>
+        <ul>
+          <li><a href="tel:02-000-0000">예약 문의 02-000-0000</a></li>
+          <li>운영시간 09:00 – 22:00</li>
+          <li>체크인 15:00 / 체크아웃 12:00</li>
+          <li><a href="reservation.html">네이버 예약 바로가기</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 교체: 상호 / 대표 / 사업자등록번호 / 관광사업 등록번호 / 주소 / 전화 -->
+    <div class="foot-bottom">
+      <div class="biz">
+        <span>상호: 호텔 누베(HÔTEL NUVÉ)</span>
+        <span>대표: 홍길동</span>
+        <span>사업자등록번호: 000-00-00000</span>
+        <span>관광사업 등록번호: 제2022-용산-00호(관광호텔업)</span>
+      </div>
+      <div>주소: 서울특별시 용산구 한남대로 00길 12 &nbsp;|&nbsp; 통신판매업신고: 제2022-서울용산-0000호 &nbsp;|&nbsp; 개인정보관리책임자: 홍길동</div>
+      <div style="margin-top:10px;opacity:.7">© 2026 HÔTEL NUVÉ. All rights reserved. · 본 페이지는 판매용 데모이며 사업자 정보·이미지·연락처는 예시입니다.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 모바일 하단 고정 CTA ===== -->
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="reservation.html" class="book"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></span>예약</a>
+    <a href="tel:02-000-0000" class="tel"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg></span>전화</a>
+    <a href="location.html"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>오시는길</a>
+  </div>
+</nav>
+
+<!-- ===== 데스크톱 플로팅 CTA ===== -->
+<a href="reservation.html" class="float-cta" id="floatCta" aria-label="예약하기"><span class="pulse" aria-hidden="true"></span> 예약하기</a>
+
+</body>
+</html>

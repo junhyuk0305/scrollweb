@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/음식·공간 사진/메뉴·가격/예약링크(캐치테이블·네이버)/인스타 임베드/연락처/사업자등록번호 -->
+<html lang="ko" class="no-js">
+<head>
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>NOTTE 노트 — 시즈널 다이닝 &amp; 와인바 | 서울 한남</title>
+<meta name="description" content="제철·로컬 식재로 완성하는 한 접시의 무드. NOTTE 노트는 서울 한남동의 시즈널 다이닝 & 와인바입니다. 매주 갱신되는 디너 코스와 120여 종 내추럴 와인 페어링.">
+<meta property="og:title" content="NOTTE 노트 — 시즈널 다이닝 & 와인바">
+<meta property="og:description" content="제철·로컬 식재로 짓는 한 접시의 무드. 한남동 시즈널 다이닝 & 와인바. 매주 다시 쓰는 코스.">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="ko_KR">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ===== 브랜드 인트로 로더 (PRO 시그니처) — window.load 후 자동 제거 ===== -->
+<div id="loader" role="status" aria-label="페이지를 불러오는 중">
+  <div class="ld-inner">
+    <div class="ld-name">NOTTE<small>seasonal dining &amp; wine</small></div>
+    <div class="ld-bar" aria-hidden="true"><i></i></div>
+  </div>
+</div>
+
+<!-- ===== 공유 헤더 ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="NOTTE 노트 홈">
+      <span class="b-name">NOTTE<small>한남 시즌 다이닝</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="menu.html" data-nav="menu.html">메뉴</a>
+      <a href="space.html" data-nav="space.html">공간·대관</a>
+      <a href="reservation.html" data-nav="reservation.html">예약</a>
+      <a href="location.html" data-nav="location.html">오시는 길</a>
+      <a href="reservation.html" class="nav-cta">예약 Reserve</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== 1. 풀블리드 시그니처 히어로 (로더 + 패럴랙스) ===== -->
+<section class="hero" aria-label="NOTTE 소개">
+  <div class="hero-media" id="heroMedia">
+    <!-- 교체: 시그니처 음식/와인바 무드 메인 사진 -->
+    <img src="https://picsum.photos/id/431/1900/1200" alt="촛불이 켜진 한남동 시즈널 다이닝 NOTTE의 저녁 무드" loading="eager">
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">seasonal dining &amp; wine bar · Hannam, Seoul</span>
+    <h1>NOTTE<span class="kr">노트</span></h1>
+    <p class="sub">해가 진 뒤에야 비로소 시작되는 식탁. 제철·로컬 식재를 한 접시의 무드로 짓고, 120여 종 내추럴 와인과 짝지어 한 저녁을 완성합니다.</p>
+    <div class="btn-row">
+      <a href="reservation.html" class="btn btn-gold">오늘 저녁 예약하기</a>
+      <a href="menu.html" class="btn btn-ghost">디너 코스 보기</a>
+    </div>
+    <div class="hero-meta">
+      <div class="m"><b>제철 한 접시</b>로컬 식재의 무드</div>
+      <div class="m"><b>Dinner Course</b>화~일 18:00 – 23:00</div>
+      <div class="m"><b>Natural Wine</b>120여 종 셀렉션</div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<!-- ===== 2. 브랜드 스토리 (단어 리빌 한 줄 + 2단) ===== -->
+<section class="philo-band" aria-label="브랜드 한 줄">
+  <div class="wrap">
+    <p class="phil" id="phil">우리는 <em>제철</em>에 진다. 가장 좋은 식재가 들어오는 날, 그날의 산과 바다와 들을 한 접시에 담아 <em>한 번의 저녁</em>으로 짓는다.</p>
+  </div>
+</section>
+
+<section class="on-deep" aria-label="브랜드 스토리">
+  <div class="wrap">
+    <div class="story-grid">
+      <div class="story-copy">
+        <span class="eyebrow">Our Story</span>
+        <h2 class="title" style="margin-bottom:22px">매주 다시 쓰는<br>한 저녁의 문장</h2>
+        <p>NOTTE는 이탈리아어로 ‘밤’. 해가 진 뒤에야 비로소 시작되는 식탁을 위해 문을 엽니다. 매주 화요일, 양평·해남·완도의 산지에서 그 주의 가장 좋은 식재가 도착하면 주방은 메뉴를 다시 씁니다.</p>
+        <p>거창한 수입 식재 대신, 제철에 정직한 로컬 식재. 봄의 두릅과 도다리, 여름의 민어와 가지, 가을의 능이와 대하, 겨울의 방어와 무. 계절이 바뀌면 접시도 바뀝니다. 그래서 같은 메뉴를 두 번 만나기 어렵습니다.</p>
+        <p>한 접시의 무드를 위해 조도와 음악, 잔의 온도까지 매만집니다. 빠르게 채우는 한 끼가 아니라, 천천히 머무는 한 저녁이 되기를.</p>
+        <div class="story-sign">— 셰프 정민우 &amp; 소믈리에 윤서아
+          <small>Head Chef &amp; Sommelier, NOTTE</small>
+        </div>
+      </div>
+      <div class="story-figure fade-up">
+        <div class="pimg-wrap"><img class="pimg" src="https://picsum.photos/id/292/900/1150" alt="제철 식재로 한 접시를 완성하는 NOTTE 주방"></div>
+        <div class="cap">매주 화요일, 다시 쓰는 메뉴</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 시즌 마키 (스크롤 방향·속도 반응) -->
+<div class="season-marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span class="dot">✦</span><span>봄 두릅</span><span class="fill">SPRING</span><span class="dot">✦</span><span>여름 민어</span><span class="fill">SUMMER</span><span class="dot">✦</span><span>가을 능이</span><span class="fill">AUTUMN</span><span class="dot">✦</span><span>겨울 방어</span><span class="fill">WINTER</span><span class="dot">✦</span>
+    <span class="dot">✦</span><span>봄 두릅</span><span class="fill">SPRING</span><span class="dot">✦</span><span>여름 민어</span><span class="fill">SUMMER</span><span class="dot">✦</span><span>가을 능이</span><span class="fill">AUTUMN</span><span class="dot">✦</span><span>겨울 방어</span><span class="fill">WINTER</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- ===== 3. 시그니처 메뉴 가로 스크롤 스크롤리텔링 (시그니처1) =====
+     데스크톱: 세로 스크롤이 카드 가로 이동으로 전환(app.js setupHorizontalScroll).
+     모바일/reduced-motion: CSS가 세로 스택으로 폴백. -->
+<section class="signature" aria-label="시그니처 메뉴">
+  <div class="wrap sig-intro" style="padding-top:clamp(72px,11vh,116px)">
+    <span class="eyebrow">Signature Plates · 다섯 접시의 코스</span>
+    <h2 class="title">접시 하나하나가<br>그 계절의 문장입니다</h2>
+    <p class="sig-lead">아뮤즈에서 디저트까지, 한 저녁의 흐름을 따라가는 다섯 접시.<br><b>옆으로 스크롤</b>하며 시그니처를 차례로 만나보세요.</p>
+    <div class="sig-guide" aria-hidden="true">
+      <span class="g-dots"><i></i><i></i><i></i><i></i><i></i></span>
+      <span class="g-hint">SCROLL <span class="g-arrow">→</span></span>
+    </div>
+  </div>
+
+  <div class="htrack-wrap" aria-label="시그니처 메뉴 가로 스크롤">
+    <div class="wrap">
+      <div class="htrack">
+
+        <article class="sig-card">
+          <div class="sig-img">
+            <img src="https://picsum.photos/id/1080/900/1150" alt="완도 다시마에 절인 도미 아뮤즈">
+            <div class="sig-num" aria-hidden="true">01</div>
+          </div>
+          <div class="sig-text">
+            <div class="sig-cat">amuse · 시작</div>
+            <h3 class="sig-name">완도 다시마에 절인 도미<small>Cured Sea Bream, Wando Kelp</small></h3>
+            <p class="sig-desc">제주 도미를 완도산 다시마로 12시간 절여 감칠맛을 끌어올립니다. 봄 두릅 오일과 유자 제스트를 더해, 첫 입에 계절을 통째로 들이는 한 점.</p>
+            <span class="sig-pair">페어링 · 루아르 슈냉블랑</span>
+          </div>
+        </article>
+
+        <article class="sig-card">
+          <div class="sig-img">
+            <img src="https://picsum.photos/id/312/900/1150" alt="능이버섯 탈리아텔레 파스타">
+            <div class="sig-num" aria-hidden="true">02</div>
+          </div>
+          <div class="sig-text">
+            <div class="sig-cat">primo · 면</div>
+            <h3 class="sig-name">능이버섯 탈리아텔레<small>Tagliatelle, Neungi Mushroom</small></h3>
+            <p class="sig-desc">매일 손으로 미는 생면에 가을 능이의 향을 입힙니다. 들깨 버터 에멀션과 숙성 그라나, 마지막에 올린 밤꿀이 가을 숲의 깊이를 냅니다.</p>
+            <span class="sig-pair">페어링 · 부르고뉴 피노누아</span>
+          </div>
+        </article>
+
+        <article class="sig-card">
+          <div class="sig-img">
+            <img src="https://picsum.photos/id/1060/900/1150" alt="참나무 훈연 방어 메인 요리">
+            <div class="sig-num" aria-hidden="true">03</div>
+          </div>
+          <div class="sig-text">
+            <div class="sig-cat">secondo · 메인</div>
+            <h3 class="sig-name">참나무 훈연 방어<small>Oak-smoked Yellowtail</small></h3>
+            <p class="sig-desc">겨울 제철 방어를 참나무로 짧게 훈연해 기름의 단맛을 응축했습니다. 구운 무 퓌레와 미나리 살사 베르데, 그을린 대파 기름으로 마무리합니다.</p>
+            <span class="sig-pair">페어링 · 에트나 로쏘</span>
+          </div>
+        </article>
+
+        <article class="sig-card">
+          <div class="sig-img">
+            <img src="https://picsum.photos/id/225/900/1150" alt="화덕 한우 채끝 요리">
+            <div class="sig-num" aria-hidden="true">04</div>
+          </div>
+          <div class="sig-text">
+            <div class="sig-cat">carne · 화덕</div>
+            <h3 class="sig-name">화덕 한우 채끝, 능이 주스<small>Wood-fired Hanwoo Sirloin</small></h3>
+            <p class="sig-desc">횡성 1++ 채끝을 장작 화덕에서 직화로 굽고, 12시간 우린 능이 주스를 끼얹습니다. 제철 뿌리채소 그릴과 함께, 불의 향이 살아있는 한 접시.</p>
+            <span class="sig-pair">페어링 · 바롤로 네비올로</span>
+          </div>
+        </article>
+
+        <article class="sig-card">
+          <div class="sig-img">
+            <img src="https://picsum.photos/id/1025/900/1150" alt="군고구마 크렘 브륄레 디저트">
+            <div class="sig-num" aria-hidden="true">05</div>
+          </div>
+          <div class="sig-text">
+            <div class="sig-cat">dolce · 디저트</div>
+            <h3 class="sig-name">군고구마 크렘 브륄레<small>Roasted Sweet Potato Brûlée</small></h3>
+            <p class="sig-desc">해남 꿀고구마를 장작에 구워 만든 커스터드 위에, 즉석에서 캐러멜라이즈한 설탕. 흑임자 튀일과 막걸리 셔벗으로 가장 한국적인 마지막을 냅니다.</p>
+            <span class="sig-pair">페어링 · 토카이 늦수확</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+    <div class="sig-progress" aria-hidden="true"><i id="sigBar"></i></div>
+    <div class="sig-stepper" id="sigStepper" aria-hidden="true">
+      <span class="ss-now" id="sigStepNum">01</span>
+      <span class="ss-sep">/</span>
+      <span class="ss-total">05</span>
+      <span class="ss-label" id="sigStepLabel">완도 다시마에 절인 도미</span>
+    </div>
+    <p class="htrack-cap" aria-hidden="true"><span class="arrow">→</span> 스크롤하면 다음 접시로 이동합니다</p>
+  </div>
+</section>
+
+<!-- ===== 4. 공간 미리보기 ===== -->
+<section class="on-deep" aria-label="공간 미리보기">
+  <div class="wrap">
+    <div class="center" style="max-width:760px;margin:0 auto">
+      <span class="eyebrow">The Space</span>
+      <h2 class="title">한남동, 골목 끝의 밤</h2>
+      <p class="lead">붉은 벽돌 건물 2층. 오픈 키친을 마주한 12석의 카운터, 창가의 테이블, 그리고 단 하나의 프라이빗 룸. 저녁의 조도에 맞춰 음악과 잔의 온도까지 매만진 공간입니다.</p>
+    </div>
+    <div class="gallery" style="grid-auto-rows:200px">
+      <div class="gitem tall fade-up"><img src="https://picsum.photos/id/431/800/1100" alt="오픈 키친을 마주한 12석 카운터"><div class="cap"><b>오픈 키친 카운터</b><span>셰프의 손끝을 마주하는 12석</span></div></div>
+      <div class="gitem wide fade-up"><img src="https://picsum.photos/id/1059/1100/620" alt="창가 테이블이 있는 다이닝 홀"><div class="cap"><b>다이닝 홀</b><span>창가 테이블 · 6테이블 20석</span></div></div>
+      <div class="gitem fade-up"><img src="https://picsum.photos/id/766/700/700" alt="120여 종을 보유한 와인 셀러"><div class="cap"><b>와인 셀러</b><span>120여 종 상시 보유</span></div></div>
+      <div class="gitem wide fade-up"><img src="https://picsum.photos/id/326/1100/560" alt="프라이빗 룸 노테"><div class="cap"><b>프라이빗 룸 ‘노테’</b><span>최대 8인 · 별도 입구</span></div></div>
+    </div>
+    <div class="btn-row" style="justify-content:center">
+      <a href="space.html" class="btn btn-ghost">공간·대관 자세히 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. 후기 / 카운트업 ===== -->
+<section class="stats-band" aria-label="이용 통계와 후기">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow" style="color:var(--gold)">Guest Notes</span>
+      <h2 class="title">다녀가신 분들이 남긴 한 저녁</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="num"><span class="count" data-to="4.9" data-dec="1">4.9</span></div><div class="lbl">평균 평점 (5점 만점)</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="2400" data-dec="0">2,400</span><span class="suf">건+</span></div><div class="lbl">누적 다이닝 후기</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="120" data-dec="0">120</span><span class="suf">종</span></div><div class="lbl">내추럴 와인 셀렉션</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="57" data-dec="0">57</span><span class="suf">%</span></div><div class="lbl">재방문 예약 비율</div></div>
+    </div>
+    <div class="review-grid">
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“계절이 바뀔 때마다 다시 찾게 됩니다. 같은 메뉴가 없으니 매번 새로운 저녁이에요. 페어링 와인 설명이 특히 좋았습니다.”</p><div class="who">디너 코스 · 김○○ 님</div></div>
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“기념일에 프라이빗 룸을 예약했는데 케이크·꽃 세팅까지 미리 준비해 주셔서 완벽했어요. 조도와 음악 모두 무드가 있었습니다.”</p><div class="who">프라이빗 룸 · 정○○ 부부</div></div>
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“카운터에서 셰프님 손끝을 보며 먹는 경험이 인상 깊었어요. 능이 탈리아텔레는 꼭 드셔보세요. 생면이 정말 다릅니다.”</p><div class="who">카운터석 · 박○○ 님</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 예약 CTA 띠 ===== -->
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>오늘 저녁, 한 자리를 비워두었습니다</h2>
+    <p>주말·기념일 좌석은 빠르게 마감됩니다. 캐치테이블·네이버 또는 전화로 미리 예약해 주세요.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="reservation.html" class="btn btn-gold">예약 가능 시간 보기</a>
+      <a href="tel:0277900000" class="btn btn-ghost">📞 02-790-0000</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 공유 푸터 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">NOTTE</div>
+        <div class="foot-tag">seasonal dining &amp; wine bar</div>
+        <p style="max-width:34ch">제철·로컬 식재로 짓는 한 접시의 무드. 해가 진 뒤 시작되는 저녁을 위해, 서울 한남동에서.</p>
+        <div class="foot-sns">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="네이버 예약">NV</a>
+          <a href="#" aria-label="캐치테이블">CT</a>
+          <a href="#" aria-label="카카오 채널">KK</a>
+        </div>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>서울 용산구 한남대로27길 00, 2층</li>
+          <li>화–금 18:00 – 23:00</li>
+          <li>토·일·공휴일 17:30 – 23:00</li>
+          <li>매주 월요일 휴무</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu &amp; Reserve</h5>
+        <ul>
+          <li><a href="menu.html">디너 코스·단품·와인</a></li>
+          <li><a href="space.html">공간·프라이빗 룸·대관</a></li>
+          <li><a href="reservation.html">예약·문의</a></li>
+          <li><a href="location.html">오시는 길·인스타</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 교체: 상호 / 대표 / 사업자등록번호 / 주소 / 전화 -->
+    <div class="foot-bottom">
+      <span>상호 NOTTE 노트 · 대표 정○○ · 사업자등록번호 000-00-00000 · 서울 용산구 한남대로27길 00</span>
+      <span>© 2026 NOTTE 노트. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 모바일 하단 고정 CTA ===== -->
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="reservation.html" class="book"><span class="ic" aria-hidden="true">🍷</span>예약</a>
+    <a href="tel:0277900000" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="location.html#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+<!-- ===== 데스크톱 플로팅 CTA ===== -->
+<a href="reservation.html" class="float-cta" id="floatCta" aria-label="예약하기"><span class="pulse" aria-hidden="true"></span> 오늘 저녁 예약</a>
+
+</body>
+</html>

@@ -65,11 +65,15 @@
   }
 
   /* ---------- 진입 리빌 (전 요소 기본 밀도) ---------- */
+  /* BASIC은 더 고급스럽게: 진입 거리·이징을 부드럽게(툭 안 나타나게) */
+  var revDur = tier === 'basic' ? 1.15 : .95;
+  var revEase = tier === 'basic' ? 'power2.out' : 'power3.out';
+  var revY = tier === 'basic' ? 38 : 46;
   var revealMap = {
-    up:    { from: { opacity: 0, y: 46 },                to: { opacity: 1, y: 0 } },
+    up:    { from: { opacity: 0, y: revY },              to: { opacity: 1, y: 0 } },
     left:  { from: { opacity: 0, x: -56 },               to: { opacity: 1, x: 0 } },
     right: { from: { opacity: 0, x: 56 },                to: { opacity: 1, x: 0 } },
-    scale: { from: { opacity: 0, scale: .9 },            to: { opacity: 1, scale: 1 } },
+    scale: { from: { opacity: 0, scale: .92, y: 18 },    to: { opacity: 1, scale: 1, y: 0 } },
     mask:  { from: { clipPath: 'inset(0 0 100% 0)' },    to: { clipPath: 'inset(0 0 0% 0)' } }
   };
   gsap.utils.toArray('.reveal, [data-reveal], [data-anim="fade-up"], [data-anim="reveal-mask"]').forEach(function (el) {
@@ -77,10 +81,22 @@
     var m = revealMap[kind] || revealMap.up;
     var d = parseFloat(el.getAttribute('data-delay')) || 0;
     gsap.fromTo(el, m.from, {
-      ...m.to, duration: .95, ease: 'power3.out', delay: d,
+      ...m.to, duration: revDur, ease: revEase, delay: d,
       scrollTrigger: { trigger: el, start: 'top 88%', once: true }
     });
   });
+
+  /* ---------- 히어로 시그니처 모먼트: clip-path 마스크 리빌 + ken-burns ---------- */
+  /* 스크럽/핀 없이 로드 직후 1회 — BASIC 허용 범위(transform/opacity/clip-path만) */
+  var heroReveal = document.querySelector('.hero__reveal');
+  if (heroReveal) {
+    var heroTl = gsap.timeline({ delay: .15 });
+    heroTl.fromTo(heroReveal,
+      { clipPath: 'inset(0 0 100% 0)' },
+      { clipPath: 'inset(0 0 0% 0)', duration: 1.25, ease: 'power3.inOut',
+        onComplete: function () { heroReveal.classList.add('is-ready'); } }   /* CSS ken-burns 시작 */
+    );
+  }
 
   /* ---------- stagger (자식 순차) — CSS가 미리 숨기므로 fromTo로 명시 ---------- */
   gsap.utils.toArray('[data-stagger], [data-anim="stagger"]').forEach(function (el) {
@@ -117,7 +133,8 @@
     var hc = document.querySelector('.hero__inner');
     if (hc) gsap.to(hc, { y: -50, opacity: 0, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: '+=55%', scrub: 1 } });
   } else {
-    var heroImg = document.querySelector('.hero__bg img');
+    // BASIC: 스크럽/패럴랙스 금지 — 히어로 줌도 생략(정적 이미지)
+    var heroImg = tier === 'basic' ? null : document.querySelector('.hero__bg img');
     if (heroImg) {
       var hs = tier === 'pro' ? 1.18 : tier === 'standard' ? 1.13 : 1.09;
       gsap.to(heroImg, { yPercent: 12, scale: hs, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });

@@ -1,0 +1,277 @@
+/* =========================================================
+   HERO LAB — 메인 히어로 애니메이션 12종 전시
+   공유 스타일 (갤러리 + 히어로 페이지 공통 + 효과별)
+   ========================================================= */
+:root{
+  --bg:#0a0b0e;
+  --bg-soft:#13151a;
+  --ink:#f4f5f7;
+  --ink-dim:#a7adba;
+  --ink-faint:#6b7280;
+  --line:rgba(255,255,255,.12);
+  --amber:#e7b85c;
+  --accent:#5b8cff;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scrollbar-gutter:stable}
+body{
+  font-family:"Pretendard Variable",Pretendard,system-ui,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+em{font-style:normal;color:var(--amber)}
+img{max-width:100%;display:block}
+.wrap{width:min(1240px,92vw);margin-inline:auto}
+
+/* ---------- 히어로 페이지 상단 크롬 (JS 주입) ---------- */
+.lab-top{
+  position:fixed;inset:0 0 auto 0;z-index:120;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(1.1rem,4vw,2.6rem);
+  mix-blend-mode:difference;color:#fff;
+}
+.lab-back{font-weight:800;letter-spacing:.04em;font-size:.92rem}
+.lab-back:hover{color:var(--amber)}
+.lab-id{display:flex;align-items:baseline;gap:.6rem;font-size:.86rem}
+.lab-id .lab-no{font-weight:800;color:var(--amber)}
+.lab-id .lab-name{color:#fff;opacity:.9}
+.lab-nav{display:flex;align-items:center;gap:.9rem;font-size:.86rem}
+.lab-nav a{
+  width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);
+  border-radius:50%;font-size:1.1rem;line-height:1;transition:.2s
+}
+.lab-nav a:hover{background:#fff;color:#000;border-color:#fff}
+.lab-count{opacity:.75;font-variant-numeric:tabular-nums}
+.lab-hint{
+  position:fixed;left:50%;bottom:1.6rem;transform:translateX(-50%);z-index:115;
+  font-size:.72rem;letter-spacing:.3em;color:#fff;mix-blend-mode:difference;
+  animation:hintPulse 1.8s var(--ease) infinite;pointer-events:none;
+}
+.lab-hint.gone{opacity:0;transition:opacity .4s}
+@keyframes hintPulse{0%,100%{transform:translate(-50%,0);opacity:.5}50%{transform:translate(-50%,6px);opacity:1}}
+
+/* ---------- 모든 히어로 공통 ---------- */
+.hero{position:relative;height:100vh;height:100dvh;overflow:hidden;display:grid;align-items:center}
+.hero .copy{position:relative;z-index:5}
+.eyebrow{
+  display:inline-block;font-size:.74rem;letter-spacing:.24em;color:var(--amber);
+  font-weight:700;margin-bottom:1.1rem;text-transform:uppercase;
+}
+.hero h1{
+  font-weight:800;line-height:1.1;letter-spacing:-.02em;
+  font-size:clamp(2.4rem,7vw,5.6rem);
+}
+.hero .lead{margin-top:1.3rem;font-size:clamp(1rem,1.5vw,1.18rem);color:var(--ink-dim);max-width:560px}
+
+/* 줄 마스크 구조 (여러 히어로 공유) */
+.ln{display:block;overflow:hidden}
+.ln>span{display:block}
+
+/* 히어로 끝 스크롤 여유 + 다음 안내 (모든 히어로 페이지 하단) */
+.lab-foot{
+  min-height:62vh;display:grid;place-items:center;text-align:center;gap:1.2rem;
+  background:linear-gradient(180deg,#0a0b0e,#13151a);padding:4rem 1.2rem;
+}
+.lab-foot .lf-label{font-size:.74rem;letter-spacing:.24em;color:var(--ink-faint);text-transform:uppercase}
+.lab-foot .lf-next{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800}
+.lab-foot .lf-next em{color:var(--amber)}
+.lab-foot .lf-links{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;margin-top:.6rem}
+.lab-foot .lf-links a{
+  padding:.7rem 1.3rem;border:1px solid var(--line);border-radius:999px;font-weight:700;font-size:.9rem;transition:.2s
+}
+.lab-foot .lf-links a:hover{background:#fff;color:#000;border-color:#fff}
+.lab-foot .lf-links a.primary{background:var(--amber);color:#000;border-color:var(--amber)}
+
+/* 모션 OFF 폴백: 가리는 레이어 제거, 최종상태 노출 */
+.no-fx .dp-grid,.no-fx .br-bars,.no-fx .ct-panel{display:none!important}
+.no-fx .swap-word{position:static!important}
+.no-fx .swap-word:not(:first-child){display:none!important}
+@media (prefers-reduced-motion:reduce){
+  .dp-grid,.br-bars,.ct-panel{display:none!important}
+  .lab-hint{animation:none}
+}
+
+/* =========================================================
+   01. SHRINK & LOCK — 풀스크린 축소 (pin · scale scrub)
+   ========================================================= */
+.hero-shrink .sh-media{
+  position:absolute;inset:0;background:var(--img) center/cover;
+  transform-origin:center 28%;will-change:transform;
+}
+.hero-shrink .sh-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,14,.1),rgba(10,11,14,.55))}
+.hero-shrink .sh-copy{position:absolute;left:0;right:0;bottom:8vh;text-align:center;z-index:5;padding:0 1.2rem}
+
+/* =========================================================
+   02. CURTAIN REVEAL — 커튼이 양옆으로 걷힘 (pin · scrub)
+   ========================================================= */
+.hero-curtain .ct-img{position:absolute;inset:0;background:var(--img) center/cover}
+.hero-curtain .ct-img::after{content:"";position:absolute;inset:0;background:rgba(10,11,14,.32)}
+.hero-curtain .ct-panel{position:absolute;top:0;bottom:0;width:50.5%;background:#0a0b0e;z-index:4}
+.hero-curtain .ct-left{left:0}
+.hero-curtain .ct-right{right:0}
+.hero-curtain .ct-panel::before{content:"";position:absolute;top:0;bottom:0;width:1px;background:var(--amber);opacity:.5}
+.hero-curtain .ct-left::before{right:0}
+.hero-curtain .ct-right::before{left:0}
+.hero-curtain .ct-copy{position:relative;z-index:5;text-align:center;width:100%;padding:0 1.2rem}
+.hero-curtain .ct-copy h1{text-shadow:0 4px 40px rgba(0,0,0,.6)}
+
+/* =========================================================
+   04. ELEMENT DISPERSE — 사진이 조각나 흩어짐 (pin · scrub)
+   ========================================================= */
+.hero-disperse{background:#0a0b0e}
+.hero-disperse .dp-grid{position:absolute;inset:0;z-index:3}
+.hero-disperse .dp-tile{
+  position:absolute;width:calc(100%/6 + 1px);height:calc(100%/4 + 1px);
+  background-image:var(--img);background-size:600% 400%;will-change:transform,opacity;
+}
+.hero-disperse .dp-copy{position:relative;z-index:5;text-align:center;width:100%;padding:0 1.2rem}
+.hero-disperse .dp-copy h1 em{color:var(--amber)}
+
+/* =========================================================
+   05. WINDOW APERTURE — 작은 창이 풀스크린으로 열림 (pin · scrub)
+   ========================================================= */
+.hero-aperture{background:#070809}
+.hero-aperture .ap-scene{position:absolute;inset:0;overflow:hidden;z-index:2;clip-path:inset(20% 26% round 18px)}
+.hero-aperture .ap-inner{position:absolute;inset:0;background:var(--img) center/cover;transform-origin:center;will-change:transform}
+.hero-aperture .ap-inner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,8,9,.12),rgba(7,8,9,.4))}
+.hero-aperture .ap-frame{position:absolute;inset:20% 26%;border:2px solid rgba(255,255,255,.75);border-radius:18px;z-index:4;pointer-events:none;box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.hero-aperture .ap-copy{position:relative;z-index:5;text-align:center;width:100%;padding:0 1.2rem;text-shadow:0 4px 40px rgba(0,0,0,.75)}
+
+/* =========================================================
+   06. CIRCLE CLIP REVEAL — 원형 마스크 확장 (pin · scrub)
+   ========================================================= */
+.hero-circle{background:#0a0b0e}
+.hero-circle .cr-img{position:absolute;inset:0;background:var(--img) center/cover;z-index:2;will-change:clip-path}
+.hero-circle .cr-img::after{content:"";position:absolute;inset:0;background:rgba(10,11,14,.34)}
+.hero-circle .cr-copy{position:relative;z-index:5;text-align:center;width:100%;padding:0 1.2rem;text-shadow:0 4px 40px rgba(0,0,0,.6)}
+
+/* =========================================================
+   07. LINE MASK REVEAL — 줄 단위 솟음 (로드 인트로, pin 없음)
+   ========================================================= */
+.hero-lines .ln-bg{position:absolute;inset:0;background:var(--img) center/cover;will-change:transform}
+.hero-lines .ln-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,11,14,.78),rgba(10,11,14,.35))}
+.hero-lines .copy{padding:0 clamp(1.2rem,6vw,5rem)}
+.hero-lines .ln-head{font-weight:800}
+.hero-lines .ln-head em{color:var(--amber)}
+.hero-lines .ln-sub{margin-top:1.4rem;color:var(--ink-dim);max-width:560px}
+
+/* =========================================================
+   08. KEN BURNS ZOOM — 카메라가 살아 움직임 (pin · scrub)
+   ========================================================= */
+.hero-kenburns{background:#0a0b0e;position:relative}
+.hero-kenburns .kb-img{position:absolute;inset:-10%;background-size:cover;background-position:center;will-change:transform}
+.hero-kenburns .kb-1{background-image:var(--img)}
+.hero-kenburns .kb-2{background-image:var(--img2,var(--img));opacity:0}
+.hero-kenburns::before{content:"";position:absolute;inset:0;z-index:3;mix-blend-mode:multiply;
+  background:linear-gradient(180deg,rgba(10,11,14,.28),rgba(10,11,14,.66))}
+.hero-kenburns::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;mix-blend-mode:overlay;
+  background:linear-gradient(120deg,rgba(91,140,255,.28),transparent 42%,rgba(231,184,92,.26));
+  animation:kbHue 9s ease-in-out infinite alternate}
+@keyframes kbHue{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(45deg)}}
+.hero-kenburns .kb-sweep{position:absolute;top:-30%;bottom:-30%;width:38%;left:-50%;z-index:4;pointer-events:none;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-12deg);
+  animation:kbSweep 6.5s linear infinite}
+@keyframes kbSweep{0%{left:-50%}100%{left:140%}}
+.hero-kenburns .kb-grain{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:kbGrain .5s steps(2) infinite}
+@keyframes kbGrain{0%{transform:translate(0,0)}50%{transform:translate(-4%,3%)}100%{transform:translate(3%,-2%)}}
+.hero-kenburns .kb-copy{position:relative;z-index:5;padding:0 clamp(1.2rem,6vw,5rem);text-shadow:0 4px 50px rgba(0,0,0,.7)}
+.hero-kenburns .kb-copy .eyebrow{color:var(--amber)}
+.hero-kenburns .kb-copy h1 em{color:var(--amber)}
+.hero-kenburns .kb-copy .lead{color:#dfe3ec}
+
+/* =========================================================
+   09. BARS REVEAL — 세로 막이 걷히며 등장 (pin · scrub)
+   ========================================================= */
+.hero-bars{background:#0a0b0e}
+.hero-bars .br-content{position:absolute;inset:0;z-index:2;display:grid;place-items:center;overflow:hidden}
+.hero-bars .br-img{position:absolute;inset:0;background:var(--img) center/cover;will-change:transform}
+.hero-bars .br-img::after{content:"";position:absolute;inset:0;background:rgba(10,11,14,.45)}
+.hero-bars .br-title{position:relative;z-index:3;text-align:center;font-weight:800;padding:0 1.2rem;text-shadow:0 4px 40px rgba(0,0,0,.6)}
+.hero-bars .br-bars{position:absolute;inset:0;z-index:6;display:flex;overflow:hidden}
+.hero-bars .br-bar{flex:0 0 auto;background:#0a0b0e;will-change:transform}
+
+/* =========================================================
+   10. STICKY WORD SWAP — 단어 교체 캐러셀 (pin)
+   ========================================================= */
+.hero-wordswap{background:#0a0b0e;place-items:center}
+.hero-wordswap .ws-bg{position:absolute;inset:0;background:var(--img) center/cover;opacity:.22;z-index:1}
+.hero-wordswap .ws-inner{position:relative;z-index:5;text-align:center;padding:0 1.2rem}
+.hero-wordswap .ws-lead{font-size:clamp(1.1rem,3vw,1.8rem);color:var(--ink-dim);font-weight:600}
+.hero-wordswap .swap-stack{display:inline-grid;overflow:hidden;margin-top:.4rem}
+.hero-wordswap .swap-word{
+  grid-area:1/1;font-size:clamp(2.8rem,10vw,8rem);font-weight:900;letter-spacing:-.03em;line-height:1.05;
+  background:linear-gradient(90deg,var(--amber),#fff 70%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;will-change:transform,opacity,filter;
+}
+
+/* =========================================================
+   11. PARALLAX LAYERS — 깊이감 (scrub + 마우스 추종)
+   ========================================================= */
+.hero-parallax{place-items:center}
+.hero-parallax .px-back{position:absolute;inset:-8%;background:var(--img) center/cover;z-index:1;will-change:transform}
+.hero-parallax .px-scrim{position:absolute;inset:0;z-index:2;background:radial-gradient(120% 90% at 50% 38%,rgba(10,11,14,.18),rgba(10,11,14,.74))}
+.hero-parallax .px-copy{position:relative;z-index:5;text-align:center;padding:0 1.2rem;will-change:transform}
+.hero-parallax .px-copy .eyebrow{color:var(--amber)}
+.hero-parallax .px-title{font-weight:900;text-shadow:0 8px 50px rgba(0,0,0,.75)}
+.hero-parallax .px-title em{color:var(--amber)}
+.hero-parallax .px-copy .lead{margin-inline:auto;color:#eef1f6;text-shadow:0 2px 20px rgba(0,0,0,.7)}
+
+/* =========================================================
+   12. SPLIT TEXT + MAGNETIC — 글자 stagger + 자석 버튼 + 속도 마키
+   ========================================================= */
+.hero-split{background:radial-gradient(900px 500px at 75% -5%,rgba(91,140,255,.14),transparent 60%),radial-gradient(700px 400px at 8% 0%,rgba(231,184,92,.1),transparent 55%),#0a0b0e}
+.hero-split .sp-bg{position:absolute;inset:0;background:var(--img) center/cover;opacity:.14;z-index:1}
+.hero-split .copy{padding:0 clamp(1.2rem,6vw,5rem);z-index:5}
+.hero-split .sp-head{font-weight:900;letter-spacing:-.03em;line-height:1;perspective:700px}
+.hero-split .sp-head .ch{display:inline-block;transform-origin:50% 100%}
+.hero-split .sp-head em{color:var(--amber)}
+.hero-split .sp-lead{margin-top:1.3rem;color:var(--ink-dim);max-width:540px}
+.hero-split .sp-cta{
+  display:inline-block;margin-top:1.8rem;padding:.9rem 1.8rem;background:var(--amber);color:#000;
+  font-weight:800;border-radius:999px;will-change:transform;
+}
+.hero-split .sp-marq{position:absolute;left:0;right:0;bottom:3.5vh;overflow:hidden;z-index:4;white-space:nowrap;mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.hero-split .sp-marq-track{display:inline-flex;gap:2.4rem;will-change:transform}
+.hero-split .sp-marq-track span{font-size:clamp(1.4rem,4vw,2.6rem);font-weight:800;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.32)}
+
+/* =========================================================
+   갤러리 (index.html)
+   ========================================================= */
+.gal-head{padding:8rem 0 2.6rem;text-align:center}
+.gal-head .eyebrow{margin-inline:auto}
+.gal-head h1{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;letter-spacing:-.02em}
+.gal-head h1 em{color:var(--amber)}
+.gal-head p{margin:1.2rem auto 0;max-width:640px;color:var(--ink-dim)}
+.hl-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.6rem}
+.hl-cat{display:flex;flex-direction:column;gap:.2rem;padding:1.4rem 1.5rem;border:1px solid var(--line);border-radius:14px;
+  background:linear-gradient(180deg,#15171d,#101218);transition:.25s}
+.hl-cat:hover{border-color:var(--amber);transform:translateY(-3px)}
+.hl-cat b{font-size:1.15rem;font-weight:800}
+.hl-cat span{color:var(--amber);font-weight:800;font-size:.86rem}
+.hl-cat i{color:var(--ink-faint);font-style:normal;font-size:.82rem;margin-top:.3rem}
+.hl-sub{font-size:1rem;font-weight:700;color:var(--ink-dim);margin-bottom:1rem;letter-spacing:.02em}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;padding-bottom:6rem}
+@media(max-width:760px){.hl-cats{grid-template-columns:1fr}}
+.gal-card{
+  position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  aspect-ratio:4/3;display:block;background:#13151a;
+}
+.gal-card .gc-img{position:absolute;inset:0;background-position:center;background-size:cover;transition:transform .7s var(--ease);filter:brightness(.62)}
+.gal-card:hover .gc-img{transform:scale(1.08)}
+.gal-card .gc-body{position:absolute;inset:auto 0 0 0;padding:1.2rem;z-index:2;background:linear-gradient(180deg,transparent,rgba(8,9,12,.92))}
+.gal-card .gc-no{font-size:.74rem;font-weight:800;color:var(--amber);letter-spacing:.1em}
+.gal-card .gc-name{font-size:1.18rem;font-weight:800;margin-top:.2rem}
+.gal-card .gc-en{font-size:.8rem;color:var(--ink-dim)}
+.gal-card .gc-tag{display:inline-block;margin-top:.6rem;font-size:.7rem;color:var(--ink-faint);border:1px solid var(--line);border-radius:999px;padding:.2rem .6rem}
+.gal-card .gc-go{position:absolute;top:1rem;right:1rem;z-index:2;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.4);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);display:grid;place-items:center;transform:translateX(6px);opacity:0;transition:.3s}
+.gal-card:hover .gc-go{transform:none;opacity:1}
+.gal-foot{text-align:center;padding-bottom:5rem;color:var(--ink-faint);font-size:.86rem}
+
+@media(max-width:820px){
+  .lab-id .lab-name{display:none}
+  .hero .lead{max-width:none}
+}

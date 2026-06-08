@@ -1,0 +1,271 @@
+/* ===== 라엘 피부과의원 · BASIC(30만) 원페이지 =====
+   의료 절제 업종: 청결·신뢰 우선 / 진입 fade-up만 / 본문 16px+ 고대비 / Pretendard
+   시그니처 0 · 로더 0 · 마스크 0 · 폼 0 · 지도임베드 0 · transform·opacity만 */
+
+:root{
+  --bg:#14110f;
+  --bg-2:#1c1a17;
+  --bg-3:#211e1a;
+  --line:rgba(197,165,114,.28);
+  --line-soft:rgba(236,230,220,.12);
+  --gold:#c5a572;
+  --gold-2:#d8c4a0;
+  --gold-deep:#b8995f;
+  --text:#f1ece3;       /* 본문 고대비 (고령 접근성) */
+  --text-dim:#cfc6b8;
+  --text-mute:#9a9183;
+  --serif:'Pretendard', sans-serif;
+  --sans:'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scrollbar-gutter:stable;}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:.005em;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.35;letter-spacing:-.01em;}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+.eyebrow{
+  font-family:var(--sans);
+  font-size:13px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:600;
+  display:inline-block;
+}
+.divider{width:48px;height:1px;background:var(--gold);margin:22px 0;opacity:.8;}
+.divider.center{margin-left:auto;margin-right:auto;}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:.02em;
+  padding:16px 30px;border:1px solid var(--gold);
+  transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);
+  cursor:pointer;background:transparent;color:var(--gold-2);border-radius:2px;
+}
+.btn:hover{background:var(--gold);color:#14110f;border-color:var(--gold);}
+.btn-solid{background:var(--gold);color:#14110f;}
+.btn-solid:hover{background:var(--gold-2);border-color:var(--gold-2);}
+.btn-ghost{border-color:var(--line);color:var(--text-dim);}
+.btn-ghost:hover{border-color:var(--gold);background:transparent;color:var(--gold-2);}
+.btn svg{width:18px;height:18px;}
+
+/* ---------- header (앵커 메뉴 없음·BASIC: 브랜드 + 전화 CTA만) ---------- */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(20,17,15,.82);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.brand{display:flex;align-items:baseline;gap:10px;}
+.brand .logo{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.12em;color:var(--text);}
+.brand .logo b{color:var(--gold);font-weight:600;}
+.brand .sub{font-size:11px;letter-spacing:.3em;color:var(--text-mute);text-transform:uppercase;}
+.nav-actions{display:flex;align-items:center;gap:18px;}
+.nav-tel{font-size:15px;color:var(--text-dim);letter-spacing:.02em;}
+.nav-tel b{color:var(--gold-2);font-weight:600;}
+.nav-cta{padding:12px 22px;font-size:14px;}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:82vh;display:flex;align-items:center;
+  padding:90px 0 70px;overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 78% 12%, rgba(197,165,114,.13), transparent 55%),
+    radial-gradient(90% 80% at 12% 96%, rgba(168,136,79,.10), transparent 50%),
+    linear-gradient(180deg, #14110f 0%, #1a1714 100%);
+}
+.hero::after{content:"";position:absolute;inset:24px;border:1px solid var(--line-soft);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;width:100%;}
+.hero-copy h1{font-size:clamp(38px,6vw,64px);font-weight:400;line-height:1.22;margin:24px 0 0;color:var(--text);}
+.hero-copy h1 em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:clamp(16px,2vw,18px);color:var(--text-dim);margin:28px 0 38px;max-width:520px;line-height:1.9;font-weight:400;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+.hero-meta{display:flex;gap:30px;margin-top:46px;padding-top:28px;border-top:1px solid var(--line-soft);flex-wrap:wrap;}
+.hero-meta .item .n{font-family:var(--serif);font-size:26px;color:var(--gold-2);}
+.hero-meta .item .l{font-size:14px;color:var(--text-mute);letter-spacing:.04em;margin-top:2px;}
+
+.hero-visual{
+  position:relative;aspect-ratio:3/4;border:1px solid var(--line);
+  overflow:hidden;background:var(--bg-3);
+  display:flex;align-items:flex-end;padding:26px;
+}
+.hero-visual::before{content:"";position:absolute;inset:13px;border:1px solid var(--line-soft);z-index:3;pointer-events:none;}
+.hero-visual::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(150deg, rgba(20,17,15,.12) 0%, rgba(20,17,15,.05) 40%, rgba(20,17,15,.72) 100%);
+}
+.hero-img,.doctor-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
+  filter:saturate(.92) contrast(1.02);
+}
+
+/* 이미지 캡션 (placeholder 라벨 대체) */
+.img-cap{
+  position:relative;z-index:3;
+  font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);
+}
+.img-cap b{display:block;font-family:var(--serif);font-size:17px;letter-spacing:.04em;color:var(--gold-2);text-transform:none;margin-bottom:4px;font-weight:400;}
+
+/* ---------- 히어로 시그니처 모먼트: clip-path 리빌 + 절제된 ken-burns (BASIC 허용 1개) ---------- */
+html.js .hero-img{
+  clip-path:inset(0 0 100% 0);
+  transform:scale(1.12);
+  transition:clip-path 1.15s var(--ease), transform 7s ease-out;
+}
+html.js .hero-visual.in .hero-img{
+  clip-path:inset(0 0 0 0);
+  transform:scale(1.04);
+}
+html.no-js .hero-img{clip-path:none;transform:none;}
+
+/* ---------- section base ---------- */
+section{padding:100px 0;position:relative;}
+.sec-bg{background:var(--bg-2);}
+.sec-head{max-width:680px;margin-bottom:54px;}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.sec-head h2{font-size:clamp(28px,4vw,42px);font-weight:400;margin-top:18px;color:var(--text);}
+.sec-head p{color:var(--text-dim);margin-top:18px;font-weight:400;font-size:16px;line-height:1.9;}
+
+/* ---------- services ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);}
+.card{background:var(--bg);padding:40px 34px;min-height:228px;position:relative;transition:background .4s var(--ease);}
+.card:hover{background:var(--bg-3);}
+.card .ico{width:42px;height:42px;color:var(--gold);margin-bottom:22px;}
+.card .ico svg{width:100%;height:100%;}
+.card h3{font-size:21px;font-weight:500;margin-bottom:12px;color:var(--text);}
+.card .en{font-size:12px;letter-spacing:.2em;color:var(--gold-deep);text-transform:uppercase;display:block;margin-bottom:14px;}
+.card p{font-size:16px;color:var(--text-dim);font-weight:400;line-height:1.8;}
+
+/* ---------- doctor ---------- */
+.doctor-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:60px;align-items:center;}
+.doctor-photo{
+  aspect-ratio:4/5;border:1px solid var(--line);position:relative;
+  overflow:hidden;background:var(--bg-3);
+  display:flex;align-items:flex-end;padding:26px;
+}
+.doctor-photo::before{content:"";position:absolute;inset:13px;border:1px solid var(--line-soft);z-index:3;pointer-events:none;}
+.doctor-photo::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(160deg, rgba(20,17,15,.10) 35%, rgba(20,17,15,.62) 100%);
+}
+.doctor-info h3{font-size:clamp(26px,3.5vw,36px);font-weight:400;margin-top:16px;}
+.doctor-info h3 span{font-family:var(--sans);font-size:17px;color:var(--text-mute);letter-spacing:.04em;font-weight:400;margin-left:10px;}
+.doctor-role{color:var(--gold-2);font-size:16px;letter-spacing:.04em;margin-top:6px;}
+.doctor-info .lead{color:var(--text-dim);font-weight:400;font-size:16px;line-height:1.9;margin-top:6px;}
+.doctor-info ul{margin-top:30px;}
+.doctor-info li{
+  padding:13px 0 13px 26px;border-bottom:1px solid var(--line-soft);
+  font-size:16px;color:var(--text-dim);font-weight:400;position:relative;
+}
+.doctor-info li::before{content:"";position:absolute;left:0;top:23px;width:8px;height:1px;background:var(--gold);}
+
+/* ---------- hours + location (텍스트 주소·지도 임베드 없음) ---------- */
+.hours-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+table.hours{width:100%;border-collapse:collapse;}
+table.hours th,table.hours td{
+  text-align:left;padding:18px 4px;border-bottom:1px solid var(--line-soft);
+  font-size:16px;font-weight:400;
+}
+table.hours th{color:var(--text-mute);font-weight:400;width:46%;letter-spacing:.02em;}
+table.hours td{color:var(--text);font-family:var(--serif);}
+table.hours tr.closed td{color:var(--text-mute);}
+.loc-note{background:var(--bg-3);border:1px solid var(--line-soft);padding:34px 32px;}
+.loc-note .badge{font-size:13px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase;}
+.loc-note h3{font-size:22px;font-weight:400;margin:16px 0 18px;}
+.loc-list li{padding:14px 0;border-bottom:1px solid var(--line-soft);display:flex;gap:16px;font-size:16px;font-weight:400;color:var(--text-dim);}
+.loc-list li:last-child{border-bottom:none;}
+.loc-list li b{color:var(--gold-2);font-weight:600;min-width:60px;font-family:var(--sans);letter-spacing:.02em;}
+
+/* ---------- reservation (전화·카톡·네이버예약 버튼만, 폼 없음) ---------- */
+.reserve{
+  background:var(--bg-3);border:1px solid var(--line);
+  padding:60px 40px;text-align:center;max-width:880px;margin:0 auto;
+}
+.reserve h2{font-size:clamp(26px,3.6vw,38px);font-weight:400;margin-top:18px;}
+.reserve p{color:var(--text-dim);font-size:16px;line-height:1.9;margin:20px auto 0;max-width:560px;}
+.reserve-tel{font-family:var(--serif);font-size:clamp(30px,5vw,44px);color:var(--gold-2);letter-spacing:.03em;margin:30px 0 6px;display:inline-block;}
+.reserve-hours{font-size:15px;color:var(--text-mute);}
+.reserve-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px;}
+.reserve-btns .btn{min-width:170px;}
+
+/* ---------- footer ---------- */
+footer{background:#100e0c;padding:64px 0 40px;border-top:1px solid var(--line-soft);}
+.foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px;}
+.foot-brand .logo{font-family:var(--serif);font-size:26px;letter-spacing:.12em;color:var(--text);}
+.foot-brand .logo b{color:var(--gold);}
+.foot-brand p{font-size:15px;color:var(--text-mute);margin-top:12px;font-weight:400;letter-spacing:.04em;}
+.foot-info{font-size:15px;color:var(--text-mute);line-height:2;font-weight:400;max-width:560px;}
+.foot-info b{color:var(--text-dim);font-weight:500;}
+.foot-review{font-size:14px;color:var(--gold-deep);letter-spacing:.04em;margin-top:18px;padding-top:18px;border-top:1px solid var(--line-soft);}
+.foot-copy{font-size:14px;color:var(--text-mute);margin-top:26px;letter-spacing:.02em;}
+
+/* ---------- mobile sticky CTA (전화·카톡·네이버예약) ---------- */
+.mcta{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:90;
+  background:rgba(16,14,12,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);
+}
+.mcta a{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;
+  padding:11px 4px;font-size:12px;letter-spacing:.02em;color:var(--text-dim);
+  border-right:1px solid var(--line-soft);
+}
+.mcta a:last-child{border-right:none;}
+.mcta a svg{width:20px;height:20px;color:var(--gold);}
+.mcta a.accent{background:var(--gold);color:#14110f;}
+.mcta a.accent svg{color:#14110f;}
+
+/* ---------- reveal animation (진입 fade-up만) ---------- */
+.reveal{transition:opacity .9s var(--ease),transform .9s var(--ease);}
+html.js .reveal{opacity:0;transform:translateY(26px);}
+html.js .reveal.in{opacity:1;transform:none;}
+html.no-js .reveal{opacity:1!important;transform:none!important;}
+.reveal.d1{transition-delay:.1s;}
+.reveal.d2{transition-delay:.2s;}
+.reveal.d3{transition-delay:.3s;}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+  .hero-img{clip-path:none!important;transform:none!important;transition:none!important;}
+  *{transition-duration:.01ms!important;animation-duration:.01ms!important;}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:44px;}
+  .hero-visual{max-width:360px;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .doctor-grid{grid-template-columns:1fr;gap:40px;}
+  .doctor-photo{max-width:340px;}
+  .hours-wrap{grid-template-columns:1fr;gap:40px;}
+}
+@media (max-width:680px){
+  section{padding:70px 0;}
+  .hero{padding:60px 0 86px;}
+  .hero::after{inset:14px;}
+  .nav-tel{display:none;}
+  .cards{grid-template-columns:1fr;}
+  .reserve{padding:46px 24px;}
+  .mcta{display:flex;}
+  body{padding-bottom:66px;}
+  .hero-meta{gap:20px;}
+  .foot-top{flex-direction:column;}
+}

@@ -24,7 +24,7 @@
   --cta-bar-h:64px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%;scrollbar-gutter:stable}
 body{
   font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
   color:var(--ink);
@@ -67,7 +67,7 @@ h2.title{font-size:clamp(26px,4vw,38px);margin-bottom:14px}
 /* ===== 헤더 (단순 메뉴 계층) ===== */
 header{
   position:sticky;top:0;z-index:60;
-  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
@@ -247,13 +247,46 @@ table.fee td.amt{text-align:right;font-weight:700;color:var(--green-deep);white-
 table.fee .cat{font-weight:700;color:var(--green)}
 .fee-foot{font-size:14px;color:var(--ink-soft);margin-top:14px}
 
-/* ===== 시설 갤러리 ===== */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:16px;margin-top:42px}
+/* ===== 시설 갤러리 (비대칭 모자이크) ===== */
+.gallery{margin-top:42px}
+/* 4컬럼 × 4행 모자이크: 대표 1컷(2×2) + 와이드 1컷(2×1) + 작은 4컷.
+   균일 그리드와 명확히 구별되되, 의료 톤에 맞게 과하지 않은 비대칭. */
+.gallery.mosaic{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:182px;
+  gap:16px;
+  grid-template-areas:
+    "hero hero wide wide"
+    "hero hero a    b"
+    "c    d    a    b";
+}
+.gallery.mosaic .g-hero{grid-area:hero}
+.gallery.mosaic .g-wide{grid-area:wide}
+.gallery.mosaic .gitem:nth-of-type(3){grid-area:a}
+.gallery.mosaic .gitem:nth-of-type(4){grid-area:b}
+.gallery.mosaic .gitem:nth-of-type(5){grid-area:c}
+.gallery.mosaic .gitem:nth-of-type(6){grid-area:d}
+
 .gitem{border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow);background:#cfe3da;border:none;padding:0;cursor:zoom-in;display:block}
-.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.gitem:hover img{transform:scale(1.06)}
-.gitem.tall{grid-row:span 2}
-.gitem .cap{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;color:#fff;font-weight:700;font-size:15px;background:linear-gradient(transparent,rgba(20,40,32,.78));text-align:left}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.22,.61,.36,1)}
+.gitem:hover img,.gitem:focus-visible img{transform:scale(1.07)}
+.gitem:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+/* 호버 캡션: 평상시 살짝 보이고, 호버 시 부드럽게 떠오름 (opacity/transform만) */
+.gitem .cap{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:18px 16px 14px;color:#fff;text-align:left;
+  display:flex;flex-direction:column;gap:2px;line-height:1.35;
+  background:linear-gradient(transparent,rgba(15,32,25,.18) 30%,rgba(15,32,25,.82));
+  transform:translateY(8px);opacity:.94;
+  transition:transform .35s ease,opacity .35s ease;
+}
+.gitem .cap b{font-size:16px;font-weight:800}
+.gitem .cap span{font-size:13px;opacity:0;max-height:0;transform:translateY(6px);
+  transition:opacity .35s ease,transform .35s ease,max-height .35s ease}
+.gitem:hover .cap,.gitem:focus-visible .cap{transform:translateY(0);opacity:1}
+.gitem:hover .cap span,.gitem:focus-visible .cap span{opacity:.92;max-height:40px;transform:translateY(0)}
+.g-hero .cap b{font-size:19px}
 
 /* 라이트박스 */
 .lightbox{
@@ -353,38 +386,31 @@ footer a:hover{color:#fff}
 .m-cta a.tel{background:var(--green);color:#fff}
 
 /* ===== 진입 모션 훅 (절제된 밀도) ===== */
-.fade-up{opacity:0;transform:translateY(28px)}
+/* pre-hide는 .js 스코프에서만: 첫 페인트부터 숨김 → FOUC/깜빡임 방지.
+   JS 미실행/GSAP 실패/no-js 시에는 아래 폴백으로 즉시 100% 노출. */
+.js .fade-up{opacity:0;transform:translateY(28px)}
 .is-in{opacity:1;transform:none}
 /* stagger: 자식 요소 초기 숨김 (JS가 순차 노출, 폴백 시 즉시 노출) */
-[data-stagger]>*{opacity:0;transform:translateY(30px)}
+.js [data-stagger]>*{opacity:0;transform:translateY(30px)}
+/* no-js / GSAP 실패 폴백: 진입 리빌 전부 즉시 노출 */
+html.no-js .fade-up,html.no-js [data-stagger]>*{opacity:1!important;transform:none!important}
 /* parallax 대상은 잘림 방지 위해 컨테이너 overflow:hidden 전제 */
 [data-speed]{will-change:transform}
 [data-zoom]{will-change:transform}
 /* parallax 이미지: 위로 이동 시 하단 빈공간 방지 — 살짝 키워 안전마진 확보 */
 .intro-photo img[data-speed],.treat-media img[data-speed],.doc-photo img[data-speed]{height:116%;object-position:center}
 
-/* ===== 시그니처: 진료 단계 핀 트랙 (treatments) ===== */
-.pin-track{position:relative}
-.pt-wrap{display:grid;grid-template-columns:.42fr .58fr;gap:40px;align-items:center;min-height:78vh}
-.pt-stage{position:relative}
-.pt-stage-inner{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:34px 32px;display:flex;flex-direction:column;gap:14px}
-.pt-progress{position:relative;width:4px;border-radius:4px;background:var(--line);align-self:stretch;min-height:260px;justify-self:start;margin-right:6px}
-.pt-progress span{position:absolute;top:0;left:0;width:100%;height:0;background:linear-gradient(var(--green),var(--mint));border-radius:4px;transition:height .2s linear}
-.pt-stage-grid{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
-.pt-stage .pt-badge{width:54px;height:54px;border-radius:15px;display:grid;place-items:center;font-size:25px;background:var(--mint-soft);color:var(--green-deep);flex:none}
-.pt-stage h3{font-size:clamp(20px,3vw,26px);margin-bottom:8px}
-.pt-stage p{font-size:16px;color:var(--ink-soft)}
-.pt-stage .pt-num{font-size:14px;font-weight:700;color:var(--green);letter-spacing:.04em}
-.pt-steps{display:grid;gap:14px;list-style:none}
-.pt-step{display:flex;gap:16px;align-items:flex-start;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:#fff;opacity:.5;transition:opacity .3s,border-color .3s,box-shadow .3s,transform .3s}
-.pt-step .pt-dot{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;background:var(--bg-soft);color:var(--ink-soft);border:1px solid var(--line);transition:background .3s,color .3s}
-.pt-step h4{font-size:17px;color:var(--ink);margin-bottom:4px}
-.pt-step p{font-size:15px;color:var(--ink-soft)}
-.pt-step.on{opacity:1;border-color:var(--mint);box-shadow:var(--shadow);transform:translateX(4px)}
-.pt-step.on .pt-dot{background:var(--green);color:#fff;border-color:var(--green)}
+/* ===== 진료 진행 단계 (절제: 정적 카드 + fade-up 진입, 핀 없음) ===== */
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:42px;list-style:none}
+.flow-step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px}
+.flow-step .flow-num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:17px;background:var(--mint-soft);color:var(--green-deep);border:1px solid var(--mint)}
+.flow-step h3{font-size:17px;color:var(--ink);margin-bottom:4px}
+.flow-step p{font-size:15px;color:var(--ink-soft)}
 @media (max-width:980px){
-  .pt-wrap{grid-template-columns:1fr;min-height:auto;gap:24px}
-  .pt-progress{display:none}
+  .flow-steps{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .flow-steps{grid-template-columns:1fr}
 }
 
 /* ===== 반응형 ===== */
@@ -401,6 +427,16 @@ footer a:hover{color:#fff}
   .nav-tel{display:none}
   .hero-float{position:static;margin-top:16px;max-width:none}
   .doc-photo{max-width:420px;margin:0 auto}
+  /* 태블릿: 모자이크를 2컬럼으로 재배치 (대표컷은 와이드로 강조 유지) */
+  .gallery.mosaic{
+    grid-template-columns:repeat(2,1fr);
+    grid-auto-rows:180px;
+    grid-template-areas:
+      "hero hero"
+      "wide wide"
+      "a    b"
+      "c    d";
+  }
   .treat-block,.treat-block.flip{grid-template-columns:1fr}
   .treat-block.flip .treat-media{order:0}
 }
@@ -408,8 +444,15 @@ footer a:hover{color:#fff}
   body{font-size:16px;padding-bottom:62px}
   section{padding:60px 0}
   .cards,.cards.cols-3{grid-template-columns:1fr}
-  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
-  .gitem.tall{grid-row:span 1}
+  /* 모바일: 1열로 깔끔히. 모자이크 영역 해제, 균일 높이 */
+  .gallery.mosaic{grid-template-columns:1fr;grid-auto-rows:220px;grid-template-areas:none}
+  .gallery.mosaic .g-hero,.gallery.mosaic .g-wide,
+  .gallery.mosaic .gitem:nth-of-type(3),.gallery.mosaic .gitem:nth-of-type(4),
+  .gallery.mosaic .gitem:nth-of-type(5),.gallery.mosaic .gitem:nth-of-type(6){grid-area:auto}
+  .gallery.mosaic .g-hero{grid-auto-rows:auto;min-height:260px}
+  /* 모바일은 호버가 없으므로 캡션 항상 노출 */
+  .gitem .cap{transform:none;opacity:1}
+  .gitem .cap span{opacity:.9;max-height:40px;transform:none}
   .foot-grid{grid-template-columns:1fr}
   .intro-stats{grid-template-columns:1fr 1fr}
   .ctabar a{font-size:14px;flex-direction:column;gap:2px;padding:9px 4px}
@@ -422,9 +465,13 @@ footer a:hover{color:#fff}
   .cta-band .inner{flex-direction:column;align-items:flex-start}
 }
 @media (prefers-reduced-motion:reduce){
-  .fade-up{opacity:1;transform:none}
-  [data-stagger]>*{opacity:1;transform:none}
+  .fade-up{opacity:1!important;transform:none!important}
+  [data-stagger]>*{opacity:1!important;transform:none!important}
   [data-speed],[data-zoom]{transform:none!important}
   .pt-step{opacity:1}
   .gitem:hover img,.card:hover{transform:none}
+  /* 캡션 본문이 모션 없이도 보이도록 */
+  .gitem .cap{transform:none;opacity:1}
+  .gitem .cap span{opacity:.9;max-height:40px;transform:none;transition:none}
+  .gitem img,.gitem .cap{transition:none}
 }
