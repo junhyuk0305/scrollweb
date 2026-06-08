@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- 규제: 의료광고 사전심의 대상 가능. 후기/전후사진 미포함. 비급여 고지 포함. 카피는 심의 전제로 클라이언트 확인 -->
+<!-- 판매 시 교체: 로고/원장사진·약력/진료시간/비급여 금액/네이버예약·카카오 링크/사업자번호/지도/시설 사진 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시설 안내 | 맑은숲한의원</title>
+<meta name="description" content="맑은숲한의원 시설 안내 - 진료실·치료실·대기실·탕전실 등 깨끗하고 편안한 진료 공간을 소개합니다.">
+<meta property="og:title" content="시설 안내 | 맑은숲한의원">
+<meta property="og:description" content="매일 소독·환기하는 청결한 진료 공간을 소개합니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="맑은숲한의원 홈">
+      <span class="logo" aria-hidden="true">숲</span>
+      <span>맑은숲한의원<small>척추·통증·체질 클리닉</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="treatments.html" data-nav="treatments.html">진료안내</a>
+      <a href="doctors.html" data-nav="doctors.html">의료진</a>
+      <a href="info.html" data-nav="info.html">진료시간·비급여</a>
+      <a href="facility.html" data-nav="facility.html" aria-current="page">시설</a>
+      <a href="contact.html" data-nav="contact.html">예약</a>
+      <a href="tel:0212345678" class="nav-tel" aria-label="전화 걸기 02-1234-5678">02-1234-5678</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="ctabar" role="region" aria-label="빠른 예약 안내">
+  <div class="inner">
+    <a href="contact.html" class="book"><span class="ic" aria-hidden="true">📅</span><span class="lbl">예약하기</span></a>
+    <a href="tel:0212345678"><span class="ic" aria-hidden="true">📞</span><span class="lbl">전화상담</span></a>
+    <a href="contact.html#map"><span class="ic" aria-hidden="true">📍</span><span class="lbl">길찾기</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="page-head">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep" aria-hidden="true">›</span><b>시설 안내</b>
+    </nav>
+    <h1>시설 안내</h1>
+    <p>매일 소독·환기하는 청결한 진료실과 치료실에서 편안하게 진료받으실 수 있습니다. 사진을 누르면 크게 보실 수 있습니다.</p>
+  </div>
+</div>
+
+<!-- ===== 시설 갤러리 (전후사진 아님, 공간 사진만) ===== -->
+<section aria-label="시설 둘러보기">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up">시설 둘러보기</span>
+      <h2 class="title fade-up">깨끗하고 편안한 진료 공간</h2>
+      <p class="lead fade-up">대기실부터 진료실·치료실·탕전실까지, 환자분이 편안하게 머무를 수 있도록 관리합니다.</p>
+    </div>
+    <div class="gallery">
+      <!-- 교체: 실제 시설(공간) 사진. 환자/시술 장면·전후사진 금지 -->
+      <button class="gitem tall fade-up" data-lightbox data-cap="대기실 · 자연 채광이 드는 편안한 공간">
+        <img src="https://picsum.photos/id/1040/600/700" data-full="https://picsum.photos/id/1040/1200/1400" alt="자연 채광이 드는 밝은 대기실"><span class="cap">대기실 · 자연 채광</span>
+      </button>
+      <button class="gitem fade-up" data-lightbox data-cap="개별 진료실 · 충분한 상담 공간">
+        <img src="https://picsum.photos/id/237/600/400" data-full="https://picsum.photos/id/237/1200/800" alt="개별 진료실 내부"><span class="cap">진료실</span>
+      </button>
+      <button class="gitem fade-up" data-lightbox data-cap="치료실 · 침·뜸·물리치료 공간">
+        <img src="https://picsum.photos/id/106/600/400" data-full="https://picsum.photos/id/106/1200/800" alt="침대가 정돈된 치료실 공간"><span class="cap">치료실</span>
+      </button>
+      <button class="gitem fade-up" data-lightbox data-cap="탕전·조제실 · 한약을 조제하는 공간">
+        <img src="https://picsum.photos/id/1025/600/400" data-full="https://picsum.photos/id/1025/1200/800" alt="한약을 조제하는 탕전·조제실"><span class="cap">탕전·조제실</span>
+      </button>
+      <button class="gitem tall fade-up" data-lightbox data-cap="복도 · 안내 공간">
+        <img src="https://picsum.photos/id/1043/600/700" data-full="https://picsum.photos/id/1043/1200/1400" alt="복도와 안내 데스크 공간"><span class="cap">복도 · 안내 공간</span>
+      </button>
+      <button class="gitem fade-up" data-lightbox data-cap="상담실 · 1:1 상담 공간">
+        <img src="https://picsum.photos/id/1059/600/400" data-full="https://picsum.photos/id/1059/1200/800" alt="조용한 1:1 상담실"><span class="cap">상담실</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 예약 CTA 띠 ===== -->
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <div>
+      <h2 class="fade-up">직접 방문해 보세요</h2>
+      <p class="fade-up">예약 후 방문하시면 대기 없이 편안하게 진료받으실 수 있습니다.</p>
+    </div>
+    <div class="btn-row fade-up" style="margin-top:0">
+      <a href="contact.html" class="btn btn-warm"><span aria-hidden="true">📅</span> 예약·상담 신청</a>
+      <a href="contact.html#map" class="btn btn-primary"><span aria-hidden="true">📍</span> 오시는 길</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">숲</span> 맑은숲한의원</div>
+        <p class="foot-legal">동네 주민과 온 가족의 건강을 가까이에서 돌보는 척추·통증·체질 한의원입니다. 충분한 진료 시간과 청결한 환경으로 모시겠습니다.</p>
+        <p class="foot-reg">※ 본 홈페이지의 의료 관련 내용은 「의료법」상 의료광고 사전심의 대상일 수 있으며, 게시 전 관련 절차를 따릅니다. 치료 효과는 환자 개인에 따라 다를 수 있습니다.</p>
+      </div>
+      <div>
+        <h5>진료 안내</h5>
+        <ul>
+          <li>평일 09:00 – 18:30</li>
+          <li>목요일 야간 ~ 20:30</li>
+          <li>토요일 09:00 – 13:00</li>
+          <li>일요일·공휴일 휴진</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="treatments.html">진료안내</a></li>
+          <li><a href="doctors.html">의료진 소개</a></li>
+          <li><a href="info.html">진료시간·비급여</a></li>
+          <li><a href="facility.html">시설 안내</a></li>
+          <li><a href="contact.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        상호 <b>맑은숲한의원</b> &nbsp;|&nbsp; 대표원장 김한결 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        서울특별시 ○○구 맑은숲로 12, 3층 &nbsp;|&nbsp; 대표전화 02-1234-5678
+      </div>
+      <div>© 2026 맑은숲한의원. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 연락">
+  <div class="inner">
+    <a href="contact.html" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:0212345678" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="contact.html#map"><span class="ic" aria-hidden="true">📍</span>길찾기</a>
+  </div>
+</nav>
+
+<!-- ===== 라이트박스 ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="시설 사진 크게 보기" aria-hidden="true">
+  <button class="lb-close" aria-label="닫기">✕</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+
+</body>
+</html>

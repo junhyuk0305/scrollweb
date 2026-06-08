@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- 규제: 의료광고 사전심의 대상 가능. 후기/전후사진 미포함. 비급여 고지 포함. 카피는 심의 전제로 클라이언트 확인 -->
+<!-- 판매 시 교체: 로고/원장사진·약력/진료시간/비급여 금액/네이버예약·카카오 링크/사업자번호/지도 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>맑은숲한의원 | 척추·통증·체질 클리닉</title>
+<meta name="description" content="맑은숲한의원 - 동네 주민과 함께하는 척추·관절통증, 체질개선, 한방다이어트, 교통사고 한방치료. 예약·전화·길찾기 안내.">
+<meta property="og:title" content="맑은숲한의원 | 척추·통증·체질 클리닉">
+<meta property="og:description" content="충분한 진료 시간과 청결한 환경. 척추·관절 통증부터 체질 개선까지 1:1 맞춤 한방진료.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ===== 공유 헤더 ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="맑은숲한의원 홈">
+      <span class="logo" aria-hidden="true">숲</span>
+      <span>맑은숲한의원<small>척추·통증·체질 클리닉</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html" aria-current="page">홈</a>
+      <a href="treatments.html" data-nav="treatments.html">진료안내</a>
+      <a href="doctors.html" data-nav="doctors.html">의료진</a>
+      <a href="info.html" data-nav="info.html">진료시간·비급여</a>
+      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="contact.html" data-nav="contact.html">예약</a>
+      <a href="tel:0212345678" class="nav-tel" aria-label="전화 걸기 02-1234-5678">02-1234-5678</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- ===== 공유 고정 CTA 바 ===== -->
+<div class="ctabar" role="region" aria-label="빠른 예약 안내">
+  <div class="inner">
+    <a href="contact.html" class="book"><span class="ic" aria-hidden="true">📅</span><span class="lbl">예약하기</span></a>
+    <a href="tel:0212345678"><span class="ic" aria-hidden="true">📞</span><span class="lbl">전화상담</span></a>
+    <a href="contact.html#map"><span class="ic" aria-hidden="true">📍</span><span class="lbl">길찾기</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ===== 히어로 ===== -->
+<section class="hero" aria-label="소개">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow fade-up">동네 주민과 함께하는 한의원</span>
+      <h1 class="fade-up">맑은 마음으로 돌보는<br><span class="hl">척추·통증</span> 그리고 <span class="hl">체질</span></h1>
+      <p class="sub fade-up">맑은숲한의원은 어르신부터 온 가족까지 편안하게 찾을 수 있도록, 충분한 진료 시간과 깨끗한 진료 환경을 갖추었습니다. 척추·관절 통증부터 체질 개선까지 꼼꼼히 살펴드립니다.</p>
+      <div class="btn-row fade-up">
+        <a href="contact.html" class="btn btn-warm"><span aria-hidden="true">📅</span> 예약·상담 신청</a>
+        <a href="treatments.html" class="btn btn-ghost">진료안내 보기</a>
+      </div>
+      <div class="hero-badges fade-up" style="margin-top:26px">
+        <span class="hbadge"><span class="ic" aria-hidden="true">🌿</span>1:1 맞춤 진료</span>
+        <span class="hbadge"><span class="ic" aria-hidden="true">🅿️</span>건물 내 주차 가능</span>
+        <span class="hbadge"><span class="ic" aria-hidden="true">🕖</span>목요일 야간진료</span>
+        <span class="hbadge"><span class="ic" aria-hidden="true">♿</span>1층 휠체어 접근</span>
+      </div>
+    </div>
+    <div class="hero-visual fade-up">
+      <div class="hero-photo">
+        <!-- 교체: 한의원 인테리어/진료 환경 사진 -->
+        <img src="https://picsum.photos/id/1059/720/800" alt="맑은숲한의원의 밝고 청결한 진료 대기 공간" loading="eager" data-zoom>
+      </div>
+      <div class="hero-float">
+        <span class="dot" aria-hidden="true">🤝</span>
+        <div>
+          <b>충분한 상담 시간</b>
+          <span>예약제로 대기 부담을 줄였습니다</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 한의원 소개 요약 ===== -->
+<section aria-label="한의원 소개">
+  <div class="wrap intro-grid">
+    <div>
+      <span class="eyebrow fade-up">한의원 소개</span>
+      <h2 class="title fade-up">서두르지 않고, 충분히 듣는 진료</h2>
+      <p class="lead fade-up">맑은숲한의원은 한 분 한 분의 생활과 체질을 함께 살피는 진료를 지향합니다. 통증의 원인을 차근차근 확인하고, 침·뜸·추나·한약을 환자분의 상태에 맞춰 안내해 드립니다. 화려한 시술보다 꾸준한 관리로 일상의 편안함을 되찾도록 돕겠습니다.</p>
+      <!-- 교체: 운영연차·평균 상담시간 등 실제 수치로 -->
+      <div class="intro-stats fade-up" data-stagger>
+        <div class="stat"><b data-count="14" data-suffix="년">0</b><span>지역 주민과 함께한 진료 [연차 확인]</span></div>
+        <div class="stat"><b data-count="20" data-suffix="분+">0</b><span>1:1 예약제 평균 상담 시간</span></div>
+        <div class="stat"><b data-count="6" data-suffix="일">0</b><span>주 6일 진료 · 목요일 야간</span></div>
+        <div class="stat"><b data-count="100" data-suffix="%">0</b><span>진료실·치료실 매일 소독·환기</span></div>
+      </div>
+      <div class="btn-row fade-up">
+        <a href="doctors.html" class="btn btn-primary">의료진 소개 보기</a>
+      </div>
+    </div>
+    <div class="intro-photo fade-up">
+      <!-- 교체: 한의원 내부/상담 환경 사진 -->
+      <img src="https://picsum.photos/id/1040/760/600" alt="맑은숲한의원의 밝고 깨끗한 상담 공간" data-speed="0.08">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 주요 진료 카드 (각 진료안내로 링크) ===== -->
+<section class="section-soft" aria-label="주요 진료">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up">주요 진료</span>
+      <h2 class="title fade-up">이런 증상, 한방으로 차근차근 살펴드립니다</h2>
+      <p class="lead fade-up">생활 속 통증과 체질 문제를 환자분의 상태에 맞춰 진료합니다. 자세한 진료 범위는 진료안내에서 확인하세요.</p>
+    </div>
+    <div class="cards" data-stagger>
+      <a class="card" href="treatments.html#spine">
+        <div class="ico" aria-hidden="true">🦴</div>
+        <h3>척추·관절 통증</h3>
+        <p>목·허리 디스크, 어깨·무릎 통증 등 근골격계 불편을 추나요법과 침 치료로 관리합니다.</p>
+        <div class="tags"><span>추나요법</span><span>침·뜸</span></div>
+        <span class="more">자세히 보기 →</span>
+      </a>
+      <a class="card" href="treatments.html#constitution">
+        <div class="ico" aria-hidden="true">🌱</div>
+        <h3>체질 개선</h3>
+        <p>소화·수면·피로 등 만성적인 불편을 체질과 생활습관을 함께 살펴 한약으로 조절합니다.</p>
+        <div class="tags"><span>체질 진단</span><span>맞춤 한약</span></div>
+        <span class="more">자세히 보기 →</span>
+      </a>
+      <a class="card" href="treatments.html#diet">
+        <div class="ico" aria-hidden="true">⚖️</div>
+        <h3>한방 다이어트</h3>
+        <p>무리한 감량 대신 체질과 대사 상태에 맞춘 식이·한약 상담으로 건강한 변화를 돕습니다.</p>
+        <div class="tags"><span>체성분 상담</span><span>식이 지도</span></div>
+        <span class="more">자세히 보기 →</span>
+      </a>
+      <a class="card" href="treatments.html#accident">
+        <div class="ico" aria-hidden="true">🚗</div>
+        <h3>교통사고 한방치료</h3>
+        <p>교통사고 후 통증·후유증을 자동차보험 적용으로 치료합니다. 보험 처리 절차도 안내해 드립니다.</p>
+        <div class="tags"><span>자동차보험</span><span>후유증 관리</span></div>
+        <span class="more">자세히 보기 →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 진료시간 요약 ===== -->
+<section aria-label="진료시간 요약">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up">진료시간 안내</span>
+      <h2 class="title fade-up">진료 시간을 미리 확인하세요</h2>
+      <p class="lead fade-up">목요일은 야간진료, 토요일은 오전 진료를 운영합니다. 진료 마감 30분 전까지 접수해 주세요.</p>
+    </div>
+    <div class="hours-grid">
+      <table class="hours fade-up" aria-label="요일별 진료 시간 요약">
+        <thead>
+          <tr><th scope="col">요일</th><th scope="col">오전</th><th scope="col">점심시간</th><th scope="col">오후</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">월·화·수·금</th><td>09:00 – 13:00</td><td>13:00 – 14:00</td><td>14:00 – 18:30</td></tr>
+          <tr class="is-highlight" id="thuRow"><th scope="row">목 (야간진료)</th><td>09:00 – 13:00</td><td>13:00 – 14:00</td><td>14:00 – 20:30</td></tr>
+          <tr><th scope="row">토요일</th><td>09:00 – 13:00</td><td>점심 없이 진료</td><td>휴진</td></tr>
+          <tr><th scope="row">일요일·공휴일</th><td class="off" colspan="3">휴진</td></tr>
+        </tbody>
+      </table>
+      <aside class="hours-note fade-up">
+        <h3>진료 안내</h3>
+        <ul>
+          <li><span class="ic" aria-hidden="true">📅</span><span>예약 환자분 우선 진료로 대기 시간을 줄였습니다.</span></li>
+          <li><span class="ic" aria-hidden="true">⏰</span><span>진료 마감 <b>30분 전</b>까지 접수 부탁드립니다.</span></li>
+          <li><span class="ic" aria-hidden="true">🌙</span><span>매주 <b>목요일은 20:30까지</b> 야간진료를 운영합니다.</span></li>
+        </ul>
+        <div class="lunch-pill"><span aria-hidden="true">🍵</span> 점심시간 평일 13:00 – 14:00</div>
+        <div class="btn-row"><a href="info.html" class="btn btn-ghost">진료시간·비급여 자세히 →</a></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 예약 CTA 띠 ===== -->
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <div>
+      <h2 class="fade-up">편하신 방법으로 예약하세요</h2>
+      <p class="fade-up">네이버 예약·카카오톡·전화 모두 가능합니다. 간단 상담 신청도 받습니다.</p>
+    </div>
+    <div class="btn-row fade-up" style="margin-top:0">
+      <a href="contact.html" class="btn btn-warm"><span aria-hidden="true">📅</span> 예약·상담 신청</a>
+      <a href="tel:0212345678" class="btn btn-primary"><span aria-hidden="true">📞</span> 02-1234-5678</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 공유 푸터 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">숲</span> 맑은숲한의원</div>
+        <p class="foot-legal">동네 주민과 온 가족의 건강을 가까이에서 돌보는 척추·통증·체질 한의원입니다. 충분한 진료 시간과 청결한 환경으로 모시겠습니다.</p>
+        <p class="foot-reg">※ 본 홈페이지의 의료 관련 내용은 「의료법」상 의료광고 사전심의 대상일 수 있으며, 게시 전 관련 절차를 따릅니다. 치료 효과는 환자 개인에 따라 다를 수 있습니다.</p>
+      </div>
+      <div>
+        <h5>진료 안내</h5>
+        <ul>
+          <li>평일 09:00 – 18:30</li>
+          <li>목요일 야간 ~ 20:30</li>
+          <li>토요일 09:00 – 13:00</li>
+          <li>일요일·공휴일 휴진</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="treatments.html">진료안내</a></li>
+          <li><a href="doctors.html">의료진 소개</a></li>
+          <li><a href="info.html">진료시간·비급여</a></li>
+          <li><a href="facility.html">시설 안내</a></li>
+          <li><a href="contact.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <!-- 교체: 사업자번호 / 대표자 / 주소 / 전화 -->
+      <div class="foot-legal">
+        상호 <b>맑은숲한의원</b> &nbsp;|&nbsp; 대표원장 김한결 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        서울특별시 ○○구 맑은숲로 12, 3층 &nbsp;|&nbsp; 대표전화 02-1234-5678
+      </div>
+      <div>© 2026 맑은숲한의원. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 모바일 하단 고정 CTA ===== -->
+<nav class="m-cta" aria-label="빠른 연락">
+  <div class="inner">
+    <a href="contact.html" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:0212345678" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="contact.html#map"><span class="ic" aria-hidden="true">📍</span>길찾기</a>
+  </div>
+</nav>
+
+</body>
+</html>

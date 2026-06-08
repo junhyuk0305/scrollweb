@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- 규제: 의료광고 사전심의 대상 가능. 후기/전후사진 미포함. 비급여 고지 포함. 카피는 심의 전제로 클라이언트 확인 -->
+<!-- 판매 시 교체: 로고/원장사진·약력/진료시간/비급여 금액/네이버예약·카카오 링크/사업자번호/지도 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>진료시간 · 비급여 안내 | 맑은숲한의원</title>
+<meta name="description" content="맑은숲한의원 진료시간표(목요일 야간진료·토요일 오전)와 「의료법」 제45조에 따른 비급여 진료비 안내 - 추나·약침·한약·다이어트.">
+<meta property="og:title" content="진료시간 · 비급여 안내 | 맑은숲한의원">
+<meta property="og:description" content="진료시간표와 비급여 진료비를 투명하게 안내합니다.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="맑은숲한의원 홈">
+      <span class="logo" aria-hidden="true">숲</span>
+      <span>맑은숲한의원<small>척추·통증·체질 클리닉</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="treatments.html" data-nav="treatments.html">진료안내</a>
+      <a href="doctors.html" data-nav="doctors.html">의료진</a>
+      <a href="info.html" data-nav="info.html" aria-current="page">진료시간·비급여</a>
+      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="contact.html" data-nav="contact.html">예약</a>
+      <a href="tel:0212345678" class="nav-tel" aria-label="전화 걸기 02-1234-5678">02-1234-5678</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="ctabar" role="region" aria-label="빠른 예약 안내">
+  <div class="inner">
+    <a href="contact.html" class="book"><span class="ic" aria-hidden="true">📅</span><span class="lbl">예약하기</span></a>
+    <a href="tel:0212345678"><span class="ic" aria-hidden="true">📞</span><span class="lbl">전화상담</span></a>
+    <a href="contact.html#map"><span class="ic" aria-hidden="true">📍</span><span class="lbl">길찾기</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="page-head">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep" aria-hidden="true">›</span><b>진료시간 · 비급여 안내</b>
+    </nav>
+    <h1>진료시간 · 비급여 안내</h1>
+    <p>요일별 진료 시간과 「의료법」 제45조에 따른 주요 비급여 진료비를 투명하게 안내합니다. 진료 마감 30분 전까지 접수해 주세요.</p>
+  </div>
+</div>
+
+<!-- ===== 진료 시간표 ===== -->
+<section id="hours" aria-label="진료 시간">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up">진료 시간</span>
+      <h2 class="title fade-up">요일별 진료 시간</h2>
+      <p class="lead fade-up">점심시간과 야간진료, 토요일 진료 시간을 구분해 안내드립니다.</p>
+    </div>
+    <div class="hours-grid">
+      <table class="hours fade-up" aria-label="요일별 진료 시간표">
+        <thead>
+          <tr><th scope="col">요일</th><th scope="col">오전</th><th scope="col">점심시간</th><th scope="col">오후</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">월·화·수·금</th><td>09:00 – 13:00</td><td>13:00 – 14:00</td><td>14:00 – 18:30</td></tr>
+          <tr class="is-highlight" id="thuRow"><th scope="row">목 (야간진료)</th><td>09:00 – 13:00</td><td>13:00 – 14:00</td><td>14:00 – 20:30</td></tr>
+          <tr><th scope="row">토요일</th><td>09:00 – 13:00</td><td>점심 없이 진료</td><td>휴진</td></tr>
+          <tr><th scope="row">일요일·공휴일</th><td class="off" colspan="3">휴진</td></tr>
+        </tbody>
+      </table>
+      <aside class="hours-note fade-up">
+        <h3>진료 안내</h3>
+        <ul>
+          <li><span class="ic" aria-hidden="true">📅</span><span>예약 환자분 우선 진료로 대기 시간을 줄였습니다.</span></li>
+          <li><span class="ic" aria-hidden="true">⏰</span><span>진료 마감 <b>30분 전</b>까지 접수 부탁드립니다.</span></li>
+          <li><span class="ic" aria-hidden="true">🌙</span><span>매주 <b>목요일은 20:30까지</b> 야간진료를 운영합니다.</span></li>
+          <li><span class="ic" aria-hidden="true">📍</span><span>토요일은 <b>오전 진료(09:00~13:00)</b>만 운영합니다.</span></li>
+        </ul>
+        <div class="lunch-pill"><span aria-hidden="true">🍵</span> 점심시간 평일 13:00 – 14:00</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 비급여 진료비 안내 (의료법 §45 법정 고지) ===== -->
+<section id="fee" class="section-soft" aria-label="비급여 진료비 안내">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up">비급여 진료비 안내</span>
+      <h2 class="title fade-up">비급여 진료비를 투명하게 안내합니다</h2>
+      <p class="lead fade-up">「의료법」 제45조에 따라 주요 비급여 항목의 진료비를 게시합니다.</p>
+    </div>
+    <div class="notice fade-up">
+      <span class="ic" aria-hidden="true">ℹ️</span>
+      <span>아래 금액은 안내용 예시이며 환자분의 상태·처방 내용에 따라 달라질 수 있습니다. 정확한 비용은 진료 시 안내해 드립니다. (단위: 원, 부가세 포함)</span>
+    </div>
+    <table class="fee fade-up" aria-label="비급여 진료비 표">
+      <thead>
+        <tr><th scope="col">구분</th><th scope="col">항목</th><th scope="col">단위</th><th scope="col">진료비(원)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="cat" rowspan="2">추나요법</td><td>단순 추나</td><td>1회</td><td class="amt">15,000</td></tr>
+        <tr><td>복잡 추나</td><td>1회</td><td class="amt">30,000</td></tr>
+        <tr><td class="cat" rowspan="2">약침</td><td>일반 약침</td><td>1회</td><td class="amt">10,000</td></tr>
+        <tr><td>봉독 약침</td><td>1회</td><td class="amt">20,000</td></tr>
+        <tr><td class="cat" rowspan="2">한약</td><td>맞춤 첩약 (보험 외)</td><td>10일분</td><td class="amt">120,000</td></tr>
+        <tr><td>공진단 (1환)</td><td>1환</td><td class="amt">30,000</td></tr>
+        <tr><td class="cat">체질 다이어트</td><td>한방 다이어트 한약</td><td>15일분</td><td class="amt">180,000</td></tr>
+        <tr><td class="cat">기타</td><td>체질·통증 정밀 상담</td><td>1회</td><td class="amt">20,000</td></tr>
+      </tbody>
+    </table>
+    <p class="fee-foot fade-up">※ 게시된 항목 외 비급여 진료비는 원무과에 문의해 주세요. 건강보험이 적용되는 항목(침·뜸·부항 등)은 본인부담금이 별도로 산정됩니다.</p>
+  </div>
+</section>
+
+<!-- ===== 예약 CTA 띠 ===== -->
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <div>
+      <h2 class="fade-up">비용·진료가 궁금하면 문의하세요</h2>
+      <p class="fade-up">전화·카카오톡·네이버 예약 모두 가능합니다.</p>
+    </div>
+    <div class="btn-row fade-up" style="margin-top:0">
+      <a href="contact.html" class="btn btn-warm"><span aria-hidden="true">📅</span> 예약·상담 신청</a>
+      <a href="tel:0212345678" class="btn btn-primary"><span aria-hidden="true">📞</span> 02-1234-5678</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">숲</span> 맑은숲한의원</div>
+        <p class="foot-legal">동네 주민과 온 가족의 건강을 가까이에서 돌보는 척추·통증·체질 한의원입니다. 충분한 진료 시간과 청결한 환경으로 모시겠습니다.</p>
+        <p class="foot-reg">※ 본 홈페이지의 의료 관련 내용은 「의료법」상 의료광고 사전심의 대상일 수 있으며, 게시 전 관련 절차를 따릅니다. 치료 효과는 환자 개인에 따라 다를 수 있습니다.</p>
+      </div>
+      <div>
+        <h5>진료 안내</h5>
+        <ul>
+          <li>평일 09:00 – 18:30</li>
+          <li>목요일 야간 ~ 20:30</li>
+          <li>토요일 09:00 – 13:00</li>
+          <li>일요일·공휴일 휴진</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="treatments.html">진료안내</a></li>
+          <li><a href="doctors.html">의료진 소개</a></li>
+          <li><a href="info.html">진료시간·비급여</a></li>
+          <li><a href="facility.html">시설 안내</a></li>
+          <li><a href="contact.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        상호 <b>맑은숲한의원</b> &nbsp;|&nbsp; 대표원장 김한결 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        서울특별시 ○○구 맑은숲로 12, 3층 &nbsp;|&nbsp; 대표전화 02-1234-5678
+      </div>
+      <div>© 2026 맑은숲한의원. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 연락">
+  <div class="inner">
+    <a href="contact.html" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:0212345678" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="contact.html#map"><span class="ic" aria-hidden="true">📍</span>길찾기</a>
+  </div>
+</nav>
+
+</body>
+</html>

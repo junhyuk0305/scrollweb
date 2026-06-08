@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/사진/연락처/네이버예약 링크/사업자·야영장업 등록번호/지도 -->
+<!-- 규제: 관광진흥법상 야영장업 등록 표기. 화기·안전 이용수칙 안내 포함 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>별헤는밤 STARGAZE | 강원 홍천 글램핑 &amp; 오토캠핑 파크</title>
+<meta name="description" content="강원 홍천 숲속 글램핑·카라반·오토캠핑·독채. 플랫폼엔 없는 우리만의 브랜드 공간과 수수료 없는 직접 예약 혜택. 별이 쏟아지는 밤, 별헤는밤에서.">
+<meta property="og:title" content="별헤는밤 STARGAZE | 강원 홍천 글램핑 & 오토캠핑 파크">
+<meta property="og:description" content="별이 쏟아지는 숲속에서의 하룻밤. 글램핑·카라반·오토캠핑·프라이빗 독채. 공식 홈페이지 직접 예약 시 추가 혜택.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<!-- ===== 공유 헤더 ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="별헤는밤 STARGAZE 홈">
+      <span class="logo" aria-hidden="true">✦</span>
+      <span class="b-name">별헤는밤<small>STARGAZE CAMP</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html" aria-current="page">홈</a>
+      <a href="sites.html" data-nav="sites.html">캠핑 사이트</a>
+      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="guide.html" data-nav="guide.html">이용안내</a>
+      <a href="gallery.html" data-nav="gallery.html">갤러리</a>
+      <a href="reservation.html" data-nav="reservation.html">예약</a>
+      <a href="reservation.html" class="nav-cta">예약하기</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== 풀스크린 히어로 (패럴랙스 + 별) ===== -->
+<section class="hero" aria-label="별헤는밤 소개">
+  <div class="hero-media" id="heroMedia">
+    <!-- 교체: 밤하늘/숲 캠핑 메인 사진 -->
+    <img src="https://picsum.photos/id/1018/1700/1100" alt="별이 쏟아지는 강원 홍천 숲속 캠핑장의 밤 풍경" loading="eager">
+  </div>
+  <div class="hero-stars" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">강원 홍천 · 해발 420m 숲속</span>
+    <h1>별이 쏟아지는 숲,<br>오늘 밤은 <span style="color:var(--amber)">별헤는밤</span>에서.</h1>
+    <p class="sub">도시의 불빛을 끄고 모닥불 곁에 앉으면, 머리 위로 은하수가 흐릅니다. 글램핑부터 오토캠핑·프라이빗 독채까지 — 당신의 밤을 골라보세요.</p>
+    <div class="btn-row">
+      <a href="reservation.html" class="btn btn-amber">공식 홈페이지 직접 예약</a>
+      <a href="sites.html" class="btn btn-ghost-light">캠핑 사이트 둘러보기</a>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<!-- ===== 브랜드 철학 한 줄 (단어 리빌) ===== -->
+<section class="philo-band" aria-label="브랜드 철학">
+  <div class="wrap">
+    <p class="phil" id="phil">우리는 더 많은 자리를 들이지 않습니다. <em>더 깊은 밤</em>을 들입니다. 숲의 간격을 지키고, 불빛을 낮추고, 별이 보이는 어둠을 남겨둡니다.</p>
+  </div>
+</section>
+
+<!-- ===== 직접 예약 혜택 배너 ===== -->
+<section class="on-dark" aria-label="직접 예약 혜택" style="padding:72px 0">
+  <div class="wrap">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap">
+      <div style="max-width:620px">
+        <span class="eyebrow">플랫폼엔 없는 혜택</span>
+        <h2 class="title" style="margin-bottom:10px">예약은 네이버·야놀자에서도,<br>혜택은 공식 홈페이지에서.</h2>
+        <p class="lead">플랫폼 수수료 없이 <b style="color:var(--amber)">사장님이 직접 운영</b>하는 공식 예약 채널입니다. 플랫폼엔 담지 못한 우리만의 사진과 이야기, 그리고 직접 예약에만 드리는 작은 혜택을 준비했습니다.</p>
+      </div>
+      <ul style="list-style:none;display:grid;gap:12px;min-width:260px">
+        <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-2)"><span style="color:var(--amber)">●</span> 직접 예약 시 <b style="color:var(--cream)">웰컴 장작 1망</b> 무료 제공</li>
+        <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-2)"><span style="color:var(--amber)">●</span> <b style="color:var(--cream)">레이트 체크아웃</b> 우선 신청(주중)</li>
+        <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-2)"><span style="color:var(--amber)">●</span> 재방문 고객 <b style="color:var(--cream)">전용 사이트</b> 우선 배정</li>
+        <li style="display:flex;gap:11px;align-items:flex-start;color:var(--cream-2)"><span style="color:var(--amber)">●</span> 중간 수수료 없는 <b style="color:var(--cream)">투명한 요금</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 캠핑 사이트 타입 미리보기 ===== -->
+<section aria-label="캠핑 사이트 타입">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">STAY TYPES</span>
+      <h2 class="title">당신의 밤을 고르세요</h2>
+      <p class="lead">취향과 일행에 맞춰 네 가지 머무름을 준비했습니다. 모든 사이트는 숲 간격을 넉넉히 두어 옆자리 소음 걱정을 덜었습니다.</p>
+    </div>
+    <div class="type-cards">
+      <a class="type-card fade-up" href="sites.html#glamping">
+        <div class="tc-media"><img src="https://picsum.photos/id/1043/600/760" alt="조명이 켜진 글램핑 텐트"></div>
+        <div class="tc-body">
+          <span class="tc-tag">GLAMPING</span>
+          <h3>숲속 글램핑 텐트</h3>
+          <p>난방·침구·전기 완비. 짐 없이 몸만 오는 가장 편한 캠핑.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+      <a class="type-card fade-up" href="sites.html#caravan">
+        <div class="tc-media"><img src="https://picsum.photos/id/1067/600/760" alt="숲에 자리한 카라반"></div>
+        <div class="tc-body">
+          <span class="tc-tag">CARAVAN</span>
+          <h3>프리미엄 카라반</h3>
+          <p>주방·화장실 포함 독립 공간. 아이와 함께라면 이곳.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+      <a class="type-card fade-up" href="sites.html#auto">
+        <div class="tc-media"><img src="https://picsum.photos/id/1015/600/760" alt="계곡 옆 오토캠핑 데크 사이트"></div>
+        <div class="tc-body">
+          <span class="tc-tag">AUTO SITE</span>
+          <h3>오토캠핑 (데크·파쇄석)</h3>
+          <p>차를 바로 옆에. 내 장비로 완성하는 정통 캠핑.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+      <a class="type-card fade-up" href="sites.html#private">
+        <div class="tc-media"><img src="https://picsum.photos/id/1039/600/760" alt="숲에 둘러싸인 프라이빗 독채"></div>
+        <div class="tc-body">
+          <span class="tc-tag">PRIVATE</span>
+          <h3>프라이빗 독채</h3>
+          <p>전용 마당·불멍존 독립. 오롯이 우리 일행만의 밤.</p>
+          <span class="tc-more">자세히 보기 →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 시설 요약 ===== -->
+<section class="section-soft" style="background:var(--cream)" aria-label="시설 요약">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">FACILITY</span>
+      <h2 class="title">불편함 없이, 자연 그대로</h2>
+      <p class="lead">온수 샤워장부터 계곡 물놀이까지 — 캠핑의 낭만은 살리고 번거로움은 덜었습니다.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat fade-up"><div class="ic" aria-hidden="true">🚿</div><h3>온수 샤워장·개수대</h3><p>24시간 온수 샤워와 온수 개수대. 겨울에도 따뜻하게.</p></div>
+      <div class="feat fade-up"><div class="ic" aria-hidden="true">🔥</div><h3>불멍존 &amp; 화로대</h3><p>안전 거리를 둔 전용 불멍존과 화로대를 갖췄습니다.</p></div>
+      <div class="feat fade-up"><div class="ic" aria-hidden="true">💧</div><h3>청정 계곡 물놀이</h3><p>여름 한정, 아이 무릎 높이의 안전한 계곡이 흐릅니다.</p></div>
+      <div class="feat fade-up"><div class="ic" aria-hidden="true">🐾</div><h3>반려견 동반 구역</h3><p>지정 구역 한정 반려견 동반 가능. 함께 떠나는 캠핑.</p></div>
+    </div>
+    <div class="btn-row" style="justify-content:center">
+      <a href="facility.html" class="btn btn-forest">시설·어메니티 전체 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 후기/카운트업 ===== -->
+<section class="stats-band" aria-label="이용 통계와 후기">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow" style="color:var(--amber)">GUEST REVIEW</span>
+      <h2 class="title" style="color:var(--cream)">다녀가신 분들이 남긴 밤</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat"><div class="num"><span class="count" data-to="4.9" data-dec="1">4.9</span></div><div class="lbl">평균 평점 (5점 만점)</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="38000" data-dec="0">38,000</span><span class="suf">명+</span></div><div class="lbl">누적 이용객</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="2100" data-dec="0">2,100</span><span class="suf">건</span></div><div class="lbl">누적 이용 후기</div></div>
+      <div class="stat"><div class="num"><span class="count" data-to="62" data-dec="0">62</span><span class="suf">%</span></div><div class="lbl">재방문 예약 비율</div></div>
+    </div>
+    <div class="review-grid">
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“텐트 사이 간격이 넓어서 옆자리 신경 안 쓰고 푹 쉬었어요. 밤에 불 끄니까 진짜 별이 쏟아져서 아이가 한참을 올려다봤습니다.”</p><div class="who">글램핑 이용 · 정○○ 가족</div></div>
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“카라반 안에 화장실이 있어서 새벽에 아이 데리고 나갈 일이 없더라고요. 난방도 빵빵하고 청결 관리가 확실했습니다.”</p><div class="who">카라반 이용 · 김○○ 님</div></div>
+      <div class="review fade-up"><div class="stars" aria-label="별점 5점">★★★★★</div><p>“홈페이지에서 바로 예약하니 장작도 챙겨주시고 체크아웃도 늦게 빼주셨어요. 다음엔 독채로 또 갑니다.”</p><div class="who">오토캠핑 이용 · 박○○ 님</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 예약 CTA 띠 ===== -->
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>오늘 밤, 별 아래 한 자리</h2>
+    <p>주말·성수기 사이트는 빠르게 마감됩니다. 공식 홈페이지에서 날짜를 확인하고 직접 예약하세요.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="reservation.html" class="btn btn-amber">예약 가능 날짜 보기</a>
+      <a href="tel:033-123-4567" class="btn btn-ghost-light">📞 033-123-4567</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 공유 푸터 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">✦</span> 별헤는밤 STARGAZE</div>
+        <p class="foot-legal">강원 홍천 숲속에서 별과 모닥불, 그리고 깊은 밤을 나누는 글램핑·오토캠핑 파크입니다. 플랫폼엔 없는 우리만의 공간과 직접 예약 혜택으로 모십니다.</p>
+      </div>
+      <div>
+        <h5>이용 안내</h5>
+        <ul>
+          <li>입실 15:00 / 퇴실 11:00</li>
+          <li>매너타임 22:00 ~ 07:00</li>
+          <li>리셉션 09:00 ~ 21:00</li>
+          <li>연중무휴 (기상특보 시 휴장)</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="sites.html">캠핑 사이트 소개</a></li>
+          <li><a href="facility.html">시설·어메니티</a></li>
+          <li><a href="guide.html">이용안내·환불규정</a></li>
+          <li><a href="gallery.html">갤러리</a></li>
+          <li><a href="reservation.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <!-- 교체: 상호 / 대표 / 사업자등록번호 / 야영장업 등록번호 / 주소 / 전화 -->
+      <div class="foot-legal">
+        상호 <b>별헤는밤 캠핑파크</b> &nbsp;|&nbsp; 대표 한지호 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        야영장업 등록번호 제2024-홍천-0007호 (일반야영장업) &nbsp;|&nbsp; 강원특별자치도 홍천군 서면 별빛로 128<br>
+        예약·문의 033-123-4567
+      </div>
+      <div>© 2026 별헤는밤 STARGAZE. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 모바일 하단 고정 CTA ===== -->
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="reservation.html" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:033-123-4567" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="reservation.html#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+<!-- ===== 데스크톱 플로팅 CTA ===== -->
+<a href="reservation.html" class="float-cta" id="floatCta" aria-label="예약하기"><span class="pulse" aria-hidden="true"></span> 직접 예약하기</a>
+
+</body>
+</html>

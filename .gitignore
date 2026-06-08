@@ -1,0 +1,12 @@
+# 의존성 (스크린샷 도구 — 재설치 가능)
+node_modules/
+
+# OS·에디터 부산물
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+
+# 로그·임시
+*.log
+.cache/

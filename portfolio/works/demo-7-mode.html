@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 판매 시 교체: 로고/룩북이미지/연락처/인스타 링크/사업자번호 -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOON 누운 — 컨템포러리 미니멀 우먼즈웨어 셀렉트 라벨 | 2026 SPRING</title>
+<meta name="description" content="서울의 컨템포러리 미니멀 우먼즈웨어 셀렉트 라벨, NOON 누운. 2026 SPRING 컬렉션과 룩북, 오프라인 매장을 만나보세요.">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
+<style>
+:root{
+  --ink:#0e0e10;
+  --ink-2:#1a1a1e;
+  --paper:#f4f2ee;
+  --paper-2:#eae7e0;
+  --white:#ffffff;
+  --grey:#6e6c68;
+  --grey-2:#9b9893;
+  --line:rgba(14,14,16,.13);
+  --line-d:rgba(255,255,255,.16);
+  --cobalt:#2a3bff;
+  --cobalt-deep:#1c2bd6;
+  --serif:'Playfair Display', serif;
+  --sans:'Pretendard', -apple-system, sans-serif;
+  --maxw:1280px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.7;
+  letter-spacing:-.01em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.serif{font-family:var(--serif)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 30px}
+.eyebrow{
+  font-size:11px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--cobalt);font-weight:700;display:inline-block;
+}
+.eyebrow::before{content:"";display:inline-block;width:24px;height:1px;background:var(--cobalt);vertical-align:middle;margin-right:12px;transform:translateY(-3px)}
+
+/* ============ HEADER ============ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px 30px;transition:background .5s var(--ease), padding .5s var(--ease), box-shadow .5s var(--ease);
+}
+.site-header.scrolled{
+  background:rgba(244,242,238,.82);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding:15px 30px;box-shadow:0 1px 0 var(--line);
+}
+.logo{font-family:var(--serif);font-weight:600;font-size:25px;letter-spacing:.02em;color:#fff;transition:color .5s var(--ease);display:flex;align-items:baseline;gap:10px}
+.logo .han{font-family:var(--sans);font-size:13px;opacity:.72;font-weight:500;letter-spacing:.18em}
+.site-header.scrolled .logo{color:var(--ink)}
+.nav{display:flex;gap:36px;align-items:center}
+.nav a{font-size:13.5px;color:rgba(255,255,255,.84);font-weight:600;transition:color .5s var(--ease),opacity .25s;position:relative;letter-spacing:.02em}
+.nav a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:currentColor;transition:width .35s var(--ease)}
+.nav a:hover::after{width:100%}
+.site-header.scrolled .nav a{color:var(--ink-2)}
+.header-cta{
+  font-size:12.5px;font-weight:700;padding:11px 22px;border-radius:0;
+  border:1px solid rgba(255,255,255,.5);color:#fff;transition:all .4s var(--ease);
+  letter-spacing:.04em;
+}
+.site-header.scrolled .header-cta{border-color:var(--ink);color:#fff;background:var(--ink)}
+.header-cta:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.nav-toggle{display:none}
+
+/* ============ HERO ============ */
+/* Shrink & Lock #1 */
+.hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end;justify-content:center}
+.hero-media{
+  position:absolute;inset:0;will-change:transform;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(10,10,14,.28) 0%,rgba(10,10,14,.05) 40%,rgba(10,10,14,.55) 100%),
+    url('https://picsum.photos/id/1027/1920/1280') center 30%/cover no-repeat;
+  transform-origin:center 36%;
+}
+.hero-content{position:relative;z-index:3;text-align:center;color:#fff;padding:0 24px 16vh}
+.hero-eyebrow{font-size:12px;letter-spacing:.46em;text-transform:uppercase;opacity:.94;margin-bottom:24px;font-weight:600}
+.hero h1{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(64px,16vw,210px);line-height:.92;letter-spacing:.01em;
+  text-shadow:0 4px 60px rgba(0,0,0,.32);
+}
+.hero h1 .han{display:block;font-family:var(--sans);font-size:.13em;letter-spacing:.6em;opacity:.8;font-weight:500;margin-top:22px;text-shadow:none}
+.hero-slogan{
+  margin-top:26px;font-size:clamp(15px,2.4vw,22px);font-weight:400;letter-spacing:.06em;
+  opacity:.96;text-shadow:0 2px 20px rgba(0,0,0,.35);
+}
+.scroll-hint{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:4;
+  color:rgba(255,255,255,.78);font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;text-align:center;
+}
+.scroll-hint .line{width:1px;height:46px;background:rgba(255,255,255,.55);margin:14px auto 0;position:relative;overflow:hidden}
+.scroll-hint .line::after{content:"";position:absolute;top:-46px;left:0;width:100%;height:46px;background:#fff;animation:scrollline 2.1s var(--ease) infinite}
+@keyframes scrollline{0%{top:-46px}60%,100%{top:46px}}
+
+/* ============ INTRO MANIFESTO ============ */
+.intro{padding:clamp(120px,18vh,210px) 0;text-align:center;background:var(--paper)}
+.intro .phil{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(28px,5vw,62px);line-height:1.34;color:var(--ink);letter-spacing:.005em;
+  max-width:1020px;margin:34px auto 0;
+}
+.intro .phil .w{display:inline-block;will-change:transform,opacity}
+.intro .phil em{font-style:italic;color:var(--cobalt)}
+.intro-sub{margin-top:42px;color:var(--grey);font-size:16px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.95}
+
+/* ============ KINETIC MARQUEE #6 ============ */
+.marquee{padding:40px 0;background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+.marquee-track{display:inline-block;will-change:transform}
+.marquee-track span{
+  font-family:var(--serif);font-style:italic;font-size:clamp(34px,7vw,84px);font-weight:500;
+  padding:0 30px;letter-spacing:.01em;
+}
+.marquee-track span .dot{color:var(--cobalt);font-style:normal;margin:0 6px}
+
+/* ============ LOOKBOOK — HORIZONTAL SCROLL #21 ============ */
+.lookbook{background:var(--ink);color:var(--white);overflow:hidden}
+.lb-head{padding:clamp(80px,12vh,130px) 0 50px}
+.lb-head .eyebrow{color:#fff}
+.lb-head .eyebrow::before{background:var(--cobalt)}
+.lb-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.5vw,66px);line-height:1.08;margin-top:18px;color:#fff}
+.lb-head p{margin-top:18px;color:rgba(255,255,255,.55);max-width:560px;font-size:15px}
+.lb-viewport{height:100vh;display:flex;align-items:center;overflow:hidden}
+.lb-track{display:flex;gap:34px;padding:0 30px;will-change:transform}
+.look-card{flex:0 0 auto;width:clamp(280px,38vw,460px)}
+.look-img{position:relative;overflow:hidden;aspect-ratio:3/4;background:#2a2a2e}
+.look-img .pimg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.1s var(--ease)}
+.look-card:hover .look-img .pimg{transform:scale(1.06)}
+.look-no{position:absolute;top:18px;left:18px;z-index:2;font-family:var(--serif);font-style:italic;font-size:22px;color:#fff;mix-blend-mode:difference}
+.look-meta{margin-top:20px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.look-meta .ttl{font-family:var(--serif);font-size:21px;font-weight:500}
+.look-meta .items{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.7;text-align:right;letter-spacing:.01em}
+.lb-foot{padding:0 0 clamp(70px,10vh,110px);text-align:center}
+.lb-hint{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+
+/* ============ FEATURED PIECES — parallax grid #7 ============ */
+.featured{padding:clamp(90px,13vh,150px) 0;background:var(--paper)}
+.section-head{margin-bottom:60px}
+.section-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,60px);line-height:1.1;margin-top:18px}
+.section-head p{margin-top:18px;color:var(--grey);max-width:560px;font-size:15px}
+.feat-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:26px}
+.product{position:relative}
+.product.p-a{grid-column:span 7}
+.product.p-b{grid-column:span 5;margin-top:64px}
+.product.p-c{grid-column:span 5}
+.product.p-d{grid-column:span 7;margin-top:-40px}
+.prod-img{position:relative;overflow:hidden;background:#ddd9d1}
+.product.p-a .prod-img,.product.p-d .prod-img{aspect-ratio:4/3}
+.product.p-b .prod-img,.product.p-c .prod-img{aspect-ratio:3/4}
+.prod-img .pimg{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
+.prod-tag{position:absolute;top:18px;left:18px;z-index:2;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--white);color:var(--ink);padding:7px 13px;font-weight:700}
+.prod-tag.new{background:var(--cobalt);color:#fff}
+.prod-body{padding:22px 4px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+.prod-name{font-family:var(--serif);font-size:clamp(21px,2.5vw,28px);font-weight:500;line-height:1.2}
+.prod-name small{display:block;font-family:var(--sans);font-size:12.5px;color:var(--grey);font-weight:500;margin-top:7px;letter-spacing:.02em}
+.prod-price{font-size:16px;font-weight:700;white-space:nowrap;letter-spacing:.01em}
+.prod-price .sale{display:block;font-size:12.5px;color:var(--grey-2);text-decoration:line-through;font-weight:500;text-align:right}
+
+/* ============ ATELIER / STORY — split ============ */
+.story{padding:clamp(90px,13vh,150px) 0;background:var(--ink);color:var(--white)}
+.story-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch}
+.story-media{position:relative;overflow:hidden;min-height:560px}
+.story-media .pimg{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform;background-image:url('https://picsum.photos/id/823/1100/1400')}
+.story-text{padding:clamp(40px,6vw,80px);display:flex;flex-direction:column;justify-content:center}
+.story-text .eyebrow{color:#fff}
+.story-text .eyebrow::before{background:var(--cobalt)}
+.story-text h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,52px);line-height:1.16;margin:20px 0 26px;color:#fff}
+.story-text p{color:rgba(255,255,255,.66);font-size:15.5px;line-height:1.95;margin-bottom:18px;max-width:480px}
+.story-text p em{font-style:italic;color:#fff;font-family:var(--serif)}
+.story-sign{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:24px;color:var(--cobalt)}
+
+/* ============ STORES ============ */
+.stores{padding:clamp(90px,13vh,150px) 0;background:var(--paper-2)}
+.store-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+.store{background:var(--white);border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden}
+.store-map{
+  position:relative;min-height:200px;
+  background:
+    radial-gradient(120% 90% at 70% 25%, rgba(42,59,255,.12), transparent 55%),
+    repeating-linear-gradient(0deg, rgba(14,14,16,.06) 0 1px, transparent 1px 44px),
+    repeating-linear-gradient(90deg, rgba(14,14,16,.06) 0 1px, transparent 1px 44px),
+    linear-gradient(160deg,#e7e4dd,#d7d3ca);
+  border-bottom:1px solid var(--line);
+}
+.store-map .road{position:absolute;background:rgba(255,255,255,.75)}
+.store-map .r1{top:0;left:42%;width:12px;height:100%;transform:rotate(7deg)}
+.store-map .r2{top:52%;left:0;width:100%;height:10px;transform:rotate(-3deg)}
+.map-pin{position:absolute;top:46%;left:48%;z-index:3;display:flex;flex-direction:column;align-items:center;transform:translate(-50%,-100%)}
+.map-pin .dot{width:18px;height:18px;background:var(--cobalt);border:3px solid #fff;border-radius:50%;box-shadow:0 6px 16px rgba(0,0,0,.3);animation:pinpulse 2.4s var(--ease) infinite}
+@keyframes pinpulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.map-pin .lbl{margin-top:8px;background:var(--ink);padding:5px 11px;font-size:11px;font-weight:700;color:#fff;white-space:nowrap}
+.map-note{position:absolute;bottom:12px;left:12px;z-index:3;font-size:10.5px;color:var(--grey);background:rgba(244,242,238,.9);padding:5px 10px;backdrop-filter:blur(4px)}
+.store-body{padding:30px 30px 34px}
+.store-body .city{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--cobalt);font-weight:700}
+.store-body h3{font-family:var(--serif);font-size:27px;font-weight:500;margin:8px 0 18px}
+.store-row{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--line);font-size:14px}
+.store-row:last-child{border-bottom:1px solid var(--line)}
+.store-row .k{flex:0 0 64px;color:var(--grey-2);font-size:12px;font-weight:600;letter-spacing:.04em;padding-top:1px}
+.store-row .v{color:var(--ink);line-height:1.7}
+
+/* ============ INSTAGRAM FEED ============ */
+.insta{padding:clamp(90px,13vh,150px) 0;background:var(--paper)}
+.insta-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:42px;flex-wrap:wrap}
+.insta-head .eyebrow{color:var(--cobalt)}
+.insta-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.6vw,54px);line-height:1.1;margin-top:16px}
+.insta-handle{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:700;border-bottom:2px solid var(--ink);padding-bottom:4px;transition:color .3s,border-color .3s;letter-spacing:.01em}
+.insta-handle:hover{color:var(--cobalt);border-color:var(--cobalt)}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.feed{position:relative;aspect-ratio:1;overflow:hidden;background:#ddd}
+.feed .pimg{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform;transition:transform .9s var(--ease)}
+.feed::after{content:"";position:absolute;inset:0;background:var(--cobalt);opacity:0;transition:opacity .4s var(--ease);mix-blend-mode:multiply}
+.feed:hover::after{opacity:.28}
+.feed:hover .pimg{transform:scale(1.05)}
+
+/* ============ CONTACT ============ */
+.contact{padding:clamp(90px,13vh,150px) 0;background:var(--ink);color:var(--white)}
+.contact-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+.contact-left .eyebrow{color:#fff}
+.contact-left .eyebrow::before{background:var(--cobalt)}
+.contact-left h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.4vw,54px);line-height:1.14;margin:18px 0 24px;color:#fff}
+.contact-left p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.95;max-width:380px;margin-bottom:30px}
+.contact-left .kv{display:flex;flex-direction:column;gap:14px}
+.contact-left .kv a,.contact-left .kv span{display:flex;gap:14px;font-size:14.5px;color:rgba(255,255,255,.82)}
+.contact-left .kv .k{color:var(--grey-2);flex:0 0 70px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding-top:2px}
+.contact-left .kv a:hover{color:#fff}
+.form{display:grid;gap:18px}
+.field label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-2);font-weight:700;margin-bottom:9px}
+.field input,.field textarea{
+  width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.28);
+  color:#fff;font-family:var(--sans);font-size:16px;padding:10px 0;transition:border-color .35s var(--ease);
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.32)}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--cobalt)}
+.field textarea{resize:vertical;min-height:90px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-submit{
+  margin-top:8px;background:var(--cobalt);color:#fff;border:none;padding:18px;font-size:15px;font-weight:700;
+  cursor:pointer;letter-spacing:.04em;transition:background .35s var(--ease),transform .3s var(--ease);
+}
+.form-submit:hover{background:#fff;color:var(--ink);transform:translateY(-2px)}
+.form-note{font-size:12px;color:var(--grey-2);margin-top:4px;line-height:1.6}
+.form-ok{font-size:13.5px;color:#9fb0ff;display:none}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--ink-2);color:var(--grey-2);padding:clamp(70px,9vh,110px) 0 40px}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center;padding-bottom:64px;margin-bottom:56px;border-bottom:1px solid var(--line-d)}
+.trust .stat .num{font-family:var(--serif);font-size:clamp(40px,6vw,68px);font-weight:500;color:#fff;line-height:1}
+.trust .stat .num .suf{font-size:.38em;color:var(--cobalt);margin-left:3px;font-family:var(--sans);font-weight:700}
+.trust .stat .lbl{font-size:13px;color:rgba(255,255,255,.55);margin-top:14px;letter-spacing:.03em}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.foot-brand .logo{color:#fff;font-size:30px;margin-bottom:18px}
+.foot-brand p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.9;max-width:340px}
+.foot-col h6{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt);margin-bottom:18px;font-weight:700}
+.foot-col a,.foot-col p{display:block;font-size:13.5px;color:rgba(255,255,255,.62);margin-bottom:11px;line-height:1.6}
+.foot-col a:hover{color:#fff}
+.foot-legal{margin-top:56px;padding-top:30px;border-top:1px solid var(--line-d);font-size:12px;color:rgba(255,255,255,.4);line-height:1.95}
+.foot-legal .biz{display:flex;flex-wrap:wrap;gap:6px 20px;margin-bottom:14px}
+
+/* ============ STICKY MOBILE CTA ============ */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:180;
+  display:none;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(14,14,16,.95);backdrop-filter:blur(12px);
+  transform:translateY(110%);transition:transform .45s var(--ease);
+}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta a{flex:1;text-align:center;padding:15px;font-size:15px;font-weight:700}
+.sticky-cta .tel{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.22);flex:0 0 52px;padding:15px 0}
+.sticky-cta .resv{background:var(--cobalt);color:#fff}
+
+/* desktop floating CTA */
+.float-cta{
+  position:fixed;right:24px;bottom:28px;z-index:170;
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--ink);color:#fff;padding:15px 24px;border-radius:100px;
+  font-size:14.5px;font-weight:700;box-shadow:0 16px 40px -14px rgba(0,0,0,.6);
+  transform:translateY(140%);transition:transform .5s var(--ease),background .3s;
+}
+.float-cta.show{transform:translateY(0)}
+.float-cta:hover{background:var(--cobalt)}
+.float-cta .pulse{width:8px;height:8px;background:#9fb0ff;border-radius:50%;box-shadow:0 0 0 0 rgba(159,176,255,.7);animation:cta-pulse 2s infinite}
+@keyframes cta-pulse{0%{box-shadow:0 0 0 0 rgba(159,176,255,.6)}70%{box-shadow:0 0 0 8px rgba(159,176,255,0)}100%{box-shadow:0 0 0 0 rgba(159,176,255,0)}}
+
+/* reveal base */
+.reveal{opacity:0;transform:translateY(38px);will-change:transform,opacity}
+.is-in{opacity:1;transform:none;transition:opacity 1s var(--ease),transform 1s var(--ease)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .nav{display:none}
+  .header-cta{display:none}
+  .feat-grid{gap:18px}
+  .product.p-a,.product.p-b,.product.p-c,.product.p-d{grid-column:span 12;margin-top:0}
+  .story-inner{grid-template-columns:1fr}
+  .story-media{min-height:380px;order:0}
+  .store-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:40px}
+  .insta-grid{grid-template-columns:repeat(4,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .wrap{padding:0 20px}
+  .site-header{padding:16px 20px}
+  .hero h1{font-size:clamp(58px,20vw,92px)}
+  .hero-content{padding-bottom:14vh}
+  .insta-grid{grid-template-columns:repeat(2,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .store-body{padding:24px 22px 28px}
+  .trust{grid-template-columns:1fr;gap:40px;padding-bottom:46px;margin-bottom:40px}
+  .foot-grid{grid-template-columns:1fr}
+  .sticky-cta{display:flex}
+  .float-cta{display:none}
+  .body-pad{padding-bottom:78px}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  .scroll-hint .line::after{animation:none}
+  .map-pin .dot{animation:none}
+}
+</style>
+</head>
+<body class="body-pad">
+
+<!-- HEADER -->
+<header class="site-header" id="header">
+  <a href="#top" class="logo">NOON<span class="han">누운</span></a>
+  <nav class="nav">
+    <a href="#lookbook">룩북</a>
+    <a href="#featured">컬렉션</a>
+    <a href="#story">브랜드</a>
+    <a href="#stores">매장</a>
+    <a href="#contact">문의</a>
+  </nav>
+  <a href="#contact" class="header-cta">CONTACT</a>
+</header>
+
+<!-- HERO — Shrink & Lock #1 -->
+<section class="hero" id="top">
+  <div class="hero-media" id="heroMedia"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">SEOUL · CONTEMPORARY WOMENSWEAR</div>
+    <h1 class="serif">NOON<span class="han">누운</span></h1>
+    <p class="hero-slogan">2026 SPRING — 누운의 계절</p>
+  </div>
+  <div class="scroll-hint">SCROLL<div class="line"></div></div>
+</section>
+
+<!-- INTRO MANIFESTO — Word-by-word reveal #8 -->
+<section class="intro">
+  <div class="wrap">
+    <span class="eyebrow">MANIFESTO</span>
+    <p class="phil serif" id="phil">옷은 결국 태도가 됩니다. NOON은 덜어내는 방식으로 <em>나다움</em>을 입는 사람들을 위해, 군더더기 없는 실루엣과 오래 입을 소재만을 골라 짓습니다.</p>
+    <p class="intro-sub">서울을 기반으로 한 컨템포러리 미니멀 우먼즈웨어 셀렉트 라벨. 한 시즌의 유행보다 다음 십 년의 옷장을 생각하며 만듭니다.</p>
+  </div>
+</section>
+
+<!-- KINETIC MARQUEE #6 -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee">
+    <span>NEW ARRIVALS<span class="dot">·</span>LOOKBOOK 2026<span class="dot">·</span>SS COLLECTION<span class="dot">·</span>누운의 계절<span class="dot">·</span>SEOUL SELECT<span class="dot">·</span></span>
+    <span>NEW ARRIVALS<span class="dot">·</span>LOOKBOOK 2026<span class="dot">·</span>SS COLLECTION<span class="dot">·</span>누운의 계절<span class="dot">·</span>SEOUL SELECT<span class="dot">·</span></span>
+  </div>
+</section>
+
+<!-- LOOKBOOK — Horizontal Scroll Section #21 -->
+<section class="lookbook" id="lookbook">
+  <div class="wrap lb-head reveal">
+    <span class="eyebrow">LOOKBOOK · 2026 SPRING</span>
+    <h2 class="serif">누운의 봄,<br>여섯 개의 룩으로</h2>
+    <p>한 사람의 하루를 따라 흐르는 여섯 개의 룩. 옆으로 스크롤하며 천천히 둘러보세요.</p>
+  </div>
+  <div class="lb-viewport" id="lbViewport">
+    <div class="lb-track" id="lbTrack">
+      <article class="look-card">
+        <div class="look-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/1011/900/1200')"></div><span class="look-no serif">01</span></div>
+        <div class="look-meta"><div class="ttl serif">Morning Linen</div><div class="items">오버사이즈 셔츠<br>와이드 슬랙스</div></div>
+      </article>
+      <article class="look-card">
+        <div class="look-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/1025/900/1200')"></div><span class="look-no serif">02</span></div>
+        <div class="look-meta"><div class="ttl serif">Quiet Tailoring</div><div class="items">싱글 블레이저<br>실크 캐미솔</div></div>
+      </article>
+      <article class="look-card">
+        <div class="look-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/177/900/1200')"></div><span class="look-no serif">03</span></div>
+        <div class="look-meta"><div class="ttl serif">Off Duty</div><div class="items">니트 베스트<br>코튼 맥시 스커트</div></div>
+      </article>
+      <article class="look-card">
+        <div class="look-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/1062/900/1200')"></div><span class="look-no serif">04</span></div>
+        <div class="look-meta"><div class="ttl serif">Cobalt Hour</div><div class="items">새틴 셔츠 드레스<br>레더 벨트</div></div>
+      </article>
+      <article class="look-card">
+        <div class="look-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/823/900/1200')"></div><span class="look-no serif">05</span></div>
+        <div class="look-meta"><div class="ttl serif">After Six</div><div class="items">우먼즈 트렌치<br>슬림 터틀넥</div></div>
+      </article>
+      <article class="look-card">
+        <div class="look-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/64/900/1200')"></div><span class="look-no serif">06</span></div>
+        <div class="look-meta"><div class="ttl serif">Late Night</div><div class="items">바이어스 슬립 드레스<br>스트랩 힐</div></div>
+      </article>
+    </div>
+  </div>
+  <div class="lb-foot"><span class="lb-hint">← 스크롤하여 룩 전체 보기 →</span></div>
+</section>
+
+<!-- FEATURED PIECES — editorial parallax grid #7 -->
+<section class="featured" id="featured">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FEATURED · 이번 시즌의 픽</span>
+      <h2 class="serif">오래 입을 한 벌을<br>고르는 일</h2>
+      <p>오버스펙 원단과 마감으로 완성한 시즌 대표 피스. 모든 가격은 부가세 포함이며 판매 시 실 상품 정보로 교체됩니다.</p>
+    </div>
+    <div class="feat-grid">
+      <article class="product p-a reveal">
+        <div class="prod-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/21/1200/900')"></div><span class="prod-tag new">NEW</span></div>
+        <div class="prod-body">
+          <div class="prod-name serif">Noon Wool Coat<small>핸드메이드 더블 울 코트 · 오트</small></div>
+          <div class="prod-price">₩498,000</div>
+        </div>
+      </article>
+      <article class="product p-b reveal">
+        <div class="prod-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/335/900/1200')"></div><span class="prod-tag">BEST</span></div>
+        <div class="prod-body">
+          <div class="prod-name serif">Silk Slip Dress<small>16mm 실크 바이어스 드레스 · 잉크</small></div>
+          <div class="prod-price">₩268,000</div>
+        </div>
+      </article>
+      <article class="product p-c reveal">
+        <div class="prod-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/342/900/1200')"></div><span class="prod-tag new">NEW</span></div>
+        <div class="prod-body">
+          <div class="prod-name serif">Cobalt Knit<small>램스울 라운드넥 니트 · 코발트</small></div>
+          <div class="prod-price">₩159,000<span class="sale">₩198,000</span></div>
+        </div>
+      </article>
+      <article class="product p-d reveal">
+        <div class="prod-img"><div class="pimg" style="background-image:url('https://picsum.photos/id/96/1200/900')"></div><span class="prod-tag">SIGNATURE</span></div>
+        <div class="prod-body">
+          <div class="prod-name serif">Wide Tailored Trouser<small>울 혼방 와이드 슬랙스 · 차콜</small></div>
+          <div class="prod-price">₩188,000</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ATELIER / STORY — split reveal -->
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-media reveal"><div class="pimg"></div></div>
+    <div class="story-text reveal">
+      <span class="eyebrow">THE ATELIER</span>
+      <h2 class="serif">서울 성수의<br>작은 아틀리에에서</h2>
+      <p>NOON은 2019년, 성수동의 작은 작업실에서 시작했습니다. <em>덜어낼수록 분명해진다</em>는 믿음으로, 매 시즌 30여 개의 피스만을 신중하게 짓습니다.</p>
+      <p>한 벌의 옷이 누군가의 십 년을 함께하길 바라며, 봉제 한 땀과 단추 하나까지 국내 공방과 손을 맞춰 만듭니다. 빠른 유행 대신 오래 남는 태도를 택했습니다.</p>
+      <div class="story-sign serif">— 누운 크리에이티브 디렉터</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORES -->
+<section class="stores" id="stores">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">STORES · 매장 안내</span>
+      <h2 class="serif">직접 만져보고<br>입어보는 경험</h2>
+      <p>두 곳의 오프라인 매장에서 NOON의 소재와 핏을 직접 경험하실 수 있습니다. 방문 전 인스타그램 DM으로 재고를 문의해 주세요.</p>
+    </div>
+    <div class="store-grid">
+      <article class="store reveal">
+        <div class="store-map">
+          <div class="road r1"></div><div class="road r2"></div>
+          <div class="map-pin"><div class="dot"></div><div class="lbl">NOON 성수</div></div>
+          <div class="map-note">지도 영역 — 판매 시 네이버/카카오 지도 임베드로 교체</div>
+        </div>
+        <div class="store-body">
+          <div class="city">FLAGSHIP · SEONGSU</div>
+          <h3 class="serif">누운 성수 플래그십</h3>
+          <div class="store-row"><div class="k">주소</div><div class="v">서울 성동구 연무장길 00, 2층<br><span style="color:var(--grey-2);font-size:13px">(우) 04793</span></div></div>
+          <div class="store-row"><div class="k">운영</div><div class="v">화–일 12:00 – 20:00<br><span style="color:var(--grey-2);font-size:13px">매주 월요일 휴무</span></div></div>
+          <div class="store-row"><div class="k">전화</div><div class="v"><a href="tel:02-000-0000" style="border-bottom:1px solid var(--line)">02-000-0000</a></div></div>
+        </div>
+      </article>
+      <article class="store reveal">
+        <div class="store-map">
+          <div class="road r1" style="left:30%;transform:rotate(-9deg)"></div><div class="road r2" style="top:40%"></div>
+          <div class="map-pin" style="top:50%;left:42%"><div class="dot"></div><div class="lbl">NOON 한남</div></div>
+          <div class="map-note">지도 영역 — 판매 시 네이버/카카오 지도 임베드로 교체</div>
+        </div>
+        <div class="store-body">
+          <div class="city">SHOWROOM · HANNAM</div>
+          <h3 class="serif">누운 한남 쇼룸</h3>
+          <div class="store-row"><div class="k">주소</div><div class="v">서울 용산구 이태원로 000, 1층<br><span style="color:var(--grey-2);font-size:13px">(우) 04401</span></div></div>
+          <div class="store-row"><div class="k">운영</div><div class="v">수–일 13:00 – 19:00 (예약제)<br><span style="color:var(--grey-2);font-size:13px">월·화 휴무</span></div></div>
+          <div class="store-row"><div class="k">예약</div><div class="v"><a href="#contact" style="border-bottom:1px solid var(--line)">방문 예약 문의</a></div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM FEED -->
+<section class="insta" id="insta">
+  <div class="wrap">
+    <div class="insta-head reveal">
+      <div>
+        <span class="eyebrow">INSTAGRAM</span>
+        <h2 class="serif">@noon.official</h2>
+      </div>
+      <a class="insta-handle" href="#" onclick="return false;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        팔로우하기
+      </a>
+    </div>
+    <div class="insta-grid reveal">
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/325/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/338/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/433/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/452/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/536/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/1080/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/129/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/206/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/235/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/249/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/292/600/600')"></div></a>
+      <a class="feed" href="#" onclick="return false;"><div class="pimg" style="background-image:url('https://picsum.photos/id/360/600/600')"></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <span class="eyebrow">CONTACT</span>
+        <h2 class="serif">문의하기</h2>
+        <p>제품·재고·도매·협업 관련 문의를 남겨 주세요. 영업일 기준 1–2일 내에 답변드립니다.</p>
+        <div class="kv">
+          <a href="tel:02-000-0000"><span class="k">전화</span><span>02-000-0000</span></a>
+          <a href="mailto:hello@noon.example"><span class="k">이메일</span><span>hello@noon.example</span></a>
+          <span><span class="k">DM</span><span>@noon.official</span></span>
+          <span><span class="k">운영</span><span>평일 11:00 – 18:00</span></span>
+        </div>
+      </div>
+      <form class="form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field"><label for="cf-name">이름</label><input id="cf-name" type="text" placeholder="성함을 입력해 주세요" required></div>
+          <div class="field"><label for="cf-tel">연락처</label><input id="cf-tel" type="tel" placeholder="010-0000-0000" required></div>
+        </div>
+        <div class="field"><label for="cf-msg">문의 내용</label><textarea id="cf-msg" placeholder="문의하실 내용을 자유롭게 작성해 주세요" required></textarea></div>
+        <!-- 제출 → 구글시트(Apps Script) 또는 이메일(web3forms) 연동 — 데모에선 미작동 -->
+        <button type="submit" class="form-submit">문의 보내기</button>
+        <p class="form-note">* 본 폼은 판매용 데모로 실제 전송되지 않습니다. 판매 시 구글시트 또는 이메일로 연동됩니다.</p>
+        <p class="form-ok" id="formOk">문의가 접수되었습니다. (데모 — 실제 전송되지 않습니다)</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER + count-up #27 -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="trust">
+      <div class="stat reveal"><div class="num"><span class="count" data-to="42000">0</span><span class="suf">+</span></div><div class="lbl">누적 주문 건수 (2019–2026)</div></div>
+      <div class="stat reveal"><div class="num"><span class="count" data-to="86000">0</span><span class="suf">+</span></div><div class="lbl">인스타그램 팔로워</div></div>
+      <div class="stat reveal"><div class="num"><span class="count" data-to="4.9" data-dec="1">0</span><span class="suf">/5.0</span></div><div class="lbl">고객 리뷰 평균 평점</div></div>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo serif">NOON <span style="font-size:.5em;opacity:.6;font-family:var(--sans);letter-spacing:.15em">누운</span></div>
+        <p>서울 기반 컨템포러리 미니멀 우먼즈웨어 셀렉트 라벨. 덜어내는 방식으로 오래 입을 옷을 짓습니다.</p>
+      </div>
+      <div class="foot-col">
+        <h6>둘러보기</h6>
+        <a href="#lookbook">룩북</a>
+        <a href="#featured">컬렉션</a>
+        <a href="#story">브랜드 스토리</a>
+        <a href="#stores">매장 안내</a>
+        <a href="#contact">문의하기</a>
+      </div>
+      <div class="foot-col">
+        <h6>고객 &amp; 문의</h6>
+        <a href="tel:02-000-0000">고객센터 02-000-0000</a>
+        <p>운영시간 평일 11:00 – 18:00</p>
+        <a href="mailto:hello@noon.example">hello@noon.example</a>
+        <a href="#" onclick="return false;">인스타그램 @noon.official</a>
+        <a href="#" onclick="return false;">카카오톡 채널 문의</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <div class="biz">
+        <span>상호: 누운(NOON)</span>
+        <span>대표: 홍길동</span>
+        <span>사업자등록번호: 000-00-00000</span>
+        <span>통신판매업신고: 제2019-서울성동-0000호</span>
+      </div>
+      <div>주소: 서울특별시 성동구 연무장길 00, 2층 &nbsp;|&nbsp; 개인정보관리책임자: 홍길동 &nbsp;|&nbsp; 고객센터: 02-000-0000</div>
+      <div style="margin-top:10px;opacity:.7">© 2026 NOON. All rights reserved. &nbsp;·&nbsp; 본 페이지는 판매용 데모이며 사업자 정보·이미지·연락처는 예시입니다.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="tel" href="tel:02-000-0000" aria-label="전화">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" style="margin:0 auto"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+  </a>
+  <a class="resv" href="#contact">문의하기</a>
+</div>
+
+<!-- DESKTOP FLOATING CTA -->
+<a class="float-cta" id="floatCta" href="#contact"><span class="pulse"></span>문의하기</a>
+
+<script>
+(function(){
+  "use strict";
+  gsap.registerPlugin(ScrollTrigger);
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width:760px)').matches;
+
+  /* ---------- Header / Sticky CTA toggle ---------- */
+  const header = document.getElementById('header');
+  const floatCta = document.getElementById('floatCta');
+  const stickyCta = document.getElementById('stickyCta');
+  function onScrollUI(y){
+    header.classList.toggle('scrolled', y > 60);
+    const show = y > window.innerHeight * 0.6;
+    floatCta.classList.toggle('show', show);
+    stickyCta.classList.toggle('show', show);
+  }
+
+  /* ---------- Contact form (demo — no real submit) ---------- */
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', e=>{
+      e.preventDefault(); // 제출 → 구글시트/이메일 연동 자리. 데모에선 미작동.
+      document.getElementById('formOk').style.display='block';
+      form.querySelector('.form-submit').textContent='접수됨 (데모)';
+    });
+  }
+
+  /* ---------- REDUCED MOTION: show final states, skip scroll FX ---------- */
+  if(reduce){
+    gsap.set('.reveal', {opacity:1, y:0, clearProps:'transform'});
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-in'));
+    document.querySelectorAll('.count').forEach(el=>{
+      const dec = +el.dataset.dec||0;
+      el.textContent = (+el.dataset.to).toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+    });
+    onScrollUI(window.scrollY);
+    window.addEventListener('scroll', ()=>onScrollUI(window.scrollY), {passive:true});
+    return;
+  }
+
+  /* ---------- Lenis ↔ ScrollTrigger sync ---------- */
+  const lenis = new Lenis({ lerp:0.1, smoothWheel:true, wheelMultiplier:1 });
+  lenis.on('scroll', (e)=>{ ScrollTrigger.update(); onScrollUI(e.animatedScroll); });
+  gsap.ticker.add((t)=>lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+
+  // anchor smooth-scroll via Lenis
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length<2) return;
+      const t = document.querySelector(id);
+      if(t){ e.preventDefault(); lenis.scrollTo(t, {offset:-10, duration:1.2}); }
+    });
+  });
+
+  function init(){
+    /* HERO — Shrink & Lock (#1) : pin + scale scrub, settle into card */
+    gsap.to('#heroMedia', {
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'+=100%', pin:true, scrub:1, anticipatePin:1 },
+      scale:0.78, borderRadius:'28px', ease:'none'
+    });
+    // hero content gently fades + lifts as it shrinks
+    gsap.to('.hero-content', {
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'+=60%', scrub:1 },
+      y:-60, opacity:0, ease:'none'
+    });
+
+    /* MANIFESTO — Word-by-word reveal (#8) */
+    const phil = document.getElementById('phil');
+    (function splitWords(node){
+      node.querySelectorAll('em').forEach(em=>{
+        const frag=document.createDocumentFragment();
+        em.textContent.split(' ').forEach((w,i)=>{
+          if(i) frag.appendChild(document.createTextNode(' '));
+          const s=document.createElement('span'); s.className='w'; s.style.color='var(--cobalt)'; s.style.fontStyle='italic'; s.textContent=w; frag.appendChild(s);
+        });
+        em.replaceWith(frag);
+      });
+      const walker = [...node.childNodes];
+      node.innerHTML='';
+      walker.forEach(n=>{
+        if(n.nodeType===3){
+          n.textContent.split(' ').forEach((w)=>{
+            if(w==='') { node.appendChild(document.createTextNode(' ')); return; }
+            const s=document.createElement('span'); s.className='w'; s.textContent=w; node.appendChild(s); node.appendChild(document.createTextNode(' '));
+          });
+        } else { node.appendChild(n); }
+      });
+    })(phil);
+    gsap.from(phil.querySelectorAll('.w'), {
+      yPercent:110, opacity:0, stagger:0.03, ease:'power3.out',
+      scrollTrigger:{ trigger:phil, start:'top 82%', end:'bottom 62%', scrub:1 }
+    });
+
+    /* KINETIC MARQUEE (#6) — endless loop, reverses direction on scroll up/down */
+    const mq = document.getElementById('marquee');
+    let mqX = 0;
+    let mqHalf = mq.scrollWidth/2;
+    let mqDir = 1; // 1 = scroll down (move left), -1 = scroll up (move right)
+    window.addEventListener('resize', ()=>{ mqHalf = mq.scrollWidth/2; });
+    gsap.ticker.add(()=>{
+      mqX -= 0.7 * mqDir;
+      if(mqX <= -mqHalf) mqX += mqHalf;
+      if(mqX > 0) mqX -= mqHalf;
+      mq.style.transform = `translateX(${mqX}px)`;
+    });
+    // direction follows scroll velocity (down → left, up → right)
+    ScrollTrigger.create({
+      onUpdate:(self)=>{ if(self.getVelocity() !== 0) mqDir = self.getVelocity() > 0 ? 1 : -1; }
+    });
+
+    /* LOOKBOOK — Horizontal Scroll Section (#21) : pin + x scrub */
+    const lbTrack = document.getElementById('lbTrack');
+    const lbViewport = document.getElementById('lbViewport');
+    function lbDistance(){ return lbTrack.scrollWidth - window.innerWidth + 60; }
+    gsap.to(lbTrack, {
+      x: ()=> -lbDistance(), ease:'none',
+      scrollTrigger:{
+        trigger:'#lbViewport', start:'top top',
+        end: ()=> '+=' + lbDistance(),
+        pin:true, scrub:1, anticipatePin:1, invalidateOnRefresh:true
+      }
+    });
+
+    /* Generic reveal on entry (#8-style fade-up) */
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      ScrollTrigger.create({ trigger:el, start:'top 86%', once:true,
+        onEnter:()=>el.classList.add('is-in') });
+    });
+
+    /* FEATURED / STORY parallax images (#7) */
+    gsap.utils.toArray('.prod-img .pimg, .story-media .pimg').forEach(img=>{
+      gsap.fromTo(img, {yPercent:-9}, {yPercent:9, ease:'none',
+        scrollTrigger:{ trigger:img.closest('.prod-img, .story-media'), start:'top bottom', end:'bottom top', scrub:1 }});
+    });
+
+    /* INSTAGRAM feed column parallax (#7) — desktop only for perf */
+    if(!isMobile){
+      gsap.utils.toArray('.feed .pimg').forEach((img,i)=>{
+        const dir = i%2 ? 7 : -7;
+        gsap.fromTo(img, {yPercent:-dir}, {yPercent:dir, ease:'none',
+          scrollTrigger:{ trigger:img.parentElement, start:'top bottom', end:'bottom top', scrub:1 }});
+      });
+    }
+
+    /* FOOTER count-up (#27 Number scrubbing) */
+    gsap.utils.toArray('.count').forEach(el=>{
+      const to = +el.dataset.to, dec = +el.dataset.dec||0;
+      const obj={v:0};
+      gsap.to(obj, { v:to, ease:'none', snap: dec?{}:{v:1},
+        scrollTrigger:{ trigger:el, start:'top 88%', end:'top 55%', scrub:1 },
+        onUpdate(){ el.textContent = obj.v.toFixed(dec).replace(/\B(?=(\d{3})+(?!\d))/g,','); }});
+    });
+
+    // refresh after images settle so triggers are accurate
+    window.addEventListener('load', ()=>ScrollTrigger.refresh());
+    setTimeout(()=>ScrollTrigger.refresh(), 600);
+  }
+
+  init();
+  onScrollUI(window.scrollY);
+})();
+</script>
+</body>
+</html>

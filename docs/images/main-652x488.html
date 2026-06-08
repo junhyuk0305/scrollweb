@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="image.css">
+<style>
+  /* 메인 전용 — 652×488 썸네일 */
+  .canvas.main{display:flex;align-items:center;padding:44px 40px}
+  .m-left{flex:1;z-index:3}
+  .m-eye{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent);
+    text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;margin-bottom:16px}
+  .m-eye::before{content:"";width:20px;height:2px;background:var(--accent)}
+  .m-title{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.24;letter-spacing:-.01em}
+  .m-title em{font-style:normal;color:var(--accent)}
+  .m-sub{font-size:15px;color:var(--ink-dim);margin-top:14px;font-weight:600}
+  .m-chips{display:flex;gap:8px;margin-top:20px}
+  .m-chips .chip{font-size:12px;padding:7px 14px}
+  .m-right{position:absolute;right:-30px;top:50%;transform:translateY(-50%);width:330px}
+  .m-brand{position:absolute;top:34px;left:40px}
+  .m-device .screen{padding:18px;min-height:150px}
+  .m-phone{position:absolute;right:-6px;bottom:-26px;width:108px}
+  .m-phone .screen{padding:11px;min-height:170px}
+  .m-streak{top:38%}
+  .m-streak2{top:60%;opacity:.4}
+</style>
+</head>
+<body>
+<div class="canvas main">
+  <div class="brand m-brand"><span class="glyph">S</span><span>SCROLL<span class="dim">WORKS</span></span></div>
+
+  <div class="m-left">
+    <span class="m-eye">스크롤 인터랙티브 웹</span>
+    <h1 class="m-title">스크롤에 반응하는<br><em>홈페이지</em> 제작</h1>
+    <p class="m-sub">반응형 · 인터랙티브 · 빠른 납기</p>
+    <div class="m-chips">
+      <span class="chip on">GSAP</span>
+      <span class="chip">반응형</span>
+      <span class="chip">모바일</span>
+    </div>
+  </div>
+
+  <div class="m-right">
+    <div class="device m-device motion-ghost">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="screen">
+        <div class="streak m-streak"></div>
+        <div class="streak m-streak2"></div>
+        <div class="ui-hero"></div>
+        <div class="ui-accent"></div>
+        <div class="ui-line w70"></div>
+        <div class="ui-line w50"></div>
+        <div class="ui-grid"><div></div><div></div></div>
+      </div>
+    </div>
+    <div class="phone m-phone">
+      <div class="screen">
+        <div class="ui-hero" style="height:52px"></div>
+        <div class="ui-accent" style="width:60%"></div>
+        <div class="ui-line w85"></div>
+        <div class="ui-line w50"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

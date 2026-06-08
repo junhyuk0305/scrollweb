@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/사진/연락처/네이버예약 링크/사업자·야영장업 등록번호/지도 -->
+<!-- 규제: 관광진흥법상 야영장업 등록 표기. 화기·안전 이용수칙 안내 포함 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>예약·오시는 길 | 별헤는밤 STARGAZE</title>
+<meta name="description" content="체크인/아웃 날짜를 달력에서 선택하고 공식 홈페이지에서 직접 예약하세요. 수수료 없는 직접 예약 혜택, 환불규정 요약, 오시는 길·주차·내비 안내. 별헤는밤 강원 홍천.">
+<meta property="og:title" content="예약·오시는 길 | 별헤는밤 STARGAZE">
+<meta property="og:description" content="달력에서 날짜 선택 → 직접 예약. 플랫폼 수수료 없이 사장님이 직접 운영하는 공식 예약.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="별헤는밤 STARGAZE 홈">
+      <span class="logo" aria-hidden="true">✦</span>
+      <span class="b-name">별헤는밤<small>STARGAZE CAMP</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="sites.html" data-nav="sites.html">캠핑 사이트</a>
+      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="guide.html" data-nav="guide.html">이용안내</a>
+      <a href="gallery.html" data-nav="gallery.html">갤러리</a>
+      <a href="reservation.html" data-nav="reservation.html" aria-current="page">예약</a>
+      <a href="reservation.html" class="nav-cta">예약하기</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="page-head" aria-label="예약">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep">›</span><b>예약·오시는 길</b>
+    </nav>
+    <h1>직접 예약하고, 더 받아가세요</h1>
+    <p>플랫폼 수수료 없이 사장님이 직접 운영하는 공식 예약입니다. 날짜를 고르고, 직접 예약 혜택까지 챙겨가세요.</p>
+  </div>
+</section>
+
+<!-- ===== 예약 달력 + 채널 ===== -->
+<section aria-label="예약 달력">
+  <div class="wrap">
+    <span class="eyebrow">BOOKING</span>
+    <h2 class="title">예약 가능 날짜 확인</h2>
+    <p class="lead">아래 달력에서 체크인·체크아웃 날짜를 선택해 보세요. (데모용 표시이며, 실제 잔여 현황은 예약 확정 시 안내됩니다.)</p>
+
+    <div class="resv-grid">
+      <!-- 달력 카드 -->
+      <div class="cal-card fade-up">
+        <div class="cal-head">
+          <div class="m" id="calMonth">2026년 6월</div>
+          <div class="cal-nav">
+            <button id="calPrev" aria-label="이전 달">‹</button>
+            <button id="calNext" aria-label="다음 달">›</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="calGrid" role="grid" aria-label="예약 달력"></div>
+        <div class="cal-legend">
+          <span><i class="av"></i>예약 가능</span>
+          <span><i class="se" style="background:var(--forest)"></i>선택한 날짜</span>
+          <span><i class="so" style="background:#e7e2d8"></i>예약 마감</span>
+        </div>
+        <div class="cal-fields">
+          <div class="cal-field"><span>체크인</span><b id="calCi">—</b></div>
+          <div class="cal-field"><span>체크아웃</span><b id="calCo">—</b></div>
+        </div>
+        <div class="cal-sel-info" id="calInfo">체크인 날짜를 선택해 주세요.</div>
+      </div>
+
+      <!-- 예약 채널 + 혜택 -->
+      <div class="resv-side">
+        <!-- 교체: 네이버예약 / 야놀자 / 전화번호 실제 링크 -->
+        <a class="chan naver" href="#" aria-label="네이버 예약으로 이동(데모)">
+          <span class="ic" aria-hidden="true">N</span>
+          <span><b>네이버 예약</b><span>실시간 예약 · 네이버페이 결제</span></span>
+        </a>
+        <a class="chan yanolja" href="#" aria-label="야놀자 예약으로 이동(데모)">
+          <span class="ic" aria-hidden="true">Y</span>
+          <span><b>야놀자 예약</b><span>플랫폼에서도 예약 가능</span></span>
+        </a>
+        <a class="chan tel" href="tel:033-123-4567" aria-label="전화 예약 033-123-4567">
+          <span class="ic" aria-hidden="true">📞</span>
+          <span><b>전화 예약 033-123-4567</b><span>09:00~21:00 · 직접 상담 예약</span></span>
+        </a>
+        <div class="direct-callout">
+          <h3>✦ 공식 홈페이지 직접 예약 혜택</h3>
+          <p>전화·공식 채널로 직접 예약하시면 — 웰컴 장작 1망 무료, 주중 레이트 체크아웃 우선, 재방문 전용 사이트 우선 배정. 플랫폼 수수료가 없어 더 투명한 요금으로 모십니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 환불규정 요약 + 간편 예약문의 폼 ===== -->
+<section class="section-soft" style="background:var(--cream)" aria-label="예약 문의와 환불규정">
+  <div class="wrap">
+    <div class="info-cols">
+      <!-- 환불규정 요약 -->
+      <div class="info-card fade-up">
+        <h3><span class="ic" aria-hidden="true">↩️</span> 취소·환불 규정 요약</h3>
+        <div class="refund-grid">
+          <div class="refund-item"><span class="when">7일 전까지</span><span class="pct">100%</span></div>
+          <div class="refund-item"><span class="when">5~6일 전</span><span class="pct">90%</span></div>
+          <div class="refund-item"><span class="when">3~4일 전</span><span class="pct">70%</span></div>
+          <div class="refund-item"><span class="when">1~2일 전</span><span class="pct">50%</span></div>
+          <div class="refund-item"><span class="when">당일·노쇼</span><span class="pct warn">0%</span></div>
+          <div class="refund-item"><span class="when">기상특보 휴장</span><span class="pct">100%</span></div>
+        </div>
+        <div class="notice"><span class="ic" aria-hidden="true">⚠️</span><span>환불 기준은 이용일(체크인일) 0시 기준이며, 단순 우천은 정상 운영됩니다. 자세한 내용은 <a href="guide.html" style="color:var(--ember);font-weight:700">이용안내</a>를 확인하세요.</span></div>
+      </div>
+
+      <!-- 간편 예약 문의 폼 -->
+      <div class="info-card fade-up" id="formFields">
+        <h3><span class="ic" aria-hidden="true">✉️</span> 간편 예약·문의 남기기</h3>
+        <p style="font-size:14.5px;color:var(--ink-soft);margin-bottom:18px">원하는 날짜·타입을 남겨 주시면 잔여 사이트를 확인해 연락드립니다. (데모 폼 — 실제 전송되지 않습니다.)</p>
+        <form id="bookForm" novalidate>
+          <div class="field" style="margin-bottom:16px">
+            <label for="bf-name">성함 <span style="color:var(--ember)">*</span></label>
+            <input type="text" id="bf-name" name="name" autocomplete="name" placeholder="예) 홍길동" style="width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)">
+            <div class="err" style="display:none;color:var(--ember);font-size:13px;margin-top:6px;font-weight:600">성함을 입력해 주세요.</div>
+          </div>
+          <div class="field" style="margin-bottom:16px">
+            <label for="bf-tel">연락처 <span style="color:var(--ember)">*</span></label>
+            <input type="tel" id="bf-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="예) 010-1234-5678" style="width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)">
+            <div class="err" style="display:none;color:var(--ember);font-size:13px;margin-top:6px;font-weight:600">연락처를 정확히 입력해 주세요.</div>
+          </div>
+          <div class="field" style="margin-bottom:16px">
+            <label for="bf-type">희망 사이트 타입</label>
+            <select id="bf-type" name="type" style="width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)">
+              <option>숲속 글램핑 텐트</option>
+              <option>프리미엄 카라반</option>
+              <option>오토캠핑 (데크)</option>
+              <option>오토캠핑 (파쇄석)</option>
+              <option>프라이빗 독채</option>
+            </select>
+          </div>
+          <div class="field" style="margin-bottom:16px">
+            <label for="bf-memo">희망 날짜·인원·요청사항</label>
+            <textarea id="bf-memo" name="memo" rows="3" placeholder="예) 6/20~21 1박, 성인 2 아동 1, 반려견 동반 희망" style="width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:12px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink);resize:vertical"></textarea>
+          </div>
+          <label class="consent" style="display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--ink-soft);margin-bottom:18px">
+            <input type="checkbox" id="bf-agree" style="width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--forest)">
+            <span>개인정보 수집·이용(예약 상담 목적)에 동의합니다. <span style="color:var(--ember)">*</span>
+              <span class="err" style="display:none;color:var(--ember);font-weight:600;margin-top:4px">동의가 필요합니다.</span>
+            </span>
+          </label>
+          <button type="submit" class="btn btn-amber" style="width:100%">예약 문의 보내기</button>
+        </form>
+      </div>
+      <!-- 폼 완료 메시지 -->
+      <div class="info-card" id="formOk" tabindex="-1" style="display:none;text-align:center">
+        <div style="font-size:46px;margin-bottom:10px" aria-hidden="true">🎉</div>
+        <h3 style="justify-content:center">문의가 접수되었습니다</h3>
+        <p style="color:var(--ink-soft)">빠른 시일 내 남겨주신 연락처로 잔여 사이트를 확인해 연락드리겠습니다. 감사합니다. (데모 화면)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 오시는 길 ===== -->
+<section id="map" aria-label="오시는 길">
+  <div class="wrap">
+    <span class="eyebrow">LOCATION</span>
+    <h2 class="title">오시는 길</h2>
+    <p class="lead">서울에서 약 1시간 40분. 내비게이션에 <b>“별헤는밤 캠핑파크”</b> 또는 아래 주소를 입력하세요.</p>
+    <div class="map-grid">
+      <!-- 교체: 실제 지도(네이버/카카오/구글 지도) iframe 삽입 -->
+      <div class="map-box" role="img" aria-label="캠핑장 위치 지도 자리표시">
+        <span class="maptag">지도 영역 (판매 시 실제 지도 삽입)</span>
+        <div class="pin">
+          <div class="marker" aria-hidden="true">📍</div>
+          <b>별헤는밤 캠핑파크</b>
+          <span>강원특별자치도 홍천군 서면 별빛로 128</span>
+        </div>
+      </div>
+      <div class="access">
+        <div class="acc-item"><h4><span aria-hidden="true">🚗</span> 자가용</h4><p>서울양양고속도로 → 동홍천 IC → 약 15분. 캠핑장 전용 주차장 이용(오토캠핑은 사이트 옆 주차).</p></div>
+        <div class="acc-item"><h4><span aria-hidden="true">🧭</span> 내비게이션</h4><p>“별헤는밤 캠핑파크” 검색 또는 주소 입력. 도착 약 2km 전부터 좁은 산길이니 서행해 주세요.</p></div>
+        <div class="acc-item"><h4><span aria-hidden="true">🚌</span> 대중교통</h4><p>홍천터미널 하차 → 택시 약 25분. 사전 연락 시 단체 픽업 가능 여부를 안내해 드립니다.</p></div>
+        <div class="acc-item"><h4><span aria-hidden="true">🅿️</span> 주차</h4><p>차량 1대 무료(사이트당). 추가 차량은 공용 주차장 이용, 매너타임 중 차량 이동은 자제 부탁드립니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="예약 안내">
+  <div class="wrap inner">
+    <h2>오늘 밤, 별 아래로 초대합니다</h2>
+    <p>전화 한 통이면 충분합니다. 직접 예약 혜택과 함께 기다리겠습니다.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="tel:033-123-4567" class="btn btn-amber">📞 033-123-4567 전화 예약</a>
+      <a href="#" class="btn btn-ghost-light">네이버 예약 바로가기</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">✦</span> 별헤는밤 STARGAZE</div>
+        <p class="foot-legal">강원 홍천 숲속에서 별과 모닥불, 그리고 깊은 밤을 나누는 글램핑·오토캠핑 파크입니다. 플랫폼엔 없는 우리만의 공간과 직접 예약 혜택으로 모십니다.</p>
+      </div>
+      <div>
+        <h5>이용 안내</h5>
+        <ul>
+          <li>입실 15:00 / 퇴실 11:00</li>
+          <li>매너타임 22:00 ~ 07:00</li>
+          <li>리셉션 09:00 ~ 21:00</li>
+          <li>연중무휴 (기상특보 시 휴장)</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="sites.html">캠핑 사이트 소개</a></li>
+          <li><a href="facility.html">시설·어메니티</a></li>
+          <li><a href="guide.html">이용안내·환불규정</a></li>
+          <li><a href="gallery.html">갤러리</a></li>
+          <li><a href="reservation.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        상호 <b>별헤는밤 캠핑파크</b> &nbsp;|&nbsp; 대표 한지호 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        야영장업 등록번호 제2024-홍천-0007호 (일반야영장업) &nbsp;|&nbsp; 강원특별자치도 홍천군 서면 별빛로 128<br>
+        예약·문의 033-123-4567
+      </div>
+      <div>© 2026 별헤는밤 STARGAZE. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="#main" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:033-123-4567" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+</body>
+</html>

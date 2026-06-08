@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/사진/연락처/네이버예약 링크/사업자·야영장업 등록번호/지도 -->
+<!-- 규제: 관광진흥법상 야영장업 등록 표기. 화기·안전 이용수칙 안내 포함 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>캠핑 사이트 소개 | 별헤는밤 STARGAZE</title>
+<meta name="description" content="글램핑 텐트·프리미엄 카라반·오토캠핑(데크/파쇄석)·프라이빗 독채. 구역별 정원·기준요금·특징을 한눈에. 별헤는밤 강원 홍천 캠핑파크.">
+<meta property="og:title" content="캠핑 사이트 소개 | 별헤는밤 STARGAZE">
+<meta property="og:description" content="글램핑·카라반·오토캠핑·독채 — 일행과 취향에 맞춰 고르는 네 가지 머무름.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="별헤는밤 STARGAZE 홈">
+      <span class="logo" aria-hidden="true">✦</span>
+      <span class="b-name">별헤는밤<small>STARGAZE CAMP</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="sites.html" data-nav="sites.html" aria-current="page">캠핑 사이트</a>
+      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="guide.html" data-nav="guide.html">이용안내</a>
+      <a href="gallery.html" data-nav="gallery.html">갤러리</a>
+      <a href="reservation.html" data-nav="reservation.html">예약</a>
+      <a href="reservation.html" class="nav-cta">예약하기</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== 페이지 헤더 ===== -->
+<section class="page-head" aria-label="캠핑 사이트 소개">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep">›</span><b>캠핑 사이트</b>
+    </nav>
+    <h1>네 가지 밤, 네 가지 머무름</h1>
+    <p>짐 없이 떠나는 글램핑부터 내 장비로 완성하는 오토캠핑까지. 모든 구역은 숲 간격을 넉넉히 두어 프라이빗하게 설계했습니다.</p>
+  </div>
+</section>
+
+<!-- ===== 구역별 상세 ===== -->
+<section aria-label="구역별 사이트">
+  <div class="wrap">
+
+    <!-- 글램핑 -->
+    <article class="site-block" id="glamping">
+      <div class="site-media fade-up">
+        <img class="pimg" src="https://picsum.photos/id/1043/900/700" alt="따뜻한 조명이 켜진 숲속 글램핑 텐트 내부와 데크">
+        <div class="price-tag"><b>175,000원~</b><span>주중 1박 기준 / 2인</span></div>
+      </div>
+      <div class="site-body fade-up">
+        <span class="s-tag">GLAMPING TENT</span>
+        <h2>숲속 글램핑 텐트</h2>
+        <div class="meta"><span>기준 <b>2인</b> · 최대 4인</span><span>면적 <b>약 20㎡</b></span><span>총 <b>8동</b></span></div>
+        <p>침구·냉난방·전기가 모두 준비된 풀옵션 텐트입니다. 무거운 장비 없이 몸만 오시면 됩니다. 전용 데크에서 모닥불을 피우고, 텐트 천장 창으로 별을 올려다보세요.</p>
+        <ul class="amen-list">
+          <li>퀸 침대 + 추가 매트리스</li>
+          <li>에어컨·전기요·난방기</li>
+          <li>전용 데크 &amp; 화로대</li>
+          <li>미니 냉장고·전기포트</li>
+          <li>개별 전기 콘센트</li>
+          <li>천장 별 관측 창</li>
+        </ul>
+        <div class="btn-row"><a href="reservation.html" class="btn btn-amber">날짜 보고 예약</a></div>
+      </div>
+    </article>
+
+    <!-- 카라반 -->
+    <article class="site-block flip" id="caravan">
+      <div class="site-media fade-up">
+        <img class="pimg" src="https://picsum.photos/id/1067/900/700" alt="숲에 자리한 프리미엄 카라반 외관">
+        <div class="price-tag"><b>195,000원~</b><span>주중 1박 기준 / 4인</span></div>
+      </div>
+      <div class="site-body fade-up">
+        <span class="s-tag">PREMIUM CARAVAN</span>
+        <h2>프리미엄 카라반</h2>
+        <div class="meta"><span>기준 <b>4인</b> · 최대 5인</span><span>면적 <b>약 16㎡</b></span><span>총 <b>5대</b></span></div>
+        <p>내부에 주방과 화장실·샤워실을 갖춘 독립형 카라반입니다. 새벽에 아이와 밖으로 나갈 필요 없이 따뜻하게 머물 수 있어, 어린 자녀를 동반한 가족에게 가장 인기 있는 타입입니다.</p>
+        <ul class="amen-list">
+          <li>내부 화장실·온수 샤워</li>
+          <li>인덕션·싱크대 주방</li>
+          <li>냉난방 완비</li>
+          <li>2층 침상 포함</li>
+          <li>전용 어닝 &amp; 테이블</li>
+          <li>전용 화로대</li>
+        </ul>
+        <div class="btn-row"><a href="reservation.html" class="btn btn-amber">날짜 보고 예약</a></div>
+      </div>
+    </article>
+
+    <!-- 오토캠핑 -->
+    <article class="site-block" id="auto">
+      <div class="site-media fade-up">
+        <img class="pimg" src="https://picsum.photos/id/1015/900/700" alt="계곡 옆 오토캠핑 데크와 파쇄석 사이트">
+        <div class="price-tag"><b>55,000원~</b><span>주중 1박 기준 / 차량 1대</span></div>
+      </div>
+      <div class="site-body fade-up">
+        <span class="s-tag">AUTO CAMPING</span>
+        <h2>오토캠핑 (데크·파쇄석)</h2>
+        <div class="meta"><span>기준 <b>4인</b> · 최대 6인</span><span>차량 <b>사이트 옆 주차</b></span><span>총 <b>22면</b></span></div>
+        <p>내 장비로 완성하는 정통 캠핑 구역입니다. 평탄한 우드 데크 사이트와 배수가 좋은 파쇄석 사이트 중 선택하세요. 모든 사이트에 개별 전기와 수전이 가깝게 배치되어 있습니다.</p>
+        <ul class="amen-list">
+          <li>데크형 / 파쇄석형 선택</li>
+          <li>사이트별 개별 전기</li>
+          <li>차량 사이트 옆 주차</li>
+          <li>인접 개수대·화장실</li>
+          <li>일부 계곡뷰 사이트</li>
+          <li>대형 텐트 설치 가능</li>
+        </ul>
+        <div class="btn-row"><a href="reservation.html" class="btn btn-amber">날짜 보고 예약</a></div>
+      </div>
+    </article>
+
+    <!-- 프라이빗 독채 -->
+    <article class="site-block flip" id="private">
+      <div class="site-media fade-up">
+        <img class="pimg" src="https://picsum.photos/id/1039/900/700" alt="숲에 둘러싸인 프라이빗 독채와 전용 마당">
+        <div class="price-tag"><b>290,000원~</b><span>주중 1박 기준 / 4인</span></div>
+      </div>
+      <div class="site-body fade-up">
+        <span class="s-tag">PRIVATE HOUSE</span>
+        <h2>프라이빗 독채</h2>
+        <div class="meta"><span>기준 <b>4인</b> · 최대 6인</span><span>전용 마당 <b>독립</b></span><span>총 <b>3채</b></span></div>
+        <p>가장 안쪽 숲에 자리한 독립 공간입니다. 전용 마당과 프라이빗 불멍존, 야외 스파(시즌제)를 갖춰 오롯이 우리 일행만의 밤을 보낼 수 있습니다. 기념일·소규모 모임에 추천합니다.</p>
+        <ul class="amen-list">
+          <li>독립된 전용 마당</li>
+          <li>프라이빗 불멍존</li>
+          <li>실내 주방·화장실</li>
+          <li>야외 스파 (시즌 운영)</li>
+          <li>거실 + 별도 침실</li>
+          <li>전용 바베큐 시설</li>
+        </ul>
+        <div class="btn-row"><a href="reservation.html" class="btn btn-amber">날짜 보고 예약</a></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== 안내 + CTA ===== -->
+<section class="on-night" aria-label="예약 안내" style="text-align:center">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--amber)">DIRECT BOOKING</span>
+    <h2 class="title" style="color:var(--cream)">표시 요금은 공식 홈페이지 기준입니다</h2>
+    <p class="lead" style="margin:0 auto;color:var(--sage)">위 기준요금은 주중 1박 기준이며 주말·성수기에는 요금이 달라집니다. 정확한 요금과 잔여 사이트는 예약 페이지의 달력에서 확인하세요. 직접 예약 시 웰컴 장작 등 혜택이 함께합니다.</p>
+    <div class="btn-row" style="justify-content:center">
+      <a href="guide.html" class="btn btn-ghost-light">요금표·이용수칙 보기</a>
+      <a href="reservation.html" class="btn btn-amber">예약 달력 열기</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">✦</span> 별헤는밤 STARGAZE</div>
+        <p class="foot-legal">강원 홍천 숲속에서 별과 모닥불, 그리고 깊은 밤을 나누는 글램핑·오토캠핑 파크입니다. 플랫폼엔 없는 우리만의 공간과 직접 예약 혜택으로 모십니다.</p>
+      </div>
+      <div>
+        <h5>이용 안내</h5>
+        <ul>
+          <li>입실 15:00 / 퇴실 11:00</li>
+          <li>매너타임 22:00 ~ 07:00</li>
+          <li>리셉션 09:00 ~ 21:00</li>
+          <li>연중무휴 (기상특보 시 휴장)</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="sites.html">캠핑 사이트 소개</a></li>
+          <li><a href="facility.html">시설·어메니티</a></li>
+          <li><a href="guide.html">이용안내·환불규정</a></li>
+          <li><a href="gallery.html">갤러리</a></li>
+          <li><a href="reservation.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        상호 <b>별헤는밤 캠핑파크</b> &nbsp;|&nbsp; 대표 한지호 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        야영장업 등록번호 제2024-홍천-0007호 (일반야영장업) &nbsp;|&nbsp; 강원특별자치도 홍천군 서면 별빛로 128<br>
+        예약·문의 033-123-4567
+      </div>
+      <div>© 2026 별헤는밤 STARGAZE. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 예약">
+  <div class="inner">
+    <a href="reservation.html" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:033-123-4567" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="reservation.html#map"><span class="ic" aria-hidden="true">📍</span>오시는길</a>
+  </div>
+</nav>
+
+<a href="reservation.html" class="float-cta" id="floatCta" aria-label="예약하기"><span class="pulse" aria-hidden="true"></span> 직접 예약하기</a>
+
+</body>
+</html>

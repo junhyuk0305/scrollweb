@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><link rel="stylesheet" href="image.css">
+<style>
+.d5 .demos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:54px}
+.d5 .demo .device .screen{min-height:150px;padding:18px}
+.d5 .demo .cap{margin-top:16px}
+.d5 .demo .cap b{display:block;font-size:18px;font-weight:700;margin-bottom:4px}
+.d5 .demo .cap span{display:block;font-size:14px;color:var(--ink-faint)}
+.d5 .live{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--good);margin-top:6px}
+.d5 .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--good);
+  box-shadow:0 0 10px var(--good)}
+/* 업종별 히어로 톤 */
+.t-stay .ui-hero{background:linear-gradient(120deg,#1d2a24,#0f1713)}
+.t-stay .ui-accent{background:#46d39a}
+.t-build .ui-hero{background:linear-gradient(120deg,#26241f,#15130f)}
+.t-build .ui-accent{background:#c8a06a}
+.t-savor .ui-hero{background:linear-gradient(120deg,#2a1d22,#160f12)}
+.t-savor .ui-accent{background:#e08a6a}
+.t-care .ui-hero{background:linear-gradient(120deg,#1a2630,#0e151b)}
+.t-care .ui-accent{background:#5bc6e0}
+.t-trust .ui-hero{background:linear-gradient(120deg,#1b2030,#0e1118)}
+.t-trust .ui-accent{background:#5b8cff}
+.t-camp .ui-hero{background:linear-gradient(120deg,#1c2230,#0c1117)}
+.t-camp .ui-accent{background:#e0a85b}
+.d5 .foot{margin-top:50px;font-size:16px;color:var(--ink-faint);text-align:center}
+</style></head>
+<body>
+<div class="canvas d5">
+  <div class="brand brand-mark"><span class="glyph">S</span><span>SCROLL<span class="dim">WORKS</span></span></div>
+  <span class="sec-tag">05 / 09</span>
+  <div class="pad-lg">
+    <span class="eyebrow">Point 2 · 라이브 데모</span>
+    <h2 class="title">말보다 결과로,<br>업종별 <em>라이브 데모</em>로 증명합니다</h2>
+    <p class="lead">직접 코딩한 자체 제작 데모입니다. 가장 가까운 사례에서 출발해<br>고객님 업종에 맞춰 발전시킵니다.</p>
+
+    <div class="demos">
+      <div class="demo t-stay"><div class="device"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen"><div class="ui-hero"></div><div class="ui-accent"></div><div class="ui-line w70"></div></div></div>
+        <div class="cap"><b>펜션 · 풀빌라</b><span>풀스크린 풍경 + 자체 예약</span><span class="live">라이브 데모</span></div></div>
+
+      <div class="demo t-build"><div class="device"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen"><div class="ui-hero"></div><div class="ui-accent"></div><div class="ui-grid"><div></div><div></div></div></div></div>
+        <div class="cap"><b>인테리어 · 시공</b><span>비포/애프터 + 견적 폼</span><span class="live">라이브 데모</span></div></div>
+
+      <div class="demo t-savor"><div class="device"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen"><div class="ui-hero"></div><div class="ui-accent"></div><div class="ui-line w85"></div></div></div>
+        <div class="cap"><b>카페 · F&B</b><span>감성 비주얼 + 메뉴 · 예약</span><span class="live">라이브 데모</span></div></div>
+
+      <div class="demo t-care"><div class="device"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen"><div class="ui-hero"></div><div class="ui-accent"></div><div class="ui-line w70"></div></div></div>
+        <div class="cap"><b>의원 · 한의원</b><span>예약·신뢰 + 규제 안전</span><span class="live">라이브 데모</span></div></div>
+
+      <div class="demo t-trust"><div class="device"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen"><div class="ui-hero"></div><div class="ui-accent"></div><div class="ui-grid"><div></div><div></div></div></div></div>
+        <div class="cap"><b>세무 · 노무</b><span>상담 전환 + 사례</span><span class="live">라이브 데모</span></div></div>
+
+      <div class="demo t-camp"><div class="device"><div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen"><div class="ui-hero"></div><div class="ui-accent"></div><div class="ui-line w85"></div></div></div>
+        <div class="cap"><b>캠핑 · 글램핑</b><span>브랜딩 + 자체 예약</span><span class="live">라이브 데모</span></div></div>
+    </div>
+
+    <p class="foot">데모는 클라이언트 없이 직접 제작한 샘플입니다 · 라이브 링크는 상품 설명에서 확인하세요</p>
+  </div>
+</div>
+</body></html>

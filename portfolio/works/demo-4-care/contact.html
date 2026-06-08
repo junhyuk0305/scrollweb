@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!-- 규제: 의료광고 사전심의 대상 가능. 후기/전후사진 미포함. 비급여 고지 포함. 카피는 심의 전제로 클라이언트 확인 -->
+<!-- 판매 시 교체: 로고/원장사진·약력/진료시간/비급여 금액/네이버예약·카카오 링크/사업자번호/지도 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>예약 · 오시는 길 | 맑은숲한의원</title>
+<meta name="description" content="맑은숲한의원 예약 - 네이버 예약·카카오톡·전화. 간단 상담 신청 폼과 지하철·버스·주차 등 오시는 길 안내.">
+<meta property="og:title" content="예약 · 오시는 길 | 맑은숲한의원">
+<meta property="og:description" content="네이버 예약·카카오톡·전화 예약 안내와 오시는 길.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip-link">본문 바로가기</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="맑은숲한의원 홈">
+      <span class="logo" aria-hidden="true">숲</span>
+      <span>맑은숲한의원<small>척추·통증·체질 클리닉</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="주요 메뉴">
+      <a href="index.html" data-nav="index.html">홈</a>
+      <a href="treatments.html" data-nav="treatments.html">진료안내</a>
+      <a href="doctors.html" data-nav="doctors.html">의료진</a>
+      <a href="info.html" data-nav="info.html">진료시간·비급여</a>
+      <a href="facility.html" data-nav="facility.html">시설</a>
+      <a href="contact.html" data-nav="contact.html" aria-current="page">예약</a>
+      <a href="tel:0212345678" class="nav-tel" aria-label="전화 걸기 02-1234-5678">02-1234-5678</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<div class="ctabar" role="region" aria-label="빠른 예약 안내">
+  <div class="inner">
+    <a href="#booking" class="book"><span class="ic" aria-hidden="true">📅</span><span class="lbl">예약하기</span></a>
+    <a href="tel:0212345678"><span class="ic" aria-hidden="true">📞</span><span class="lbl">전화상담</span></a>
+    <a href="#map"><span class="ic" aria-hidden="true">📍</span><span class="lbl">길찾기</span></a>
+  </div>
+</div>
+
+<main id="main">
+
+<div class="page-head">
+  <div class="wrap">
+    <nav class="crumb" aria-label="현재 위치">
+      <a href="index.html">홈</a><span class="sep" aria-hidden="true">›</span><b>예약 · 오시는 길</b>
+    </nav>
+    <h1>예약 · 오시는 길</h1>
+    <p>네이버 예약·카카오톡·전화 모두 가능합니다. 간단 상담 신청을 남겨주시면 진료시간 내에 연락드립니다.</p>
+  </div>
+</div>
+
+<!-- ===== 예약/상담 ===== -->
+<section id="booking" class="booking" aria-label="예약 및 상담">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up" style="background:rgba(255,255,255,.16);color:#fff">예약 · 상담</span>
+      <h2 class="title fade-up">편하신 방법으로 예약하세요</h2>
+      <p class="lead fade-up">네이버 예약과 카카오톡 상담, 전화 모두 가능합니다. 아래 신청서를 남겨주시면 진료시간 내 연락드립니다.</p>
+    </div>
+    <div class="book-grid">
+      <div class="book-channels">
+        <!-- 교체: 네이버예약 / 카카오 채널 실제 링크 -->
+        <a href="#" class="chan naver fade-up" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">N</span>
+          <span><b>네이버 예약</b><span>원하는 시간대를 바로 선택해 예약</span></span>
+        </a>
+        <a href="#" class="chan kakao fade-up" target="_blank" rel="noopener">
+          <span class="ic" aria-hidden="true">💬</span>
+          <span><b>카카오톡 상담</b><span>증상·진료 문의를 편하게 채팅으로</span></span>
+        </a>
+        <a href="tel:0212345678" class="chan tel fade-up">
+          <span class="ic" aria-hidden="true">📞</span>
+          <span><b>전화 02-1234-5678</b><span>진료시간 내 통화로 빠른 예약</span></span>
+        </a>
+      </div>
+
+      <form class="form-card fade-up" id="bookForm" novalidate>
+        <div id="formFields">
+          <h3>간편 상담 신청</h3>
+          <p class="fhint">남겨주시면 진료시간 내에 연락드립니다. (진료 예약은 전화·네이버 예약이 더 빠릅니다)</p>
+          <div class="field">
+            <label for="bf-name">성함 <span class="req" aria-hidden="true">*</span></label>
+            <input id="bf-name" name="name" type="text" autocomplete="name" required placeholder="예) 홍길동">
+            <span class="err" role="alert">성함을 입력해 주세요.</span>
+          </div>
+          <div class="field">
+            <label for="bf-tel">연락처 <span class="req" aria-hidden="true">*</span></label>
+            <input id="bf-tel" name="tel" type="tel" inputmode="numeric" autocomplete="tel" required placeholder="예) 010-0000-0000">
+            <span class="err" role="alert">연락처를 정확히 입력해 주세요.</span>
+          </div>
+          <div class="field">
+            <label for="bf-topic">상담 항목</label>
+            <select id="bf-topic" name="topic">
+              <option>척추·관절 통증</option>
+              <option>체질 개선 / 한약</option>
+              <option>한방 다이어트</option>
+              <option>교통사고 한방치료</option>
+              <option>기타 문의</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="bf-msg">남기실 내용</label>
+            <textarea id="bf-msg" name="msg" placeholder="증상이나 원하시는 진료 시간을 적어주세요."></textarea>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="bf-agree" name="agree" required>
+            <span>개인정보 수집·이용에 동의합니다. (상담 응대 목적으로만 이용하며, 동의 철회 시 즉시 파기합니다.)
+              <span class="err" role="alert" style="display:none">개인정보 수집·이용에 동의해 주세요.</span>
+            </span>
+          </label>
+          <button type="submit" class="submit">상담 신청하기</button>
+        </div>
+        <div class="form-ok" id="formOk" role="status" aria-live="polite" tabindex="-1">
+          <div class="big" aria-hidden="true">✅</div>
+          <h3>상담 신청이 접수되었습니다</h3>
+          <p class="fhint" style="margin-top:8px">진료시간 내에 남겨주신 연락처로 연락드리겠습니다. 감사합니다.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 오시는 길 ===== -->
+<section id="map" aria-label="오시는 길">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow fade-up">오시는 길</span>
+      <h2 class="title fade-up">찾아오시는 방법</h2>
+      <p class="lead fade-up">지하철·버스 모두 편리하며, 건물 내 주차도 가능합니다.</p>
+    </div>
+    <div class="map-grid">
+      <!-- 교체: 네이버/카카오 지도 임베드 -->
+      <div class="map-box fade-up" role="img" aria-label="맑은숲한의원 위치 지도 (지도 임베드 자리)">
+        <span class="maptag">지도 자리 · 네이버/카카오 지도 임베드</span>
+        <div class="pin">
+          <div class="marker" aria-hidden="true">📍</div>
+          <b>맑은숲한의원</b>
+          <span>서울특별시 ○○구 맑은숲로 12, 3층</span>
+        </div>
+      </div>
+      <div class="access">
+        <div class="acc-item fade-up">
+          <h4><span aria-hidden="true">🚇</span> 지하철</h4>
+          <p>○○역 3번 출구에서 도보 4분 (출구에서 직진 후 첫 사거리)</p>
+        </div>
+        <div class="acc-item fade-up">
+          <h4><span aria-hidden="true">🚌</span> 버스</h4>
+          <p>맑은숲공원 정류장 하차 (간선 100·241 / 마을 02)</p>
+        </div>
+        <div class="acc-item fade-up">
+          <h4><span aria-hidden="true">🅿️</span> 주차</h4>
+          <p>건물 지하 주차장 이용 가능 (진료 시 2시간 무료, 원무과에서 확인 도장)</p>
+        </div>
+        <div class="acc-item fade-up">
+          <h4><span aria-hidden="true">♿</span> 편의</h4>
+          <p>1층 출입구 휠체어 접근 가능 · 엘리베이터 이용</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="logo" aria-hidden="true">숲</span> 맑은숲한의원</div>
+        <p class="foot-legal">동네 주민과 온 가족의 건강을 가까이에서 돌보는 척추·통증·체질 한의원입니다. 충분한 진료 시간과 청결한 환경으로 모시겠습니다.</p>
+        <p class="foot-reg">※ 본 홈페이지의 의료 관련 내용은 「의료법」상 의료광고 사전심의 대상일 수 있으며, 게시 전 관련 절차를 따릅니다. 치료 효과는 환자 개인에 따라 다를 수 있습니다.</p>
+      </div>
+      <div>
+        <h5>진료 안내</h5>
+        <ul>
+          <li>평일 09:00 – 18:30</li>
+          <li>목요일 야간 ~ 20:30</li>
+          <li>토요일 09:00 – 13:00</li>
+          <li>일요일·공휴일 휴진</li>
+        </ul>
+      </div>
+      <div>
+        <h5>바로가기</h5>
+        <ul>
+          <li><a href="treatments.html">진료안내</a></li>
+          <li><a href="doctors.html">의료진 소개</a></li>
+          <li><a href="info.html">진료시간·비급여</a></li>
+          <li><a href="facility.html">시설 안내</a></li>
+          <li><a href="contact.html">예약·오시는 길</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-legal">
+        상호 <b>맑은숲한의원</b> &nbsp;|&nbsp; 대표원장 김한결 &nbsp;|&nbsp; 사업자등록번호 123-45-67890<br>
+        서울특별시 ○○구 맑은숲로 12, 3층 &nbsp;|&nbsp; 대표전화 02-1234-5678
+      </div>
+      <div>© 2026 맑은숲한의원. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<nav class="m-cta" aria-label="빠른 연락">
+  <div class="inner">
+    <a href="#booking" class="book"><span class="ic" aria-hidden="true">📅</span>예약</a>
+    <a href="tel:0212345678" class="tel"><span class="ic" aria-hidden="true">📞</span>전화</a>
+    <a href="#map"><span class="ic" aria-hidden="true">📍</span>길찾기</a>
+  </div>
+</nav>
+
+</body>
+</html>

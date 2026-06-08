@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<!-- 판매 시 교체: 로고/시공사진/면허번호/견적폼 수신/카카오 링크 -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>여백건축 YEOBAEK — 공간에 여백을 더하다 | 상업·주거 인테리어/리모델링</title>
+<meta name="description" content="여백건축 YEOBAEK. 누적 시공 1,200건, 14년 실적의 상업·주거 인테리어/리모델링 전문. 비포/애프터로 확인하는 시공 품질, 평형·예산별 견적 가이드, 무료 견적 문의." />
+<meta property="og:title" content="여백건축 YEOBAEK — 공간에 여백을 더하다" />
+<meta property="og:description" content="누적 시공 1,200건 · 14년 · 재발주율 68%. 신뢰와 실적 중심의 인테리어/리모델링." />
+<meta property="og:type" content="website" />
+
+<!-- CDN -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
+<style>
+/* ============================== 디자인 토큰 ============================== */
+:root{
+  --charcoal:#1c1c1e;        /* 차콜 */
+  --charcoal-2:#26262a;
+  --ink:#111114;
+  --offwhite:#f4f1ea;        /* 오프화이트 */
+  --paper:#ece7dd;
+  --line:#d8d1c4;
+  --wood:#a9794f;            /* 우드 액센트 */
+  --wood-soft:#c39a6e;
+  --bronze:#9c7a3c;          /* 브론즈 */
+  --bronze-soft:#bd9a59;
+  --muted:#6f6a61;
+  --muted-d:#9a948a;
+  --maxw:1240px;
+  --gut:clamp(20px,5vw,64px);
+  --r:14px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --shadow:0 18px 50px -24px rgba(20,18,14,.55);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Pretendard',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--offwhite);
+  color:var(--charcoal);
+  line-height:1.6;
+  letter-spacing:-.01em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+::selection{background:var(--wood);color:#fff}
+
+/* Lenis */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+
+/* 타이포 헬퍼 */
+.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--bronze);display:inline-flex;align-items:center;gap:.7em;
+}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--wood)}
+.display{font-weight:800;line-height:1.05;letter-spacing:-.035em}
+.serif-ko{font-weight:300}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+section{position:relative}
+
+/* ============================== 헤더 ============================== */
+header.nav{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--gut);
+  transition:background .4s var(--ease),backdrop-filter .4s,padding .4s var(--ease),box-shadow .4s;
+  color:#fff;
+}
+header.nav.scrolled{
+  background:rgba(248,245,238,.86);backdrop-filter:blur(14px) saturate(1.2);
+  color:var(--charcoal);padding:12px var(--gut);
+  box-shadow:0 1px 0 rgba(0,0,0,.06);
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em;font-size:1.05rem}
+.brand .mark{
+  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--wood),var(--bronze));color:#fff;
+  font-weight:800;font-size:.95rem;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+}
+.brand small{display:block;font-size:.6rem;font-weight:600;letter-spacing:.34em;opacity:.7;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:.9rem;font-weight:600}
+.nav-links a{position:relative;opacity:.9;transition:opacity .25s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:currentColor;transition:width .3s var(--ease)}
+.nav-links a:hover{opacity:1}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+  background:var(--charcoal);color:#fff;padding:9px 18px;border-radius:100px;
+  font-size:.84rem;font-weight:700;border:1px solid transparent;transition:transform .25s var(--ease),background .25s;
+}
+header.nav.scrolled .nav-cta{background:var(--wood)}
+.nav-cta:hover{transform:translateY(-2px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;padding:6px}
+.burger span{width:24px;height:2px;background:currentColor;border-radius:2px;transition:.3s}
+
+/* 고정 견적 CTA (모바일/우하단) */
+.float-cta{
+  position:fixed;right:clamp(14px,3vw,28px);bottom:clamp(14px,3vw,28px);z-index:55;
+  display:flex;flex-direction:column;gap:10px;align-items:flex-end;
+}
+.float-cta .fbtn{
+  display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:100px;
+  font-weight:800;font-size:.92rem;box-shadow:var(--shadow);border:0;
+  transition:transform .3s var(--ease),box-shadow .3s;
+}
+.float-cta .fbtn:hover{transform:translateY(-3px)}
+.fbtn.estimate{background:var(--wood);color:#fff}
+.fbtn.kakao{background:#FEE500;color:#3a1d1d}
+.fbtn svg{width:18px;height:18px}
+
+/* ============================== 히어로 ============================== */
+.hero{
+  min-height:100svh;display:flex;align-items:flex-end;
+  position:relative;overflow:hidden;color:#fff;
+  padding-bottom:clamp(48px,9vh,96px);
+}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.hero-bg img{
+  width:100%;height:118%;object-fit:cover;position:absolute;top:-9%;left:0;
+  filter:brightness(.62) saturate(.92);will-change:transform;
+}
+.hero-bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,14,12,.55) 0%,rgba(15,14,12,.15) 32%,rgba(15,14,12,.78) 100%);
+}
+.hero-inner{position:relative;z-index:2;width:100%}
+.hero .wrap{display:grid;gap:26px}
+.hero h1{
+  font-size:clamp(2.6rem,7.4vw,6rem);max-width:14ch;
+  text-shadow:0 6px 40px rgba(0,0,0,.4);
+}
+.hero h1 .ko{font-weight:300;letter-spacing:-.02em}
+.hero h1 .accent{
+  background:linear-gradient(100deg,var(--wood-soft),var(--bronze-soft));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;
+}
+.hero-sub{font-size:clamp(1rem,2vw,1.22rem);max-width:46ch;color:rgba(255,255,255,.86);font-weight:400}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+.btn-primary{
+  background:var(--wood);color:#fff;padding:15px 30px;border-radius:100px;font-weight:800;
+  display:inline-flex;align-items:center;gap:10px;border:0;font-size:1rem;
+  box-shadow:0 14px 36px -14px rgba(169,121,79,.9);transition:transform .3s var(--ease),box-shadow .3s;
+}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-ghost{
+  background:rgba(255,255,255,.08);color:#fff;padding:15px 28px;border-radius:100px;font-weight:700;
+  border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(4px);transition:background .3s,transform .3s var(--ease);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.hero-meta{
+  display:flex;gap:30px;flex-wrap:wrap;margin-top:18px;
+  padding-top:22px;border-top:1px solid rgba(255,255,255,.18);font-size:.86rem;color:rgba(255,255,255,.78);
+}
+.hero-meta b{color:#fff;font-weight:700}
+.scroll-cue{
+  position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;
+  display:flex;flex-direction:column;align-items:center;gap:6px;font-size:.66rem;letter-spacing:.3em;color:rgba(255,255,255,.6);
+}
+.scroll-cue .bar{width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:cue 2s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}40%{transform:scaleY(1);transform-origin:top}60%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============================== 브랜드 + 카운트업 ============================== */
+.brandline{padding:clamp(80px,12vh,140px) 0 clamp(40px,6vh,70px)}
+.brandline .lead{
+  font-size:clamp(1.5rem,3.4vw,2.7rem);font-weight:300;line-height:1.42;max-width:20ch;letter-spacing:-.02em;
+}
+.brandline .lead b{font-weight:700;color:var(--charcoal)}
+.brandline .lead .hl{color:var(--wood);font-weight:600}
+.brandline .desc{margin-top:26px;max-width:52ch;color:var(--muted);font-size:1.02rem}
+.stats{
+  margin-top:clamp(46px,7vh,80px);display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.stat{padding:34px 28px 34px 0;position:relative}
+.stat + .stat{border-left:1px solid var(--line);padding-left:34px}
+.stat .num{font-size:clamp(2.3rem,4.6vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--charcoal);display:flex;align-items:baseline;gap:2px}
+.stat .num .suf{font-size:.42em;font-weight:700;color:var(--wood)}
+.stat .lab{margin-top:12px;font-size:.86rem;color:var(--muted);font-weight:500}
+
+/* ============================== 비포/애프터 ============================== */
+.ba{padding:clamp(70px,10vh,120px) 0;background:var(--paper)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(34px,5vh,56px)}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,3.2rem);font-weight:800;letter-spacing:-.035em;max-width:18ch}
+.sec-head .sh-side{max-width:38ch;color:var(--muted);font-size:.98rem}
+.sec-head .gh{margin-bottom:14px}
+
+.ba-stage{position:relative}
+.ba-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.ba-tab{
+  background:#fff;border:1px solid var(--line);color:var(--muted);
+  padding:9px 18px;border-radius:100px;font-weight:600;font-size:.86rem;transition:.25s var(--ease);
+}
+.ba-tab.active{background:var(--charcoal);color:#fff;border-color:var(--charcoal)}
+
+.ba-compare{
+  position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--shadow);user-select:none;touch-action:pan-y;cursor:ew-resize;background:#000;
+}
+.ba-layer{position:absolute;inset:0}
+.ba-layer img{width:100%;height:100%;object-fit:cover}
+/* after = 밝은 톤, before = 어두운 톤으로 명확히 구분 */
+.ba-after img{filter:brightness(1.04) saturate(1.06) contrast(1.02)}
+.ba-before{clip-path:inset(0 0 0 var(--pos,50%));z-index:2}
+.ba-before img{filter:brightness(.5) saturate(.62) contrast(.95)}
+.ba-cap{
+  position:absolute;top:16px;padding:6px 14px;border-radius:100px;font-size:.74rem;font-weight:800;letter-spacing:.06em;z-index:5;
+  backdrop-filter:blur(6px);
+}
+.ba-cap.b{left:16px;background:rgba(20,18,14,.62);color:#fff}
+.ba-cap.a{right:16px;background:rgba(255,255,255,.86);color:var(--charcoal)}
+.ba-handle{
+  position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:#fff;z-index:6;transform:translateX(-50%);
+  box-shadow:0 0 18px rgba(0,0,0,.4);
+}
+.ba-knob{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);color:var(--charcoal);
+}
+.ba-knob svg{width:22px;height:22px}
+.ba-meta{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:22px}
+.ba-meta .t{font-weight:800;font-size:1.15rem}
+.ba-meta .d{color:var(--muted);font-size:.92rem;margin-top:4px}
+.ba-spec{display:flex;gap:24px;flex-wrap:wrap;font-size:.84rem;color:var(--muted)}
+.ba-spec b{color:var(--charcoal);font-weight:700;display:block;font-size:.95rem}
+.ba-hint{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;color:var(--muted-d);margin-top:14px}
+
+/* ============================== 포트폴리오 갤러리 ============================== */
+.portfolio{padding:clamp(70px,10vh,120px) 0}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.filter{
+  background:transparent;border:1px solid var(--line);color:var(--muted);
+  padding:9px 20px;border-radius:100px;font-weight:600;font-size:.88rem;transition:.25s var(--ease);
+}
+.filter.active{background:var(--wood);color:#fff;border-color:var(--wood)}
+.filter:hover:not(.active){border-color:var(--wood);color:var(--wood)}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.4vw,20px)}
+.gitem{
+  position:relative;border-radius:var(--r);overflow:hidden;cursor:pointer;background:#ddd;
+  grid-column:span 4;aspect-ratio:4/5;will-change:transform,opacity;
+}
+.gitem.wide{grid-column:span 8;aspect-ratio:16/10}
+.gitem.tall{grid-column:span 4;aspect-ratio:4/6}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease),filter .5s}
+.gitem:hover img{transform:scale(1.07)}
+.gitem .gov{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:22px;color:#fff;z-index:2;
+  background:linear-gradient(180deg,transparent 40%,rgba(15,14,12,.85));
+  opacity:.95;transition:opacity .4s;
+}
+.gitem .gtype{font-size:.7rem;font-weight:700;letter-spacing:.18em;color:var(--wood-soft);text-transform:uppercase}
+.gitem .gname{font-size:1.12rem;font-weight:800;margin-top:5px}
+.gitem .gsub{font-size:.82rem;color:rgba(255,255,255,.74);margin-top:3px}
+.gitem .gplus{
+  position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.16);backdrop-filter:blur(6px);display:grid;place-items:center;color:#fff;
+  border:1px solid rgba(255,255,255,.3);opacity:0;transform:scale(.8);transition:.35s var(--ease);
+}
+.gitem:hover .gplus{opacity:1;transform:scale(1)}
+.gitem.hide{display:none}
+
+/* 라이트박스 */
+.lightbox{
+  position:fixed;inset:0;z-index:90;background:rgba(15,14,12,.94);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);
+  opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;
+}
+.lightbox.open{opacity:1;visibility:visible}
+.lb-inner{max-width:1000px;width:100%;display:grid;grid-template-columns:1.5fr 1fr;gap:0;background:var(--charcoal);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transform:scale(.96);transition:transform .45s var(--ease)}
+.lightbox.open .lb-inner{transform:scale(1)}
+.lb-img{position:relative;min-height:340px;background:#000}
+.lb-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb-info{padding:clamp(26px,4vw,40px);color:#fff;display:flex;flex-direction:column;gap:14px}
+.lb-info .lbtype{font-size:.72rem;font-weight:700;letter-spacing:.2em;color:var(--wood-soft);text-transform:uppercase}
+.lb-info h3{font-size:1.7rem;font-weight:800;letter-spacing:-.02em}
+.lb-info p{color:rgba(255,255,255,.72);font-size:.95rem}
+.lb-info .lbgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14)}
+.lb-info .lbgrid div span{display:block;font-size:.72rem;color:var(--muted-d);margin-bottom:3px}
+.lb-info .lbgrid div b{font-size:1rem;font-weight:700}
+.lb-close{position:absolute;top:16px;right:16px;z-index:5;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.15);border:0;color:#fff;display:grid;place-items:center;font-size:1.3rem}
+.lb-close:hover{background:rgba(255,255,255,.28)}
+
+/* ============================== 프로세스 ============================== */
+.process{padding:clamp(70px,10vh,120px) 0;background:var(--charcoal);color:var(--offwhite)}
+.process .sec-head h2{color:#fff}
+.process .sec-head .sh-side{color:var(--muted-d)}
+.process .eyebrow{color:var(--wood-soft)}
+.proc-grid{display:grid;grid-template-columns:1fr;gap:0;position:relative}
+.proc-line{position:absolute;left:calc(28px + 0px);top:0;bottom:0;width:2px;background:rgba(255,255,255,.12)}
+.proc-line .fill{position:absolute;inset:0;background:var(--wood);transform:scaleY(0);transform-origin:top}
+.step{
+  display:grid;grid-template-columns:58px 1fr;gap:clamp(20px,4vw,52px);align-items:flex-start;
+  padding:clamp(26px,4vh,46px) 0;opacity:.34;transition:opacity .5s var(--ease);position:relative;
+}
+.step.is-active{opacity:1}
+.step .dot{
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  background:var(--charcoal-2);border:2px solid rgba(255,255,255,.18);
+  font-weight:800;font-size:1.1rem;color:var(--muted-d);transition:.5s var(--ease);position:relative;z-index:2;
+}
+.step.is-active .dot{background:var(--wood);border-color:var(--wood);color:#fff;box-shadow:0 0 0 8px rgba(169,121,79,.16)}
+.step .scontent{display:grid;gap:8px;padding-top:6px}
+.step h3{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.02em}
+.step .stag{font-size:.74rem;font-weight:700;letter-spacing:.16em;color:var(--wood-soft);text-transform:uppercase}
+.step p{color:var(--muted-d);max-width:54ch;font-size:.98rem}
+.step.is-active p{color:rgba(255,255,255,.82)}
+.step ul{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;list-style:none}
+.step ul li{font-size:.78rem;color:var(--muted-d);background:rgba(255,255,255,.06);padding:5px 12px;border-radius:100px;border:1px solid rgba(255,255,255,.08)}
+
+/* ============================== 예산/공정 가이드 표 ============================== */
+.budget{padding:clamp(70px,10vh,120px) 0;background:var(--offwhite)}
+.guide-table{
+  width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--shadow);font-size:.94rem;
+}
+.guide-wrap{overflow-x:auto;border-radius:var(--r)}
+.guide-table th,.guide-table td{padding:18px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.guide-table thead th{background:var(--charcoal);color:#fff;font-weight:700;font-size:.86rem;letter-spacing:.02em;white-space:nowrap}
+.guide-table tbody tr:last-child td{border-bottom:0}
+.guide-table tbody tr{transition:background .25s}
+.guide-table tbody tr:hover{background:var(--paper)}
+.guide-table td.range{font-weight:800;color:var(--charcoal)}
+.guide-table td .scope{color:var(--muted);font-size:.85rem;display:block;margin-top:3px}
+.guide-table .price{font-weight:800;color:var(--wood);white-space:nowrap}
+.guide-note{margin-top:18px;font-size:.82rem;color:var(--muted);display:flex;gap:10px;align-items:flex-start;max-width:70ch}
+.guide-note svg{width:18px;height:18px;flex-shrink:0;margin-top:2px;color:var(--wood)}
+.scope-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(34px,5vh,52px)}
+.scope-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .35s var(--ease),box-shadow .35s}
+.scope-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.scope-card .ic{width:46px;height:46px;border-radius:11px;background:linear-gradient(150deg,var(--wood),var(--bronze));display:grid;place-items:center;color:#fff;margin-bottom:16px}
+.scope-card h4{font-size:1.18rem;font-weight:800;margin-bottom:8px}
+.scope-card p{color:var(--muted);font-size:.9rem}
+
+/* ============================== 견적 문의 폼 ============================== */
+.quote{padding:clamp(70px,10vh,120px) 0;background:var(--charcoal);color:var(--offwhite)}
+.quote-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,6vw,80px);align-items:start}
+.quote-left .eyebrow{color:var(--wood-soft)}
+.quote-left h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800;letter-spacing:-.035em;margin-top:18px;color:#fff}
+.quote-left p{color:var(--muted-d);margin-top:18px;max-width:40ch}
+.quote-trust{margin-top:34px;display:grid;gap:14px}
+.quote-trust .qt{display:flex;gap:14px;align-items:center;font-size:.92rem;color:rgba(255,255,255,.82)}
+.quote-trust .qt .qic{width:38px;height:38px;border-radius:10px;background:rgba(169,121,79,.18);display:grid;place-items:center;color:var(--wood-soft);flex-shrink:0}
+.kakao-btn{
+  margin-top:30px;display:inline-flex;align-items:center;gap:10px;background:#FEE500;color:#3a1d1d;
+  padding:14px 24px;border-radius:12px;font-weight:800;font-size:.95rem;transition:transform .3s var(--ease);
+}
+.kakao-btn:hover{transform:translateY(-3px)}
+.kakao-btn svg{width:20px;height:20px}
+
+.qform{background:#fff;color:var(--charcoal);border-radius:18px;padding:clamp(26px,4vw,40px);box-shadow:var(--shadow)}
+.qform h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.qform .qf-sub{font-size:.86rem;color:var(--muted);margin-bottom:24px}
+.field{margin-bottom:20px}
+.field > label{display:block;font-size:.82rem;font-weight:700;margin-bottom:10px;color:var(--charcoal)}
+.field > label .req{color:var(--wood);margin-left:3px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{
+  display:inline-block;padding:9px 16px;border-radius:100px;border:1.5px solid var(--line);
+  font-size:.85rem;font-weight:600;color:var(--muted);transition:.2s var(--ease);
+}
+.chip input:checked + span{background:var(--charcoal);border-color:var(--charcoal);color:#fff}
+.chip input:focus-visible + span{outline:2px solid var(--wood);outline-offset:2px}
+.qform input[type=text],.qform input[type=tel],.qform select,.qform textarea{
+  width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:11px;
+  font-family:inherit;font-size:.95rem;color:var(--charcoal);background:#fbfaf7;transition:border-color .25s,box-shadow .25s;
+}
+.qform input:focus,.qform select:focus,.qform textarea:focus{outline:0;border-color:var(--wood);box-shadow:0 0 0 3px rgba(169,121,79,.14);background:#fff}
+.qform textarea{resize:vertical;min-height:84px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.qform .submit{
+  width:100%;background:var(--wood);color:#fff;border:0;padding:16px;border-radius:12px;
+  font-weight:800;font-size:1rem;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:9px;
+  transition:transform .3s var(--ease),background .3s;
+}
+.qform .submit:hover{transform:translateY(-2px);background:#946840}
+.qform .agree{display:flex;gap:9px;align-items:flex-start;margin-top:16px;font-size:.78rem;color:var(--muted)}
+.qform .agree input{margin-top:3px}
+.qform .agree a{color:var(--wood);text-decoration:underline}
+.form-ok{
+  display:none;text-align:center;padding:30px 10px;
+}
+.form-ok.show{display:block}
+.form-ok .okic{width:64px;height:64px;border-radius:50%;background:rgba(169,121,79,.14);color:var(--wood);display:grid;place-items:center;margin:0 auto 18px}
+.form-ok h3{font-size:1.4rem;margin-bottom:8px}
+.form-ok p{color:var(--muted);font-size:.92rem}
+
+/* ============================== 푸터 ============================== */
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(56px,8vh,86px) 0 34px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-brand .brand{color:#fff;margin-bottom:18px}
+.foot-brand p{max-width:38ch;font-size:.92rem;line-height:1.7}
+.foot-col h5{color:#fff;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px;font-weight:700}
+.foot-col a{display:block;font-size:.92rem;margin-bottom:11px;transition:color .25s}
+.foot-col a:hover{color:var(--wood-soft)}
+.foot-licenses{
+  margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px 36px;
+  padding:30px 0;border-bottom:1px solid rgba(255,255,255,.1);
+}
+.lic{font-size:.84rem}
+.lic span{display:block;font-size:.7rem;letter-spacing:.1em;color:var(--wood-soft);text-transform:uppercase;margin-bottom:5px;font-weight:700}
+.lic b{color:rgba(255,255,255,.88);font-weight:600}
+.foot-badges{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.78);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:8px 14px;border-radius:100px}
+.badge svg{width:15px;height:15px;color:var(--wood-soft)}
+.foot-bottom{margin-top:32px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.78rem;color:rgba(255,255,255,.4)}
+
+/* ============================== 진입 애니메이션 기본 상태 ============================== */
+.reveal{opacity:0;transform:translateY(34px)}
+.reveal-img{opacity:0;transform:translateY(40px) scale(1.02);will-change:transform,opacity}
+
+/* ============================== 반응형 ============================== */
+@media(max-width:980px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .quote-grid{grid-template-columns:1fr;gap:42px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:32px}
+  .foot-brand{grid-column:1/-1}
+}
+@media(max-width:760px){
+  .stats{grid-template-columns:1fr 1fr}
+  .stat + .stat{border-left:0}
+  .stat:nth-child(odd){border-right:1px solid var(--line)}
+  .stat{padding:26px 20px}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .gitem,.gitem.wide,.gitem.tall{grid-column:span 1;aspect-ratio:4/5}
+  .scope-cards{grid-template-columns:1fr}
+  .lb-inner{grid-template-columns:1fr;max-width:440px}
+  .lb-img{min-height:240px;aspect-ratio:16/11}
+  .two{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr}
+  .nav-cta{display:none}
+  .float-cta .fbtn span{display:none}
+  .float-cta .fbtn{padding:14px}
+}
+@media(max-width:480px){
+  .gallery{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .ba-knob{width:46px;height:46px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .reveal,.reveal-img{opacity:1!important;transform:none!important}
+  .hero-bg img{height:100%;top:0}
+  .scroll-cue{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 헤더 ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top">
+    <span class="mark">餘</span>
+    <span>여백건축<small>YEOBAEK</small></span>
+  </a>
+  <nav class="nav-links" aria-label="주요 메뉴">
+    <a href="#ba">시공 비교</a>
+    <a href="#portfolio">포트폴리오</a>
+    <a href="#process">작업 프로세스</a>
+    <a href="#budget">예산 가이드</a>
+    <a href="#quote">견적 문의</a>
+  </nav>
+  <a href="#quote" class="nav-cta">무료 견적</a>
+  <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ============ 고정 CTA ============ -->
+<div class="float-cta">
+  <!-- 판매 시 교체: 카카오 채널 링크 -->
+  <a href="#" class="fbtn kakao" aria-label="카카오 채널 상담">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.5 10-7.6C22 6.5 17.5 3 12 3z"/></svg>
+    <span>카카오 상담</span>
+  </a>
+  <a href="#quote" class="fbtn estimate">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+    <span>무료 견적 받기</span>
+  </a>
+</div>
+
+<!-- ============ 히어로 ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <!-- 판매 시 교체: 대표 시공 사진 -->
+    <img src="https://picsum.photos/id/1048/1920/1280" alt="여백건축 대표 시공 — 모던 미니멀 거실 리모델링" />
+  </div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--wood-soft)">상업 · 주거 인테리어 / 리모델링</span>
+      <h1 class="display">
+        <span class="ko">공간에</span> <span class="accent">여백</span><span class="ko">을<br>더하다</span>
+      </h1>
+      <p class="hero-sub">덜어내야 보이는 본질. 14년간 1,200건의 공간을, 과하지 않게 그러나 완성도 높게 다시 지었습니다.</p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn-primary">
+          무료 견적 받기
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#ba" class="btn-ghost">비포/애프터 보기</a>
+      </div>
+      <div class="hero-meta">
+        <span><b>종합건설업</b> 등록</span>
+        <span><b>실내건축공사업</b> 면허</span>
+        <span><b>하자보증 2년</b> A/S</span>
+        <span><b>재발주율 68%</b></span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- ============ 브랜드 + 카운트업 ============ -->
+<section class="brandline">
+  <div class="wrap">
+    <span class="eyebrow reveal">여백의 철학</span>
+    <p class="lead reveal" style="margin-top:22px">
+      <b>채우는 인테리어</b>는 흔합니다. 여백건축은 <span class="hl">덜어내는 설계</span>로, 사는 사람과 쓰는 사람이 오래 머무는 공간을 만듭니다.
+    </p>
+    <p class="desc reveal">
+      아파트 전체 리모델링부터 상가·카페·사무실 인테리어까지. 실측 기반 설계, 직영 시공, 투명한 공정 관리로
+      "예산은 지키고 품질은 타협하지 않는" 작업을 14년째 이어오고 있습니다.
+    </p>
+
+    <div class="stats" id="stats">
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="1200">0</span><span class="suf">건</span></div>
+        <div class="lab">누적 시공 실적</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="14">0</span><span class="suf">년</span></div>
+        <div class="lab">업력 (2011년 설립)</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="68">0</span><span class="suf">%</span></div>
+        <div class="lab">재발주 · 소개 비율</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span class="cnt" data-to="2">0</span><span class="suf">년</span></div>
+        <div class="lab">하자보증 A/S 기간</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 비포/애프터 ============ -->
+<section class="ba" id="ba">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">BEFORE / AFTER</span>
+        <h2 class="reveal">사진이 아니라<br>'변화'를 보여드립니다</h2>
+      </div>
+      <p class="sh-side reveal">핸들을 좌우로 드래그하면 시공 전과 후가 한 화면에서 비교됩니다. 노후 공간이 어떻게 달라지는지 직접 확인해 보세요.</p>
+    </div>
+
+    <div class="ba-stage reveal">
+      <div class="ba-tabs" id="baTabs">
+        <button class="ba-tab active" data-i="0">아파트 거실 · 32평</button>
+        <button class="ba-tab" data-i="1">카페 인테리어 · 18평</button>
+        <button class="ba-tab" data-i="2">사무실 리모델링 · 45평</button>
+      </div>
+
+      <div class="ba-compare" id="baCompare" style="--pos:50%">
+        <div class="ba-layer ba-after">
+          <img id="baAfter" src="https://picsum.photos/id/1080/1600/900" alt="시공 후 — 밝고 정돈된 공간" />
+        </div>
+        <div class="ba-layer ba-before">
+          <img id="baBefore" src="https://picsum.photos/id/1078/1600/900" alt="시공 전 — 노후한 기존 공간" />
+        </div>
+        <span class="ba-cap b">BEFORE</span>
+        <span class="ba-cap a">AFTER</span>
+        <div class="ba-handle" id="baHandle">
+          <div class="ba-knob">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="ba-meta">
+        <div>
+          <div class="t" id="baTitle">서초 아파트 32평 — 거실·주방 통합 리모델링</div>
+          <div class="d" id="baDesc">벽을 헐어 거실과 주방을 하나로. 우드톤 마루와 간접조명으로 군더더기를 덜어냈습니다.</div>
+        </div>
+        <div class="ba-spec" id="baSpec">
+          <div><b>4주</b>공사 기간</div>
+          <div><b>전체 리모델링</b>공사 범위</div>
+          <div><b>4,800만원대</b>시공 예산</div>
+        </div>
+      </div>
+      <span class="ba-hint">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 7l-4 5 4 5M16 7l4 5-4 5"/></svg>
+        핸들을 드래그하거나 이미지를 클릭해 비교하세요
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 포트폴리오 갤러리 ============ -->
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">PORTFOLIO</span>
+        <h2 class="reveal">공간유형별 시공 사례</h2>
+      </div>
+      <p class="sh-side reveal">아파트·상가·카페·사무실. 공간의 쓰임에 맞춘 설계를 필터로 모아 보세요. 이미지를 클릭하면 상세가 열립니다.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-f="all">전체</button>
+      <button class="filter" data-f="apt">아파트</button>
+      <button class="filter" data-f="shop">상가</button>
+      <button class="filter" data-f="cafe">카페</button>
+      <button class="filter" data-f="office">사무실</button>
+    </div>
+
+    <div class="gallery" id="gallery">
+      <!-- 판매 시 교체: 시공 사진 / 사례 정보 -->
+      <div class="gitem wide" data-cat="apt" data-img="1084" data-type="아파트" data-name="반포 래미안 38평" data-sub="전체 리모델링 · 5주" data-area="38평" data-budget="5,600만원대" data-period="5주" data-scope="전체 리모델링" data-desc="확장형 거실에 헤링본 마루와 무몰딩 마감. 수납을 벽 안으로 숨겨 시야를 비웠습니다.">
+        <img src="https://picsum.photos/id/1084/900/560" alt="반포 래미안 38평 리모델링" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">아파트</span><div class="gname">반포 래미안 38평</div><div class="gsub">전체 리모델링 · 5주</div></div>
+      </div>
+      <div class="gitem" data-cat="cafe" data-img="431" data-type="카페" data-name="연남동 로스터리 카페" data-sub="상업 인테리어 · 3주" data-area="22평" data-budget="3,200만원대" data-period="3주" data-scope="상업 인테리어" data-desc="노출 천장과 빈티지 우드 바. 원두 향이 머무는 동선으로 좌석을 재배치했습니다.">
+        <img src="https://picsum.photos/id/431/600/750" alt="연남동 로스터리 카페" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">카페</span><div class="gname">연남동 로스터리</div><div class="gsub">상업 인테리어 · 3주</div></div>
+      </div>
+      <div class="gitem" data-cat="office" data-img="180" data-type="사무실" data-name="강남 스타트업 오피스" data-sub="사무실 리모델링 · 4주" data-area="45평" data-budget="6,100만원대" data-period="4주" data-scope="부분 리모델링" data-desc="유리 파티션으로 집중과 협업 공간을 분리. 흡음 패널로 소음을 잡았습니다.">
+        <img src="https://picsum.photos/id/180/600/750" alt="강남 스타트업 오피스" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">사무실</span><div class="gname">강남 스타트업 오피스</div><div class="gsub">사무실 리모델링 · 4주</div></div>
+      </div>
+      <div class="gitem" data-cat="apt" data-img="1062" data-type="아파트" data-name="목동 신시가지 29평" data-sub="주방·욕실 부분 시공 · 2주" data-area="29평" data-budget="2,400만원대" data-period="2주" data-scope="부분 시공" data-desc="주방 상부장을 걷어내 개방감을 확보. 욕실은 대형 타일로 청소가 쉬운 마감.">
+        <img src="https://picsum.photos/id/1062/600/750" alt="목동 신시가지 29평" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">아파트</span><div class="gname">목동 신시가지 29평</div><div class="gsub">주방·욕실 부분 · 2주</div></div>
+      </div>
+      <div class="gitem wide" data-cat="shop" data-img="1077" data-type="상가" data-name="성수 편집숍 매장" data-sub="상업 인테리어 · 4주" data-area="30평" data-budget="4,400만원대" data-period="4주" data-scope="상업 인테리어" data-desc="브론즈 집기와 마이크로시멘트 바닥. 제품이 주인공이 되도록 배경을 비웠습니다.">
+        <img src="https://picsum.photos/id/1077/900/560" alt="성수 편집숍 매장" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">상가</span><div class="gname">성수 편집숍 매장</div><div class="gsub">상업 인테리어 · 4주</div></div>
+      </div>
+      <div class="gitem" data-cat="cafe" data-img="225" data-type="카페" data-name="망원 브런치 카페" data-sub="상업 인테리어 · 3주" data-area="26평" data-budget="3,700만원대" data-period="3주" data-scope="상업 인테리어" data-desc="아치 개구부와 따뜻한 베이지 톤. 큰 창으로 자연광을 끌어들였습니다.">
+        <img src="https://picsum.photos/id/225/600/750" alt="망원 브런치 카페" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">카페</span><div class="gname">망원 브런치 카페</div><div class="gsub">상업 인테리어 · 3주</div></div>
+      </div>
+      <div class="gitem" data-cat="office" data-img="3" data-type="사무실" data-name="여의도 금융사 라운지" data-sub="부분 리모델링 · 3주" data-area="40평" data-budget="5,200만원대" data-period="3주" data-scope="부분 리모델링" data-desc="차콜과 브론즈로 묵직한 신뢰감. 응접 라운지와 회의실을 동선으로 분리.">
+        <img src="https://picsum.photos/id/3/600/750" alt="여의도 금융사 라운지" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">사무실</span><div class="gname">여의도 금융사 라운지</div><div class="gsub">부분 리모델링 · 3주</div></div>
+      </div>
+      <div class="gitem" data-cat="apt" data-img="1068" data-type="아파트" data-name="판교 타운하우스 52평" data-sub="전체 리모델링 · 6주" data-area="52평" data-budget="8,300만원대" data-period="6주" data-scope="전체 리모델링" data-desc="복층 구조에 우드 계단과 라이브러리 월. 가족의 동선을 중심에 놓은 설계.">
+        <img src="https://picsum.photos/id/1068/600/750" alt="판교 타운하우스 52평" loading="lazy" />
+        <div class="gplus"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div>
+        <div class="gov"><span class="gtype">아파트</span><div class="gname">판교 타운하우스 52평</div><div class="gsub">전체 리모델링 · 6주</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 프로세스 ============ -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">HOW WE WORK</span>
+        <h2 class="reveal">상담부터 하자보수까지,<br>5단계 투명 공정</h2>
+      </div>
+      <p class="sh-side reveal">"맡겨놓으면 알아서"가 아니라, 매 단계 진행 상황을 공유합니다. 스크롤을 내리면 현재 단계가 강조됩니다.</p>
+    </div>
+
+    <div class="proc-grid" id="procGrid">
+      <div class="proc-line"><span class="fill" id="procFill"></span></div>
+
+      <div class="step is-active">
+        <div class="dot">01</div>
+        <div class="scontent">
+          <span class="stag">STEP 01 — Consulting</span>
+          <h3>상담</h3>
+          <p>공간 용도·예산·일정을 듣고 방향을 잡습니다. 무리한 권유 없이, 가능한 것과 어려운 것을 솔직하게 말씀드립니다.</p>
+          <ul><li>현장 방문 상담</li><li>예산대 협의</li><li>레퍼런스 확인</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">02</div>
+        <div class="scontent">
+          <span class="stag">STEP 02 — Measuring</span>
+          <h3>실측</h3>
+          <p>전문 인력이 직접 방문해 치수·배관·전기·구조를 정밀 측정합니다. 추가 비용의 80%는 부실 실측에서 나옵니다.</p>
+          <ul><li>정밀 실측</li><li>설비 상태 점검</li><li>철거 범위 확정</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">03</div>
+        <div class="scontent">
+          <span class="stag">STEP 03 — Design</span>
+          <h3>설계</h3>
+          <p>3D 도면과 자재 샘플로 완성된 모습을 미리 확인합니다. 견적서에는 자재·수량·단가를 모두 명시합니다.</p>
+          <ul><li>3D 설계 도면</li><li>자재 마감재 선정</li><li>항목별 상세 견적</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">04</div>
+        <div class="scontent">
+          <span class="stag">STEP 04 — Construction</span>
+          <h3>시공</h3>
+          <p>직영 시공팀이 공정표대로 진행하고, 매일 작업 사진을 공유합니다. 현장 소장이 끝까지 한 명으로 책임집니다.</p>
+          <ul><li>직영 시공</li><li>일일 진행 공유</li><li>공정별 검수</li></ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="dot">05</div>
+        <div class="scontent">
+          <span class="stag">STEP 05 — Warranty</span>
+          <h3>하자보수</h3>
+          <p>준공 후 2년간 하자보증. 사용 중 발생한 문제는 빠르게 방문 조치합니다. 끝이 아니라 관계의 시작입니다.</p>
+          <ul><li>2년 하자보증</li><li>신속 A/S 방문</li><li>정기 점검</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 예산/공정 가이드 ============ -->
+<section class="budget" id="budget">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow gh reveal">BUDGET GUIDE</span>
+        <h2 class="reveal">평형 · 공사범위별<br>예산 가이드</h2>
+      </div>
+      <p class="sh-side reveal">아래는 표준 자재 기준의 참고 예산입니다. 실제 견적은 현장 실측 후 자재·구조에 따라 조정됩니다.</p>
+    </div>
+
+    <div class="guide-wrap reveal">
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>평형</th>
+            <th>부분 시공<span style="display:block;font-weight:400;font-size:.78rem;opacity:.7;margin-top:2px">주방·욕실·도배</span></th>
+            <th>전체 리모델링<span style="display:block;font-weight:400;font-size:.78rem;opacity:.7;margin-top:2px">올수리 기준</span></th>
+            <th>예상 공기</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="range">20평대<span class="scope">소형 아파트 / 빌라</span></td>
+            <td>1,500 ~ 2,500만원</td>
+            <td class="price">2,800 ~ 4,200만원</td>
+            <td>2 ~ 4주</td>
+          </tr>
+          <tr>
+            <td class="range">30평대<span class="scope">표준 아파트</span></td>
+            <td>2,200 ~ 3,400만원</td>
+            <td class="price">4,000 ~ 5,800만원</td>
+            <td>3 ~ 5주</td>
+          </tr>
+          <tr>
+            <td class="range">40평대<span class="scope">대형 아파트 / 주택</span></td>
+            <td>3,000 ~ 4,600만원</td>
+            <td class="price">5,500 ~ 8,000만원</td>
+            <td>4 ~ 6주</td>
+          </tr>
+          <tr>
+            <td class="range">상가 · 카페<span class="scope">상업 공간 (평당)</span></td>
+            <td>평당 90 ~ 150만원</td>
+            <td class="price">평당 150 ~ 260만원</td>
+            <td>3 ~ 5주</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="guide-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01" stroke-linecap="round"/></svg>
+      샤시(창호) 교체, 확장, 구조 변경, 시스템 에어컨 등은 별도 견적입니다. 자재 등급(타일·마루·주방)에 따라 금액이 달라지며, 정확한 비용은 무료 현장 실측 후 항목별로 안내해 드립니다.
+    </p>
+
+    <div class="scope-cards">
+      <div class="scope-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h4>부분 시공</h4>
+        <p>주방·욕실·도배·바닥 등 필요한 부분만. 거주하면서도 진행 가능한 합리적 선택입니다.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V8l8-5 8 5v12M9 20v-6h6v6"/></svg></div>
+        <h4>전체 리모델링</h4>
+        <p>철거부터 마감까지 올수리. 구조·동선·수납을 처음부터 다시 설계하는 작업입니다.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg></div>
+        <h4>상업 공간</h4>
+        <p>카페·상가·사무실. 매출과 브랜드로 이어지는 공간을 콘셉트부터 함께 만듭니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 견적 문의 폼 ============ -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="quote-grid">
+      <div class="quote-left">
+        <span class="eyebrow reveal">GET A QUOTE</span>
+        <h2 class="reveal">무료 견적,<br>3분이면 충분합니다</h2>
+        <p class="reveal">평형과 원하는 공사 범위만 알려주시면, 담당 소장이 24시간 내 연락드려 맞춤 견적을 안내합니다. 방문 상담·실측도 무료입니다.</p>
+
+        <div class="quote-trust">
+          <div class="qt reveal"><span class="qic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>현장 실측 · 방문 상담 무료</div>
+          <div class="qt reveal"><span class="qic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>항목별 상세 견적서 · 추가비 없는 투명 계약</div>
+          <div class="qt reveal"><span class="qic"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>준공 후 2년 하자보증 · A/S</div>
+        </div>
+
+        <!-- 판매 시 교체: 카카오 채널 링크 -->
+        <a href="#" class="kakao-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.2 4.7 6.6-.2.7-.7 2.6-.8 3-.1.5.2.5.4.4.2-.1 2.6-1.8 3.7-2.5.6.1 1.3.1 2 .1 5.5 0 10-3.5 10-7.6C22 6.5 17.5 3 12 3z"/></svg>
+          카카오 채널로 바로 상담
+        </a>
+      </div>
+
+      <!-- 판매 시 교체: 견적폼 수신(action / 이메일 / API) -->
+      <form class="qform" id="quoteForm" novalidate>
+        <div id="qformBody">
+          <h3>맞춤 견적 신청</h3>
+          <p class="qf-sub">입력해 주신 정보는 견적 안내 용도로만 사용됩니다.</p>
+
+          <div class="field">
+            <label>공사 범위<span class="req">*</span></label>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="scope" value="부분 시공" checked><span>부분 시공</span></label>
+              <label class="chip"><input type="radio" name="scope" value="전체 리모델링"><span>전체 리모델링</span></label>
+              <label class="chip"><input type="radio" name="scope" value="상업 공간"><span>상업 공간</span></label>
+              <label class="chip"><input type="radio" name="scope" value="미정·상담"><span>미정 · 상담</span></label>
+            </div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="area">평형 / 면적<span class="req">*</span></label>
+              <input type="text" id="area" name="area" placeholder="예) 32평 아파트" required>
+            </div>
+            <div class="field">
+              <label for="budget">예산대</label>
+              <select id="budget" name="budget">
+                <option value="">선택해 주세요</option>
+                <option>2,000만원 이하</option>
+                <option>2,000 ~ 4,000만원</option>
+                <option>4,000 ~ 6,000만원</option>
+                <option>6,000 ~ 8,000만원</option>
+                <option>8,000만원 이상</option>
+                <option>상담 후 결정</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="two">
+            <div class="field">
+              <label for="name">성함<span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="홍길동" required>
+            </div>
+            <div class="field">
+              <label for="phone">연락처<span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="010-0000-0000" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="msg">상세 요청 (선택)</label>
+            <textarea id="msg" name="msg" placeholder="공사 희망 시기, 특별히 원하시는 부분 등을 적어주세요."></textarea>
+          </div>
+
+          <button type="submit" class="submit">
+            무료 견적 신청하기
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <label class="agree">
+            <input type="checkbox" id="agree" required>
+            <span>견적 상담을 위한 <a href="#">개인정보 수집·이용</a>에 동의합니다. (필수)</span>
+          </label>
+        </div>
+
+        <div class="form-ok" id="formOk">
+          <div class="okic"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3>견적 신청이 접수되었습니다</h3>
+          <p>담당 소장이 24시간 이내 입력하신 연락처로 연락드리겠습니다. 감사합니다.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 푸터 ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="#top"><span class="mark">餘</span><span>여백건축<small>YEOBAEK</small></span></a>
+        <p>공간에 여백을 더하다. 상업·주거 인테리어와 리모델링을 직영 시공으로 책임지는 종합건설 브랜드입니다.</p>
+        <div class="foot-badges">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>하자보증 2년</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg>직영 시공</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6" stroke-linecap="round"/></svg>4대보험 가입</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>바로가기</h5>
+        <a href="#ba">시공 비교 (B/A)</a>
+        <a href="#portfolio">시공 포트폴리오</a>
+        <a href="#process">작업 프로세스</a>
+        <a href="#budget">예산 가이드</a>
+        <a href="#quote">무료 견적 문의</a>
+      </div>
+      <div class="foot-col">
+        <h5>문의 · 연락</h5>
+        <!-- 판매 시 교체: 연락처/주소/카카오 -->
+        <a href="tel:0212345678">대표전화 02-1234-5678</a>
+        <a href="#">카카오 채널 @여백건축</a>
+        <a href="#">평일 09:00 – 18:00</a>
+        <a href="#">서울특별시 강남구 논현로 000, 3층</a>
+      </div>
+    </div>
+
+    <!-- 판매 시 교체: 면허번호/사업자번호/평가액 -->
+    <div class="foot-licenses">
+      <div class="lic"><span>종합건설업 등록</span><b>서울-제 2018-000-0000 호</b></div>
+      <div class="lic"><span>실내건축공사업 면허</span><b>제 2016-실내-0000 호</b></div>
+      <div class="lic"><span>시공능력평가액</span><b>토목건축 / 실내건축 등재</b></div>
+      <div class="lic"><span>사업자등록번호</span><b>123-45-67890</b></div>
+      <div class="lic"><span>통신판매업 신고</span><b>제 2019-서울강남-0000 호</b></div>
+      <div class="lic"><span>하자이행 · 영업보증</span><b>건설공제조합 가입</b></div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 여백건축 YEOBAEK Co., Ltd. All rights reserved.</span>
+      <span>본 페이지는 판매용 데모이며, 표기된 면허·실적·연락처는 예시입니다.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ 라이트박스 ============ -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lb-inner">
+    <button class="lb-close" id="lbClose" aria-label="닫기">&times;</button>
+    <div class="lb-img"><img id="lbImg" src="" alt="" /></div>
+    <div class="lb-info">
+      <span class="lbtype" id="lbType"></span>
+      <h3 id="lbName"></h3>
+      <p id="lbDesc"></p>
+      <div class="lbgrid">
+        <div><span>면적</span><b id="lbArea"></b></div>
+        <div><span>공사 범위</span><b id="lbScope"></b></div>
+        <div><span>공사 기간</span><b id="lbPeriod"></b></div>
+        <div><span>시공 예산</span><b id="lbBudget"></b></div>
+      </div>
+      <a href="#quote" class="btn-primary" id="lbCta" style="margin-top:8px;align-self:flex-start">이런 공간 견적 받기</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ========== 헤더 스크롤 상태 ========== */
+  const nav = document.getElementById('nav');
+  const onNav = () => nav.classList.toggle('scrolled', window.scrollY > 60);
+  onNav(); window.addEventListener('scroll', onNav, {passive:true});
+
+  /* ========== 비포/애프터 슬라이더 (마우스 + 터치) ========== */
+  const sets = [
+    {after:'1080', before:'1078', title:'서초 아파트 32평 — 거실·주방 통합 리모델링',
+     desc:'벽을 헐어 거실과 주방을 하나로. 우드톤 마루와 간접조명으로 군더더기를 덜어냈습니다.',
+     spec:[['4주','공사 기간'],['전체 리모델링','공사 범위'],['4,800만원대','시공 예산']]},
+    {after:'292', before:'326', title:'연남동 로스터리 카페 18평 — 상업 인테리어',
+     desc:'어두운 임대 상태에서, 노출 천장과 빈티지 우드 바로 분위기를 새로 만들었습니다.',
+     spec:[['3주','공사 기간'],['상업 인테리어','공사 범위'],['3,100만원대','시공 예산']]},
+    {after:'201', before:'160', title:'강남 오피스 45평 — 사무실 리모델링',
+     desc:'칸막이로 막혀 답답하던 공간을, 유리 파티션과 흡음 마감으로 트이고 조용하게.',
+     spec:[['4주','공사 기간'],['부분 리모델링','공사 범위'],['6,100만원대','시공 예산']]}
+  ];
+  const compare = document.getElementById('baCompare');
+  const handle  = document.getElementById('baHandle');
+  const baAfter = document.getElementById('baAfter');
+  const baBefore= document.getElementById('baBefore');
+  const baTitle = document.getElementById('baTitle');
+  const baDesc  = document.getElementById('baDesc');
+  const baSpec  = document.getElementById('baSpec');
+  let dragging = false;
+
+  function setPos(clientX){
+    const r = compare.getBoundingClientRect();
+    let p = ((clientX - r.left) / r.width) * 100;
+    p = Math.max(2, Math.min(98, p));
+    compare.style.setProperty('--pos', p + '%');
+  }
+  function fromEvent(e){
+    const x = e.touches ? e.touches[0].clientX : e.clientX;
+    setPos(x);
+  }
+  // 클릭/탭 위치로 이동
+  compare.addEventListener('mousedown', e=>{ dragging=true; fromEvent(e); });
+  window.addEventListener('mousemove', e=>{ if(dragging) fromEvent(e); });
+  window.addEventListener('mouseup', ()=> dragging=false);
+  compare.addEventListener('touchstart', e=>{ dragging=true; fromEvent(e); }, {passive:true});
+  window.addEventListener('touchmove', e=>{ if(dragging) fromEvent(e); }, {passive:true});
+  window.addEventListener('touchend', ()=> dragging=false);
+  // 단순 클릭으로도 이동(드래그 안 해도)
+  compare.addEventListener('click', e=>{ if(e.target.closest('.ba-knob')) return; setPos(e.clientX); });
+
+  // 탭 전환
+  document.getElementById('baTabs').addEventListener('click', e=>{
+    const btn = e.target.closest('.ba-tab'); if(!btn) return;
+    document.querySelectorAll('.ba-tab').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const s = sets[+btn.dataset.i];
+    // 판매 시 교체: 비포/애프터 시공 사진
+    baAfter.src  = 'https://picsum.photos/id/'+s.after+'/1600/900';
+    baBefore.src = 'https://picsum.photos/id/'+s.before+'/1600/900';
+    baTitle.textContent = s.title;
+    baDesc.textContent = s.desc;
+    baSpec.innerHTML = s.spec.map(x=>'<div><b>'+x[0]+'</b>'+x[1]+'</div>').join('');
+    compare.style.setProperty('--pos','50%');
+  });
+
+  /* ========== 포트폴리오 필터 ========== */
+  const gallery = document.getElementById('gallery');
+  const items = Array.from(gallery.children);
+  document.getElementById('filters').addEventListener('click', e=>{
+    const btn = e.target.closest('.filter'); if(!btn) return;
+    document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.f;
+    items.forEach(it=>{
+      const show = (f==='all' || it.dataset.cat===f);
+      it.classList.toggle('hide', !show);
+    });
+    if(window.ScrollTrigger) ScrollTrigger.refresh();
+  });
+
+  /* ========== 라이트박스 ========== */
+  const lb = document.getElementById('lightbox');
+  const lbImg=document.getElementById('lbImg'), lbType=document.getElementById('lbType'),
+        lbName=document.getElementById('lbName'), lbDesc=document.getElementById('lbDesc'),
+        lbArea=document.getElementById('lbArea'), lbScope=document.getElementById('lbScope'),
+        lbPeriod=document.getElementById('lbPeriod'), lbBudget=document.getElementById('lbBudget');
+  function openLB(d){
+    // 판매 시 교체: 상세 시공 사진(고해상)
+    lbImg.src='https://picsum.photos/id/'+d.img+'/1000/1100';
+    lbImg.alt=d.name;
+    lbType.textContent=d.type; lbName.textContent=d.name; lbDesc.textContent=d.desc;
+    lbArea.textContent=d.area; lbScope.textContent=d.scope;
+    lbPeriod.textContent=d.period; lbBudget.textContent=d.budget;
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+    document.documentElement.style.overflow='hidden';
+    if(window.lenis) lenis.stop();
+  }
+  function closeLB(){
+    lb.classList.remove('open'); lb.setAttribute('aria-hidden','true');
+    document.documentElement.style.overflow='';
+    if(window.lenis) lenis.start();
+  }
+  items.forEach(it=> it.addEventListener('click', ()=> openLB(it.dataset)));
+  document.getElementById('lbClose').addEventListener('click', closeLB);
+  lb.addEventListener('click', e=>{ if(e.target===lb) closeLB(); });
+  document.getElementById('lbCta').addEventListener('click', closeLB);
+  window.addEventListener('keydown', e=>{ if(e.key==='Escape' && lb.classList.contains('open')) closeLB(); });
+
+  /* ========== 폼 제출 ========== */
+  const form = document.getElementById('quoteForm');
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    // 판매 시 교체: 실제 폼 전송(fetch/메일/API). 데모는 화면 전환만.
+    document.getElementById('qformBody').style.display='none';
+    document.getElementById('formOk').classList.add('show');
+    if(window.ScrollTrigger) ScrollTrigger.refresh();
+  });
+
+  /* ========== GSAP / Lenis / ScrollTrigger ========== */
+  if(typeof gsap === 'undefined'){
+    document.querySelectorAll('.reveal,.reveal-img').forEach(el=>{el.style.opacity=1;el.style.transform='none';});
+    return;
+  }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 카운트업은 reduce에서도 즉시 최종값 표시
+  function setCountsFinal(){
+    document.querySelectorAll('.cnt').forEach(el=>{
+      el.textContent = (+el.dataset.to).toLocaleString();
+    });
+  }
+
+  if(reduce){
+    gsap.set('.reveal,.reveal-img',{clearProps:'all',opacity:1,y:0,scale:1});
+    setCountsFinal();
+    document.querySelectorAll('.step').forEach(s=>s.classList.add('is-active'));
+    document.getElementById('procFill').style.transform='scaleY(1)';
+    return;
+  }
+
+  // Lenis 부드러운 스크롤 ↔ ScrollTrigger 동기화
+  const lenis = new Lenis({ lerp:0.1, smoothWheel:true });
+  window.lenis = lenis;
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+
+  // 앵커 클릭 → Lenis 스크롤
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length<2) return;
+      const t = document.querySelector(id);
+      if(!t) return;
+      e.preventDefault();
+      lenis.scrollTo(t, {offset:-70});
+    });
+  });
+
+  // 히어로 패럴랙스 (절제 — 중간 강도)
+  gsap.to('.hero-bg img', {
+    yPercent:12, ease:'none',
+    scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
+  });
+
+  // 공통 진입 페이드업 (텍스트 reveal)
+  gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.to(el,{ opacity:1, y:0, duration:.9, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:'top 86%' }});
+  });
+
+  // 사진/카드 진입 페이드 + 살짝 줌
+  gsap.utils.toArray('.reveal-img').forEach(el=>{
+    gsap.to(el,{ opacity:1, y:0, scale:1, duration:1, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:'top 88%' }});
+  });
+
+  // 포트폴리오 stagger 진입
+  gsap.from('#gallery .gitem',{
+    opacity:0, y:40, duration:.8, ease:'power3.out', stagger:0.07,
+    scrollTrigger:{ trigger:'#gallery', start:'top 80%' }
+  });
+
+  // 스코프 카드 stagger
+  gsap.from('.scope-card',{
+    opacity:0, y:36, duration:.8, ease:'power3.out', stagger:0.1,
+    scrollTrigger:{ trigger:'.scope-cards', start:'top 82%' }
+  });
+
+  // 카운트업 (진입 트리거)
+  document.querySelectorAll('.cnt').forEach(el=>{
+    const to = +el.dataset.to, obj={v:0};
+    ScrollTrigger.create({
+      trigger:'#stats', start:'top 78%', once:true,
+      onEnter:()=> gsap.to(obj,{ v:to, duration:1.8, ease:'power2.out', snap:{v:1},
+        onUpdate:()=> el.textContent = Math.round(obj.v).toLocaleString() })
+    });
+  });
+
+  // 프로세스 진행선 (scaleY scrub)
+  gsap.fromTo('#procFill',{scaleY:0},{
+    scaleY:1, ease:'none', transformOrigin:'top',
+    scrollTrigger:{ trigger:'#procGrid', start:'top 60%', end:'bottom 70%', scrub:1 }
+  });
+
+  // 프로세스 스텝 하이라이트
+  gsap.utils.toArray('.step').forEach(step=>{
+    ScrollTrigger.create({
+      trigger:step, start:'top 60%', end:'bottom 50%',
+      onToggle:self=> step.classList.toggle('is-active', self.isActive)
+    });
+  });
+
+  // 이미지 로드 후 위치 보정
+  window.addEventListener('load', ()=> ScrollTrigger.refresh());
+
+  /* ========== 모바일 버거 (앵커로 부드럽게) ========== */
+  document.getElementById('burger').addEventListener('click', ()=>{
+    lenis.scrollTo('#quote', {offset:-70});
+  });
+})();
+</script>
+</body>
+</html>

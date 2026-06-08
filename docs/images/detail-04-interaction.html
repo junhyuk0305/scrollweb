@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><link rel="stylesheet" href="image.css">
+<style>
+.d4 .badge-line{display:inline-flex;align-items:center;gap:10px;margin-top:30px;
+  background:var(--accent-soft);border:1px solid var(--accent-line);border-radius:999px;
+  padding:12px 22px;font-size:16px;font-weight:700;color:#dce6ff}
+.d4 .fxgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:50px}
+/* 패럴랙스 다이어그램 */
+.parax i{position:absolute;border-radius:7px}
+.parax i:nth-child(1){left:16px;top:20px;width:36%;height:80px;background:rgba(91,140,255,.25)}
+.parax i:nth-child(2){left:34%;top:42px;width:36%;height:60px;background:rgba(91,140,255,.45)}
+.parax i:nth-child(3){right:16px;top:14px;width:30%;height:92px;background:rgba(91,140,255,.7)}
+/* 핀 다이어그램 */
+.pin .frame{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60%;height:62%;
+  border:2px dashed var(--accent-line);border-radius:8px}
+.pin .blk2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46%;height:30px;
+  border-radius:6px;background:var(--accent)}
+.pin .tag{position:absolute;top:10px;right:12px;font-size:12px;color:var(--accent);font-weight:700}
+/* 타이포 분할 */
+.split{display:flex;align-items:center;justify-content:center;gap:8px;height:100%}
+.split b{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--accent);opacity:.4}
+.split b:nth-child(1){opacity:1}.split b:nth-child(2){opacity:.75}.split b:nth-child(3){opacity:.5}
+.split b:nth-child(4){opacity:.3;transform:translateY(8px)}
+</style></head>
+<body>
+<div class="canvas d4">
+  <div class="brand brand-mark"><span class="glyph">S</span><span>SCROLL<span class="dim">WORKS</span></span></div>
+  <span class="sec-tag">04 / 09</span>
+  <div class="pad-lg">
+    <span class="eyebrow">Point 1 · 스크롤 인터랙션</span>
+    <h2 class="title">단순 템플릿 수정이 아닌,<br><em>스크롤 효과를 직접 코딩</em>합니다</h2>
+    <p class="lead">GSAP(ScrollTrigger) 기반으로 페이드인·핀·패럴랙스·타이포 모션 등<br>업종과 목적에 맞는 효과를 조합합니다.</p>
+    <span class="badge-line">◆ 보유 스크롤 효과 55종을 업종에 맞게 조합</span>
+
+    <div class="fxgrid">
+      <div class="fx"><div class="stage ghosting"><i></i><i></i><i></i></div>
+        <h4>페이드 인 · 라이즈</h4><p>요소가 아래에서 떠오르며 등장</p></div>
+      <div class="fx"><div class="stage parax"><i></i><i></i><i></i></div>
+        <h4>패럴랙스</h4><p>레이어별 속도 차로 깊이감 연출</p></div>
+      <div class="fx"><div class="stage pin"><span class="tag">PIN</span><div class="frame"></div><div class="blk2"></div></div>
+        <h4>핀 고정 · 스크럽</h4><p>구간을 고정하고 스크롤로 제어</p></div>
+      <div class="fx"><div class="stage"><div class="split"><b>T</b><b>E</b><b>X</b><b>T</b></div></div>
+        <h4>타이포 분할</h4><p>글자·단어 단위로 분해되는 타이포</p></div>
+    </div>
+  </div>
+</div>
+</body></html>
