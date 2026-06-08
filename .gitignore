@@ -10,3 +10,14 @@ desktop.ini
 # 로그·임시
 *.log
 .cache/
+
+# ===== GitHub에는 "사이트 코드(html/css/js/gs)"만 올린다 =====
+# 문서·기획·내부 설정은 로컬에만 두고 업로드 제외
+# (gitignore는 줄 끝 주석을 지원하지 않으므로 패턴은 단독 줄로 둔다)
+
+# 모든 마크다운(기획·계획·README·CLAUDE.md 등)
+*.md
+# 기획·전략 문서 + 크몽 이미지 생성기
+docs/
+# Claude Code 설정·에이전트
+.claude/
