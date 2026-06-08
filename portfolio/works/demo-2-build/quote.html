@@ -179,14 +179,13 @@
     </div>
 
     <div class="locate-grid">
-      <!-- 판매 시 교체: 카카오/네이버/구글 지도 iframe 임베드로 교체 -->
-      <div class="map-box reveal" role="img" aria-label="여백건축 사무실 위치 지도 (판매 시 실제 지도로 교체)">
-        <div class="map-pin">
-          <span class="pin-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 1 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-          <b>여백건축 본사</b>
-          <span>서울특별시 강남구 논현로 000, 3층</span>
-          <span style="font-size:.78rem;color:var(--muted-d)">※ 판매 시 카카오/네이버 지도로 교체</span>
-        </div>
+      <!-- 실제 구글 지도(무료·API 키 불필요). 판매 시 iframe src 의 q= 값(현재 '서울 강남구 논현로 학동역')만 실제 주소로 교체 -->
+      <div class="map-box reveal" role="application" aria-label="여백건축 본사 위치 지도">
+        <iframe
+          src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EB%85%BC%ED%98%84%EB%A1%9C%20%ED%95%99%EB%8F%99%EC%97%AD&z=16&hl=ko&output=embed"
+          width="100%" height="100%" style="position:absolute;inset:0;border:0;display:block"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="여백건축 본사 위치 — 구글 지도"></iframe>
       </div>
 
       <div class="locate-info">

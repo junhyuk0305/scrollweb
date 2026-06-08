@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>예약·오시는 길 | 별헤는밤 STARGAZE</title>
-<meta name="description" content="체크인/아웃 날짜를 달력에서 선택하고 공식 홈페이지에서 직접 예약하세요. 수수료 없는 직접 예약 혜택, 환불규정 요약, 오시는 길·주차·내비 안내. 별헤는밤 강원 홍천.">
+<meta name="description" content="공식 홈페이지에서 직접 예약하세요. 수수료 없는 직접 예약 혜택, 환불규정 요약, 오시는 길·주차·내비 안내. 별헤는밤 강원 홍천.">
 <meta property="og:title" content="예약·오시는 길 | 별헤는밤 STARGAZE">
-<meta property="og:description" content="달력에서 날짜 선택 → 직접 예약. 플랫폼 수수료 없이 사장님이 직접 운영하는 공식 예약.">
+<meta property="og:description" content="공식 채널로 직접 예약. 플랫폼 수수료 없이 사장님이 직접 운영하는 공식 예약.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,38 +59,35 @@
       <a href="index.html">홈</a><span class="sep">›</span><b>예약·오시는 길</b>
     </nav>
     <h1>직접 예약하고, 더 받아가세요</h1>
-    <p>플랫폼 수수료 없이 사장님이 직접 운영하는 공식 예약입니다. 날짜를 고르고, 직접 예약 혜택까지 챙겨가세요.</p>
+    <p>플랫폼 수수료 없이 사장님이 직접 운영하는 공식 예약입니다. 원하는 날짜와 사이트를 정하고, 직접 예약 혜택까지 챙겨가세요.</p>
   </div>
 </section>
 
-<!-- ===== 예약 달력 + 채널 ===== -->
-<section aria-label="예약 달력">
+<!-- ===== 예약 방법 안내 + 채널 ===== -->
+<section aria-label="예약 방법 안내">
   <div class="wrap">
     <span class="eyebrow">BOOKING</span>
-    <h2 class="title">예약 가능 날짜 확인</h2>
-    <p class="lead">아래 달력에서 체크인·체크아웃 날짜를 선택해 보세요. (데모용 표시이며, 실제 잔여 현황은 예약 확정 시 안내됩니다.)</p>
+    <h2 class="title">예약은 이렇게 진행됩니다</h2>
+    <p class="lead">원하는 날짜와 사이트 타입을 정하신 뒤, 아래 공식 채널로 바로 예약하세요. 실시간 잔여 사이트는 네이버 예약 또는 전화로 확인해 안내해 드립니다.</p>
 
     <div class="resv-grid">
-      <!-- 달력 카드 -->
+      <!-- 예약 절차 카드 -->
       <div class="cal-card fade-up">
-        <div class="cal-head">
-          <div class="m" id="calMonth">2026년 6월</div>
-          <div class="cal-nav">
-            <button id="calPrev" aria-label="이전 달">‹</button>
-            <button id="calNext" aria-label="다음 달">›</button>
-          </div>
-        </div>
-        <div class="cal-grid" id="calGrid" role="grid" aria-label="예약 달력"></div>
-        <div class="cal-legend">
-          <span><i class="av"></i>예약 가능</span>
-          <span><i class="se" style="background:var(--forest)"></i>선택한 날짜</span>
-          <span><i class="so" style="background:#e7e2d8"></i>예약 마감</span>
-        </div>
-        <div class="cal-fields">
-          <div class="cal-field"><span>체크인</span><b id="calCi">—</b></div>
-          <div class="cal-field"><span>체크아웃</span><b id="calCo">—</b></div>
-        </div>
-        <div class="cal-sel-info" id="calInfo">체크인 날짜를 선택해 주세요.</div>
+        <ol class="resv-steps">
+          <li>
+            <span class="st-no">1</span>
+            <div><b>날짜·사이트 정하기</b><span><a href="sites.html" style="color:var(--ember);font-weight:700">캠핑 사이트</a>에서 타입과 기준요금을 확인하고, 원하는 숙박 날짜와 인원을 정해 주세요.</span></div>
+          </li>
+          <li>
+            <span class="st-no">2</span>
+            <div><b>공식 채널로 예약</b><span>네이버 예약·전화·야놀자 중 편한 곳으로 신청해 주세요. 실시간 잔여 사이트는 이때 안내해 드립니다.</span></div>
+          </li>
+          <li>
+            <span class="st-no">3</span>
+            <div><b>확정 연락</b><span>예약 내용과 요금을 확인한 뒤 확정 안내를 드립니다. 직접 예약 시 웰컴 장작 등 혜택이 함께합니다.</span></div>
+          </li>
+        </ol>
+        <div class="cal-sel-info">입실 15:00 / 퇴실 11:00 · 리셉션 09:00~21:00</div>
       </div>
 
       <!-- 예약 채널 + 혜택 -->
@@ -191,14 +188,13 @@
     <h2 class="title">오시는 길</h2>
     <p class="lead">서울에서 약 1시간 40분. 내비게이션에 <b>“별헤는밤 캠핑파크”</b> 또는 아래 주소를 입력하세요.</p>
     <div class="map-grid">
-      <!-- 교체: 실제 지도(네이버/카카오/구글 지도) iframe 삽입 -->
-      <div class="map-box" role="img" aria-label="캠핑장 위치 지도 자리표시">
-        <span class="maptag">지도 영역 (판매 시 실제 지도 삽입)</span>
-        <div class="pin">
-          <div class="marker" aria-hidden="true">📍</div>
-          <b>별헤는밤 캠핑파크</b>
-          <span>강원특별자치도 홍천군 서면 별빛로 128</span>
-        </div>
+      <!-- 실제 구글 지도(무료·API 키 불필요). 판매 시 iframe src 의 q= 값(현재 주소: 강원 홍천군 서면 별빛로 128)만 실제 주소로 교체 -->
+      <div class="map-box" role="application" aria-label="별헤는밤 캠핑파크 위치 지도">
+        <iframe
+          src="https://www.google.com/maps?q=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%ED%99%8D%EC%B2%9C%EA%B5%B0%20%EC%84%9C%EB%A9%B4%20%EB%B3%84%EB%B9%9B%EB%A1%9C%20128&z=15&hl=ko&output=embed"
+          width="100%" height="100%" style="position:absolute;inset:0;border:0;display:block"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="별헤는밤 캠핑파크 위치 — 구글 지도"></iframe>
       </div>
       <div class="access">
         <div class="acc-item"><h4><span aria-hidden="true">🚗</span> 자가용</h4><p>서울양양고속도로 → 동홍천 IC → 약 15분. 캠핑장 전용 주차장 이용(오토캠핑은 사이트 옆 주차).</p></div>

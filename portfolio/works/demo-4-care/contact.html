@@ -138,14 +138,13 @@
       <p class="lead fade-up">지하철·버스 모두 편리하며, 건물 내 주차도 가능합니다.</p>
     </div>
     <div class="map-grid">
-      <!-- 교체: 네이버/카카오 지도 임베드 -->
-      <div class="map-box fade-up" role="img" aria-label="맑은숲한의원 위치 지도 (지도 임베드 자리)">
-        <span class="maptag">지도 자리 · 네이버/카카오 지도 임베드</span>
-        <div class="pin">
-          <div class="marker" aria-hidden="true">📍</div>
-          <b>맑은숲한의원</b>
-          <span>서울특별시 ○○구 맑은숲로 12, 3층</span>
-        </div>
+      <!-- 실제 구글 지도(무료·API 키 불필요). 판매 시 iframe src 의 q= 값(현재 '서울 맑은숲한의원')만 실제 주소/상호로 교체 -->
+      <div class="map-box fade-up" role="application" aria-label="맑은숲한의원 위치 지도">
+        <iframe
+          src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EB%A7%91%EC%9D%80%EC%88%B2%ED%95%9C%EC%9D%98%EC%9B%90&z=16&hl=ko&output=embed"
+          width="100%" height="100%" style="position:absolute;inset:0;border:0;display:block"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="맑은숲한의원 위치 — 구글 지도"></iframe>
       </div>
       <div class="access">
         <div class="acc-item fade-up">

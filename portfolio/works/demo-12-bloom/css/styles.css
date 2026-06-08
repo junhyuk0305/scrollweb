@@ -1,0 +1,159 @@
+/* ============================================================
+   BLOOM · 스킨(이 데모의 룩만). 모션은 공유 fx 엔진이 담당.
+   BASIC(30) 원페이지 · F&B 따뜻한 베이커리 무드 · 콘텐츠 우선
+   ============================================================ */
+
+:root {
+  --cream:#f6efe4; --paper:#fbf7f0; --ink:#2a201a; --ink-soft:#6f6052;
+  --clay:#b05c3b; --clay-deep:#8c4528; --gold:#c79a4b; --line:#e6dac8;
+  --serif:'Nanum Myeongjo',serif;
+  --sans:'Pretendard',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wrap:1160px; --r:18px; --shadow:0 22px 60px -28px rgba(60,38,20,.5);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
+@media (prefers-reduced-motion:reduce){ html{ scroll-behavior:auto; } }
+body { font-family:var(--sans); color:var(--ink); background:var(--cream);
+  line-height:1.68; letter-spacing:-.01em; overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; }
+em { font-style:normal; color:var(--clay); }
+.wrap { width:100%; max-width:var(--wrap); margin:0 auto; padding:0 clamp(20px,5vw,40px); }
+.eyebrow { display:inline-block; font-size:.74rem; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--clay-deep); font-weight:700; margin-bottom:1rem; }
+.eyebrow.light { color:var(--gold); }
+h2 { font-family:var(--serif); font-weight:800; font-size:clamp(1.8rem,4.4vw,2.9rem); line-height:1.2; letter-spacing:-.02em; }
+h3 { font-family:var(--serif); font-weight:700; }
+section { padding-block:clamp(4rem,9vw,7rem); }
+
+/* ---- 버튼 ---- */
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:.4em;
+  height:52px; min-height:44px; padding:0 1.5rem; border-radius:999px; font-weight:700; font-size:.95rem;
+  transition:transform .25s ease, background .25s ease, color .25s ease; cursor:pointer; border:1.5px solid transparent; }
+.btn-solid { background:var(--clay); color:#fff; }
+.btn-solid:hover { background:var(--clay-deep); transform:translateY(-2px); }
+.btn-solid b { font-weight:800; margin-left:.1em; }
+.btn-ghost { border-color:var(--ink); color:var(--ink); background:transparent; }
+.btn-ghost:hover { background:var(--ink); color:var(--cream); transform:translateY(-2px); }
+.btn-ghost em { font-size:.78em; opacity:.7; }
+
+/* ============== HEADER (BASIC: 로고 + CTA) ============== */
+header { position:sticky; top:0; z-index:50; background:rgba(246,239,228,.82);
+  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid transparent; transition:.3s; }
+header.scrolled { border-color:var(--line); background:rgba(246,239,228,.95); }
+.nav { display:flex; align-items:center; justify-content:space-between; height:72px; }
+.brand { display:flex; flex-direction:column; line-height:1; }
+.brand .logo { font-family:var(--serif); font-weight:800; font-size:1.5rem; letter-spacing:.04em; }
+.brand-sub { font-size:.6rem; letter-spacing:.26em; text-transform:uppercase; color:var(--ink-soft); margin-top:3px; }
+.nav-cta { height:46px; padding:0 1.2rem; font-size:.88rem; }
+.nav-cta b { display:inline; }
+
+/* ============== HERO ============== */
+.hero { position:relative; min-height:92svh; display:flex; align-items:flex-end;
+  padding:0 0 clamp(3rem,8vh,6rem); overflow:hidden; }
+.hero-media-wrap { position:absolute; inset:0; overflow:hidden; z-index:0; }
+.hero-img { width:100%; height:100%; object-fit:cover; }
+.hero-tint { position:absolute; inset:0; background:linear-gradient(180deg,rgba(20,12,6,.2) 0%,rgba(20,12,6,.62) 76%,rgba(20,12,6,.8) 100%); }
+.hero-inner { position:relative; z-index:2; color:#fdf7ee; }
+.hero-inner .eyebrow { color:#f0d9b8; }
+.hero-title { font-family:var(--serif); font-weight:800; font-size:clamp(2.2rem,6.4vw,4.6rem);
+  line-height:1.1; letter-spacing:-.02em; margin-bottom:1.4rem; }
+.hero-title em { color:#f3c98e; }
+.fx-word-mask { display:block; overflow:hidden; }
+.hero-sub { max-width:46ch; font-size:clamp(1rem,1.5vw,1.18rem); color:rgba(253,247,238,.92); margin-bottom:1.8rem; }
+.hero-cta { display:flex; gap:.8rem; flex-wrap:wrap; }
+.hero-cta .btn-ghost { border-color:rgba(253,247,238,.7); color:#fdf7ee; }
+.hero-cta .btn-ghost:hover { background:#fdf7ee; color:var(--ink); }
+.hero-cta .btn-ghost em { color:inherit; }
+.scroll-cue { position:absolute; right:clamp(20px,5vw,40px); bottom:2rem; z-index:2; color:rgba(253,247,238,.85);
+  font-size:.66rem; letter-spacing:.2em; writing-mode:vertical-rl; }
+.scroll-cue::after { content:""; display:block; width:1px; height:40px; margin:.6rem auto 0; background:rgba(253,247,238,.6); }
+
+/* ============== 약속(왜 BLOOM) ============== */
+.promise-lead { font-family:var(--serif); font-size:clamp(1.5rem,3.4vw,2.4rem); line-height:1.4; font-weight:700; margin-bottom:clamp(2rem,5vw,3.5rem); max-width:24ch; }
+.promise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,2.6vw,2rem); }
+.pcard { padding:clamp(1.6rem,2.6vw,2.2rem); background:var(--paper); border:1px solid var(--line); border-radius:var(--r); }
+.pnum { font-family:var(--serif); color:var(--clay); font-size:.95rem; letter-spacing:.08em; }
+.pcard h3 { font-size:clamp(1.2rem,2.2vw,1.5rem); margin:.6rem 0 .8rem; }
+.pcard p { color:var(--ink-soft); font-size:.98rem; }
+
+/* ============== 시그니처 메뉴 ============== */
+.menu { background:var(--paper); }
+.menu-head { margin-bottom:clamp(2rem,4vw,3rem); }
+.menu-head h2 { margin:.2rem 0 .8rem; }
+.menu-note { color:var(--ink-soft); max-width:40ch; }
+.menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.4rem,3vw,2.2rem); }
+.mcard { background:var(--cream); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); }
+.mcard figure { overflow:hidden; aspect-ratio:9/6; }
+.mcard figure img { width:100%; height:118%; object-fit:cover; margin-top:-9%; }
+.mbody { padding:clamp(1.3rem,2.4vw,1.8rem); }
+.mtop { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:.5rem; }
+.mtop h3 { font-size:clamp(1.2rem,2.2vw,1.5rem); }
+.mtop b { font-family:var(--serif); font-size:1.2rem; color:var(--clay-deep); white-space:nowrap; }
+.mbody p { color:var(--ink-soft); font-size:.96rem; }
+
+/* ============== 만드는 방식 ============== */
+.craft { background:var(--ink); color:var(--cream); }
+.craft-head h2 { color:var(--cream); margin:.2rem 0 .6rem; }
+.craft-head p { color:rgba(246,239,228,.7); }
+.steps { list-style:none; display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin:clamp(2rem,4vw,3rem) auto; }
+.steps li { padding:1.4rem 1.2rem; border:1px solid rgba(246,239,228,.18); border-radius:var(--r); }
+.steps .time { display:block; font-family:var(--serif); font-size:1.5rem; color:var(--gold); margin-bottom:.4rem; }
+.steps .act { color:rgba(246,239,228,.82); font-size:.95rem; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; text-align:center; padding-top:1rem; border-top:1px solid rgba(246,239,228,.16); }
+.stat .num { display:block; font-family:var(--serif); font-weight:800; font-size:clamp(1.8rem,4.4vw,2.8rem); color:var(--gold); }
+.stat .lbl { display:block; margin-top:.35rem; color:rgba(246,239,228,.7); font-size:.88rem; }
+
+/* ============== 후기 ============== */
+.reviews-head { margin-bottom:2rem; }
+.reviews-head h2 { margin-top:.2rem; }
+.reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+.reviews blockquote { padding:1.8rem; background:var(--paper); border:1px solid var(--line); border-radius:var(--r); }
+.reviews p { font-family:var(--serif); font-size:1.08rem; line-height:1.55; margin-bottom:1rem; }
+.reviews cite { color:var(--ink-soft); font-style:normal; font-size:.9rem; }
+
+/* ============== 오시는 길 · 주문 ============== */
+.order { background:var(--paper); }
+.order-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+.order-info h2 { margin:.2rem 0 1.2rem; }
+.order-reassure { background:var(--cream); border-left:3px solid var(--clay); padding:1rem 1.2rem; border-radius:10px; color:var(--ink-soft); margin-bottom:1.6rem; }
+.order-reassure b { color:var(--ink); }
+.info-list { display:flex; flex-direction:column; gap:.9rem; margin-bottom:1.6rem; }
+.info-list li { display:grid; grid-template-columns:80px 1fr; gap:1rem; padding-bottom:.9rem; border-bottom:1px solid var(--line); }
+.info-list b { color:var(--clay-deep); }
+.info-list span { color:var(--ink-soft); }
+.info-list a { color:var(--ink); border-bottom:1px solid var(--clay); }
+.order-cta { display:flex; gap:.8rem; flex-wrap:wrap; }
+.order-photo { overflow:hidden; border-radius:var(--r); aspect-ratio:5/6; box-shadow:var(--shadow); }
+.order-photo img { width:100%; height:116%; object-fit:cover; margin-top:-8%; }
+
+/* ============== FOOTER ============== */
+.foot { background:var(--ink); color:rgba(246,239,228,.75); padding-block:clamp(2.5rem,6vw,4rem); }
+.foot-in { text-align:center; display:flex; flex-direction:column; gap:.5rem; align-items:center; }
+.foot .logo { font-family:var(--serif); font-weight:800; font-size:1.6rem; color:var(--cream); letter-spacing:.04em; }
+.foot .biz { font-size:.82rem; opacity:.7; }
+.foot em { color:var(--gold); font-size:.85em; }
+
+/* ============== 모바일 고정 CTA ============== */
+.float-cta { display:none; position:fixed; left:0; right:0; bottom:0; z-index:60;
+  background:var(--clay); color:#fff; text-align:center; padding:1rem; font-weight:700; box-shadow:0 -8px 24px -12px rgba(0,0,0,.4); }
+
+/* ============== 반응형 ============== */
+@media (max-width:860px){
+  .nav-cta b { display:none; }
+  .promise-grid { grid-template-columns:1fr; }
+  .menu-grid { grid-template-columns:1fr; }
+  .steps { grid-template-columns:repeat(2,1fr); }
+  .stats-grid { grid-template-columns:repeat(2,1fr); gap:1.6rem 1rem; }
+  .reviews-grid { grid-template-columns:1fr; }
+  .order-grid { grid-template-columns:1fr; }
+  .order-photo { order:-1; aspect-ratio:4/3; }
+  .float-cta { display:block; }
+  body { padding-bottom:60px; }
+}
+@media (max-width:520px){
+  .hero { min-height:86svh; }
+  .steps { grid-template-columns:1fr; }
+  .stats-grid { grid-template-columns:1fr 1fr; }
+}

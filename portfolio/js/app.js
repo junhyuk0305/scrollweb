@@ -95,27 +95,27 @@ const WORKS = [
     period: "3일", sections: 5, pages: 1,
     features: ["진료 안내", "의료진 소개", "진료시간·오시는 길", "전화·카톡 예약"],
     img: "https://picsum.photos/id/1062/900/1200",
-    href: "works/clinic-v2-luxury/index.html"
+    href: "works/demo-9-skin/index.html"
   },
   {
     num: "10", short: "풀빌라", cat: "펜션 · 풀빌라",
     title: "윤슬 풀빌라",
     industry: "가평 독채 프라이빗 풀빌라",
     price: "30만원", priceTier: "기본 BASIC", tier: "basic",
-    period: "3일", sections: 5, pages: 1,
-    features: ["공간 소개", "어메니티·이용안내", "위치 요약", "전화·카톡 문의"],
+    period: "3일", sections: 6, pages: 1,
+    features: ["시네마틱 타이포 리빌", "공간 소개 카드", "어메니티·이용안내", "요금표", "위치 안내", "전화·카톡 예약"],
     img: "https://picsum.photos/id/1043/900/1200",
-    href: "works/yunseul-stay/index.html"
+    href: "works/demo-10-villa/index.html"
   },
   {
     num: "11", short: "청소이사", cat: "청소 · 이사",
     title: "믿음 청소이사",
     industry: "입주청소 · 이사 · 사무실 이전",
     price: "30만원", priceTier: "기본 BASIC", tier: "basic",
-    period: "3일", sections: 5, pages: 1,
-    features: ["단가표", "전화·카톡 견적", "서비스 지역", "신뢰 배지"],
+    period: "3일", sections: 6, pages: 1,
+    features: ["견적 카드 인터랙션", "서비스 카드", "평형별 단가표", "작업 절차·신뢰", "FAQ", "전화·카톡 견적"],
     img: "https://picsum.photos/id/1060/900/1200",
-    href: "works/labor-service/index.html"
+    href: "works/demo-11-move/index.html"
   }
 ];
 

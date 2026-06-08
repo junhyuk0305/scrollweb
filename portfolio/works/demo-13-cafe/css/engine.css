@@ -1,0 +1,43 @@
+/* ============================================================
+   SCROLLWORKS · 공유 fx 엔진 — 초기 상태 & 폴백 (룩 0)
+   원리: 모션 무장(fx-arm) 상태에서만 요소를 미리 숨긴다.
+        <head> 인라인 스크립트가 모션최소화가 아니면 html.fx-arm 부여.
+        GSAP 실패/모션최소화면 engine.js가 fx-arm 제거 → 전부 즉시 노출.
+   = FOUC(깜빡임) 없이, 어떤 실패에도 콘텐츠는 항상 보인다.
+   ============================================================ */
+
+/* reveal: 단독은 본인을, data-stagger는 자식을 숨김 */
+html.fx-arm [data-fx~="reveal"]:not([data-stagger]) { opacity: 0; transform: translateY(26px); }
+html.fx-arm [data-fx~="reveal"][data-stagger] > * { opacity: 0; transform: translateY(26px); }
+
+/* blur: 포커스&블러 진입 초기 숨김(FOUC 방지) */
+html.fx-arm [data-fx~="blur"] { opacity: 0; }
+
+/* words: 단어 등장 — 분할 전 깜빡임 방지 + 단어 마스크 */
+html.fx-arm [data-fx~="words"] { visibility: hidden; }
+.fx-w { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.fx-w > span { display: inline-block; will-change: transform; }
+
+/* hero: 단어는 마스크 아래로 내려두고, 미디어는 아래에서 클립 */
+html.fx-arm [data-hero-word] { opacity: 0; transform: translateY(90px); }
+html.fx-arm [data-hero-media] { clip-path: inset(0 0 100% 0); }
+
+/* 히어로 단어 마스크(넘침 숨김) — 마크업 도우미 */
+[data-hero-word] { display: inline-block; will-change: transform; }
+.fx-word-mask { display: inline-block; overflow: hidden; vertical-align: bottom; }
+
+/* reveal-mask 덮개 기본값(덮은 상태) */
+[data-mask-cover] { transform-origin: left center; will-change: transform; }
+
+/* marquee 트랙: 가로 넘침 숨김 + 줄바꿈 금지 (디스패치 속성 data-fx 기준) */
+[data-fx~="marquee"] { overflow: hidden; max-width: 100%; }
+[data-marquee-track] { display: inline-flex; flex-wrap: nowrap; white-space: nowrap; will-change: transform; }
+
+/* 모션최소화/폴백: 혹시 남아있을 변형 무력화 (안전망) */
+html.fx-fallback [data-fx],
+html.fx-fallback [data-hero-word],
+html.fx-fallback [data-hero-media] { opacity: 1 !important; transform: none !important; clip-path: none !important; visibility: visible !important; }
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-word], [data-hero-media], [data-fx] { opacity: 1 !important; transform: none !important; clip-path: none !important; visibility: visible !important; }
+  [data-mask-cover] { display: none !important; }
+}

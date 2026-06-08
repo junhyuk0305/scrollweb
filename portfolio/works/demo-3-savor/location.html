@@ -102,12 +102,13 @@
         <div class="mi-row"><div class="k">Parking</div><div class="v">발레파킹 운영 (2시간) <small>· 인근 공영주차장 제휴</small></div></div>
         <div class="mi-row"><div class="k">Reserve</div><div class="v">02-790-0000 · reserve@notte.kr</div></div>
       </div>
-      <!-- 판매 시 교체: 아래 지도 플레이스홀더를 네이버/카카오/구글 지도 iframe으로 교체 -->
-      <div class="map-box" role="img" aria-label="NOTTE 위치 지도 자리표시">
-        <span class="maptag">지도 영역 (판매 시 실제 지도 삽입) · 한강진역 7min</span>
-        <div class="road r1"></div>
-        <div class="road r2"></div>
-        <div class="pin"><div class="dot"></div><div class="lbl">NOTTE</div></div>
+      <!-- 실제 구글 지도(무료·API 키 불필요). 판매 시 iframe src 의 q= 값만 실제 주소/상호로 교체 -->
+      <div class="map-box" role="application" aria-label="NOTTE 한남 위치 지도">
+        <iframe
+          src="https://www.google.com/maps?q=%EC%84%9C%EC%9A%B8%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EB%82%A8%EB%8C%80%EB%A1%9C27%EA%B8%B8&z=16&hl=ko&output=embed"
+          width="100%" height="100%" style="position:absolute;inset:0;border:0;display:block"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="NOTTE 한남 위치 — 구글 지도"></iframe>
       </div>
     </div>
 

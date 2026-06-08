@@ -1,0 +1,188 @@
+<!-- 판매 시 교체: 로고/브랜드명/동네·상권/창업연도/카피/메뉴·가격/대표 사진/연락처·카카오 링크/주소·영업시간/사업자번호 -->
+<!-- BLOOM 디저트·베이커리 데모 · BASIC(30만) 원페이지 · 콘텐츠 우선(BRIEF.md) · 공유 fx 엔진(data-fx) -->
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('fx-arm');</script>
+<title>BLOOM 블룸 | 새벽에 직접 구워, 오늘 가장 맛있게 — 동네 베이커리</title>
+<meta name="description" content="BLOOM(블룸) — 2014년부터 매일 새벽 5시에 직접 굽는 동네 디저트 베이커리. 15년 키운 천연발효 르방, 그날 받은 제철 과일, 당일 소진 원칙. 무화과 타르트·르방 캄파뉴·버터 크루아상·바스크 치즈케이크. 케이크 예약 주문." />
+<meta name="robots" content="index, follow" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="BLOOM 블룸 — 새벽에 직접 구워, 오늘 가장 맛있게" />
+<meta property="og:description" content="2014년부터 매일 새벽 5시 직접 베이킹. 15년 르방, 제철 과일, 당일 소진. 동네 디저트 베이커리." />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="BLOOM" />
+<meta name="theme-color" content="#2a201a" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" />
+<link rel="stylesheet" href="css/engine.css" />
+<link rel="stylesheet" href="css/styles.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="js/engine.js" defer></script>
+<script src="js/app.js" defer></script>
+</head>
+
+<!-- BASIC(30): nav 메뉴 없음(로고+CTA), 진입 모션 위주. data-tier로 강도 자동(.3) -->
+<body data-tier="basic">
+
+<!-- ===== HEADER · BASIC: 로고 + 전화 CTA만 ===== -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand" aria-label="BLOOM 홈">
+      <span class="logo">BLOOM</span>
+      <span class="brand-sub">daily bakery · since 2014</span>
+    </a>
+    <a href="tel:0212345678" class="btn btn-solid nav-cta">오늘 빵 확인 <b>02-1234-5678</b></a>
+  </div>
+</header>
+
+<!-- ===== 1. HERO (data-fx="hero") ===== -->
+<section class="hero" data-fx="hero">
+  <div class="hero-media-wrap">
+    <!-- 판매 시 실제 매장/제품 사진으로 교체 · 데모용 picsum 고정 id -->
+    <img class="hero-img" data-hero-media src="https://picsum.photos/id/431/1600/1100" alt="BLOOM 매장 진열대 (데모 이미지 · 판매 시 실제 사진으로 교체)" loading="eager" width="1600" height="1100" />
+    <span class="hero-tint" aria-hidden="true"></span>
+  </div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow">서울 ○○동 · 2014년부터 매일 새벽</span>
+    <h1 class="hero-title">
+      <span class="fx-word-mask"><span data-hero-word>새벽 5시에</span></span>
+      <span class="fx-word-mask"><span data-hero-word>시작한 반죽이,</span></span>
+      <span class="fx-word-mask"><span data-hero-word>오늘 <em>당신의 아침</em>이</span></span>
+      <span class="fx-word-mask"><span data-hero-word>됩니다.</span></span>
+    </h1>
+    <p class="hero-sub">공장에서 받아오지 않습니다. 전날 빵을 데우지 않습니다. 사장이 매일 새벽 5시에 르방을 깨워 직접 굽고, 그날 다 팔리면 문을 닫습니다.</p>
+    <div class="hero-cta">
+      <a href="tel:0212345678" class="btn btn-solid">오늘 빵 확인 전화</a>
+      <a href="#order" class="btn btn-ghost">케이크 예약 문의</a>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true">SCROLL</span>
+</section>
+
+<!-- ===== 2. 왜 BLOOM인가 (약속 3축) ===== -->
+<section class="promise">
+  <div class="wrap">
+    <p class="promise-lead" data-fx="reveal">빵 맛은 결국 세 가지에서 갈립니다.<br />우리가 매일 지키는 것 — 재료, 시간, 당일.</p>
+    <div class="promise-grid" data-fx="reveal" data-stagger>
+      <article class="pcard">
+        <span class="pnum">01</span>
+        <h3>15년 키운 천연발효종</h3>
+        <p>이스트 대신 15년째 이어온 자가 배양 르방으로 발효합니다. 속은 더 촉촉하고, 소화가 편하고, 시간이 만든 깊은 풍미가 납니다.</p>
+      </article>
+      <article class="pcard">
+        <span class="pnum">02</span>
+        <h3>새벽 5시, 사람이 굽는 빵</h3>
+        <p>매일 새벽 5시에 굽기 시작합니다. 냉동 생지나 완제품 반입이 없습니다. 그래서 오전에 가장 종류가 많고, 늦으면 인기 빵은 빠르게 소진됩니다.</p>
+      </article>
+      <article class="pcard">
+        <span class="pnum">03</span>
+        <h3>그날 받은 제철 과일</h3>
+        <p>주 3회 산지에서 직접 받은 과일만 올립니다. 향료·보존료를 쓰지 않아 조금 빨리 굳고, 그래서 ‘당일 소진’을 원칙으로 합니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. 시그니처 메뉴 ===== -->
+<section class="menu" id="menu">
+  <div class="wrap menu-head" data-fx="reveal">
+    <span class="eyebrow">Signature</span>
+    <h2>오늘도 굽는 대표 메뉴</h2>
+    <p class="menu-note">매일 38종을 굽습니다. 아래는 단골이 가장 먼저 찾는 네 가지.</p>
+  </div>
+  <div class="wrap menu-grid" data-fx="reveal" data-stagger>
+    <article class="mcard">
+      <figure data-parallax-scope><img data-fx="parallax" data-speed="0.12" src="https://picsum.photos/id/1080/900/760" alt="무화과 타르트 (데모 이미지)" loading="lazy" width="900" height="760" /></figure>
+      <div class="mbody"><div class="mtop"><h3>무화과 타르트</h3><b>8,500원</b></div><p>바삭한 사블레 위 바닐라빈 크렘, 그날 들어온 무화과만 올려 <em>하루 30판 한정</em>.</p></div>
+    </article>
+    <article class="mcard">
+      <figure data-parallax-scope><img data-fx="parallax" data-speed="0.12" src="https://picsum.photos/id/292/900/760" alt="르방 캄파뉴 (데모 이미지)" loading="lazy" width="900" height="760" /></figure>
+      <div class="mbody"><div class="mtop"><h3>르방 캄파뉴</h3><b>6,000원</b></div><p>48시간 저온 숙성. 겉은 바삭, 속은 촉촉. 데우면 갓 구운 그 상태로 돌아옵니다.</p></div>
+    </article>
+    <article class="mcard">
+      <figure data-parallax-scope><img data-fx="parallax" data-speed="0.12" src="https://picsum.photos/id/312/900/760" alt="버터 크루아상 (데모 이미지)" loading="lazy" width="900" height="760" /></figure>
+      <div class="mbody"><div class="mtop"><h3>버터 크루아상</h3><b>4,200원</b></div><p>발효 버터로 27겹. 아침에만 굽고, 점심이면 대개 소진됩니다.</p></div>
+    </article>
+    <article class="mcard">
+      <figure data-parallax-scope><img data-fx="parallax" data-speed="0.12" src="https://picsum.photos/id/225/900/760" alt="바스크 치즈케이크 (데모 이미지)" loading="lazy" width="900" height="760" /></figure>
+      <div class="mbody"><div class="mtop"><h3>바스크 치즈케이크</h3><b>7,000원</b></div><p>겉은 진하게 태우고 속은 흐르게. 달지 않아 선물용으로 가장 많이 나갑니다.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 4. 만드는 방식 (증거 + 숫자) ===== -->
+<section class="craft">
+  <div class="wrap craft-head" data-fx="reveal">
+    <span class="eyebrow light">How we bake</span>
+    <h2>맛은 공정에서 갈립니다</h2>
+    <p>우리가 매일 같은 시간에 반복하는 일.</p>
+  </div>
+  <ol class="steps wrap" data-fx="reveal" data-stagger>
+    <li><span class="time">05:00</span><span class="act">르방을 깨웁니다</span></li>
+    <li><span class="time">06:30</span><span class="act">성형하고 발효합니다</span></li>
+    <li><span class="time">08:00</span><span class="act">첫 빵을 진열합니다</span></li>
+    <li><span class="time">소진 시</span><span class="act">문을 닫습니다</span></li>
+  </ol>
+  <div class="wrap stats-grid" data-fx="reveal" data-stagger>
+    <div class="stat"><span class="num" data-fx="count" data-count="11" data-suffix="년">11년</span><span class="lbl">한자리에서</span></div>
+    <div class="stat"><span class="num" data-fx="count" data-count="38" data-suffix="종">38종</span><span class="lbl">매일 굽는 품목</span></div>
+    <div class="stat"><span class="num" data-fx="count" data-count="5" data-suffix="시">5시</span><span class="lbl">새벽 베이킹 시작</span></div>
+    <div class="stat"><span class="num" data-fx="count" data-count="1200" data-suffix="+">1,200+</span><span class="lbl">단골 회원</span></div>
+  </div>
+</section>
+
+<!-- ===== 5. 단골의 말 ===== -->
+<section class="reviews">
+  <div class="wrap reviews-head" data-fx="reveal"><span class="eyebrow">Voices</span><h2>단골의 말</h2></div>
+  <div class="wrap reviews-grid" data-fx="reveal" data-stagger>
+    <blockquote><p>“출근길에 꼭 들러요. 크루아상은 아침에 안 사면 후회합니다.”</p><cite>— 3년차 단골</cite></blockquote>
+    <blockquote><p>“딸 생일 케이크를 맡겼는데, 맛도 디자인도 기대 이상이었어요.”</p><cite>— 케이크 주문 손님</cite></blockquote>
+    <blockquote><p>“달지 않고 재료 맛이 살아 있어, 선물용으로 자주 포장합니다.”</p><cite>— 선물 단골</cite></blockquote>
+  </div>
+</section>
+
+<!-- ===== 6. 오시는 길 · 주문 (전환) ===== -->
+<section class="order" id="order">
+  <div class="wrap order-grid" data-fx="reveal" data-stagger>
+    <div class="order-info">
+      <span class="eyebrow">Visit & Order</span>
+      <h2>오시는 길 · 주문 안내</h2>
+      <p class="order-reassure">오늘 어떤 빵이 남았는지 <b>전화로 확인</b>하실 수 있어요. 케이크·단체 주문은 <b>3일 전 전화 한 통</b>이면 됩니다.</p>
+      <ul class="info-list">
+        <li><b>주소</b><span>서울특별시 ○○구 ○○로 12, 1층 <em>(판매 시 교체)</em></span></li>
+        <li><b>영업시간</b><span>매일 08:00–21:00 · 매주 월요일 휴무</span></li>
+        <li><b>전화</b><span><a href="tel:0212345678">02-1234-5678</a></span></li>
+      </ul>
+      <div class="order-cta">
+        <a href="tel:0212345678" class="btn btn-solid">전화 주문·예약</a>
+        <a href="#" class="btn btn-ghost">카카오톡 채널 <em>(판매 시 링크)</em></a>
+      </div>
+    </div>
+    <figure class="order-photo" data-parallax-scope>
+      <img data-fx="parallax" data-speed="0.16" src="https://picsum.photos/id/326/1000/1200" alt="BLOOM 매장 내부 (데모 이미지)" loading="lazy" width="1000" height="1200" />
+    </figure>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span class="logo">BLOOM</span>
+    <p>2014년부터 매일 새벽 굽는 동네 베이커리 · 서울 ○○구 <em>(판매 시 교체)</em></p>
+    <p class="biz">사업자등록번호 000-00-00000 <em>(판매 시 교체)</em> · © BLOOM</p>
+  </div>
+</footer>
+
+<a href="tel:0212345678" class="float-cta" aria-label="전화 주문·예약">오늘 빵 확인 · 02-1234-5678</a>
+
+</body>
+</html>

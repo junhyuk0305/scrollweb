@@ -143,10 +143,13 @@
 <section class="section" style="background:var(--off-2)" id="directions" aria-label="오시는 길">
   <div class="wrap">
     <div class="dir-inner">
-      <div class="map-ph fade-up" role="img" aria-label="고요재 위치 지도(데모)">
-        <div class="road r1"></div><div class="road r2"></div><div class="water"></div>
-        <div class="map-pin"><div class="dot"></div><div class="lbl">고요재 古耀齋</div></div>
-        <div class="map-note">지도 영역 — 판매 시 네이버/카카오 지도 임베드로 교체</div>
+      <!-- 실제 구글 지도(무료·API 키 불필요). 판매 시 iframe src 의 q= 값(현재 주소: 강원 양양군 현북면 솔숲길 24-7)만 실제 주소로 교체 -->
+      <div class="map-ph fade-up" role="application" aria-label="고요재 위치 지도">
+        <iframe
+          src="https://www.google.com/maps?q=%EA%B0%95%EC%9B%90%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%20%EC%96%91%EC%96%91%EA%B5%B0%20%ED%98%84%EB%B6%81%EB%A9%B4%20%EC%86%94%EC%88%B2%EA%B8%B8%2024-7&z=15&hl=ko&output=embed"
+          width="100%" height="100%" style="position:absolute;inset:0;border:0;display:block"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="고요재 위치 — 구글 지도"></iframe>
       </div>
       <div class="dir-info fade-up">
         <span class="eyebrow">DIRECTIONS</span>

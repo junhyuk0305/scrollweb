@@ -339,3 +339,30 @@
     setTimeout(function () { ScrollTrigger.refresh(); }, 600);
   }
 })();
+
+/* === 좌상단 로고: 클릭 시 현재 페이지 새로고침(맨 위) === */
+(function () {
+  function init() {
+    var header = document.querySelector('header');
+    if (!header) return;
+    var logo = header.querySelector('.brand, .logo');
+    if (!logo) return;
+    logo.style.cursor = 'pointer';
+    if (logo.tagName !== 'A') {
+      logo.setAttribute('role', 'button');
+      logo.setAttribute('tabindex', '0');
+    }
+    function reloadTop(e) {
+      if (e) e.preventDefault();
+      try { if ('scrollRestoration' in history) history.scrollRestoration = 'manual'; } catch (_) {}
+      window.scrollTo(0, 0);
+      window.location.reload();
+    }
+    logo.addEventListener('click', reloadTop);
+    logo.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') reloadTop(e);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

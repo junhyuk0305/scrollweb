@@ -364,6 +364,13 @@ table.rate .cat{font-weight:600;color:var(--brass-deep)}
 .cal-sel-info{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:14.5px;color:var(--charcoal);min-height:24px}
 .cal-sel-info b{font-family:var(--serif-ko)}
 
+/* 예약 절차 3단계 (달력 대체) */
+.resv-steps{list-style:none;display:grid;gap:22px}
+.resv-steps li{display:flex;gap:16px;align-items:flex-start}
+.resv-steps .st-no{flex:none;width:38px;height:38px;border-radius:11px;background:var(--brass-deep);color:#fff;display:grid;place-items:center;font-family:var(--serif-ko);font-size:18px;font-weight:600}
+.resv-steps b{display:block;font-family:var(--serif-ko);font-size:17px;color:var(--charcoal);margin-bottom:4px}
+.resv-steps div span{display:block;font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+
 .resv-side{display:grid;gap:14px}
 .chan{display:flex;align-items:center;gap:16px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:transform .2s,box-shadow .2s;min-height:80px;box-shadow:var(--shadow)}
 .chan:hover,.chan:focus-visible{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
